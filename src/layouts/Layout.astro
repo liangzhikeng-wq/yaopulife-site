@@ -56,5 +56,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </head>
 <body class="min-h-screen bg-white">
   <slot />
+  <slot name="after-footer" />
+  <script src="//code.tidio.co/YOUR_PUBLIC_KEY.js" async></script>
 </body>
 </html>
