@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const products = [
+  { id: 1, title: "Custom Pet Embroidery Hoop", price: "From $48", category: "pet-portraits", image: "/products/embroidery-pet-01.jpg" },
+  { id: 2, title: "Needle Felted Cat Portrait", price: "From $65", category: "pet-portraits", image: "/products/felt-cat-01.jpg" },
+  { id: 3, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/sign-family-01.jpg" },
+  { id: 4, title: "DIY Resin Ocean Coasters", price: "From $28", category: "home-decor", image: "/products/resin-ocean-01.jpg" },
+  { id: 5, title: "Custom Wedding Embroidery", price: "From $55", category: "custom-gifts", image: "/products/embroidery-wedding-01.jpg" },
+  { id: 6, title: "3D Printed Moon Lamp", price: "From $42", category: "home-decor", image: "/products/lamp-moon-01.jpg" }
+];
+
+const categories = ["All", "Custom Gifts", "Home Decor", "Pet Portraits", "Party Decor"];
+---
+
+<Layout title="Shop" description="Browse our collection of AI-designed, handcrafted DIY creations. Custom gifts, home decor, and pet portraits.">
+  <Navbar />
+  
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-gray-900">Our Collection</h1>
+      <p class="mt-4 text-lg text-gray-600">Every piece starts as inspiration, becomes art through AI, and comes to life by hand.</p>
+      
+      <div class="mt-8 flex flex-wrap gap-2">
+        {categories.map(cat => (
+          <button class="px-4 py-2 text-sm font-medium rounded-full bg-white border border-gray-200 hover:bg-brand-50 hover:border-brand-300 transition-colors">
+            {cat}
+          </button>
+        ))}
+      </div>
+      
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map(p => (
+          <a href={`/product/${p.id}`} class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center">
+              <span class="text-gray-400 text-sm">{p.title}</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h3>
+              <p class="mt-1 text-sm text-gray-500 capitalize">{p.category.replace('-', ' ')}</p>
+              <p class="mt-3 text-base font-medium text-brand-600">{p.price}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const steps = [
+  { num: "01", title: "Share Your Vision", desc: "Tell us your idea through photos, sketches, or words. The more detail, the better." },
+  { num: "02", title: "AI Design Preview", desc: "Within 24 hours, we create 2-3 AI-generated design previews tailored to your request." },
+  { num: "03", title: "You Approve & Pay", desc: "Pick your favorite design. We send a PayPal invoice. Once paid, production begins." },
+  { num: "04", title: "Handcrafted with Care", desc: "Our artisan partners bring the approved design to life using traditional DIY techniques." },
+  { num: "05", title: "Quality Check & Delivery", desc: "Every piece is inspected, photographed for your approval, then shipped worldwide." }
+];
+
+const faqs = [
+  { q: "How long does custom production take?", a: "Most orders are completed within 7-14 business days after design approval. Complex pieces may take up to 21 days." },
+  { q: "What if I don't like the AI preview?", a: "We offer up to 2 rounds of revisions on the AI preview at no extra cost. Your satisfaction is guaranteed." },
+  { q: "Do you ship internationally?", a: "Yes! We ship worldwide via reliable courier partners. Shipping typically takes 10-20 days depending on your location." },
+  { q: "Can I see photos before shipping?", a: "Absolutely. We send production photos for your final approval before the item leaves our workshop." }
+];
+---
+
+<Layout title="How It Works" description="Our simple 5-step process: share your vision, get AI previews, approve, and receive your handcrafted custom piece.">
+  <Navbar />
+  
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-center text-gray-900">How It Works</h1>
+      <p class="mt-4 text-lg text-center text-gray-600">From idea to doorstep in five simple steps</p>
+      
+      <div class="mt-16 space-y-12">
+        {steps.map((step, i) => (
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 bg-brand-600 text-white rounded-full flex items-center justify-center text-lg font-bold">
+              {step.num}
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900">{step.title}</h3>
+              <p class="mt-2 text-gray-600">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900">Frequently Asked Questions</h2>
+      <div class="mt-12 space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-white rounded-lg shadow-sm">
+            <summary class="px-6 py-4 text-lg font-medium text-gray-900 cursor-pointer hover:bg-gray-50 rounded-lg">
+              {faq.q}
+            </summary>
+            <div class="px-6 pb-4 text-gray-600">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

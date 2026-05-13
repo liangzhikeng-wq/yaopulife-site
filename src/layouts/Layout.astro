@@ -1,0 +1,60 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description = "Handpicked DIY, AI-Imagined Artistry. Custom handcrafted gifts made to order.",
+  ogImage = "/og-image.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | yaopulife DIY</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "yaopulife DIY",
+    "url": "https://yaopulife.com",
+    "logo": "https://yaopulife.com/logo.png",
+    "description": description
+  })} />
+</head>
+<body class="min-h-screen bg-white">
+  <slot />
+</body>
+</html>
