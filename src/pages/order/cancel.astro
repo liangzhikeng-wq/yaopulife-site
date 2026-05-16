@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Order Cancelled - yaopulife" description="Your order was cancelled">
+  <section class="py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <div class="text-6xl mb-6">😕</div>
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Order Cancelled</h1>
+      <p class="text-lg text-gray-600 mb-8">
+        No worries! Your order wasn't completed.
+      </p>
+      
+      <div class="bg-gray-50 rounded-xl p-8 mb-8">
+        <h2 class="text-lg font-semibold mb-4">Still interested?</h2>
+        <p class="text-gray-600 mb-6">
+          Browse our collection and find the perfect custom gift for yourself or a loved one.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-4 text-left">
+          <a href="/shop" class="block p-4 bg-white border rounded-lg hover:border-brand-500 transition-colors">
+            <span class="text-2xl">🛍️</span>
+            <h3 class="font-medium text-gray-900 mt-2">Browse Products</h3>
+            <p class="text-sm text-gray-500">View all custom gifts</p>
+          </a>
+          <a href="/contact" class="block p-4 bg-white border rounded-lg hover:border-brand-500 transition-colors">
+            <span class="text-2xl">💬</span>
+            <h3 class="font-medium text-gray-900 mt-2">Custom Order</h3>
+            <p class="text-sm text-gray-500">Get personalized design</p>
+          </a>
+        </div>
+      </div>
+      
+      <a href="/" class="px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700">
+        Back to Home
+      </a>
+    </div>
+  </section>
+</Layout>
