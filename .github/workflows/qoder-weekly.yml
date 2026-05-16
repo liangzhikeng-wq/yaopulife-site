@@ -57,7 +57,7 @@ jobs:
           else
             git add src/content/blog/ content/social/ ops/state/
             git commit -m "chore: QODER weekly content run $(date '+%Y-%m-%d')"
-            git push
+            git push || echo "Push skipped"
           fi
 
       - name: Upload reports
