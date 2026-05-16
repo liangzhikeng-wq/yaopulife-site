@@ -40,10 +40,11 @@ export default async function handler(req, res) {
       customer_email: customerEmail,
       metadata: {
         productId: productId,
+        productName: productName || 'Custom Gift',
+        price: price,
         customization: customization || '',
         source: 'website'
       },
-      // 允许自定义附加信息
       custom_text: {
         submit: {
           message: 'Your custom gift will be crafted with care. Production takes 5-18 days.',
