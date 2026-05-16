@@ -160,47 +160,14 @@ const { title, price, category, material, size, time, description, mainImage, ga
             
             <!-- Payment Options -->
             <div class="space-y-3" id="paymentOptions">
-              <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-500 transition-colors payment-option" data-gateway="stripe">
-                <input type="radio" name="payment" value="stripe" class="w-5 h-5 text-brand-600" checked />
-                <div class="ml-3 flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium text-gray-900">Credit/Debit Card</span>
-                    <span class="text-xs text-gray-500">2.9% + $0.30</span>
-                  </div>
-                  <p class="text-xs text-gray-500">Visa, Mastercard, Amex</p>
-                </div>
-              </label>
-              
-              <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-500 transition-colors payment-option" data-gateway="paypal">
-                <input type="radio" name="payment" value="paypal" class="w-5 h-5 text-brand-600" />
+              <label class="flex items-center p-4 border-2 border-brand-500 rounded-lg bg-brand-50 payment-option" data-gateway="paypal">
+                <input type="radio" name="payment" value="paypal" class="w-5 h-5 text-brand-600" checked />
                 <div class="ml-3 flex-1">
                   <div class="flex items-center justify-between">
                     <span class="font-medium text-gray-900">PayPal</span>
                     <span class="text-xs text-gray-500">3.7% + $0.30</span>
                   </div>
-                  <p class="text-xs text-gray-500">PayPal, Bank Transfer, Balance</p>
-                </div>
-              </label>
-              
-              <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-500 transition-colors payment-option" data-gateway="pingpp">
-                <input type="radio" name="payment" value="pingpp" class="w-5 h-5 text-brand-600" />
-                <div class="ml-3 flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium text-gray-900">WeChat / Alipay</span>
-                    <span class="text-xs text-gray-500">0.6% - 1.2%</span>
-                  </div>
-                  <p class="text-xs text-gray-500">Chinese payment methods</p>
-                </div>
-              </label>
-              
-              <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-500 transition-colors payment-option" data-gateway="airwallex">
-                <input type="radio" name="payment" value="airwallex" class="w-5 h-5 text-brand-600" />
-                <div class="ml-3 flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium text-gray-900">Airwallex</span>
-                    <span class="text-xs text-gray-500">0.5% - 0.7%</span>
-                  </div>
-                  <p class="text-xs text-gray-500">International cards, WeChat, Alipay</p>
+                  <p class="text-xs text-gray-500">PayPal, Credit Card, Bank Transfer</p>
                 </div>
               </label>
             </div>
@@ -311,39 +278,23 @@ const { title, price, category, material, size, time, description, mainImage, ga
   
   <Footer />
   
-  <!-- Multi-Payment Gateway Script -->
+  <!-- PayPal Payment Script -->
   <script>
-    // 支付方式选择样式
-    document.querySelectorAll('.payment-option').forEach(option => {
-      const input = option.querySelector('input[type="radio"]');
-      const handleSelect = () => {
-        document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('border-brand-500', 'bg-brand-50'));
-        option.classList.add('border-brand-500', 'bg-brand-50');
-      };
-      input?.addEventListener('change', handleSelect);
-      // 初始化已选中的样式
-      if (input?.checked) handleSelect();
-    });
-
-    // 购买按钮
     document.getElementById('buyNowBtn')?.addEventListener('click', async function(e) {
       const btn = e.target;
       const productId = btn.dataset.productId;
       const productName = btn.dataset.productName;
       const price = parseFloat(btn.dataset.price);
       
-      // 获取选中的支付方式
-      const selectedGateway = document.querySelector('input[name="payment"]:checked')?.value || 'stripe';
-      
       try {
-        btn.textContent = 'Redirecting to payment...';
+        btn.textContent = 'Redirecting to PayPal...';
         btn.disabled = true;
         
         const response = await fetch('/api/payment-gateway', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
-            gateway: selectedGateway,
+            gateway: 'paypal',
             amount: price,
             currency: 'USD',
             productId,
@@ -355,19 +306,9 @@ const { title, price, category, material, size, time, description, mainImage, ga
         const data = await response.json();
         
         if (data.success && data.url) {
-          // 跳转到支付页面
           window.location.href = data.url;
-        } else if (data.success && data.display) {
-          // Ping++ 返回客户端凭证，需要前端SDK处理
-          if (selectedGateway === 'pingpp') {
-            alert('Ping++ payment credentials received. This requires additional setup.');
-          } else if (selectedGateway === 'airwallex') {
-            // Airwallex 需要使用 clientSecret 跳转到支付页面
-            window.location.href = `https://checkout.airwallex.com?client_secret=${data.clientSecret}`;
-          }
         } else if (data.error && data.config) {
-          // 支付网关未配置
-          alert(`${data.error}\n\nPlease configure the following environment variables:\n${data.config.join('\n')}`);
+          alert('PayPal not configured. Please add PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET to Vercel environment variables.');
           btn.textContent = 'Pay Now - $' + price;
           btn.disabled = false;
         } else {

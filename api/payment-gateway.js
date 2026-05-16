@@ -129,9 +129,13 @@ async function createPayPalPayment(req, res, options) {
     return { success: false, error: 'PayPal not configured', config: GATEWAYS.paypal.keys };
   }
 
+  // 检测是否沙盒模式（包含 sandbox 关键字）
+  const isSandbox = PAYPAL_CLIENT_ID.includes('sandbox') || PAYPAL_CLIENT_ID.includes('SB');
+  const baseUrl = isSandbox ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
+
   // 获取 Access Token
   const auth = Buffer.from(PAYPAL_CLIENT_ID + ':' + PAYPAL_CLIENT_SECRET).toString('base64');
-  const tokenResponse = await fetch('https://api-m.sandbox.paypal.com/v1/oauth2/token', {
+  const tokenResponse = await fetch(baseUrl + '/v1/oauth2/token', {
     method: 'POST',
     headers: {
       'Authorization': 'Basic ' + auth,
@@ -144,7 +148,7 @@ async function createPayPalPayment(req, res, options) {
   const accessToken = tokenData.access_token;
 
   // 创建订单
-  const orderResponse = await fetch('https://api-m.sandbox.paypal.com/v2/checkout/orders', {
+  const orderResponse = await fetch(baseUrl + '/v2/checkout/orders', {
     method: 'POST',
     headers: {
       'Authorization': 'Bearer ' + accessToken,
