@@ -16,41 +16,206 @@ const products = [
   { id: 10, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/wood-sign/ws-name-main.jpg" }
 ];
 
-const categories = ["All", "Custom Gifts", "Home Decor", "Pet Portraits", "Party Decor"];
+const categories = [
+  { name: "All", slug: "all" },
+  { name: "Custom Gifts", slug: "custom-gifts" },
+  { name: "Home Decor", slug: "home-decor" },
+  { name: "Pet Portraits", slug: "pet-portraits" }
+];
+
+const categoryDescriptions = {
+  "custom-gifts": "Handcrafted personalized gifts perfect for weddings, anniversaries, and special occasions. Each piece is customized with your unique message.",
+  "home-decor": "Unique handmade home accessories that add personality to any space. From wooden signs to ocean-themed coasters.",
+  "pet-portraits": "Custom pet portraits crafted with love. Preserve your furry friend's memory with needle-felted or embroidered artwork."
+};
 ---
 
-<Layout title="Shop" description="Browse our collection of AI-designed, handcrafted DIY creations. Custom gifts, home decor, and pet portraits.">
+<Layout 
+  title="Shop Custom DIY Gifts | Handcrafted Personalized Products"
+  description="Browse our collection of AI-designed, handcrafted DIY creations. Custom pet portraits, personalized gifts, and unique home decor – all made to order. Free shipping on orders over $50."
+>
   <Navbar />
   
+  <!-- SEO Optimized Header -->
   <section class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold text-gray-900">Our Collection</h1>
-      <p class="mt-4 text-lg text-gray-600">Every piece starts as inspiration, becomes art through AI, and comes to life by hand.</p>
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900">Custom DIY Gifts & Handmade Products</h1>
+        <p class="mt-4 text-lg text-gray-600">
+          Every piece starts as inspiration, becomes art through AI design, and comes to life by hand. 
+          Personalized gifts crafted just for you – perfect for pet lovers, home decorators, and anyone who appreciates unique handcrafted items.
+        </p>
+      </div>
       
-      <div class="mt-8 flex flex-wrap gap-2">
+      <!-- Category Filters -->
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
         {categories.map(cat => (
-          <button class="px-4 py-2 text-sm font-medium rounded-full bg-white border border-gray-200 hover:bg-brand-50 hover:border-brand-300 transition-colors">
-            {cat}
-          </button>
+          <a 
+            href={cat.slug === "all" ? "/shop" : `/shop?category=${cat.slug}`}
+            class="px-5 py-2.5 text-sm font-medium rounded-full bg-white border border-gray-200 hover:bg-brand-50 hover:border-brand-300 hover:text-brand-700 transition-colors"
+          >
+            {cat.name}
+          </a>
         ))}
       </div>
       
+      <!-- Product Grid -->
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map(p => (
           <a href={`/product/${p.id}`} class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-            <div class="aspect-square bg-gray-100 overflow-hidden">
-              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <div class="aspect-square bg-gray-100 overflow-hidden relative">
+              <img 
+                src={p.image} 
+                alt={`Custom ${p.title.toLowerCase()} - handcrafted DIY gift`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <span class="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-white/90 rounded-full text-gray-700 capitalize">
+                {p.category.replace('-', ' ')}
+              </span>
             </div>
             <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h3>
+              <h2 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h2>
               <p class="mt-1 text-sm text-gray-500 capitalize">{p.category.replace('-', ' ')}</p>
-              <p class="mt-3 text-base font-medium text-brand-600">{p.price}</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="text-base font-medium text-brand-600">{p.price}</span>
+                <span class="text-sm text-brand-600 group-hover:underline">View Details →</span>
+              </div>
             </div>
           </a>
+        ))}
+      </div>
+      
+      <!-- Trust Signals -->
+      <div class="mt-16 grid sm:grid-cols-4 gap-6">
+        {[
+          { icon: "M5 13l4 4L19 7", text: "Free Design Preview" },
+          { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", text: "10-18 Days Production" },
+          { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064", text: "Worldwide Shipping" },
+          { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Satisfaction Guaranteed" }
+        ].map(item => (
+          <div class="flex items-center gap-3 p-4 bg-white rounded-lg">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-gray-700">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- SEO Content Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900">Custom DIY Gifts Made Easy</h2>
+        <div class="mt-6 prose prose-gray">
+          <p>
+            Looking for unique gifts that go beyond ordinary presents? Our collection of handcrafted DIY products 
+            offers something special for everyone – from pet lovers seeking memorial portraits to couples celebrating 
+            their wedding day with personalized embroidery.
+          </p>
+          <p>
+            Each item is crafted by skilled artisans using premium materials. We combine cutting-edge AI design 
+            technology with traditional craftsmanship to create pieces that are both precise and personal. Every 
+            customization is handled with care, ensuring your gift is truly one-of-a-kind.
+          </p>
+          <p>
+            Whether you're shopping for a birthday, anniversary, wedding, or just because – our custom DIY gifts 
+            make thoughtful presents that show you've put genuine thought into your choice. Browse our collection 
+            and start creating something unique today.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section for SEO -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-gray-900 text-center">Frequently Asked Questions</h2>
+      <div class="mt-8 space-y-4">
+        {[
+          {
+            q: "How long does it take to make a custom product?",
+            a: "Production time varies by product type: embroidery and felted portraits take 14-18 days, wood signs and moon lamps take 5-7 days. We always build in buffer time for quality checks."
+          },
+          {
+            q: "Can I customize any product with my own design?",
+            a: "Yes! Most of our products support full customization. You can add names, dates, photos, or custom text. Our team will send a design preview for your approval before production begins."
+          },
+          {
+            q: "Do you offer international shipping?",
+            a: "Yes, we ship worldwide. Shipping times vary by destination: US orders typically arrive in 7-14 days, European orders in 10-16 days, and other regions in 14-21 days."
+          },
+          {
+            q: "What if I'm not satisfied with my order?",
+            a: "We stand behind our quality. If there are issues with craftsmanship or significant deviations from the approved design, contact us within 7 days for a replacement or refund."
+          },
+          {
+            q: "Can I order a rush order?",
+            a: "Rush orders are available for select products with an additional fee. Contact us before ordering to discuss rush production timelines."
+          }
+        ].map((item, i) => (
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900">{i + 1}. {item.q}</h3>
+            <p class="mt-2 text-gray-600">{item.a}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
   
   <Footer />
+  
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to make a custom product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Production time varies by product type: embroidery and felted portraits take 14-18 days, wood signs and moon lamps take 5-7 days. We always build in buffer time for quality checks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize any product with my own design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Most of our products support full customization. You can add names, dates, photos, or custom text. Our team will send a design preview for your approval before production begins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer international shipping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we ship worldwide. Shipping times vary by destination: US orders typically arrive in 7-14 days, European orders in 10-16 days, and other regions in 14-21 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I'm not satisfied with my order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We stand behind our quality. If there are issues with craftsmanship or significant deviations from the approved design, contact us within 7 days for a replacement or refund."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I order a rush order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rush orders are available for select products with an additional fee. Contact us before ordering to discuss rush production timelines."
+        }
+      }
+    ]
+  })} />
 </Layout>

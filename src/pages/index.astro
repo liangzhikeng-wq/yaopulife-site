@@ -4,10 +4,10 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const categories = [
-  { name: "Custom Gifts", desc: "One-of-a-kind presents", image: "/products/embroidery/emb-wedding-main.jpg" },
-  { name: "Home Decor", desc: "AI-designed interiors", image: "/products/resin-coaster/rc-ocean-main.jpg" },
-  { name: "Pet Portraits", desc: "Your furry friend, reimagined", image: "/products/needle-felt/nf-dog-main.jpg" },
-  { name: "Party Decor", desc: "Celebrations elevated", image: "/products/moon-lamp/ml-text-main.jpg" }
+  { name: "Custom Gifts", desc: "One-of-a-kind presents", slug: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg" },
+  { name: "Home Decor", desc: "AI-designed interiors", slug: "home-decor", image: "/products/resin-coaster/rc-ocean-main.jpg" },
+  { name: "Pet Portraits", desc: "Your furry friend, reimagined", slug: "pet-portraits", image: "/products/needle-felt/nf-dog-main.jpg" },
+  { name: "Party Decor", desc: "Celebrations elevated", slug: "custom-gifts", image: "/products/moon-lamp/ml-text-main.jpg" }
 ];
 
 const trustPoints = [
@@ -15,9 +15,18 @@ const trustPoints = [
   { title: "Handcrafted to Order", desc: "Real artisans bring the vision to life" },
   { title: "Worldwide Shipping", desc: "From our workshop to your door, globally" }
 ];
+
+const featuredProducts = [
+  { id: 1, title: "Needle Felted Cat Portrait", price: "$65", image: "/products/needle-felt/nf-cat-main.jpg", tag: "Best Seller" },
+  { id: 7, title: "Custom Photo Moon Lamp", price: "$42", image: "/products/moon-lamp/ml-photo-main.jpg", tag: "Popular" },
+  { id: 6, title: "Custom Wedding Embroidery", price: "$55", image: "/products/embroidery/emb-wedding-main.jpg", tag: "Gift" }
+];
 ---
 
-<Layout title="Home" description="Discover handpicked DIY creations, reimagined with AI artistry. Custom gifts, home decor, and pet portraits made to order.">
+<Layout 
+  title="Custom DIY Gifts & Handcrafted Products | yaopulife DIY"
+  description="Discover unique handcrafted DIY gifts: custom pet portraits, personalized moon lamps, wedding embroidery, and home decor. Made to order with AI design and artisan craftsmanship. Perfect for pet lovers, weddings, and special occasions."
+>
   <Navbar />
   
   <!-- Hero -->
@@ -63,7 +72,7 @@ const trustPoints = [
       <h2 class="text-3xl font-bold text-center text-gray-900">Shop by Category</h2>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map(cat => (
-          <a href={`/shop?category=${cat.name.toLowerCase().replace(' ', '-')}`} class="group block bg-gray-50 rounded-xl overflow-hidden hover:bg-brand-50 transition-colors">
+          <a href={`/shop?category=${cat.slug}`} class="group block bg-gray-50 rounded-xl overflow-hidden hover:bg-brand-50 transition-colors">
             <div class="aspect-[3/2] overflow-hidden">
               <img src={cat.image} alt={cat.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
@@ -77,8 +86,40 @@ const trustPoints = [
     </div>
   </section>
   
-  <!-- Trust -->
+  <!-- Featured Products -->
   <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Bestselling Custom Gifts</h2>
+        <p class="mt-3 text-gray-600">Customer favorites – each made just for you</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {featuredProducts.map(p => (
+          <a href={`/product/${p.id}`} class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="aspect-square bg-gray-100 overflow-hidden relative">
+              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <span class="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-brand-600 text-white rounded-full">
+                {p.tag}
+              </span>
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h3>
+              <p class="mt-2 text-xl font-bold text-brand-600">{p.price}</p>
+              <p class="mt-2 text-sm text-brand-600 group-hover:underline">View Details →</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/shop" class="inline-flex items-center px-6 py-3 text-base font-medium text-brand-600 bg-white border border-brand-200 rounded-lg hover:bg-brand-50 transition-colors">
+          View All Products →
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Trust -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
         {trustPoints.map(point => (
