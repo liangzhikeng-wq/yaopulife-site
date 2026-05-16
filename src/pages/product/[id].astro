@@ -127,12 +127,12 @@ const { title, price, category, material, size, time, description, mainImage, ga
         <!-- Image Gallery -->
         <div>
           <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden">
-            <img src={mainImage} alt={title} class="w-full h-full object-cover" />
+            <img src={mainImage} alt={`${title} - Handcrafted ${category} by yaopulife DIY`} class="w-full h-full object-cover" />
           </div>
           <div class="mt-4 grid grid-cols-3 gap-3">
             {gallery.map((img, i) => (
               <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                <img src={img} alt={`${title} - Scene ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy" />
+                <img src={img} alt={`${title} - ${['Lifestyle shot', 'Gift presentation', 'Home decor display'][i]}`} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy" />
               </div>
             ))}
           </div>
