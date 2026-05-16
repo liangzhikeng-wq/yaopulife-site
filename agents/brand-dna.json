@@ -1,0 +1,68 @@
+{
+  "brand_identity": {
+    "brand_name": "yaopulife DIY",
+    "tagline": "Handpicked DIY, Reimagined with AI Artistry",
+    "mission": "Making custom handcrafted gifts accessible to everyone, worldwide",
+    "core_values": ["Authenticity", "Craftsmanship", "Personal Connection", "Transparency"],
+    "brand_archetype": "Creator",
+    "positioning_statement": "For people who want meaningful, personalized gifts that tell a story, yaopulife DIY is a custom gift marketplace that transforms your ideas into handcrafted keepsakes because every piece is made by skilled artisans, designed for you."
+  },
+  "visual_dna": {
+    "primary_color": "#6366F1",
+    "accent_color": "#8B5CF6",
+    "text_color": "#1F2937",
+    "bg_color": "#FFFFFF",
+    "hero_bg": "#F5F3FF",
+    "typography": {
+      "heading": "Inter, sans-serif",
+      "body": "Inter, sans-serif"
+    },
+    "photography_style": "warm_lifestyle",
+    "images": ["warm natural light", "real hands crafting", "lifestyle moments", "earthy tones"],
+    "forbidden_images": ["stock photo poses", "dark backgrounds", "flash-heavy", "generic corporate"]
+  },
+  "voice_dna": {
+    "tone": "warm_professional",
+    "personality_traits": ["Friendly", "Expert", "Honest", "Encouraging"],
+    "vocabulary_whitelist": ["handcrafted", "artisan", "made just for you", "unique", "meaningful", "treasured keepsake"],
+    "vocabulary_blacklist": ["cheap", "bargain", "fast shipping guaranteed", "best in market", "cure", "treat"],
+    "cta_style": "warm_encouragement",
+    "ctas": ["Start Your Custom Order", "Browse Collection", "Get Your Free Preview", "Contact Us"],
+    "pronoun_preference": "you_friendly"
+  },
+  "pricing_dna": {
+    "price_positioning": "mid_premium",
+    "price_range_usd": "35-89",
+    "discount_philosophy": "never_regular_discount",
+    "minimum_margin_pct": 50,
+    "target_roas": 3.0,
+    "target_aov": 55,
+    "free_shipping_threshold": 50
+  },
+  "customer_promise": {
+    "shipping_promise": "Free worldwide shipping on orders over $50 | 7-15 days delivery",
+    "return_policy": "Satisfaction guaranteed. Contact us within 14 days if you're not happy.",
+    "quality_guarantee": "Every piece inspected before shipping. Free rework if quality issue.",
+    "response_time": "Within 2 hours on business days",
+    "unique_value_proposition": "Custom handcrafted gifts made by artisans, designed by you, delivered worldwide"
+  },
+  "audience_persona": {
+    "primary": {
+      "name": "Thoughtful Gift Giver",
+      "age": "28-45",
+      "gender": "Female 70% / Male 30%",
+      "income": "$50K-$100K",
+      "location": "US/UK/CA/AU",
+      "traits": ["values quality over quantity", "researches before buying", "loves personal touches", "uses Pinterest for ideas"],
+      "pain_points": ["hard to find unique gifts", "worried about quality online", "doesn't know customization process"],
+      "language": ["custom", "personalized", "thoughtful", "meaningful", "handmade"]
+    },
+    "secondary": {
+      "name": "Pet Parent",
+      "age": "25-40",
+      "gender": "Female 80%",
+      "traits": ["treats pets like family", "active on Instagram/Pinterest", "loves memorial pieces"],
+      "language": ["pet portrait", "furbaby", "memorial gift", "cat mom", "dog dad"]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "version": "v1.0",
+  "lastUpdated": "2026-05-16T07:00:00Z",
+  "documents": {
+    "ops/state/pipeline-state.json": {
+      "version": "v1.0",
+      "status": "STABLE",
+      "owner": "QODER",
+      "active_readers": [],
+      "write_lock": null,
+      "freeze_stage": null
+    },
+    "agents/agent-registry.json": {
+      "version": "v1.0",
+      "status": "STABLE",
+      "owner": "QODER",
+      "active_readers": [],
+      "write_lock": null,
+      "freeze_stage": null
+    },
+    "agents/brand-dna.json": {
+      "version": "v1.0",
+      "status": "FROZEN",
+      "owner": "QODER",
+      "active_readers": [],
+      "write_lock": null,
+      "freeze_stage": "S3.5"
+    },
+    "docs/operations-sop-v3.md": {
+      "version": "v1.0",
+      "status": "STABLE",
+      "owner": "QODER",
+      "active_readers": [],
+      "write_lock": null,
+      "freeze_stage": null
+    }
+  }
+}

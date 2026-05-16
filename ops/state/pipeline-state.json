@@ -1,0 +1,156 @@
+{
+  "pipeline": "yaopulife-diy",
+  "currentStage": "S5",
+  "lastUpdated": "2026-05-16T06:15:00Z",
+  "stages": {
+    "S1": {
+      "status": "completed",
+      "completedAt": "2026-05-01"
+    },
+    "S2": {
+      "status": "completed",
+      "completedAt": "2026-05-10"
+    },
+    "S3": {
+      "status": "completed",
+      "completedAt": "2026-05-13"
+    },
+    "S4": {
+      "status": "in_progress",
+      "pct": 80,
+      "blockers": [
+        "Pinterest未发布Pin",
+        "Resend邮件未配置",
+        "Tidio客服未配置"
+      ]
+    },
+    "S5": {
+      "status": "in_progress",
+      "pct": 40,
+      "notes": "站点上线，博客8篇，内容节奏建立"
+    },
+    "S6": {
+      "status": "planned",
+      "pct": 10,
+      "notes": "相关产品推荐已完成，Trust Badges已加，其他待做"
+    },
+    "S7": {
+      "status": "planned",
+      "pct": 10,
+      "notes": "供应商报价待确认"
+    },
+    "S8": {
+      "status": "pending",
+      "pct": 0,
+      "triggerCondition": "周均5+询盘"
+    }
+  },
+  "thisWeek": {
+    "weekNumber": 2,
+    "weekStart": "2026-05-12",
+    "weekEnd": "2026-05-18",
+    "tasks": {
+      "S-COPY": {
+        "status": "pending",
+        "items": [
+          "写2篇新博客文章"
+        ]
+      },
+      "M-SOCIAL": {
+        "status": "pending",
+        "items": [
+          "生成Week3 Pinterest Pin文案"
+        ]
+      },
+      "M-EMAIL": {
+        "status": "pending",
+        "items": [
+          "写1封EDM Campaign文案"
+        ]
+      },
+      "A-DATA": {
+        "status": "pending",
+        "items": [
+          "检查本周流量数据"
+        ]
+      }
+    },
+    "completed": {
+      "blogPosts": [
+        "best-fathers-day-gifts-2026-personalized",
+        "ocean-resin-art-handmade-coasters-guide"
+      ],
+      "pinterestPins": [
+        "week-01.md",
+        "week-02.md"
+      ]
+    }
+  },
+  "pendingActions": [
+    {
+      "task": "Pinterest发布Week1-2 Pin",
+      "owner": "human",
+      "priority": "P0"
+    },
+    {
+      "task": "GSC提交sitemap",
+      "owner": "human",
+      "priority": "P0"
+    },
+    {
+      "task": "注册Resend+配置邮件",
+      "owner": "human+Qoder",
+      "priority": "P1"
+    },
+    {
+      "task": "注册Tidio+配置FAQ",
+      "owner": "human+Qoder",
+      "priority": "P1"
+    },
+    {
+      "task": "确认供应商报价单",
+      "owner": "human",
+      "priority": "P1"
+    }
+  ],
+  "kpis": {
+    "weekVisitors": {
+      "value": null,
+      "target": 50,
+      "status": "no_data_yet"
+    },
+    "inquiries": {
+      "value": 0,
+      "target": 2,
+      "status": "monitoring"
+    },
+    "orders": {
+      "value": 0,
+      "target": 1,
+      "status": "monitoring"
+    },
+    "emailSubscribers": {
+      "value": 0,
+      "target": 5,
+      "status": "system_not_ready"
+    }
+  },
+  "alerts": [],
+  "taskLog": [
+    {
+      "agent": "S-BLOG",
+      "status": "COMPLETE",
+      "details": [
+        {
+          "slug": "ocean-themed-home-decor-ideas",
+          "path": "/Users/yaopulife/yaopuqoder/yaopulife-site/src/content/blog/ocean-themed-home-decor-ideas.md"
+        },
+        {
+          "slug": "handmade-birthday-gift-guide-2026",
+          "path": "/Users/yaopulife/yaopuqoder/yaopulife-site/src/content/blog/handmade-birthday-gift-guide-2026.md"
+        }
+      ],
+      "timestamp": "2026-05-16T12:42:38.337Z"
+    }
+  ]
+}

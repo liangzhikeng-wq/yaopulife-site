@@ -1,0 +1,151 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-05-16",
+  "agents": [
+    {
+      "id": "QODER",
+      "role": "总调度",
+      "description": "流水线总控，负责阶段推进、任务派发、状态更新、异常处理",
+      "activeStage": ["S4","S5","S6","S7","S8"],
+      "workDir": "ops/",
+      "triggerMode": "manual"
+    },
+    {
+      "id": "R-NICHE",
+      "role": "赛道分析师",
+      "description": "监控品类趋势、市场机会、竞争变化",
+      "activeStage": ["S1"],
+      "workDir": "ops/research/",
+      "triggerMode": "schedule",
+      "schedule": "monthly"
+    },
+    {
+      "id": "R-AUD",
+      "role": "用户画像师",
+      "description": "分析用户行为、需求、痛点、购买旅程",
+      "activeStage": ["S1"],
+      "workDir": "ops/research/",
+      "triggerMode": "schedule",
+      "schedule": "monthly"
+    },
+    {
+      "id": "R-COMP",
+      "role": "竞品分析师",
+      "description": "监测竞品动态、广告素材、定价策略、新品发布",
+      "activeStage": ["S4","S5","S6"],
+      "workDir": "ops/research/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "P-SEL",
+      "role": "选品决策师",
+      "description": "评估产品机会、差异化空间、利润模型",
+      "activeStage": ["S2","S6"],
+      "workDir": "ops/product/",
+      "triggerMode": "manual"
+    },
+    {
+      "id": "P-IP",
+      "role": "合规审查师",
+      "description": "评估知识产权、合规风险、广告政策",
+      "activeStage": ["S2","S6"],
+      "workDir": "ops/product/",
+      "triggerMode": "manual"
+    },
+    {
+      "id": "S-SEO",
+      "role": "SEO架构师",
+      "description": "关键词研究、内容规划、技术SEO优化",
+      "activeStage": ["S3","S5"],
+      "workDir": "ops/marketing/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "S-COPY",
+      "role": "文案撰写师",
+      "description": "产品描述、博客文章、广告文案、邮件内容",
+      "activeStage": ["S3","S4","S5"],
+      "workDir": "ops/content/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "M-SOCIAL",
+      "role": "社媒运营师",
+      "description": "Pinterest/Instagram 内容规划与发布准备",
+      "activeStage": ["S4","S5"],
+      "workDir": "ops/marketing/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "M-EMAIL",
+      "role": "邮件营销师",
+      "description": "邮件流程设计、Campaign 文案、自动回复",
+      "activeStage": ["S4","S5"],
+      "workDir": "ops/marketing/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "A-DATA",
+      "role": "数据分析师",
+      "description": "KPI 监控、周报月报、趋势分析、优化建议",
+      "activeStage": ["S5","S6","S7","S8"],
+      "workDir": "ops/reports/",
+      "triggerMode": "schedule",
+      "schedule": "weekly"
+    },
+    {
+      "id": "A-TEST",
+      "role": "A/B测试设计师",
+      "description": "测试设计、执行追踪、胜者决策",
+      "activeStage": ["S6"],
+      "workDir": "ops/reports/",
+      "triggerMode": "schedule",
+      "schedule": "biweekly"
+    },
+    {
+      "id": "O-CS",
+      "role": "客服知识库",
+      "description": "FAQ 自动回复脚本、常见问题处理流程",
+      "activeStage": ["S5"],
+      "workDir": "ops/operations/",
+      "triggerMode": "manual"
+    },
+    {
+      "id": "O-LOG",
+      "role": "物流协调师",
+      "description": "物流方案文档、运费计算、国际货运跟踪",
+      "activeStage": ["S5","S7"],
+      "workDir": "ops/operations/",
+      "triggerMode": "manual"
+    },
+    {
+      "id": "ED-DEVIL",
+      "role": "对抗性审查员",
+      "description": "主动寻找风险点、漏洞、问题",
+      "activeStage": ["S4","S5"],
+      "workDir": "ops/reviews/",
+      "triggerMode": "gate"
+    },
+    {
+      "id": "ED-FIN",
+      "role": "财务审查员",
+      "description": "现金流安全、ROI 验证、预算合规",
+      "activeStage": ["S5","S7"],
+      "workDir": "ops/reviews/",
+      "triggerMode": "gate"
+    },
+    {
+      "id": "ED-BRAND",
+      "role": "品牌审查员",
+      "description": "品牌一致性检查、文案语调、视觉规范",
+      "activeStage": ["S3","S4"],
+      "workDir": "ops/reviews/",
+      "triggerMode": "manual"
+    }
+  ]
+}
