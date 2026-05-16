@@ -3,15 +3,24 @@ export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
+  articleAuthor?: string;
+  articleSection?: string;
+  productPrice?: string;
 }
 
 const { 
   title, 
   description = "Handpicked DIY, AI-Imagined Artistry. Custom handcrafted gifts made to order.",
-  ogImage = "/og-image.jpg"
+  ogImage = "/og-image.jpg",
+  ogType = "website",
+  articleAuthor,
+  articleSection,
+  productPrice,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.com${ogImage}`;
 ---
 
 <!DOCTYPE html>
@@ -26,15 +35,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
+  <meta property="og:image" content={fullOgImage} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="yaopulife DIY" />
+  {ogType === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}
+  {ogType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
+  {productPrice && <meta property="product:price:amount" content={productPrice} />}
+  {productPrice && <meta property="product:price:currency" content="USD" />}
+  
+  <!-- Pinterest -->
+  <meta name="p:domain_verify" content="b76db1c1cf08aa2520e87b00538c777a" />
+  <meta name="pinterest-rich-pin" content="true" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image" content={fullOgImage} />
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -57,6 +75,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <body class="min-h-screen bg-white">
   <slot />
   <slot name="after-footer" />
-  <script src="//code.tidio.co/YOUR_PUBLIC_KEY.js" async></script>
+
 </body>
 </html>

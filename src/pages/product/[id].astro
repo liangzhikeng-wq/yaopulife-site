@@ -5,34 +5,136 @@ import Footer from "../../components/Footer.astro";
 
 export function getStaticPaths() {
   const products = [
-    { id: "1", title: "Custom Pet Embroidery Hoop", price: "$48", category: "Pet Portraits", material: "Cotton thread on linen, wooden hoop", size: "8 inch diameter", time: "10-14 days", description: "A stunning hand-embroidered portrait of your beloved pet, stitched with care on premium linen fabric. Perfect for commemorating furry family members." },
-    { id: "2", title: "Needle Felted Cat Portrait", price: "$65", category: "Pet Portraits", material: "100% wool roving, glass eyes", size: "6x6 inch shadow box", time: "14-18 days", description: "A three-dimensional needle-felted sculpture capturing your cat's unique personality. Each piece is meticulously shaped by hand using natural wool fibers." },
-    { id: "3", title: "Personalized Family Name Sign", price: "$35", category: "Home Decor", material: "Basswood, non-toxic paint", size: "12x8 inches", time: "7-10 days", description: "A beautifully carved and painted wooden sign featuring your family name. Adds a warm, personal touch to any entryway or living space." },
-    { id: "4", title: "DIY Resin Ocean Coasters", price: "$28", category: "Home Decor", material: "Epoxy resin, alcohol ink", size: "4x4 inches each (set of 4)", time: "5-7 days", description: "Mesmerizing ocean-wave coasters created with layered epoxy resin and alcohol inks. Each set is unique, like miniature seascapes for your table." },
-    { id: "5", title: "Custom Wedding Embroidery", price: "$55", category: "Custom Gifts", material: "Silk thread on cotton", size: "10 inch diameter", time: "10-14 days", description: "Commemorate your special day with a bespoke embroidery featuring wedding flowers, dates, and names. A timeless keepsake for anniversaries." },
-    { id: "6", title: "3D Printed Moon Lamp", price: "$42", category: "Home Decor", material: "PLA filament, LED base", size: "5.9 inch diameter", time: "5-7 days", description: "A realistic moon-shaped lamp printed from NASA lunar surface data. Warm LED glow creates ambient lighting perfect for bedrooms and nurseries." }
+    {
+      id: "1", title: "Needle Felted Cat Portrait", price: "$65", category: "Pet Portraits",
+      material: "100% wool roving, glass eyes, wooden hoop", size: "8 inch round frame",
+      time: "14-18 days",
+      description: "A stunning three-dimensional needle-felted portrait capturing your cat's unique personality. Each whisker is individually placed, creating lifelike texture and depth that photographs simply cannot achieve.",
+      mainImage: "/products/needle-felt/nf-cat-main.jpg",
+      gallery: ["/products/needle-felt/nf-cat-scene-shelf.jpg", "/products/needle-felt/nf-cat-scene-gift.jpg", "/products/needle-felt/nf-cat-scene-hand.jpg"]
+    },
+    {
+      id: "2", title: "Needle Felted Dog Portrait", price: "$65", category: "Pet Portraits",
+      material: "100% wool roving, glass eyes, wooden hoop", size: "8 inch round frame",
+      time: "14-18 days",
+      description: "Celebrate your loyal companion with a handcrafted needle-felted portrait. Every fur strand is shaped by hand to capture your dog's expression, from playful grins to soulful eyes.",
+      mainImage: "/products/needle-felt/nf-dog-main.jpg",
+      gallery: ["/products/needle-felt/nf-dog-scene-shelf.jpg", "/products/needle-felt/nf-dog-scene-gift.jpg", "/products/needle-felt/nf-dog-scene-hand.jpg"]
+    },
+    {
+      id: "3", title: "Multi-Pet Felt Portrait", price: "$89", category: "Pet Portraits",
+      material: "100% wool roving, glass eyes, premium wooden frame", size: "10-12 inch oval frame",
+      time: "18-24 days",
+      description: "Bring your whole fur family together in one stunning piece. This larger-format portrait accommodates 2-3 pets arranged artfully, creating a cherished family keepsake.",
+      mainImage: "/products/needle-felt/nf-multi-main.jpg",
+      gallery: ["/products/needle-felt/nf-multi-scene-wall.jpg", "/products/needle-felt/nf-multi-scene-gift.jpg", "/products/needle-felt/nf-multi-scene-shelf.jpg"]
+    },
+    {
+      id: "4", title: "Custom Pet Embroidery Hoop", price: "$48", category: "Pet Portraits",
+      material: "Cotton thread on linen, bamboo hoop", size: "6-8 inch diameter",
+      time: "10-14 days",
+      description: "A delicate hand-embroidered portrait of your beloved pet, stitched with care on premium linen fabric. Colorful threads capture the personality and charm of your furry friend.",
+      mainImage: "/products/embroidery/emb-pet-main.jpg",
+      gallery: ["/products/embroidery/emb-pet-scene-desk.jpg", "/products/embroidery/emb-pet-scene-wall.jpg", "/products/embroidery/emb-pet-scene-hand.jpg"]
+    },
+    {
+      id: "5", title: "Floral Embroidery Hoop", price: "$38", category: "Home Decor",
+      material: "Cotton thread on cream linen, bamboo hoop", size: "6 inch diameter",
+      time: "7-10 days",
+      description: "A beautiful hand-stitched wildflower bouquet featuring lavender, daisies, and delicate greenery. Perfect as a gift or to brighten any room with natural charm.",
+      mainImage: "/products/embroidery/emb-flower-main.jpg",
+      gallery: ["/products/embroidery/emb-flower-scene-desk.jpg", "/products/embroidery/emb-flower-scene-wall.jpg", "/products/embroidery/emb-flower-scene-gift.jpg"]
+    },
+    {
+      id: "6", title: "Custom Wedding Embroidery", price: "$55", category: "Custom Gifts",
+      material: "Silk and cotton thread, bamboo hoop", size: "8-10 inch diameter",
+      time: "10-14 days",
+      description: "Commemorate your special day with a bespoke embroidery featuring a floral wreath, wedding date, and couple's names. A timeless keepsake for anniversaries and newlyweds.",
+      mainImage: "/products/embroidery/emb-wedding-main.jpg",
+      gallery: ["/products/embroidery/emb-wedding-scene-desk.jpg", "/products/embroidery/emb-wedding-scene-wall.jpg", "/products/embroidery/emb-wedding-scene-gift.jpg"]
+    },
+    {
+      id: "7", title: "Custom Photo Moon Lamp", price: "$42", category: "Custom Gifts",
+      material: "PLA filament, LED module, wooden base", size: "5.5 inch (14cm) diameter",
+      time: "5-7 days",
+      description: "A realistic moon-shaped lamp 3D printed from NASA lunar surface data, with your custom photo engraved onto its surface. Warm LED glow creates magical ambient lighting.",
+      mainImage: "/products/moon-lamp/ml-photo-main.jpg",
+      gallery: ["/products/moon-lamp/ml-photo-scene-bedroom.jpg", "/products/moon-lamp/ml-photo-scene-dark.jpg", "/products/moon-lamp/ml-photo-scene-gift.jpg"]
+    },
+    {
+      id: "8", title: "Engraved Text Moon Lamp", price: "$39", category: "Custom Gifts",
+      material: "PLA filament, LED module, wooden base", size: "5.5 inch (14cm) diameter",
+      time: "5-7 days",
+      description: "Express your feelings with a personalized moon lamp featuring your custom message. Perfect for confessions, graduations, or any moment worth remembering under a warm glow.",
+      mainImage: "/products/moon-lamp/ml-text-main.jpg",
+      gallery: ["/products/moon-lamp/ml-text-scene-bedroom.jpg", "/products/moon-lamp/ml-text-scene-dark.jpg", "/products/moon-lamp/ml-text-scene-gift.jpg"]
+    },
+    {
+      id: "9", title: "Ocean Resin Coaster Set", price: "$28", category: "Home Decor",
+      material: "Epoxy resin, natural seashells, sand", size: "4x4 inches each (set of 4)",
+      time: "5-7 days",
+      description: "Mesmerizing ocean-wave coasters created with layered epoxy resin. Each set features unique blue-white gradients with embedded seashells and sand, like miniature seascapes for your table.",
+      mainImage: "/products/resin-coaster/rc-ocean-main.jpg",
+      gallery: ["/products/resin-coaster/rc-ocean-scene-table.jpg", "/products/resin-coaster/rc-ocean-scene-drink.jpg", "/products/resin-coaster/rc-ocean-scene-flatlay.jpg"]
+    },
+    {
+      id: "10", title: "Personalized Family Name Sign", price: "$35", category: "Home Decor",
+      material: "Natural basswood, non-toxic finish", size: "12x8 inches",
+      time: "5-7 days",
+      description: "A beautifully laser-engraved wooden sign featuring your family name in elegant cursive script. Adds a warm, personal touch to any entryway, porch, or living space.",
+      mainImage: "/products/wood-sign/ws-name-main.jpg",
+      gallery: ["/products/wood-sign/ws-name-scene-door.jpg", "/products/wood-sign/ws-name-scene-wall.jpg", "/products/wood-sign/ws-name-scene-desk.jpg"]
+    }
   ];
   return products.map(p => ({ params: { id: p.id }, props: p }));
 }
 
-const { title, price, category, material, size, time, description } = Astro.props;
+const { title, price, category, material, size, time, description, mainImage, gallery } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} ogImage={mainImage} ogType="product" productPrice={price.replace('$', '')}>
   <Navbar />
+  
+  <!-- Schema.org Product Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": title,
+    "description": description,
+    "image": [`https://yaopulife.com${mainImage}`, ...gallery.map(g => `https://yaopulife.com${g}`)],
+    "brand": { "@type": "Brand", "name": "yaopulife DIY" },
+    "category": category,
+    "material": material,
+    "offers": {
+      "@type": "Offer",
+      "url": `https://yaopulife.com/product/${Astro.params.id}`,
+      "priceCurrency": "USD",
+      "price": price.replace(/[^0-9.]/g, ''),
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@type": "Organization", "name": "yaopulife DIY" }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "12"
+    }
+  })} />
   
   <section class="py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Image Gallery -->
         <div>
-          <div class="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
-            <span class="text-gray-400">{title} - Main Image</span>
+          <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden">
+            <img src={mainImage} alt={title} class="w-full h-full object-cover" />
           </div>
           <div class="mt-4 grid grid-cols-3 gap-3">
-            <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center"><span class="text-xs text-gray-400">Scene</span></div>
-            <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center"><span class="text-xs text-gray-400">Detail</span></div>
-            <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center"><span class="text-xs text-gray-400">Size</span></div>
+            {gallery.map((img, i) => (
+              <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                <img src={img} alt={`${title} - Scene ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy" />
+              </div>
+            ))}
           </div>
         </div>
         
@@ -58,6 +160,28 @@ const { title, price, category, material, size, time, description } = Astro.prop
             </a>
             <p class="mt-3 text-center text-sm text-gray-500">Free AI design preview within 24 hours</p>
           </div>
+
+          <!-- Trust Badges -->
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex items-center gap-2 text-xs text-gray-600">
+                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Free Design Preview</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600">
+                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Handcrafted by Artisans</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600">
+                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Worldwide Shipping</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600">
+                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Satisfaction Guaranteed</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -77,6 +201,49 @@ const { title, price, category, material, size, time, description } = Astro.prop
               <p class="mt-1 text-sm text-gray-500">{s.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <!-- Related Articles (Internal Links for SEO) -->
+      <div class="mt-16 border-t pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">You Might Also Like to Read</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category === "Pet Portraits" && (
+            <>
+              <a href="/blog/best-custom-pet-portrait-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Best Custom Pet Portrait Gifts for Dog & Cat Lovers</p>
+              </a>
+              <a href="/blog/needle-felt-vs-embroidery-pet-portraits" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Comparison</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Needle Felted vs Embroidered: Which to Choose?</p>
+              </a>
+            </>
+          )}
+          {category === "Custom Gifts" && (
+            <>
+              <a href="/blog/personalized-wedding-anniversary-gift-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">10 Unique Personalized Wedding & Anniversary Gifts</p>
+              </a>
+              <a href="/blog/how-custom-moon-lamps-are-made" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Behind the Scenes</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">How Custom Moon Lamps Are Made</p>
+              </a>
+            </>
+          )}
+          {category === "Home Decor" && (
+            <>
+              <a href="/blog/personalized-wedding-anniversary-gift-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">10 Unique Personalized Wedding & Anniversary Gifts</p>
+              </a>
+              <a href="/blog/best-custom-pet-portrait-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Best Custom Pet Portrait Gifts</p>
+              </a>
+            </>
+          )}
         </div>
       </div>
     </div>

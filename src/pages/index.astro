@@ -4,10 +4,10 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const categories = [
-  { name: "Custom Gifts", desc: "One-of-a-kind presents" },
-  { name: "Home Decor", desc: "AI-designed interiors" },
-  { name: "Pet Portraits", desc: "Your furry friend, reimagined" },
-  { name: "Party Decor", desc: "Celebrations elevated" }
+  { name: "Custom Gifts", desc: "One-of-a-kind presents", image: "/products/embroidery/emb-wedding-main.jpg" },
+  { name: "Home Decor", desc: "AI-designed interiors", image: "/products/resin-coaster/rc-ocean-main.jpg" },
+  { name: "Pet Portraits", desc: "Your furry friend, reimagined", image: "/products/needle-felt/nf-dog-main.jpg" },
+  { name: "Party Decor", desc: "Celebrations elevated", image: "/products/moon-lamp/ml-text-main.jpg" }
 ];
 
 const trustPoints = [
@@ -43,8 +43,14 @@ const trustPoints = [
           </div>
         </div>
         <div class="relative">
-          <div class="aspect-[4/3] bg-gradient-to-br from-brand-100 to-orange-100 rounded-2xl flex items-center justify-center">
-            <span class="text-gray-400 text-sm">Hero Image Placeholder</span>
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+            <img src="/products/needle-felt/nf-cat-main.jpg" alt="Needle felted cat portrait - handcrafted DIY art" class="w-full h-full object-cover" />
+          </div>
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white">
+            <img src="/products/embroidery/emb-flower-main.jpg" alt="Floral embroidery hoop" class="w-full h-full object-cover" />
+          </div>
+          <div class="absolute -top-4 -right-4 w-28 h-28 rounded-xl overflow-hidden shadow-md border-2 border-white">
+            <img src="/products/moon-lamp/ml-photo-main.jpg" alt="Custom moon lamp" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -57,9 +63,14 @@ const trustPoints = [
       <h2 class="text-3xl font-bold text-center text-gray-900">Shop by Category</h2>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map(cat => (
-          <a href={`/shop?category=${cat.name.toLowerCase().replace(' ', '-')}`} class="group block p-6 bg-gray-50 rounded-xl hover:bg-brand-50 transition-colors">
-            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{cat.name}</h3>
-            <p class="mt-2 text-sm text-gray-500">{cat.desc}</p>
+          <a href={`/shop?category=${cat.name.toLowerCase().replace(' ', '-')}`} class="group block bg-gray-50 rounded-xl overflow-hidden hover:bg-brand-50 transition-colors">
+            <div class="aspect-[3/2] overflow-hidden">
+              <img src={cat.image} alt={cat.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{cat.name}</h3>
+              <p class="mt-1 text-sm text-gray-500">{cat.desc}</p>
+            </div>
           </a>
         ))}
       </div>

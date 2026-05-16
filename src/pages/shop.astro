@@ -4,12 +4,16 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const products = [
-  { id: 1, title: "Custom Pet Embroidery Hoop", price: "From $48", category: "pet-portraits", image: "/products/embroidery-pet-01.jpg" },
-  { id: 2, title: "Needle Felted Cat Portrait", price: "From $65", category: "pet-portraits", image: "/products/felt-cat-01.jpg" },
-  { id: 3, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/sign-family-01.jpg" },
-  { id: 4, title: "DIY Resin Ocean Coasters", price: "From $28", category: "home-decor", image: "/products/resin-ocean-01.jpg" },
-  { id: 5, title: "Custom Wedding Embroidery", price: "From $55", category: "custom-gifts", image: "/products/embroidery-wedding-01.jpg" },
-  { id: 6, title: "3D Printed Moon Lamp", price: "From $42", category: "home-decor", image: "/products/lamp-moon-01.jpg" }
+  { id: 1, title: "Needle Felted Cat Portrait", price: "From $65", category: "pet-portraits", image: "/products/needle-felt/nf-cat-main.jpg" },
+  { id: 2, title: "Needle Felted Dog Portrait", price: "From $65", category: "pet-portraits", image: "/products/needle-felt/nf-dog-main.jpg" },
+  { id: 3, title: "Multi-Pet Felt Portrait", price: "From $89", category: "pet-portraits", image: "/products/needle-felt/nf-multi-main.jpg" },
+  { id: 4, title: "Custom Pet Embroidery Hoop", price: "From $48", category: "pet-portraits", image: "/products/embroidery/emb-pet-main.jpg" },
+  { id: 5, title: "Floral Embroidery Hoop", price: "From $38", category: "home-decor", image: "/products/embroidery/emb-flower-main.jpg" },
+  { id: 6, title: "Custom Wedding Embroidery", price: "From $55", category: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg" },
+  { id: 7, title: "Custom Photo Moon Lamp", price: "From $42", category: "custom-gifts", image: "/products/moon-lamp/ml-photo-main.jpg" },
+  { id: 8, title: "Engraved Text Moon Lamp", price: "From $39", category: "custom-gifts", image: "/products/moon-lamp/ml-text-main.jpg" },
+  { id: 9, title: "Ocean Resin Coaster Set", price: "From $28", category: "home-decor", image: "/products/resin-coaster/rc-ocean-main.jpg" },
+  { id: 10, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/wood-sign/ws-name-main.jpg" }
 ];
 
 const categories = ["All", "Custom Gifts", "Home Decor", "Pet Portraits", "Party Decor"];
@@ -34,8 +38,8 @@ const categories = ["All", "Custom Gifts", "Home Decor", "Pet Portraits", "Party
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map(p => (
           <a href={`/product/${p.id}`} class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-            <div class="aspect-square bg-gray-100 flex items-center justify-center">
-              <span class="text-gray-400 text-sm">{p.title}</span>
+            <div class="aspect-square bg-gray-100 overflow-hidden">
+              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h3>

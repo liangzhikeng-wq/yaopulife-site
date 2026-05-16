@@ -18,31 +18,62 @@ import Footer from "../components/Footer.astro";
         <div>
           <h2 class="text-xl font-semibold text-gray-900">Send a Message</h2>
           <form class="mt-6 space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-              <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500" />
+              </div>
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500" />
-            </div>
-            <div>
-              <label for="interest" class="block text-sm font-medium text-gray-700">Product Interest</label>
-              <select id="interest" name="interest" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                <option>Custom Gifts</option>
-                <option>Home Decor</option>
-                <option>Pet Portraits</option>
-                <option>Party Decor</option>
-                <option>Other</option>
+              <label for="interest" class="block text-sm font-medium text-gray-700">Product Interest <span class="text-red-500">*</span></label>
+              <select id="interest" name="interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                <option value="">Select a product type...</option>
+                <option>Custom Pet Portrait (Needle Felted)</option>
+                <option>Custom Pet Portrait (Embroidery)</option>
+                <option>Multi-Pet Portrait</option>
+                <option>Floral Embroidery Hoop</option>
+                <option>Custom Wedding Embroidery</option>
+                <option>Custom Photo Moon Lamp</option>
+                <option>Custom Text Moon Lamp</option>
+                <option>Ocean Resin Coasters</option>
+                <option>Personalized Family Name Sign</option>
+                <option>Other / Multiple Products</option>
               </select>
             </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="budget" class="block text-sm font-medium text-gray-700">Budget Range</label>
+                <select id="budget" name="budget" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                  <option>Under $50</option>
+                  <option>$50 - $100</option>
+                  <option>$100 - $200</option>
+                  <option>$200+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label for="timeline" class="block text-sm font-medium text-gray-700">Needed By</label>
+                <select id="timeline" name="timeline" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                  <option>No specific deadline</option>
+                  <option>1-2 weeks</option>
+                  <option>3-4 weeks</option>
+                  <option>1-2 months</option>
+                  <option>Special date (please specify below)</option>
+                </select>
+              </div>
+            </div>
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements</label>
-              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us about your customization needs, preferred colors, size, any special requests..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
             </div>
             <div>
               <label for="file" class="block text-sm font-medium text-gray-700">Upload Reference Image (optional)</label>
-              <input type="file" id="file" name="file" accept="image/*" class="mt-1 block w-full text-sm text-gray-500" />
+              <input type="file" id="file" name="file" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100" />
+              <p class="mt-1 text-xs text-gray-500">Share a photo of what you have in mind — helps us understand your vision better.</p>
             </div>
             <div class="flex items-start">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-brand-600 border-gray-300 rounded" />

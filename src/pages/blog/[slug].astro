@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+const categoryLabels: Record<string, string> = {
+  "gift-guides": "Gift Guides",
+  "diy-inspiration": "DIY Inspiration",
+  "product-care": "Product Care",
+  "behind-the-scenes": "Behind the Scenes",
+};
+---
+
+<Layout title={post.data.title} description={post.data.description} ogImage={post.data.image} ogType="article" articleAuthor="yaopulife DIY" articleSection={categoryLabels[post.data.category] || post.data.category}>
+  <Navbar />
+
+  <article class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <header class="mb-8">
+        <p class="text-sm font-medium text-brand-600 uppercase tracking-wide">{categoryLabels[post.data.category] || post.data.category}</p>
+        <h1 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">{post.data.title}</h1>
+        <time class="mt-4 block text-sm text-gray-500" datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+        </time>
+      </header>
+
+      {post.data.image && (
+        <img src={post.data.image} alt={post.data.imageAlt || post.data.title} class="w-full rounded-xl mb-8" />
+      )}
+
+      <div class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-brand-600 hover:prose-a:text-brand-700">
+        <Content />
+      </div>
+
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex flex-wrap gap-2">
+          {post.data.keywords.map((kw: string) => (
+            <span class="px-3 py-1 text-xs font-medium text-brand-600 bg-brand-50 rounded-full">{kw}</span>
+          ))}
+        </div>
+
+        <div class="mt-8 p-6 bg-brand-50 rounded-xl">
+          <h3 class="text-lg font-semibold text-gray-900">Ready to Create Something Unique?</h3>
+          <p class="mt-2 text-sm text-gray-600">Share your idea and get a free AI design preview within 24 hours.</p>
+          <a href="/contact" class="mt-4 inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+            Start Your Custom Order
+          </a>
+        </div>
+      </footer>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
