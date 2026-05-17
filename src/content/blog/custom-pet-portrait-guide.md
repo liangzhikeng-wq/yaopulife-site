@@ -7,6 +7,7 @@ category: "Pet Portraits"
 tags: ["pet portrait", "custom pet gift", "dog memorial gift", "cat lover gift", "needle felted portrait", "handmade gift"]
 image: "/blog/pet-portrait-guide.jpg"
 featured: false
+keywords: ["DIY", "handmade", "custom gifts"]
 ---
 
 Losing a beloved pet is one of the most difficult experiences any pet owner can face. Our furry companions become family members, and when they pass, finding meaningful ways to honor their memory becomes incredibly important. A custom pet portrait offers a beautiful, tangible way to keep their memory alive.

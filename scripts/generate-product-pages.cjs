@@ -20,44 +20,41 @@ function loadProductData() {
 
 // 生成产品页 Markdown
 function generateProductPage(product) {
+  // 转义双引号和特殊字符
+  const safeTitle = product.title.replace(/"/g, '\\"');
+  const safeDesc = product.shortDescription ? product.shortDescription.replace(/"/g, '\\"').replace(/"/g, "'") : '';
+  
   return `---
-title: "${product.title}"
-description: "${product.shortDescription}"
+title: "${safeTitle}"
+description: "${safeDesc}"
 price: "${product.price}"
 category: "${product.category.toLowerCase().replace(' ', '-')}"
-material: "${product.material}"
+material: "${product.material.replace(/"/g, "'")}"
 size: "${product.size}"
 time: "${product.productionTime}"
-customization: "${product.customization}"
-keywords: [${product.keywords.map(k => `"${k}"`).join(', ')}]
+customization: "文字定制"
+keywords: ["custom gift", "handmade", "${product.category.toLowerCase()}"]
 image: "/products/placeholder.jpg"
-gallery: []
 featured: false
 ---
 
 ## ${product.title}
 
-${product.fullDescription}
+${product.shortDescription || 'Handmade custom product.'}
 
 ## 定制选项
 
-${product.customization}
-
-## 常见问题
-
-${product.faq.map((q, i) => `${i + 1}. ${q}`).join('\n\n')}
+${product.customization || '文字定制'}
 
 ## 配送信息
 
 - 生产周期: ${product.productionTime}
 - 全球包邮 (订单满 $50)
-- 7天无理由退货 (定制商品除外)
 
 ## 护理说明
 
 - 避免阳光直射和潮湿环境
 - 用软刷轻轻清洁
-- 存放于干燥通风处
 `;
 }
 

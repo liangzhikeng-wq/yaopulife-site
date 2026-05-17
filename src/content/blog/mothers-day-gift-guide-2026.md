@@ -7,6 +7,7 @@ category: "Gift Guides"
 tags: ["mother's day", "handmade gift", "personalized gift", "gift for mom", "DIY gift", "unique gift"]
 image: "/blog/mothers-day-gifts-2026.jpg"
 featured: true
+keywords: ["DIY", "handmade", "custom gifts"]
 ---
 
 Mother's Day approaches on May 10, 2026, and with it comes the annual challenge of finding a gift that truly expresses our gratitude and love. Flowers wilt, chocolates get eaten, and generic gifts get forgotten. This year, consider something different – a handcrafted, personalized gift that mom will treasure for years to come.

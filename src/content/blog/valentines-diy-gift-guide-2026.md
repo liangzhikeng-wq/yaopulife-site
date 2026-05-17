@@ -7,6 +7,7 @@ category: "Gift Guides"
 tags: ["valentine's day", "DIY gifts", "personalized gifts", "handmade gifts", "gift ideas"]
 image: "/blog/valentines-diy-gifts.jpg"
 featured: true
+keywords: ["DIY", "handmade", "custom gifts"]
 ---
 
 Valentine's Day is just around the corner, and finding the perfect gift that truly captures your feelings can be challenging. Generic presents from big-box stores simply won't do when you want to express something special. That's where DIY gifts come in – handcrafted, personalized items that show you've put genuine thought and effort into your choice.
