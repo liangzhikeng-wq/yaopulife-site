@@ -1,0 +1,27 @@
+{
+  "sku": "DIY-HOME-003",
+  "product": "Personalized Family Name Sign",
+  "prompts": [
+    {
+      "filename": "main.webp",
+      "prompt": "Product photo of laser engraved wooden family name sign, elegant cursive font reading \"The Smith Family\", natural wood grain visible, non-toxic finish, white background, studio photography",
+      "type": "main"
+    },
+    {
+      "filename": "scene.webp",
+      "prompt": "Lifestyle photo of wooden family name sign hanging on front door of modern American home, wreath decoration, welcoming atmosphere, natural daylight",
+      "type": "scene"
+    },
+    {
+      "filename": "detail.webp",
+      "prompt": "Close-up detail of laser engraved text on wood, smooth edges, precise lettering, natural wood texture around text, macro photography",
+      "type": "detail"
+    },
+    {
+      "filename": "gift.webp",
+      "prompt": "Family name sign in kraft paper with twine, wooden gift tag attached, housewarming gift presentation on wooden table",
+      "type": "gift"
+    }
+  ],
+  "generatedAt": "2026-05-17T01:01:15.425Z"
+}

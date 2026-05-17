@@ -1,0 +1,27 @@
+{
+  "sku": "DIY-GIFT-002",
+  "product": "Custom Photo Moon Lamp",
+  "prompts": [
+    {
+      "filename": "main.webp",
+      "prompt": "Product photo of 3D printed moon lamp with custom photo texture on surface, warm LED glow, wooden base, pure white background, studio lighting, high detail, 4K",
+      "type": "main"
+    },
+    {
+      "filename": "scene.webp",
+      "prompt": "Lifestyle photo of moon lamp on bedside table in cozy bedroom, warm amber glow illuminating surrounding area, books and plant on nightstand, evening ambiance",
+      "type": "scene"
+    },
+    {
+      "filename": "glow.webp",
+      "prompt": "Close-up of moon lamp glowing in dark room, realistic lunar surface texture, warm ambient light, romantic atmosphere, long exposure photography",
+      "type": "glow"
+    },
+    {
+      "filename": "gift.webp",
+      "prompt": "Moon lamp in elegant gift box with LED ribbon, unboxing moment, soft blue and warm amber lighting, gift for anniversary",
+      "type": "gift"
+    }
+  ],
+  "generatedAt": "2026-05-17T01:01:15.425Z"
+}

@@ -1,0 +1,27 @@
+{
+  "sku": "DIY-PET-001",
+  "product": "Needle Felted Cat Portrait",
+  "prompts": [
+    {
+      "filename": "main.webp",
+      "prompt": "Product photo of a custom needle felted cat portrait in 8-inch wooden hoop, realistic cat face with glass eyes, soft fur texture, natural lighting, white background, studio photography, high detail, 4K",
+      "type": "main"
+    },
+    {
+      "filename": "scene.webp",
+      "prompt": "Lifestyle photo of needle felted cat portrait displayed on a rustic wooden shelf in a cozy living room, warm ambient lighting, Scandinavian interior design, bokeh background with plants and books",
+      "type": "scene"
+    },
+    {
+      "filename": "detail.webp",
+      "prompt": "Close-up detail of needle felted cat fur texture, individual wool fibers visible, glass eyes catching light, macro photography, shallow depth of field",
+      "type": "detail"
+    },
+    {
+      "filename": "gift.webp",
+      "prompt": "Needle felted cat portrait beautifully wrapped in kraft paper with twine, surrounded by dried flowers, gift opening scenario, warm golden light",
+      "type": "gift"
+    }
+  ],
+  "generatedAt": "2026-05-17T01:01:15.424Z"
+}

@@ -1,0 +1,27 @@
+{
+  "sku": "DIY-PET-002",
+  "product": "Needle Felted Dog Portrait",
+  "prompts": [
+    {
+      "filename": "main.webp",
+      "prompt": "Product photo of a custom needle felted dog portrait in 8-inch wooden hoop, golden retriever style with glass eyes, realistic fur texture, natural lighting, white background, studio photography, high detail, 4K",
+      "type": "main"
+    },
+    {
+      "filename": "scene.webp",
+      "prompt": "Lifestyle photo of needle felted dog portrait hanging on a modern white wall in a sunlit living room, minimalist Scandinavian design, dog bed in foreground",
+      "type": "scene"
+    },
+    {
+      "filename": "detail.webp",
+      "prompt": "Close-up detail of needle felted dog fur texture, individual wool fibers visible, glass eyes with warm brown color, macro photography",
+      "type": "detail"
+    },
+    {
+      "filename": "gift.webp",
+      "prompt": "Needle felted dog portrait in elegant gift box with cream ribbon, memorial gift presentation, soft natural light",
+      "type": "gift"
+    }
+  ],
+  "generatedAt": "2026-05-17T01:01:15.425Z"
+}
