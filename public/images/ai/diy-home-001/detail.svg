@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <rect fill="#D1FAE5" width="400" height="400"/>
+      <circle cx="200" cy="180" r="100" fill="white" stroke="#10B981" stroke-width="2"/>
+      <text x="200" y="175" font-family="Arial" font-size="14" fill="#1F2937" text-anchor="middle">DETAIL</text>
+      <text x="200" y="195" font-family="Arial" font-size="12" fill="#6B7280" text-anchor="middle">Cotton thread on cream linen</text>
+      <rect x="50" y="320" width="300" height="40" rx="5" fill="#10B981" opacity="0.3"/>
+      <text x="200" y="345" font-family="Arial" font-size="12" fill="#1F2937" text-anchor="middle">6 inch diameter</text>
+    </svg>

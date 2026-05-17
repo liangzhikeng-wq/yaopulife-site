@@ -1,27 +1,54 @@
 {
+  "id": 7,
   "sku": "DIY-GIFT-002",
-  "product": "Custom Photo Moon Lamp",
+  "title": "Custom Photo Moon Lamp – 3D Printed Personalized Night Light with Photo & Coordinates | Best Gift for Loved Ones",
+  "category": "Custom Gifts",
+  "price": "$42",
+  "material": "PLA filament, LED module, wooden base",
+  "size": "5.5 inch (14cm) diameter",
+  "productionTime": "5-7 days",
+  "customization": "图片定制（照片/坐标）",
+  "keywords": [
+    "photo moon lamp",
+    "custom gift",
+    "personalized lamp",
+    "3D printed lamp"
+  ],
+  "metaTitle": "Custom Photo Moon Lamp – 3D Printed Personalized Gift with Photo & Coordinates",
+  "metaDescription": "Create a unique custom photo moon lamp with your favorite photo or coordinates. 3D printed, LED-lit, wooden base. Perfect personalized gift. Order now!",
+  "shortDescription": "Personalized 3D printed moon lamp with your photo & coordinates. LED-lit, wooden base. Unique gift for any occasion.",
+  "fullDescription": "**Bring the moon closer to your heart with our Custom Photo Moon Lamp.**\n\nImagine holding the moon in your hands, etched with your most cherished memory. Whether it’s a beloved photo, a special date, or the exact coordinates of a meaningful place, this personalized moon lamp transforms your story into a glowing work of art.\n\n**Why you’ll love it:**\n- **Fully Customizable:** Upload your photo or provide coordinates, and we’ll 3D print them onto the moon’s surface. Every lamp is one-of-a-kind.\n- **Premium Materials:** Made from eco-friendly PLA filament, a warm LED module, and a sleek wooden base – safe, durable, and beautiful.\n- **Perfect Size:** 5.5 inches (14 cm) in diameter – fits perfectly on a nightstand, desk, or shelf.\n- **Warm, Soothing Glow:** The soft LED light creates a cozy ambiance, ideal for bedtime or as a calming night light.\n\n**How it works:**\n1. Choose your customization option (photo or coordinates).\n2. Upload your image or enter your coordinates during checkout.\n3. We handcraft your lamp with care (production takes 5-7 days).\n4. Receive a beautifully packaged, ready-to-gift lamp.\n\n**Perfect for every occasion:**\n- Birthdays, anniversaries, weddings, Valentine’s Day, Mother’s Day, or just because.\n- A romantic gift for your partner, a heartfelt present for parents, or a unique keepsake for friends.\n\n**What’s included:**\n- 1x Custom Photo Moon Lamp\n- 1x Wooden Base\n- 1x USB LED Module (cable included)\n\n**Note:** Due to the custom nature, please allow 5-7 days production time. Each lamp is made to order just for you.",
+  "altTags": [
+    "Custom photo moon lamp with personalized image on 3D printed surface",
+    "Personalized moon lamp with coordinates on wooden base",
+    "Glowing custom moon lamp on nightstand as unique gift"
+  ],
+  "faq": [
+    "How do I upload my photo or coordinates for the lamp?",
+    "Can I see a preview of my design before you print?",
+    "What is the production and shipping time for this custom moon lamp?"
+  ],
+  "generatedAt": "2026-05-17T00:59:58.148Z",
   "prompts": [
     {
+      "type": "main",
       "filename": "main.webp",
-      "prompt": "Product photo of 3D printed moon lamp with custom photo texture on surface, warm LED glow, wooden base, pure white background, studio lighting, high detail, 4K",
-      "type": "main"
+      "prompt": "Professional product photo of Custom Photo Moon Lamp – 3D Printed Personalized Night Light with Photo & Coordinates | Best Gift for Loved Ones. **Bring the moon closer to your heart with our Custom Photo Moon Lamp.**\n\nImagine holding the moon i. photo moon lamp, custom gift, personalized lamp, 3D printed lamp. High quality, commercial photography style."
     },
     {
+      "type": "scene",
       "filename": "scene.webp",
-      "prompt": "Lifestyle photo of moon lamp on bedside table in cozy bedroom, warm amber glow illuminating surrounding area, books and plant on nightstand, evening ambiance",
-      "type": "scene"
+      "prompt": "Professional product photo of Custom Photo Moon Lamp – 3D Printed Personalized Night Light with Photo & Coordinates | Best Gift for Loved Ones. **Bring the moon closer to your heart with our Custom Photo Moon Lamp.**\n\nImagine holding the moon i. photo moon lamp, custom gift, personalized lamp, 3D printed lamp. High quality, commercial photography style."
     },
     {
-      "filename": "glow.webp",
-      "prompt": "Close-up of moon lamp glowing in dark room, realistic lunar surface texture, warm ambient light, romantic atmosphere, long exposure photography",
-      "type": "glow"
+      "type": "detail",
+      "filename": "detail.webp",
+      "prompt": "Professional product photo of Custom Photo Moon Lamp – 3D Printed Personalized Night Light with Photo & Coordinates | Best Gift for Loved Ones. **Bring the moon closer to your heart with our Custom Photo Moon Lamp.**\n\nImagine holding the moon i. photo moon lamp, custom gift, personalized lamp, 3D printed lamp. High quality, commercial photography style."
     },
     {
-      "filename": "gift.webp",
-      "prompt": "Moon lamp in elegant gift box with LED ribbon, unboxing moment, soft blue and warm amber lighting, gift for anniversary",
-      "type": "gift"
+      "type": "social",
+      "filename": "social.webp",
+      "prompt": "Professional product photo of Custom Photo Moon Lamp – 3D Printed Personalized Night Light with Photo & Coordinates | Best Gift for Loved Ones. **Bring the moon closer to your heart with our Custom Photo Moon Lamp.**\n\nImagine holding the moon i. photo moon lamp, custom gift, personalized lamp, 3D printed lamp. High quality, commercial photography style."
     }
-  ],
-  "generatedAt": "2026-05-17T01:01:15.425Z"
+  ]
 }

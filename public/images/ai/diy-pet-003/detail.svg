@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <rect fill="#FEF3C7" width="400" height="400"/>
+      <circle cx="200" cy="180" r="100" fill="white" stroke="#F59E0B" stroke-width="2"/>
+      <text x="200" y="175" font-family="Arial" font-size="14" fill="#1F2937" text-anchor="middle">DETAIL</text>
+      <text x="200" y="195" font-family="Arial" font-size="12" fill="#6B7280" text-anchor="middle">100% wool roving</text>
+      <rect x="50" y="320" width="300" height="40" rx="5" fill="#F59E0B" opacity="0.3"/>
+      <text x="200" y="345" font-family="Arial" font-size="12" fill="#1F2937" text-anchor="middle">10-12 inch oval frame</text>
+    </svg>

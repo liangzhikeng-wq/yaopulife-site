@@ -1,0 +1,53 @@
+{
+  "id": 4,
+  "sku": "DIY-PET-004",
+  "title": "Custom Pet Embroidery Hoop – Personalized Hand Embroidered Pet Portrait, Unique Dog or Cat Gift",
+  "category": "Pet Portraits",
+  "price": "$48",
+  "material": "Cotton thread on linen, bamboo hoop",
+  "size": "6-8 inch diameter",
+  "productionTime": "10-14 days",
+  "customization": "图片定制（宠物照片）",
+  "keywords": [
+    "pet embroidery",
+    "custom pet gift",
+    "hand embroidery portrait"
+  ],
+  "metaTitle": "Custom Pet Embroidery Hoop – Personalized Hand Embroidered Portrait Gift",
+  "metaDescription": "Turn your pet photo into a custom hand embroidery hoop. Cotton thread on linen, bamboo hoop, 6-8 inch. Unique gift for dog or cat lovers. Order now!",
+  "shortDescription": "Personalized hand-embroidered pet portrait on linen in a bamboo hoop. A heartfelt gift for pet lovers.",
+  "fullDescription": "Celebrate your furry friend with a one-of-a-kind custom pet embroidery hoop. Each piece is meticulously hand-embroidered using high-quality cotton thread on natural linen, capturing the unique personality and charm of your beloved dog, cat, or other pet. The finished portrait is stretched and displayed in a classic bamboo hoop, ready to hang on your wall or sit on a shelf as a timeless keepsake.\n\n**Why choose our custom pet embroidery?**\n- **Emotional connection:** Every stitch is a tribute to your pet’s unique features—from floppy ears to soulful eyes.\n- **Handcrafted quality:** Skilled artisans create each portrait with care, ensuring lasting beauty.\n- **Versatile decor:** The 6 to 8 inch diameter hoop fits seamlessly into any home style, making it a perfect gift for pet lovers, new pet parents, or as a memorial piece.\n\n**Customization process:**\n1. Upload a clear, high-resolution photo of your pet (face-forward preferred).\n2. Our artist reviews the photo and begins hand-embroidering the portrait.\n3. Within 10-14 days, your custom hoop is carefully packaged and shipped to you.\n\n**Product specifications:**\n- Material: Cotton thread on natural linen, bamboo embroidery hoop\n- Size: 6 inch, 7 inch, or 8 inch diameter\n- Production time: 10-14 business days\n- Care: Gently dust with a soft brush; avoid direct sunlight to preserve colors\n\n**Perfect for:**\n- Birthday or holiday gifts for dog and cat owners\n- Commemorating a beloved pet’s life\n- Adding a personal touch to your home or office\n\nMake your pet the star of your decor. Order your custom pet embroidery hoop today and give a gift that truly speaks from the heart.",
+  "altTags": [
+    "Custom hand embroidered dog portrait in bamboo hoop",
+    "Personalized cat embroidery hoop with cotton thread on linen",
+    "Unique pet memorial gift – custom embroidery hoop 8 inch"
+  ],
+  "faq": [
+    "How do I submit my pet’s photo for customization?",
+    "What sizes are available for the embroidery hoop?",
+    "How long does it take to create and ship my custom pet hoop?"
+  ],
+  "generatedAt": "2026-05-17T00:59:40.093Z",
+  "prompts": [
+    {
+      "type": "main",
+      "filename": "main.webp",
+      "prompt": "Professional product photo of Custom Pet Embroidery Hoop – Personalized Hand Embroidered Pet Portrait, Unique Dog or Cat Gift. Celebrate your furry friend with a one-of-a-kind custom pet embroidery hoop. Each piece is meticulou. pet embroidery, custom pet gift, hand embroidery portrait. High quality, commercial photography style."
+    },
+    {
+      "type": "scene",
+      "filename": "scene.webp",
+      "prompt": "Professional product photo of Custom Pet Embroidery Hoop – Personalized Hand Embroidered Pet Portrait, Unique Dog or Cat Gift. Celebrate your furry friend with a one-of-a-kind custom pet embroidery hoop. Each piece is meticulou. pet embroidery, custom pet gift, hand embroidery portrait. High quality, commercial photography style."
+    },
+    {
+      "type": "detail",
+      "filename": "detail.webp",
+      "prompt": "Professional product photo of Custom Pet Embroidery Hoop – Personalized Hand Embroidered Pet Portrait, Unique Dog or Cat Gift. Celebrate your furry friend with a one-of-a-kind custom pet embroidery hoop. Each piece is meticulou. pet embroidery, custom pet gift, hand embroidery portrait. High quality, commercial photography style."
+    },
+    {
+      "type": "social",
+      "filename": "social.webp",
+      "prompt": "Professional product photo of Custom Pet Embroidery Hoop – Personalized Hand Embroidered Pet Portrait, Unique Dog or Cat Gift. Celebrate your furry friend with a one-of-a-kind custom pet embroidery hoop. Each piece is meticulou. pet embroidery, custom pet gift, hand embroidery portrait. High quality, commercial photography style."
+    }
+  ]
+}
