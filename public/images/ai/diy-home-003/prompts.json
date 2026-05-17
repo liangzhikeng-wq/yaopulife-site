@@ -1,54 +1,27 @@
 {
-  "id": 10,
   "sku": "DIY-HOME-003",
-  "title": "Personalized Family Name Sign – Custom Wooden Home Decor with Laser Engraved Text",
-  "category": "Home Decor",
-  "price": "$35",
-  "material": "Natural basswood, non-toxic finish",
-  "size": "12x8 inches",
-  "productionTime": "5-7 days",
-  "customization": "文字定制（家庭名字）",
-  "keywords": [
-    "family name sign",
-    "wooden sign",
-    "personalized home decor",
-    "laser engraved"
-  ],
-  "metaTitle": "Personalized Family Name Sign – Custom Wooden Home Decor",
-  "metaDescription": "Personalize your home with a custom family name sign. Made from natural basswood, laser engraved, non-toxic. Perfect for walls, mantels, or gifts. Order now!",
-  "shortDescription": "Create a warm welcome with a custom family name sign. Laser engraved on natural basswood, non-toxic finish, ready in 5-7 days.",
-  "fullDescription": "**Welcome Your Guests with a Touch of Personal Charm**\n\nYour home is your sanctuary, and the first thing visitors see should reflect your unique story. Our Personalized Family Name Sign is more than just decor – it's a heartfelt statement of belonging. Whether you want to display your family surname, a beloved nickname, or a meaningful phrase, this custom wooden sign turns any space into a warm, inviting haven.\n\n**Why This Sign Stands Out**\n\nCrafted from premium natural basswood, each sign is carefully laser engraved to create crisp, lasting text that won't fade or peel. The non-toxic finish ensures it's safe for every room, including nurseries and kitchens. At 12x8 inches, it's the perfect size for a mantel, entryway wall, or above a doorway – not too big, not too small.\n\n**How to Customize**\n1. **Choose Your Text** – Enter your family name, last name, or any custom word (up to 15 characters recommended for best readability).\n2. **We Engrave with Precision** – Our laser engraving delivers sharp, elegant lines that highlight the natural wood grain.\n3. **Receive & Display** – Your sign is made to order and ships within 5–7 business days. Ready to hang with a pre-installed sawtooth hanger.\n\n**Perfect for Any Occasion**\n- Housewarming gifts that feel personal and thoughtful\n- Wedding or anniversary presents for newlyweds\n- Adding a cozy touch to your own living room, bedroom, or porch\n- Creating a family gallery wall with other custom signs\n\n**Specifications**\n- Material: Natural basswood with non-toxic finish\n- Size: 12 x 8 inches (30.5 x 20.3 cm)\n- Production Time: 5–7 business days\n- Customization: Laser engraved text (family name, surname, or custom phrase)\n- Includes: Sawtooth hanger for easy wall mounting\n\nMake your home truly yours. Order your Personalized Family Name Sign today and let your family name shine.",
-  "altTags": [
-    "Custom family name sign on natural basswood wall decor",
-    "Laser engraved wooden sign with family surname for mantel",
-    "Personalized home decor sign with non-toxic finish 12x8 inches"
-  ],
-  "faq": [
-    "What types of text can I customize on the sign? You can enter any family name, surname, nickname, or short phrase up to 15 characters for best readability. We'll laser engrave it exactly as written.",
-    "Is the wood safe for homes with children or pets? Yes, the sign is made from natural basswood with a non-toxic finish, making it safe for any room, including nurseries and kitchens.",
-    "How long does it take to receive my sign? Production takes 5–7 business days, plus shipping time. You'll receive a tracking number once your order ships."
-  ],
-  "generatedAt": "2026-05-17T01:00:22.792Z",
+  "product": "Personalized Family Name Sign",
   "prompts": [
     {
-      "type": "main",
       "filename": "main.webp",
-      "prompt": "Professional product photo of Personalized Family Name Sign – Custom Wooden Home Decor with Laser Engraved Text. **Welcome Your Guests with a Touch of Personal Charm**\n\nYour home is your sanctuary, and the first t. family name sign, wooden sign, personalized home decor, laser engraved. High quality, commercial photography style."
+      "prompt": "Product photo of laser engraved wooden family name sign, elegant cursive font reading \"The Smith Family\", natural wood grain visible, non-toxic finish, white background, studio photography",
+      "type": "main"
     },
     {
-      "type": "scene",
       "filename": "scene.webp",
-      "prompt": "Professional product photo of Personalized Family Name Sign – Custom Wooden Home Decor with Laser Engraved Text. **Welcome Your Guests with a Touch of Personal Charm**\n\nYour home is your sanctuary, and the first t. family name sign, wooden sign, personalized home decor, laser engraved. High quality, commercial photography style."
+      "prompt": "Lifestyle photo of wooden family name sign hanging on front door of modern American home, wreath decoration, welcoming atmosphere, natural daylight",
+      "type": "scene"
     },
     {
-      "type": "detail",
       "filename": "detail.webp",
-      "prompt": "Professional product photo of Personalized Family Name Sign – Custom Wooden Home Decor with Laser Engraved Text. **Welcome Your Guests with a Touch of Personal Charm**\n\nYour home is your sanctuary, and the first t. family name sign, wooden sign, personalized home decor, laser engraved. High quality, commercial photography style."
+      "prompt": "Close-up detail of laser engraved text on wood, smooth edges, precise lettering, natural wood texture around text, macro photography",
+      "type": "detail"
     },
     {
-      "type": "social",
-      "filename": "social.webp",
-      "prompt": "Professional product photo of Personalized Family Name Sign – Custom Wooden Home Decor with Laser Engraved Text. **Welcome Your Guests with a Touch of Personal Charm**\n\nYour home is your sanctuary, and the first t. family name sign, wooden sign, personalized home decor, laser engraved. High quality, commercial photography style."
+      "filename": "gift.webp",
+      "prompt": "Family name sign in kraft paper with twine, wooden gift tag attached, housewarming gift presentation on wooden table",
+      "type": "gift"
     }
-  ]
+  ],
+  "generatedAt": "2026-05-17T01:22:28.523Z"
 }
