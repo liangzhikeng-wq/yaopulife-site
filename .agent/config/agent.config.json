@@ -1,0 +1,14 @@
+{
+  "projectName": "Yaopulife AI Store Operating System",
+  "site": "yaopulife.com",
+  "workspaceRoot": ".agent",
+  "draftsDir": ".agent/drafts",
+  "reportsDir": ".agent/reports",
+  "logsDir": ".agent/logs",
+  "approvalsDir": ".agent/approvals",
+  "sourcingDir": ".agent/sourcing",
+  "defaultCurrency": "USD",
+  "domesticCurrency": "CNY",
+  "skuPrefix": "DIY",
+  "firstVersionMode": "local-files-only"
+}

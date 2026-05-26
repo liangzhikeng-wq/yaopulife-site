@@ -1,0 +1,18 @@
+{
+  "sku": "DIY-PET-020",
+  "date": "2026-05-25T23:57:46.316Z",
+  "supplierPrice": 11.02,
+  "domesticShippingFee": 0,
+  "internationalShippingEstimate": 0,
+  "platformFee": 1.4,
+  "paymentFee": 1.14,
+  "packagingCost": 0,
+  "adCostEstimate": 4,
+  "targetSellingPrice": 28,
+  "grossProfit": 16.98,
+  "grossMargin": 0.6064,
+  "totalCost": 17.56,
+  "netProfitEstimate": 10.44,
+  "netMarginEstimate": 0.3729,
+  "marginDecision": "testable"
+}

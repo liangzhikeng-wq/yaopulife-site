@@ -1,0 +1,26 @@
+{
+  "sku": "DIY-PET-020",
+  "product_name": "Custom Pet Photo Mug",
+  "target_keyword": "custom pet photo mug",
+  "created_at": "2026-05-25T23:28:52.560Z",
+  "pipeline": {
+    "status": "blocked",
+    "current_step": "source_record",
+    "missing": [
+      "sourcing_record"
+    ],
+    "next_commands": [
+      "node scripts/agent-source-product.cjs --yaopulife-sku DIY-PET-020 --supplier-name \"Supplier Name\" --supplier-product-url \"https://detail.1688.com/...\" --domestic-platform 1688"
+    ],
+    "markdown_path": ".agent/reports/pipelines/DIY-PET-020.md",
+    "json_path": ".agent/reports/pipelines/DIY-PET-020.json"
+  },
+  "source_template": {
+    "markdown_path": ".agent/drafts/sourcing/DIY-PET-020-source-template-2026-05-25.md",
+    "json_path": ".agent/drafts/sourcing/DIY-PET-020-source-template-2026-05-25.json"
+  },
+  "sourcing_keywords": {
+    "markdown_path": ".agent/research/sourcing-keywords/DIY-PET-020-custom-pet-photo-mug-2026-05-25.md",
+    "json_path": ".agent/research/sourcing-keywords/DIY-PET-020-custom-pet-photo-mug-2026-05-25.json"
+  }
+}

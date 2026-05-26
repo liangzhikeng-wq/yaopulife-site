@@ -1,0 +1,47 @@
+{
+  "sku": "DIY-PET-020",
+  "date": "2026-05-25T23:54:09.680Z",
+  "summary": {
+    "approved": 3,
+    "rejected": 0,
+    "need_review": 0
+  },
+  "results": [
+    {
+      "image": "openclaw-detail-hands.png",
+      "final_decision": "approve",
+      "clarity_score": 85,
+      "realism_score": 85,
+      "product_consistency_score": 85,
+      "material_accuracy_score": 85,
+      "background_score": 85,
+      "ai_artifact_score": 85,
+      "store_fit_score": 85,
+      "notes": "File-level MVP QC approved. Human visual review is still recommended before publishing."
+    },
+    {
+      "image": "openclaw-lifestyle-breakfast.png",
+      "final_decision": "approve",
+      "clarity_score": 85,
+      "realism_score": 85,
+      "product_consistency_score": 85,
+      "material_accuracy_score": 85,
+      "background_score": 85,
+      "ai_artifact_score": 85,
+      "store_fit_score": 85,
+      "notes": "File-level MVP QC approved. Human visual review is still recommended before publishing."
+    },
+    {
+      "image": "openclaw-main.png",
+      "final_decision": "approve",
+      "clarity_score": 85,
+      "realism_score": 85,
+      "product_consistency_score": 85,
+      "material_accuracy_score": 85,
+      "background_score": 85,
+      "ai_artifact_score": 85,
+      "store_fit_score": 85,
+      "notes": "File-level MVP QC approved. Human visual review is still recommended before publishing."
+    }
+  ]
+}

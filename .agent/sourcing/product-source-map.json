@@ -1,0 +1,13 @@
+{
+  "DIY-PET-020": {
+    "source_id": "SRC-20260525-001",
+    "supplier_product_url": "https://www.8ding.com/custom/P00795/mug-11-oz-made-in-usa",
+    "supplier_name": "八点多定制",
+    "supplier_price": "75.00",
+    "main_image_folder": ".agent/sourcing/downloaded-images/DIY-PET-020/raw",
+    "approved_image_folder": ".agent/sourcing/downloaded-images/DIY-PET-020/final",
+    "listing_draft_path": ".agent/drafts/products/DIY-PET-020-2026-05-25.md",
+    "status": "draft_generated",
+    "listing_draft_json_path": ".agent/drafts/products/DIY-PET-020-2026-05-25.json"
+  }
+}

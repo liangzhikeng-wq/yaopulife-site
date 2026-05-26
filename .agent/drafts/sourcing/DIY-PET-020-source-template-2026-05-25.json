@@ -1,0 +1,26 @@
+{
+  "sku": "DIY-PET-020",
+  "product_name": "Custom Pet Photo Mug",
+  "research_id": "R-20260525-001",
+  "domestic_search_keyword": "照片陶瓷马克杯 定制",
+  "required_fields": [
+    "supplier_name",
+    "supplier_store_url",
+    "supplier_product_url",
+    "supplier_product_title",
+    "supplier_price_min",
+    "supplier_price_max",
+    "currency",
+    "moq",
+    "supports_dropshipping",
+    "supports_customization",
+    "material",
+    "size",
+    "domestic_shipping_fee",
+    "estimated_weight",
+    "stock_status",
+    "risk_notes"
+  ],
+  "created_at": "2026-05-25T23:28:52.560Z",
+  "updated_at": "2026-05-25T23:28:52.560Z"
+}

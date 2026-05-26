@@ -1,0 +1,31 @@
+{
+  "date": "2026-05-25T23:54:47.168Z",
+  "summary": {
+    "framework": "Astro",
+    "has_project_scan": true,
+    "pages": 15,
+    "blog_posts": 11,
+    "product_content": 10,
+    "product_data": 10,
+    "research_records": 1,
+    "sourcing_records": 1,
+    "product_source_map_entries": 1,
+    "product_drafts": 1,
+    "purchase_records": 0,
+    "image_sku_folders": 1,
+    "image_skus_with_output": 1,
+    "image_skus_with_qc": 1,
+    "image_skus_with_final": 1
+  },
+  "tasks": [
+    "Run listing readiness checks for sourced SKUs."
+  ],
+  "qc_status": [
+    {
+      "sku": "DIY-PET-020",
+      "openclaw_output_images": 3,
+      "final_images": 3,
+      "has_qc_report": true
+    }
+  ]
+}

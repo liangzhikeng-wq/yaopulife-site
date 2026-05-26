@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-25T23:53:51.749Z",
+  "results": [
+    {
+      "job": "openclaw-main",
+      "promptId": "18c40d24-b568-472b-b2d6-670a989f30e7",
+      "sourcePath": "/Users/yaopulife/Documents/ComfyUI/output/yaopu_DIY-PET-020_openclaw-main_00001_.png",
+      "targetPath": "/Users/yaopulife/yaopuqoder/yaopulife-site/.agent/sourcing/downloaded-images/DIY-PET-020/openclaw-output/openclaw-main.png"
+    },
+    {
+      "job": "openclaw-lifestyle-breakfast",
+      "promptId": "99ddfbd4-a361-4675-be92-79b4c9bd2199",
+      "sourcePath": "/Users/yaopulife/Documents/ComfyUI/output/yaopu_DIY-PET-020_openclaw-lifestyle-breakfast_00001_.png",
+      "targetPath": "/Users/yaopulife/yaopuqoder/yaopulife-site/.agent/sourcing/downloaded-images/DIY-PET-020/openclaw-output/openclaw-lifestyle-breakfast.png"
+    },
+    {
+      "job": "openclaw-detail-hands",
+      "promptId": "b1abae0c-1673-4803-9352-c1f48b1590a2",
+      "sourcePath": "/Users/yaopulife/Documents/ComfyUI/output/yaopu_DIY-PET-020_openclaw-detail-hands_00001_.png",
+      "targetPath": "/Users/yaopulife/yaopuqoder/yaopulife-site/.agent/sourcing/downloaded-images/DIY-PET-020/openclaw-output/openclaw-detail-hands.png"
+    }
+  ]
+}

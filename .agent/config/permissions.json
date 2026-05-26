@@ -1,0 +1,22 @@
+{
+  "allowSourceFileWrites": false,
+  "allowProductPublishing": false,
+  "allowPriceChanges": false,
+  "allowPolicyChanges": false,
+  "allowSupplierCheckout": false,
+  "allowCustomerEmailSend": false,
+  "requireHumanApprovalFor": [
+    "publish_product",
+    "change_price",
+    "send_customer_email",
+    "place_supplier_order",
+    "modify_policy",
+    "use_supplier_image_publicly"
+  ],
+  "allowedWriteRoots": [
+    ".agent",
+    "docs/superpowers",
+    "scripts",
+    "tests"
+  ]
+}

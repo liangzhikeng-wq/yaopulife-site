@@ -1,0 +1,20 @@
+{
+  "sku": "DIY-PET-020",
+  "generated_at": "2026-05-26T00:07:35.024Z",
+  "status": "ready_for_readiness_check",
+  "current_step": "readiness_check",
+  "missing": [],
+  "next_commands": [
+    "node scripts/agent-listing-readiness-check.cjs --sku DIY-PET-020"
+  ],
+  "state": {
+    "has_source": true,
+    "has_map_entry": true,
+    "raw_images": 3,
+    "has_openclaw_brief": true,
+    "openclaw_output_images": 3,
+    "has_qc_report": true,
+    "final_images": 3,
+    "has_product_draft": true
+  }
+}

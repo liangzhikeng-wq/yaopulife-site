@@ -1,0 +1,21 @@
+{
+  "brandName": "yaopulife",
+  "tagline": "Handpicked DIY, AI-Imagined Artistry.",
+  "targetMarket": ["US", "EU"],
+  "tone": ["warm", "clear", "handmade", "trustworthy"],
+  "doNotClaim": [
+    "fake customer reviews",
+    "unverified certifications",
+    "unconfirmed production times",
+    "unconfirmed shipping times",
+    "materials not confirmed by supplier"
+  ],
+  "imageRules": [
+    "supplier originals stay in raw folders only",
+    "no supplier watermark",
+    "no marketplace UI",
+    "no Chinese promotional text",
+    "do not change core product structure",
+    "do not show features the supplier cannot produce"
+  ]
+}
