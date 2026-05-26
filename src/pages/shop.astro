@@ -4,16 +4,22 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const products = [
-  { id: 1, title: "Needle Felted Cat Portrait", price: "From $65", category: "pet-portraits", image: "/products/needle-felt/nf-cat-main.jpg" },
-  { id: 2, title: "Needle Felted Dog Portrait", price: "From $65", category: "pet-portraits", image: "/products/needle-felt/nf-dog-main.jpg" },
-  { id: 3, title: "Multi-Pet Felt Portrait", price: "From $89", category: "pet-portraits", image: "/products/needle-felt/nf-multi-main.jpg" },
   { id: 4, title: "Custom Pet Embroidery Hoop", price: "From $48", category: "pet-portraits", image: "/products/embroidery/emb-pet-main.jpg" },
   { id: 5, title: "Floral Embroidery Hoop", price: "From $38", category: "home-decor", image: "/products/embroidery/emb-flower-main.jpg" },
-  { id: 6, title: "Custom Wedding Embroidery", price: "From $55", category: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg" },
-  { id: 7, title: "Custom Photo Moon Lamp", price: "From $42", category: "custom-gifts", image: "/products/moon-lamp/ml-photo-main.jpg" },
+  { id: 6, title: "Custom Wedding Embroidery", price: "From $55", category: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg", tag: "Gift" },
+  { id: 7, title: "Custom Photo Moon Lamp", price: "From $42", category: "custom-gifts", image: "/products/moon-lamp/ml-photo-main.jpg", tag: "Popular" },
   { id: 8, title: "Engraved Text Moon Lamp", price: "From $39", category: "custom-gifts", image: "/products/moon-lamp/ml-text-main.jpg" },
   { id: 9, title: "Ocean Resin Coaster Set", price: "From $28", category: "home-decor", image: "/products/resin-coaster/rc-ocean-main.jpg" },
-  { id: 10, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/wood-sign/ws-name-main.jpg" }
+  { id: 10, title: "Personalized Family Name Sign", price: "From $35", category: "home-decor", image: "/products/wood-sign/ws-name-main.jpg" },
+  { id: 12, title: "Custom Name Canvas", price: "From $45", category: "home-decor", image: "/products/name_canvas_main.jpg", tag: "New" },
+  { id: 13, title: "Dried Flower Bouquet", price: "From $58", category: "home-decor", image: "/products/dried_flower_main.jpg", tag: "New" },
+  { id: 14, title: "Custom Pet Name Puzzle", price: "From $38", category: "pet-portraits", image: "/products/pet-name-puzzle/pnp-main.jpg", tag: "New" },
+  { id: 15, title: "Custom House Portrait", price: "From $55", category: "home-decor", image: "/products/house-portrait/hph-main.jpg", tag: "New" },
+  { id: 16, title: "Pet Memorial Shadow Box", price: "From $58", category: "pet-portraits", image: "/products/memorial-shadow/pms-main.jpg", tag: "New" },
+  { id: 17, title: "Custom Pet Photo Blanket", price: "From $48", category: "pet-portraits", image: "/products/custom-blanket/cb-main.jpg", tag: "New" },
+  { id: 18, title: "Custom Pet Photo Keychain", price: "From $22", category: "pet-portraits", image: "/products/pet-keychain/pk-main.jpg", tag: "New" },
+  { id: 19, title: "Custom Pet Name Necklace", price: "From $35", category: "pet-portraits", image: "/products/pet-name-necklace/pnn-main.jpg", tag: "New" },
+  { id: 20, title: "Custom Pet Photo Mug", price: "From $28", category: "pet-portraits", image: "/products/custom-pet-mug/cpm-main.jpg", tag: "New" }
 ];
 
 const categories = [
@@ -73,6 +79,11 @@ const categoryDescriptions = {
               <span class="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-white/90 rounded-full text-gray-700 capitalize">
                 {p.category.replace('-', ' ')}
               </span>
+              {p.tag && (
+                <span class="absolute top-3 right-3 px-2 py-1 text-xs font-medium bg-brand-600 text-white rounded-full">
+                  {p.tag}
+                </span>
+              )}
             </div>
             <div class="p-5">
               <h2 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h2>

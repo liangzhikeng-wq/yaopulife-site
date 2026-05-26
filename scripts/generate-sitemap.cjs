@@ -19,18 +19,24 @@ function getAllPages() {
   // 分类页
   pages.push({ url: '/shop', priority: '0.9', changefreq: 'weekly' });
   
-  // 产品页 (现有10个)
+  // 产品页
   const products = [
-    { id: 1, slug: 'custom-needle-felted-cat-portrait' },
-    { id: 2, slug: 'custom-needle-felted-dog-portrait' },
-    { id: 3, slug: 'custom-multi-pet-felt-portrait' },
     { id: 4, slug: 'custom-pet-embroidery-hoop' },
     { id: 5, slug: 'floral-embroidery-hoop' },
     { id: 6, slug: 'custom-wedding-embroidery' },
     { id: 7, slug: 'custom-photo-moon-lamp' },
     { id: 8, slug: 'engraved-text-moon-lamp' },
     { id: 9, slug: 'ocean-resin-coaster-set' },
-    { id: 10, slug: 'personalized-family-name-sign' }
+    { id: 10, slug: 'personalized-family-name-sign' },
+    { id: 12, slug: 'custom-name-canvas' },
+    { id: 13, slug: 'dried-flower-bouquet' },
+    { id: 14, slug: 'custom-pet-name-puzzle' },
+    { id: 15, slug: 'custom-house-portrait' },
+    { id: 16, slug: 'pet-memorial-shadow-box' },
+    { id: 17, slug: 'custom-pet-photo-blanket' },
+    { id: 18, slug: 'custom-pet-photo-keychain' },
+    { id: 19, slug: 'custom-pet-name-necklace' },
+    { id: 20, slug: 'custom-pet-photo-mug' }
   ];
   
   products.forEach(p => {
@@ -48,7 +54,8 @@ function getAllPages() {
     'mothers-day-gift-guide-2026',
     'custom-pet-portrait-guide',
     'handmade-birthday-gift-guide-2026',
-    'ocean-themed-home-decor-ideas'
+    'ocean-themed-home-decor-ideas',
+    'trending-custom-gift-ideas-2026'
   ];
   
   blogSlugs.forEach(slug => {
@@ -59,6 +66,8 @@ function getAllPages() {
   pages.push({ url: '/about', priority: '0.6', changefreq: 'monthly' });
   pages.push({ url: '/how-it-works', priority: '0.7', changefreq: 'monthly' });
   pages.push({ url: '/contact', priority: '0.5', changefreq: 'yearly' });
+  pages.push({ url: '/shipping-and-returns', priority: '0.5', changefreq: 'yearly' });
+  pages.push({ url: '/terms-of-service', priority: '0.5', changefreq: 'yearly' });
   
   return pages;
 }

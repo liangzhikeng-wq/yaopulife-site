@@ -6,18 +6,18 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="Contact" description="Get in touch for custom orders, questions, or collaborations. We typically respond within 2 hours.">
   <Navbar />
-  
+
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="text-4xl font-bold text-gray-900">Get in Touch</h1>
         <p class="mt-4 text-lg text-gray-600">Have an idea? We'd love to hear it. Response time: within 2 hours on business days.</p>
       </div>
-      
+
       <div class="mt-12 grid md:grid-cols-2 gap-12">
         <div>
           <h2 class="text-xl font-semibold text-gray-900">Send a Message</h2>
-          <form class="mt-6 space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+          <form id="contactForm" class="mt-6 space-y-4">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
@@ -48,11 +48,11 @@ import Footer from "../components/Footer.astro";
               <div>
                 <label for="budget" class="block text-sm font-medium text-gray-700">Budget Range</label>
                 <select id="budget" name="budget" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                  <option>Not sure yet</option>
                   <option>Under $50</option>
                   <option>$50 - $100</option>
                   <option>$100 - $200</option>
                   <option>$200+</option>
-                  <option>Not sure yet</option>
                 </select>
               </div>
               <div>
@@ -70,21 +70,44 @@ import Footer from "../components/Footer.astro";
               <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements <span class="text-red-500">*</span></label>
               <textarea id="message" name="message" rows="4" required placeholder="Tell us about your customization needs, preferred colors, size, any special requests..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
             </div>
-            <div>
-              <label for="file" class="block text-sm font-medium text-gray-700">Upload Reference Image (optional)</label>
-              <input type="file" id="file" name="file" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100" />
-              <p class="mt-1 text-xs text-gray-500">Share a photo of what you have in mind — helps us understand your vision better.</p>
-            </div>
             <div class="flex items-start">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-brand-600 border-gray-300 rounded" />
               <label for="privacy" class="ml-2 text-sm text-gray-600">I agree to the <a href="/privacy" class="text-brand-600 hover:underline">Privacy Policy</a></label>
             </div>
-            <button type="submit" class="w-full px-6 py-3 text-base font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+            <button type="submit" id="submitBtn" class="w-full px-6 py-3 text-base font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
               Send Request
             </button>
           </form>
+
+          <div id="formSuccess" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-green-800">Message sent successfully!</p>
+                <p class="text-sm text-green-600 mt-1">We'll respond within 2 business hours.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="formError" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-red-800">Failed to send message</p>
+                <p class="text-sm text-red-600 mt-1">Please try again or email us directly.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <div>
           <h2 class="text-xl font-semibold text-gray-900">Other Ways to Reach Us</h2>
           <div class="mt-6 space-y-4">
@@ -111,6 +134,53 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
-  
+
   <Footer />
+
+  <script>
+    document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      const formSuccess = document.getElementById('formSuccess');
+      const formError = document.getElementById('formError');
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        interest: form.interest.value,
+        budget: form.budget.value,
+        timeline: form.timeline.value,
+        message: form.message.value,
+        privacy: form.privacy.checked
+      };
+
+      try {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        formError.classList.add('hidden');
+
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          form.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
+      } catch (error) {
+        console.error('Form error:', error);
+        formError.classList.remove('hidden');
+        submitBtn.textContent = 'Send Request';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </Layout>

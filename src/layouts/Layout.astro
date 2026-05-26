@@ -9,8 +9,10 @@ export interface Props {
   productPrice?: string;
 }
 
-const { 
-  title, 
+import CookieBanner from "../components/CookieBanner.astro";
+
+const {
+  title,
   description = "Handpicked DIY, AI-Imagined Artistry. Custom handcrafted gifts made to order.",
   ogImage = "/og-image.jpg",
   ogType = "website",
@@ -28,10 +30,20 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18170525119"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18170525119');
+  </script>
+
   <title>{title} | yaopulife DIY</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -43,25 +55,25 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
   {ogType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
   {productPrice && <meta property="product:price:amount" content={productPrice} />}
   {productPrice && <meta property="product:price:currency" content="USD" />}
-  
+
   <!-- Pinterest -->
   <meta name="p:domain_verify" content="b76db1c1cf08aa2520e87b00538c777a" />
   <meta name="pinterest-rich-pin" content="true" />
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={fullOgImage} />
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
+
   <!-- Schema.org -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -75,6 +87,6 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
 <body class="min-h-screen bg-white">
   <slot />
   <slot name="after-footer" />
-
+  <CookieBanner />
 </body>
 </html>

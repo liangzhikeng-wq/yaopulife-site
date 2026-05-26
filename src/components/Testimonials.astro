@@ -1,0 +1,48 @@
+---
+const trustHighlights = [
+  {
+    title: "Preview before production",
+    text: "Share photos, names, dates, or a rough idea first. We prepare a design direction before handmade production starts.",
+    tag: "Custom order workflow"
+  },
+  {
+    title: "Made for personal stories",
+    text: "Pet portraits, keepsakes, home decor, and gift pieces are selected for emotional, personalized occasions.",
+    tag: "Gift-ready products"
+  },
+  {
+    title: "Clear handoff and review",
+    text: "Each custom order keeps the product brief, supplier trace, and image review separate so expectations stay grounded.",
+    tag: "Human-reviewed process"
+  }
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Designed for Custom Gift Confidence</h2>
+      <p class="mt-3 text-gray-600">A preview-first process for personal, made-to-order pieces.</p>
+
+      <div class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200">
+        <span class="h-2 w-2 rounded-full bg-green-500"></span>
+        Human review before production and publishing
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+      {trustHighlights.map(item => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">{item.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-gray-600">{item.text}</p>
+          <p class="mt-4 text-xs font-medium text-brand-600">{item.tag}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

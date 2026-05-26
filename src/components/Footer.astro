@@ -1,9 +1,29 @@
 ---
 const footerLinks = {
-  Shop: ["Custom Gifts", "Home Decor", "Pet Portraits", "Party Decor"],
-  Support: ["How It Works", "Shipping & Returns", "Privacy Policy", "Terms of Service"],
-  Company: ["About Us", "Contact", "Blog"]
+  Shop: [
+    { href: "/shop?category=custom-gifts", label: "Custom Gifts" },
+    { href: "/shop?category=home-decor", label: "Home Decor" },
+    { href: "/shop?category=pet-portraits", label: "Pet Portraits" },
+    { href: "/shop", label: "All Products" }
+  ],
+  Support: [
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/shipping-and-returns", label: "Shipping & Returns" },
+    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/terms-of-service", label: "Terms of Service" }
+  ],
+  Company: [
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact" },
+    { href: "/blog", label: "Blog" }
+  ]
 };
+
+const socialLinks = [
+  { href: "https://www.instagram.com/yaopulife", label: "Instagram", icon: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 6.333 0 6.741 0 8c0 3.366 0 3.843.072 4.957.2 4.358 2.618 6.78 6.98 6.98C8.333 19.986 8.741 20 12 20c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.156.072-1.591.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
+  { href: "https://www.pinterest.com/yaopulife", label: "Pinterest", icon: "M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" },
+  { href: "https://www.tiktok.com/@yaopulife", label: "TikTok", icon: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2a8.46 8.46 0 014.73-1.32 8.48 8.48 0 015.37 2.59 8.45 8.45 0 01-2.72 10.11 8.37 8.37 0 01-5.12-2.13v3.16a4.84 4.84 0 01-5.53 4.82 4.84 4.84 0 01-4.81-4.79 4.82 4.82 0 015.4-4.73 8.4 8.4 0 014.94 2.49 8.5 8.5 0 01-3.31 6.46 8.4 8.4 0 01-2.45-.69 4.83 4.83 0 013.78-4.25 4.86 4.86 0 01-2.96.84 4.83 4.83 0 01-2.74-4.51 4.89 4.89 0 015.59-2.61 4.85 4.85 0 013.07 4.59 9.7 9.7 0 01-6.04 2.69 13.4 13.4 0 0010.5 2.83V18a8.39 8.39 0 006.23-2.36 8.5 8.5 0 001.44-5.25z" }
+];
 ---
 
 <footer class="bg-gray-900 text-gray-300">
@@ -12,26 +32,55 @@ const footerLinks = {
       <div class="col-span-2 md:col-span-1">
         <a href="/" class="text-2xl font-bold text-white">yaopulife</a>
         <p class="mt-4 text-sm text-gray-400">Handpicked DIY, AI-Imagined Artistry.</p>
+
+        <!-- Trust Badges -->
+        <div class="mt-6 flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Secure Checkout</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4h1l.6 3h13.8l.6-3h1l-1 5H4l-1-5z"/></svg>
+            <span>Worldwide Shipping</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-400">
+            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Satisfaction Guaranteed</span>
+          </div>
+        </div>
       </div>
-      
+
       {Object.entries(footerLinks).map(([title, links]) => (
         <div>
           <h3 class="text-sm font-semibold text-white uppercase tracking-wider">{title}</h3>
           <ul class="mt-4 space-y-2">
             {links.map(link => (
-              <li><a href="#" class="text-sm hover:text-white transition-colors">{link}</a></li>
+              <li><a href={link.href} class="text-sm hover:text-white transition-colors">{link.label}</a></li>
             ))}
           </ul>
         </div>
       ))}
     </div>
-    
+
     <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-sm text-gray-500">© 2026 yaopulife DIY. All rights reserved.</p>
-      <div class="mt-4 md:mt-0 flex space-x-6">
-        <a href="#" class="text-gray-400 hover:text-white"><span class="sr-only">Instagram</span>IG</a>
-        <a href="#" class="text-gray-400 hover:text-white"><span class="sr-only">Pinterest</span>PI</a>
-        <a href="#" class="text-gray-400 hover:text-white"><span class="sr-only">TikTok</span>TK</a>
+      <div class="text-sm text-gray-500">
+        <p>© 2026 yaopulife DIY. All rights reserved.</p>
+        <p class="mt-1 text-xs text-gray-600">Registered in China | hello@yaopulife.com</p>
+      </div>
+      <div class="mt-4 md:mt-0 flex space-x-5">
+        {socialLinks.map(link => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors"
+            aria-label={link.label}
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d={link.icon}/>
+            </svg>
+          </a>
+        ))}
       </div>
     </div>
   </div>

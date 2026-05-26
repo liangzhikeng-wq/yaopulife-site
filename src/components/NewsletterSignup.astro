@@ -1,0 +1,54 @@
+---
+// Newsletter signup section
+---
+
+<section class="py-16 bg-gradient-to-r from-brand-600 to-brand-700">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-2xl font-bold text-white">Get 10% Off Your First Order</h2>
+    <p class="mt-2 text-brand-100">Subscribe and be the first to know about new products and exclusive offers.</p>
+
+    <form id="newsletter-form" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input
+        type="email"
+        id="newsletter-email"
+        name="email"
+        required
+        placeholder="Enter your email"
+        class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+      />
+      <button
+        type="submit"
+        class="px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+      >
+        Subscribe
+      </button>
+    </form>
+
+    <p class="mt-4 text-xs text-brand-200">No spam, unsubscribe anytime. By subscribing, you agree to our Privacy Policy.</p>
+
+    <!-- Success Message -->
+    <div id="newsletter-success" class="hidden mt-6 p-4 bg-white/20 rounded-lg">
+      <p class="text-white font-medium">Welcome! Check your inbox for your 10% discount code.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('newsletter-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const email = (document.getElementById('newsletter-email') as HTMLInputElement)?.value;
+    if (!email) return;
+
+    // In production, this would call your email marketing API (Mailchimp, Klaviyo, etc.)
+    // For now, we'll just show a success message
+    const form = e.target as HTMLFormElement;
+    const successMsg = document.getElementById('newsletter-success');
+
+    form.classList.add('hidden');
+    successMsg?.classList.remove('hidden');
+
+    // TODO: Integrate with email marketing service
+    console.log('Newsletter signup:', email);
+  });
+</script>

@@ -3,32 +3,10 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 
+export const prerender = true;
+
 export function getStaticPaths() {
   const products = [
-    {
-      id: "1", title: "Needle Felted Cat Portrait", price: "$65", category: "Pet Portraits",
-      material: "100% wool roving, glass eyes, wooden hoop", size: "8 inch round frame",
-      time: "14-18 days",
-      description: "A stunning three-dimensional needle-felted portrait capturing your cat's unique personality. Each whisker is individually placed, creating lifelike texture and depth that photographs simply cannot achieve.",
-      mainImage: "/products/needle-felt/nf-cat-main.jpg",
-      gallery: ["/products/needle-felt/nf-cat-scene-shelf.jpg", "/products/needle-felt/nf-cat-scene-gift.jpg", "/products/needle-felt/nf-cat-scene-hand.jpg"]
-    },
-    {
-      id: "2", title: "Needle Felted Dog Portrait", price: "$65", category: "Pet Portraits",
-      material: "100% wool roving, glass eyes, wooden hoop", size: "8 inch round frame",
-      time: "14-18 days",
-      description: "Celebrate your loyal companion with a handcrafted needle-felted portrait. Every fur strand is shaped by hand to capture your dog's expression, from playful grins to soulful eyes.",
-      mainImage: "/products/needle-felt/nf-dog-main.jpg",
-      gallery: ["/products/needle-felt/nf-dog-scene-shelf.jpg", "/products/needle-felt/nf-dog-scene-gift.jpg", "/products/needle-felt/nf-dog-scene-hand.jpg"]
-    },
-    {
-      id: "3", title: "Multi-Pet Felt Portrait", price: "$89", category: "Pet Portraits",
-      material: "100% wool roving, glass eyes, premium wooden frame", size: "10-12 inch oval frame",
-      time: "18-24 days",
-      description: "Bring your whole fur family together in one stunning piece. This larger-format portrait accommodates 2-3 pets arranged artfully, creating a cherished family keepsake.",
-      mainImage: "/products/needle-felt/nf-multi-main.jpg",
-      gallery: ["/products/needle-felt/nf-multi-scene-wall.jpg", "/products/needle-felt/nf-multi-scene-gift.jpg", "/products/needle-felt/nf-multi-scene-shelf.jpg"]
-    },
     {
       id: "4", title: "Custom Pet Embroidery Hoop", price: "$48", category: "Pet Portraits",
       material: "Cotton thread on linen, bamboo hoop", size: "6-8 inch diameter",
@@ -84,6 +62,78 @@ export function getStaticPaths() {
       description: "A beautifully laser-engraved wooden sign featuring your family name in elegant cursive script. Adds a warm, personal touch to any entryway, porch, or living space.",
       mainImage: "/products/wood-sign/ws-name-main.jpg",
       gallery: ["/products/wood-sign/ws-name-scene-door.jpg", "/products/wood-sign/ws-name-scene-wall.jpg", "/products/wood-sign/ws-name-scene-desk.jpg"]
+    },
+    {
+      id: "12", title: "Custom Name Canvas", price: "$45", category: "Home Decor",
+      material: "Premium canvas, UV-resistant ink", size: "16x20 inches",
+      time: "5-7 days",
+      description: "A stunning personalized canvas featuring your chosen name in elegant typography, surrounded by decorative botanical elements. Each piece is custom-designed to create a unique wall art piece for any room.",
+      mainImage: "/products/name_canvas_main.jpg",
+      gallery: ["/products/name_canvas_main.jpg", "/products/name_canvas_main.jpg", "/products/name_canvas_main.jpg"]
+    },
+    {
+      id: "13", title: "Dried Flower Bouquet", price: "$58", category: "Home Decor",
+      material: "Natural dried flowers, handmade paper wrap", size: "Approximately 12 inches tall",
+      time: "7-10 days",
+      description: "A timeless dried flower arrangement featuring premium preserved blooms in warm earth tones. Each bouquet is carefully assembled using seasonal dried flowers for a natural, elegant display that lasts for years.",
+      mainImage: "/products/dried_flower_main.jpg",
+      gallery: ["/products/dried_flower_main.jpg", "/products/dried_flower_main.jpg", "/products/dried_flower_main.jpg"]
+    },
+    {
+      id: "14", title: "Custom Pet Name Puzzle", price: "$38", category: "Pet Portraits",
+      material: "Natural oak wood, laser engraved", size: "8x10 inches",
+      time: "5-7 days",
+      description: "A beautiful personalized wooden puzzle featuring your pet's name in elegant script. Each piece is laser-engraved with your chosen name, perfect as a unique gift for pet lovers or a decorative piece for any pet-loving home.",
+      mainImage: "/products/pet-name-puzzle/pnp-main.jpg",
+      gallery: ["/products/pet-name-puzzle/pnp-scene-shelf.jpg", "/products/pet-name-puzzle/pnp-scene-gift.jpg", "/products/pet-name-puzzle/pnp-scene-unboxing.jpg"]
+    },
+    {
+      id: "15", title: "Custom House Portrait", price: "$55", category: "Home Decor",
+      material: "Premium watercolor paper, archival inks", size: "8x10 inches",
+      time: "5-7 days",
+      description: "A beautiful custom watercolor house portrait capturing the charm of any home. Each illustration is hand-crafted with warm colors and attention to architectural details, creating a unique keepsake that celebrates home ownership, anniversaries, or housewarming gifts.",
+      mainImage: "/products/house-portrait/hph-main.jpg",
+      gallery: ["/products/house-portrait/hph-scene-shelf.jpg", "/products/house-portrait/hph-scene-gift.jpg", "/products/house-portrait/hph-scene-unboxing.jpg"]
+    },
+    {
+      id: "16", title: "Pet Memorial Shadow Box", price: "$58", category: "Pet Portraits",
+      material: "Wood, glass dome, felted wool, dried flowers", size: "6x8 inches",
+      time: "7-10 days",
+      description: "A beautiful memorial shadow box preserving precious memories of your beloved pet. Features a needle-felted portrait surrounded by dried flower petals and a personalized name plaque, all enclosed in an elegant glass dome display.",
+      mainImage: "/products/memorial-shadow/pms-main.jpg",
+      gallery: ["/products/memorial-shadow/pms-scene-shelf.jpg", "/products/memorial-shadow/pms-scene-gift.jpg", "/products/memorial-shadow/pms-scene-unboxing.jpg"]
+    },
+    {
+      id: "17", title: "Custom Pet Photo Blanket", price: "$48", category: "Pet Portraits",
+      material: "Premium fleece, vibrant dye-sublimation print", size: "50x60 inches",
+      time: "5-7 days",
+      description: "A luxuriously soft custom photo blanket featuring your beloved pet's portrait. Made from premium fleece with vibrant, fade-resistant dye-sublimation printing. Perfect for cozy evenings, pet memorial tributes, or as a unique gift for pet lovers.",
+      mainImage: "/products/custom-blanket/cb-main.jpg",
+      gallery: ["/products/custom-blanket/cb-scene-sofa.jpg", "/products/custom-blanket/cb-scene-gift.jpg"]
+    },
+    {
+      id: "18", title: "Custom Pet Photo Keychain", price: "$22", category: "Pet Portraits",
+      material: "Acrylic photo charm, stainless steel hardware", size: "1.5 inch diameter",
+      time: "3-5 days",
+      description: "A beautiful custom pet photo keychain featuring your furry friend's portrait encased in clear acrylic. Durable stainless steel hardware ensures it will withstand daily use. The perfect gift for pet lovers - functional and sentimental.",
+      mainImage: "/products/pet-keychain/pk-main.jpg",
+      gallery: ["/products/pet-keychain/pk-scene-wallet.jpg", "/products/pet-keychain/pk-scene-gift.jpg"]
+    },
+    {
+      id: "19", title: "Custom Pet Name Necklace", price: "$35", category: "Pet Portraits",
+      material: "Gold plated pendant, stainless steel chain", size: "18 inch chain",
+      time: "5-7 days",
+      description: "An elegant personalized necklace featuring your pet's name on a beautiful gold-plated pendant. Comes with a delicate chain that complements any outfit. A meaningful gift for pet parents who want to carry their furry friend's name close to their heart.",
+      mainImage: "/products/pet-name-necklace/pnn-main.jpg",
+      gallery: ["/products/pet-name-necklace/pnn-scene-wearing.jpg", "/products/pet-name-necklace/pnn-scene-gift.jpg"]
+    },
+    {
+      id: "20", title: "Custom Pet Photo Mug", price: "$28", category: "Pet Portraits",
+      material: "Ceramic, sublimation print", size: "11oz",
+      time: "3-5 days",
+      description: "Start every morning with a smile thanks to this custom pet photo mug featuring your beloved companion. High-quality sublimation printing ensures vibrant, fade-resistant colors that last. Perfect for coffee, tea, or as a meaningful gift for pet lovers.",
+      mainImage: "/products/custom-pet-mug/cpm-main.jpg",
+      gallery: ["/products/custom-pet-mug/cpm-scene-breakfast.jpg", "/products/custom-pet-mug/cpm-scene-hands.jpg"]
     }
   ];
   return products.map(p => ({ params: { id: p.id }, props: p }));
@@ -94,7 +144,7 @@ const { title, price, category, material, size, time, description, mainImage, ga
 
 <Layout title={title} description={description} ogImage={mainImage} ogType="product" productPrice={price.replace('$', '')}>
   <Navbar />
-  
+
   <!-- Schema.org Product Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -113,14 +163,9 @@ const { title, price, category, material, size, time, description, mainImage, ga
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition",
       "seller": { "@type": "Organization", "name": "yaopulife DIY" }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "12"
     }
   })} />
-  
+
   <section class="py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12">
@@ -137,27 +182,55 @@ const { title, price, category, material, size, time, description, mainImage, ga
             ))}
           </div>
         </div>
-        
+
         <!-- Product Info -->
         <div>
           <p class="text-sm text-brand-600 font-medium">{category}</p>
           <h1 class="mt-2 text-3xl font-bold text-gray-900">{title}</h1>
           <p class="mt-4 text-2xl font-semibold text-brand-600">{price}</p>
-          
+
           <div class="mt-6 prose text-gray-600">
             <p>{description}</p>
           </div>
-          
+
           <div class="mt-8 space-y-3">
             <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Material</span><span class="text-sm text-gray-900">{material}</span></div>
             <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Size</span><span class="text-sm text-gray-900">{size}</span></div>
             <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Production</span><span class="text-sm text-gray-900">{time}</span></div>
+            <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Delivery</span><span class="text-sm text-gray-900">2-3 weeks worldwide</span></div>
           </div>
-          
+
+          <!-- Satisfaction Guarantee -->
+          <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-100">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <p class="text-sm font-medium text-green-800">100% Satisfaction Guaranteed</p>
+                <p class="text-xs text-green-600 mt-1">Get a free design preview first. If you're not happy with the final result, we'll make it right or refund your payment.</p>
+              </div>
+            </div>
+          </div>
+
           <!-- Buy Buttons -->
           <div class="mt-8 space-y-4">
-            <p class="text-sm font-medium text-gray-700">Select Payment Method:</p>
-            
+            <p class="text-sm font-medium text-gray-700">Ready to start? Here's how:</p>
+
+            <a href="/contact" class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+              Get Free Design Preview
+            </a>
+            <p class="mt-2 text-center text-xs text-gray-500">Send your photos & ideas, get a custom design mockup in 24h</p>
+
+            <div class="relative py-4">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="px-2 bg-white text-gray-500">or pay now with</span>
+              </div>
+            </div>
+
             <!-- Payment Options -->
             <div class="space-y-3" id="paymentOptions">
               <label class="flex items-center p-4 border-2 border-brand-500 rounded-lg bg-brand-50 payment-option" data-gateway="paypal">
@@ -171,21 +244,16 @@ const { title, price, category, material, size, time, description, mainImage, ga
                 </div>
               </label>
             </div>
-            
-            <button 
+
+            <button
               id="buyNowBtn"
               data-product-id={Astro.props.id}
               data-product-name={title}
               data-price={price.replace('$', '')}
-              class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors mt-4"
+              class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"
             >
               Pay Now - {price}
             </button>
-            
-            <a href="/contact" class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-              Request Custom Design
-            </a>
-            <p class="mt-2 text-center text-xs text-gray-500">Custom orders include free AI design preview within 24 hours</p>
           </div>
 
           <!-- Trust Badges -->
@@ -211,7 +279,7 @@ const { title, price, category, material, size, time, description, mainImage, ga
           </div>
         </div>
       </div>
-      
+
       <!-- Process -->
       <div class="mt-16 border-t pt-12">
         <h2 class="text-2xl font-bold text-gray-900">How Your Custom Piece is Made</h2>
@@ -237,37 +305,37 @@ const { title, price, category, material, size, time, description, mainImage, ga
         <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {category === "Pet Portraits" && (
             <>
-              <a href="/blog/best-custom-pet-portrait-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+              <a href="/blog/custom-pet-portrait-guide" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
                 <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Best Custom Pet Portrait Gifts for Dog & Cat Lovers</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Custom Pet Portrait Gift Guide</p>
               </a>
-              <a href="/blog/needle-felt-vs-embroidery-pet-portraits" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Comparison</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Needle Felted vs Embroidered: Which to Choose?</p>
+              <a href="/blog/pet-portrait-memorial-guide" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Memorial Guide</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Pet Portrait Memorial Gift Ideas</p>
               </a>
             </>
           )}
           {category === "Custom Gifts" && (
             <>
-              <a href="/blog/personalized-wedding-anniversary-gift-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+              <a href="/blog/trending-custom-gift-ideas-2026" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
                 <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">10 Unique Personalized Wedding & Anniversary Gifts</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Trending Custom Gift Ideas</p>
               </a>
-              <a href="/blog/how-custom-moon-lamps-are-made" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Behind the Scenes</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">How Custom Moon Lamps Are Made</p>
+              <a href="/blog/how-to-customize-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">How It Works</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">How to Customize Gifts</p>
               </a>
             </>
           )}
           {category === "Home Decor" && (
             <>
-              <a href="/blog/personalized-wedding-anniversary-gift-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">10 Unique Personalized Wedding & Anniversary Gifts</p>
+              <a href="/blog/personalized-home-decor-trends" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Home Decor</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Personalized Home Decor Trends</p>
               </a>
-              <a href="/blog/best-custom-pet-portrait-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Best Custom Pet Portrait Gifts</p>
+              <a href="/blog/ocean-themed-home-decor-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
+                <p class="text-sm font-medium text-brand-600">Inspiration</p>
+                <p class="mt-1 text-sm text-gray-900 font-semibold">Ocean Themed Home Decor Ideas</p>
               </a>
             </>
           )}
@@ -275,9 +343,9 @@ const { title, price, category, material, size, time, description, mainImage, ga
       </div>
     </div>
   </section>
-  
+
   <Footer />
-  
+
   <!-- PayPal Payment Script -->
   <script>
     document.getElementById('buyNowBtn')?.addEventListener('click', async function(e) {
@@ -285,15 +353,15 @@ const { title, price, category, material, size, time, description, mainImage, ga
       const productId = btn.dataset.productId;
       const productName = btn.dataset.productName;
       const price = parseFloat(btn.dataset.price);
-      
+
       try {
         btn.textContent = 'Redirecting to PayPal...';
         btn.disabled = true;
-        
+
         const response = await fetch('/api/payment-gateway', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             gateway: 'paypal',
             amount: price,
             currency: 'USD',
@@ -302,9 +370,9 @@ const { title, price, category, material, size, time, description, mainImage, ga
             description: 'Handcrafted custom gift from yaopulife'
           })
         });
-        
+
         const data = await response.json();
-        
+
         if (data.success && data.url) {
           window.location.href = data.url;
         } else if (data.error && data.config) {

@@ -41,7 +41,10 @@
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml"
+    },
+    {
+      "source": "/api/payment-gateway",
+      "destination": "/api/payment-gateway/"
     }
-  ],
-  "trailingSlash": true
+  ]
 }

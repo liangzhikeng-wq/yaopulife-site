@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Testimonials from "../components/Testimonials.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 
 const categories = [
   { name: "Custom Gifts", desc: "One-of-a-kind presents", slug: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg" },
@@ -17,9 +19,12 @@ const trustPoints = [
 ];
 
 const featuredProducts = [
-  { id: 1, title: "Needle Felted Cat Portrait", price: "$65", image: "/products/needle-felt/nf-cat-main.jpg", tag: "Best Seller" },
+  { id: 4, title: "Custom Pet Embroidery Hoop", price: "$48", image: "/products/embroidery/emb-pet-main.jpg", tag: "Best Seller" },
   { id: 7, title: "Custom Photo Moon Lamp", price: "$42", image: "/products/moon-lamp/ml-photo-main.jpg", tag: "Popular" },
-  { id: 6, title: "Custom Wedding Embroidery", price: "$55", image: "/products/embroidery/emb-wedding-main.jpg", tag: "Gift" }
+  { id: 16, title: "Pet Memorial Shadow Box", price: "$58", image: "/products/memorial-shadow/pms-main.jpg", tag: "New" },
+  { id: 12, title: "Custom Name Canvas", price: "$45", image: "/products/name_canvas_main.jpg", tag: "New" },
+  { id: 6, title: "Custom Wedding Embroidery", price: "$55", image: "/products/embroidery/emb-wedding-main.jpg", tag: "Gift" },
+  { id: 13, title: "Dried Flower Bouquet", price: "$58", image: "/products/dried_flower_main.jpg", tag: "New" }
 ];
 ---
 
@@ -117,7 +122,10 @@ const featuredProducts = [
       </div>
     </div>
   </section>
-  
+
+  <!-- Testimonials -->
+  <Testimonials />
+
   <!-- Trust -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +142,10 @@ const featuredProducts = [
       </div>
     </div>
   </section>
-  
+
+  <!-- Newsletter Signup -->
+  <NewsletterSignup />
+
   <!-- CTA -->
   <section class="py-20 bg-brand-600">
     <div class="max-w-3xl mx-auto px-4 text-center">

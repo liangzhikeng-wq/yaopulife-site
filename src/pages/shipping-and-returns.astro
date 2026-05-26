@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Shipping & Returns" description="yaopulife DIY Shipping and Returns Policy - Worldwide shipping, production times, and satisfaction guarantee.">
+  <Navbar />
+
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-gray-900">Shipping & Returns</h1>
+      <p class="mt-4 text-gray-500">Last updated: May 13, 2026</p>
+
+      <div class="mt-12 prose prose-lg text-gray-600">
+        <h2 class="text-xl font-semibold text-gray-900">Shipping Information</h2>
+        <p>We ship worldwide from our studio in Dongguan, China. Shipping times vary by destination:</p>
+        <ul>
+          <li><strong>United States:</strong> 7-14 business days</li>
+          <li><strong>Europe:</strong> 10-16 business days</li>
+          <li><strong>Other regions:</strong> 14-21 business days</li>
+        </ul>
+        <p>All orders include tracking number via email notification.</p>
+
+        <h2 class="text-xl font-semibold text-gray-900 mt-8">Production Time</h2>
+        <p>Each item is handcrafted to order. Production time varies:</p>
+        <ul>
+          <li>Embroidery & Needle Felted Portraits: 14-18 days</li>
+          <li>Wood Signs & Moon Lamps: 5-7 days</li>
+          <li>Resin Products: 5-7 days</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold text-gray-900 mt-8">Returns Policy</h2>
+        <p>We stand behind our craftsmanship. If there are issues with quality or significant deviations from your approved design, contact us within 7 days for replacement or refund.</p>
+        <p>Custom personalized items cannot be returned unless defective. Please review your design preview carefully before production approval.</p>
+
+        <h2 class="text-xl font-semibold text-gray-900 mt-8">Contact Us</h2>
+        <p>Questions about shipping or returns? Email us at <a href="mailto:hello@yaopulife.com" class="text-brand-600">hello@yaopulife.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
