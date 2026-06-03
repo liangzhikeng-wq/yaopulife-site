@@ -31,13 +31,23 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18170525119"></script>
+  <!-- Google tag (gtag.js) — loaded only with cookie consent -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18170525119');
+    window.loadGtag = function() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18170525119';
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18170525119');
+    };
+    if (localStorage.getItem('cookie-consent') === 'accepted') {
+      window.loadGtag();
+    }
   </script>
 
   <title>{title} | yaopulife DIY</title>

@@ -1,6 +1,6 @@
 ---
 // Cookie consent settings
-const cookieText = "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.";
+const cookieText = "We use essential cookies for site functionality and analytics cookies only if you accept them.";
 const cookieLink = "/privacy";
 ---
 
@@ -36,17 +36,23 @@ const cookieLink = "/privacy";
     setTimeout(() => {
       banner?.classList.remove('translate-y-full');
     }, 2000);
+  } else if (consent === 'accepted' && window.loadGtag) {
+    // User already accepted — ensure analytics is loaded
+    window.loadGtag();
   }
 
   acceptBtn?.addEventListener('click', () => {
     localStorage.setItem('cookie-consent', 'accepted');
     banner?.classList.add('translate-y-full');
-    // Enable analytics cookies here
+    // Enable analytics
+    if (window.loadGtag) {
+      window.loadGtag();
+    }
   });
 
   declineBtn?.addEventListener('click', () => {
     localStorage.setItem('cookie-consent', 'declined');
     banner?.classList.add('translate-y-full');
-    // Disable non-essential cookies here
+    // Do not load analytics
   });
 </script>
