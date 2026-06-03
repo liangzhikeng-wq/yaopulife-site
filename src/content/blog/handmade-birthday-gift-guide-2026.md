@@ -4,7 +4,7 @@ description: "Explore the best handmade birthday gift ideas for every personalit
 pubDate: "2026-01-15"
 category: "gift-guides"
 keywords: ["birthday gift guide, handmade birthday, personalized gift, handmade birthday gift ideas"]
-image: "/images/handmade-birthday-gift-guide-2026.jpg"
+image: "/blog/handmade-birthday-gift-guide-2026.jpg"
 ---
 
 # Handmade Birthday Gift Ideas for Every Personality – The Ultimate 2026 Birthday Gift Guide

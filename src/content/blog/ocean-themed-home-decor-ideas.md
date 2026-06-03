@@ -4,7 +4,7 @@ description: "Discover 15 handmade ocean-themed home decor ideas to bring coasta
 pubDate: "2025-04-07"
 category: "gift-guides"
 keywords: ["coastal home decor", "ocean themed decor", "beach house style"]
-image: "/og-image.jpg"
+image: "/blog/ocean-themed.jpg"
 ---
 
 # 15 Ocean-Themed Home Decor Ideas (Handmade Edition)
