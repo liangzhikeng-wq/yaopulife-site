@@ -140,6 +140,18 @@ export function getStaticPaths() {
 }
 
 const { title, price, category, material, size, time, description, mainImage, gallery } = Astro.props;
+
+// Shared FAQ for the custom-gift buying process. Answers use the store's real
+// policies (24h preview, approve-before-production, 7-day returns, 10–20 day turnaround)
+// and reference this product's own fields — no fabricated claims.
+const faqs = [
+  { q: "How does the custom order process work?", a: `Share your photos, ideas, or descriptions and we'll send you a design preview within 24 hours. You approve the design — with free revisions — before we begin. Then our artisans handcraft your ${category.toLowerCase()} and ship it to you.` },
+  { q: "How long until I receive my order?", a: `Most pieces are handcrafted and delivered within 10–20 days. This item's typical turnaround is ${time}. Need it sooner? Contact us before ordering and we'll do our best.` },
+  { q: "Can I request changes to the design preview?", a: "Yes. We revise the preview until you're happy — production only begins after you approve the design." },
+  { q: "What is it made of?", a: `${material}. Each piece is handcrafted by skilled artisans, so slight natural variations make your item one of a kind.` },
+  { q: "Will the final handmade piece match the preview?", a: "The preview shows the design direction. Your final piece is handcrafted by an artisan to match it as closely as possible — it's handmade, not mass-produced." },
+  { q: "What if I'm not happy with my order?", a: "If something isn't right, contact us within 7 days of delivery and we'll arrange a replacement or refund." },
+];
 ---
 
 <Layout title={title} description={description} ogImage={mainImage} ogType="product" productPrice={price.replace('$', '')}>
@@ -164,6 +176,17 @@ const { title, price, category, material, size, time, description, mainImage, ga
       "itemCondition": "https://schema.org/NewCondition",
       "seller": { "@type": "Organization", "name": "yaopulife DIY" }
     }
+  })} />
+
+  <!-- Schema.org FAQ Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
   })} />
 
   <section class="py-12 bg-white">
@@ -392,4 +415,22 @@ const { title, price, category, material, size, time, description, mainImage, ga
       }
     });
   </script>
+
+  <!-- FAQ -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 text-center">Frequently Asked Questions</h2>
+      <div class="mt-8 space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-lg border border-gray-200 p-5">
+            <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-900 list-none">
+              <span>{f.q}</span>
+              <span class="ml-4 text-brand-600 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-3 text-gray-600">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
