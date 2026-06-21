@@ -57,8 +57,8 @@ export default async function handler(req, res) {
     const safeMessage = escapeHtml(message);
 
     const emailContent = {
-      to: 'hello@yaopulife.com',
-      from: 'noreply@yaopulife.com',
+      to: process.env.CONTACT_TO_EMAIL || 'hello@yaopulife.com',
+      from: process.env.CONTACT_FROM_EMAIL || 'noreply@yaopulife.com',
       replyTo: email,
       subject: `[New Inquiry] ${interest || 'Custom Order'} from ${name}`,
       html: `
