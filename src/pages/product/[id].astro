@@ -397,6 +397,7 @@ const faqs = [
         const data = await response.json();
 
         if (data.success && data.url) {
+          if (window.gtag) window.gtag('event', 'begin_checkout', { currency: 'USD', value: parseFloat(price.replace(/[^0-9.]/g, '')) || undefined, items: [{ item_name: productName }] });
           window.location.href = data.url;
         } else if (data.error && data.config) {
           alert('PayPal not configured. Please add PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET to Vercel environment variables.');

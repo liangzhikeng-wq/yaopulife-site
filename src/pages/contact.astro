@@ -172,6 +172,7 @@ import Footer from "../components/Footer.astro";
         if (data.success) {
           form.classList.add('hidden');
           formSuccess.classList.remove('hidden');
+          if (window.gtag) window.gtag('event', 'generate_lead', { form: 'contact' });
         } else {
           throw new Error(data.error || 'Failed to send message');
         }

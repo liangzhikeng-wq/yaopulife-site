@@ -38,12 +38,13 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
       window.gtagLoaded = true;
       var script = document.createElement('script');
       script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18170525119';
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-44706DBXRP';
       document.head.appendChild(script);
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18170525119');
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'AW-18170525119'); // Google Ads (existing)
+      window.gtag('config', 'G-44706DBXRP');   // GA4 traffic analytics
     };
     if (localStorage.getItem('cookie-consent') === 'accepted') {
       window.loadGtag();

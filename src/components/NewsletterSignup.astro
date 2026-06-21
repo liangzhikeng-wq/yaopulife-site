@@ -63,6 +63,7 @@
       if (data.success) {
         form.classList.add('hidden');
         successMsg?.classList.remove('hidden');
+        if ((window as any).gtag) (window as any).gtag('event', 'sign_up', { method: 'newsletter' });
       } else {
         throw new Error(data.error || 'Subscription failed');
       }
