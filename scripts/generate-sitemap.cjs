@@ -25,25 +25,8 @@ function getAllPages() {
     pages.push({ url: `/product/${sku.toLowerCase()}`, priority: '0.8', changefreq: 'weekly' });
   });
   
-  // 博客页
-  const blogSlugs = [
-    'diy-gift-ideas-2026',
-    'pet-portrait-memorial-guide',
-    'wedding-gift-guide-2026',
-    'personalized-home-decor-trends',
-    'how-to-customize-gifts',
-    'valentines-diy-gift-guide-2026',
-    'mothers-day-gift-guide-2026',
-    'custom-pet-portrait-guide',
-    'handmade-birthday-gift-guide-2026',
-    'ocean-themed-home-decor-ideas',
-    'trending-custom-gift-ideas-2026'
-  ];
-  
-  blogSlugs.forEach(slug => {
-    pages.push({ url: `/blog/${slug}`, priority: '0.7', changefreq: 'monthly' });
-  });
-  
+  // 博客已随纯手机壳店重定位下架，不再进 sitemap（且旧 slug 多为 404）
+
   // 其他页面
   pages.push({ url: '/about', priority: '0.6', changefreq: 'monthly' });
   pages.push({ url: '/how-it-works', priority: '0.7', changefreq: 'monthly' });
