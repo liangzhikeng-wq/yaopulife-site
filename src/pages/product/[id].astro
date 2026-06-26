@@ -1,4 +1,6 @@
 ---
+import fs from "node:fs";
+import path from "node:path";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
@@ -6,432 +8,241 @@ import Footer from "../../components/Footer.astro";
 export const prerender = true;
 
 export function getStaticPaths() {
-  const products = [
-    {
-      id: "4", title: "Custom Pet Embroidery Hoop", price: "$48", category: "Pet Portraits",
-      material: "Cotton thread on linen, bamboo hoop", size: "6-8 inch diameter",
-      time: "10-14 days",
-      description: "A delicate hand-embroidered portrait of your beloved pet, stitched with care on premium linen fabric. Colorful threads capture the personality and charm of your furry friend.",
-      mainImage: "/products/embroidery/emb-pet-main.jpg",
-      gallery: ["/products/embroidery/emb-pet-scene-desk.jpg", "/products/embroidery/emb-pet-scene-wall.jpg", "/products/embroidery/emb-pet-scene-hand.jpg"]
-    },
-    {
-      id: "5", title: "Floral Embroidery Hoop", price: "$38", category: "Home Decor",
-      material: "Cotton thread on cream linen, bamboo hoop", size: "6 inch diameter",
-      time: "7-10 days",
-      description: "A beautiful hand-stitched wildflower bouquet featuring lavender, daisies, and delicate greenery. Perfect as a gift or to brighten any room with natural charm.",
-      mainImage: "/products/embroidery/emb-flower-main.jpg",
-      gallery: ["/products/embroidery/emb-flower-scene-desk.jpg", "/products/embroidery/emb-flower-scene-wall.jpg", "/products/embroidery/emb-flower-scene-gift.jpg"]
-    },
-    {
-      id: "6", title: "Custom Wedding Embroidery", price: "$55", category: "Custom Gifts",
-      material: "Silk and cotton thread, bamboo hoop", size: "8-10 inch diameter",
-      time: "10-14 days",
-      description: "Commemorate your special day with a bespoke embroidery featuring a floral wreath, wedding date, and couple's names. A timeless keepsake for anniversaries and newlyweds.",
-      mainImage: "/products/embroidery/emb-wedding-main.jpg",
-      gallery: ["/products/embroidery/emb-wedding-scene-desk.jpg", "/products/embroidery/emb-wedding-scene-wall.jpg", "/products/embroidery/emb-wedding-scene-gift.jpg"]
-    },
-    {
-      id: "7", title: "Custom Photo Moon Lamp", price: "$42", category: "Custom Gifts",
-      material: "PLA filament, LED module, wooden base", size: "5.5 inch (14cm) diameter",
-      time: "5-7 days",
-      description: "A realistic moon-shaped lamp 3D printed from NASA lunar surface data, with your custom photo engraved onto its surface. Warm LED glow creates magical ambient lighting.",
-      mainImage: "/products/moon-lamp/ml-photo-main.jpg",
-      gallery: ["/products/moon-lamp/ml-photo-scene-bedroom.jpg", "/products/moon-lamp/ml-photo-scene-dark.jpg", "/products/moon-lamp/ml-photo-scene-gift.jpg"]
-    },
-    {
-      id: "8", title: "Engraved Text Moon Lamp", price: "$39", category: "Custom Gifts",
-      material: "PLA filament, LED module, wooden base", size: "5.5 inch (14cm) diameter",
-      time: "5-7 days",
-      description: "Express your feelings with a personalized moon lamp featuring your custom message. Perfect for confessions, graduations, or any moment worth remembering under a warm glow.",
-      mainImage: "/products/moon-lamp/ml-text-main.jpg",
-      gallery: ["/products/moon-lamp/ml-text-scene-bedroom.jpg", "/products/moon-lamp/ml-text-scene-dark.jpg", "/products/moon-lamp/ml-text-scene-gift.jpg"]
-    },
-    {
-      id: "9", title: "Ocean Resin Coaster Set", price: "$28", category: "Home Decor",
-      material: "Epoxy resin, natural seashells, sand", size: "4x4 inches each (set of 4)",
-      time: "5-7 days",
-      description: "Mesmerizing ocean-wave coasters created with layered epoxy resin. Each set features unique blue-white gradients with embedded seashells and sand, like miniature seascapes for your table.",
-      mainImage: "/products/resin-coaster/rc-ocean-main.jpg",
-      gallery: ["/products/resin-coaster/rc-ocean-scene-table.jpg", "/products/resin-coaster/rc-ocean-scene-drink.jpg", "/products/resin-coaster/rc-ocean-scene-flatlay.jpg"]
-    },
-    {
-      id: "10", title: "Personalized Family Name Sign", price: "$35", category: "Home Decor",
-      material: "Natural basswood, non-toxic finish", size: "12x8 inches",
-      time: "5-7 days",
-      description: "A beautifully laser-engraved wooden sign featuring your family name in elegant cursive script. Adds a warm, personal touch to any entryway, porch, or living space.",
-      mainImage: "/products/wood-sign/ws-name-main.jpg",
-      gallery: ["/products/wood-sign/ws-name-scene-door.jpg", "/products/wood-sign/ws-name-scene-wall.jpg", "/products/wood-sign/ws-name-scene-desk.jpg"]
-    },
-    {
-      id: "12", title: "Custom Name Canvas", price: "$45", category: "Home Decor",
-      material: "Premium canvas, UV-resistant ink", size: "16x20 inches",
-      time: "5-7 days",
-      description: "A stunning personalized canvas featuring your chosen name in elegant typography, surrounded by decorative botanical elements. Each piece is custom-designed to create a unique wall art piece for any room.",
-      mainImage: "/products/name_canvas_main.jpg",
-      gallery: ["/products/name_canvas_main.jpg", "/products/name_canvas_main.jpg", "/products/name_canvas_main.jpg"]
-    },
-    {
-      id: "13", title: "Dried Flower Bouquet", price: "$58", category: "Home Decor",
-      material: "Natural dried flowers, handmade paper wrap", size: "Approximately 12 inches tall",
-      time: "7-10 days",
-      description: "A timeless dried flower arrangement featuring premium preserved blooms in warm earth tones. Each bouquet is carefully assembled using seasonal dried flowers for a natural, elegant display that lasts for years.",
-      mainImage: "/products/dried_flower_main.jpg",
-      gallery: ["/products/dried_flower_main.jpg", "/products/dried_flower_main.jpg", "/products/dried_flower_main.jpg"]
-    },
-    {
-      id: "14", title: "Custom Pet Name Puzzle", price: "$38", category: "Pet Portraits",
-      material: "Natural oak wood, laser engraved", size: "8x10 inches",
-      time: "5-7 days",
-      description: "A beautiful personalized wooden puzzle featuring your pet's name in elegant script. Each piece is laser-engraved with your chosen name, perfect as a unique gift for pet lovers or a decorative piece for any pet-loving home.",
-      mainImage: "/products/pet-name-puzzle/pnp-main.jpg",
-      gallery: ["/products/pet-name-puzzle/pnp-scene-shelf.jpg", "/products/pet-name-puzzle/pnp-scene-gift.jpg", "/products/pet-name-puzzle/pnp-scene-unboxing.jpg"]
-    },
-    {
-      id: "15", title: "Custom House Portrait", price: "$55", category: "Home Decor",
-      material: "Premium watercolor paper, archival inks", size: "8x10 inches",
-      time: "5-7 days",
-      description: "A beautiful custom watercolor house portrait capturing the charm of any home. Each illustration is hand-crafted with warm colors and attention to architectural details, creating a unique keepsake that celebrates home ownership, anniversaries, or housewarming gifts.",
-      mainImage: "/products/house-portrait/hph-main.jpg",
-      gallery: ["/products/house-portrait/hph-scene-shelf.jpg", "/products/house-portrait/hph-scene-gift.jpg", "/products/house-portrait/hph-scene-unboxing.jpg"]
-    },
-    {
-      id: "16", title: "Pet Memorial Shadow Box", price: "$58", category: "Pet Portraits",
-      material: "Wood, glass dome, felted wool, dried flowers", size: "6x8 inches",
-      time: "7-10 days",
-      description: "A beautiful memorial shadow box preserving precious memories of your beloved pet. Features a needle-felted portrait surrounded by dried flower petals and a personalized name plaque, all enclosed in an elegant glass dome display.",
-      mainImage: "/products/memorial-shadow/pms-main.jpg",
-      gallery: ["/products/memorial-shadow/pms-scene-shelf.jpg", "/products/memorial-shadow/pms-scene-gift.jpg", "/products/memorial-shadow/pms-scene-unboxing.jpg"]
-    },
-    {
-      id: "17", title: "Custom Pet Photo Blanket", price: "$48", category: "Pet Portraits",
-      material: "Premium fleece, vibrant dye-sublimation print", size: "50x60 inches",
-      time: "5-7 days",
-      description: "A luxuriously soft custom photo blanket featuring your beloved pet's portrait. Made from premium fleece with vibrant, fade-resistant dye-sublimation printing. Perfect for cozy evenings, pet memorial tributes, or as a unique gift for pet lovers.",
-      mainImage: "/products/custom-blanket/cb-main.jpg",
-      gallery: ["/products/custom-blanket/cb-scene-sofa.jpg", "/products/custom-blanket/cb-scene-gift.jpg"]
-    },
-    {
-      id: "18", title: "Custom Pet Photo Keychain", price: "$22", category: "Pet Portraits",
-      material: "Acrylic photo charm, stainless steel hardware", size: "1.5 inch diameter",
-      time: "3-5 days",
-      description: "A beautiful custom pet photo keychain featuring your furry friend's portrait encased in clear acrylic. Durable stainless steel hardware ensures it will withstand daily use. The perfect gift for pet lovers - functional and sentimental.",
-      mainImage: "/products/pet-keychain/pk-main.jpg",
-      gallery: ["/products/pet-keychain/pk-scene-wallet.jpg", "/products/pet-keychain/pk-scene-gift.jpg"]
-    },
-    {
-      id: "19", title: "Custom Pet Name Necklace", price: "$35", category: "Pet Portraits",
-      material: "Gold plated pendant, stainless steel chain", size: "18 inch chain",
-      time: "5-7 days",
-      description: "An elegant personalized necklace featuring your pet's name on a beautiful gold-plated pendant. Comes with a delicate chain that complements any outfit. A meaningful gift for pet parents who want to carry their furry friend's name close to their heart.",
-      mainImage: "/products/pet-name-necklace/pnn-main.jpg",
-      gallery: ["/products/pet-name-necklace/pnn-scene-wearing.jpg", "/products/pet-name-necklace/pnn-scene-gift.jpg"]
-    },
-    {
-      id: "20", title: "Custom Pet Photo Mug", price: "$28", category: "Pet Portraits",
-      material: "Ceramic, sublimation print", size: "11oz",
-      time: "3-5 days",
-      description: "Start every morning with a smile thanks to this custom pet photo mug featuring your beloved companion. High-quality sublimation printing ensures vibrant, fade-resistant colors that last. Perfect for coffee, tea, or as a meaningful gift for pet lovers.",
-      mainImage: "/products/custom-pet-mug/cpm-main.jpg",
-      gallery: ["/products/custom-pet-mug/cpm-scene-breakfast.jpg", "/products/custom-pet-mug/cpm-scene-hands.jpg"]
-    }
-  ];
-  return products.map(p => ({ params: { id: p.id }, props: p }));
+  // 白名单：只发布已通过合规审查的产品。绝不 republish 已退役的测试品。
+  const LIVE_SKUS = ["PHONE-CASE-001"];
+  const dir = path.join(process.cwd(), "data", "products");
+  return LIVE_SKUS.map((sku) => {
+    const product = JSON.parse(fs.readFileSync(path.join(dir, `${sku}.json`), "utf-8"));
+    return { params: { id: sku.toLowerCase() }, props: { product } };
+  });
 }
 
-const { title, price, category, material, size, time, description, mainImage, gallery } = Astro.props;
+const { product } = Astro.props;
+const slug = product.sku.toLowerCase();
+const img = (name: string) => `/images/products/${slug}/${name}`;
 
-// Shared FAQ for the custom-gift buying process. Answers use the store's real
-// policies (24h preview, approve-before-production, 7-day returns, 10–20 day turnaround)
-// and reference this product's own fields — no fabricated claims.
-const faqs = [
-  { q: "How does the custom order process work?", a: `Share your photos, ideas, or descriptions and we'll send you a design preview within 24 hours. You approve the design — with free revisions — before we begin. Then our artisans handcraft your ${category.toLowerCase()} and ship it to you.` },
-  { q: "How long until I receive my order?", a: `Most pieces are handcrafted and delivered within 10–20 days. This item's typical turnaround is ${time}. Need it sooner? Contact us before ordering and we'll do our best.` },
-  { q: "Can I request changes to the design preview?", a: "Yes. We revise the preview until you're happy — production only begins after you approve the design." },
-  { q: "What is it made of?", a: `${material}. Each piece is handcrafted by skilled artisans, so slight natural variations make your item one of a kind.` },
-  { q: "Will the final handmade piece match the preview?", a: "The preview shows the design direction. Your final piece is handcrafted by an artisan to match it as closely as possible — it's handmade, not mass-produced." },
-  { q: "What if I'm not happy with my order?", a: "If something isn't right, contact us within 7 days of delivery and we'll arrange a replacement or refund." },
+// faq 字段是 "Question? Answer" 单行，拆成 {q,a}
+const faqs = (product.faq || []).map((line: string) => {
+  const i = line.indexOf("? ");
+  return i >= 0 ? { q: line.slice(0, i + 1), a: line.slice(i + 2) } : { q: line, a: "" };
+});
+
+// 询盘 CTA：带产品意向进 contact 表单
+const inquireHref = `/contact?interest=${encodeURIComponent("Custom Photo Phone Case")}`;
+
+// 价格展示：规范化两位小数，明确是 base price（运费/税/机型差价在书面报价时确认）
+const priceNum = Number(String(product.price).replace(/[^0-9.]/g, ""));
+const priceDisplay = isNaN(priceNum) ? product.price : `$${priceNum.toFixed(2)}`;
+
+// 卖点（来自合规返修后的可验证结构，不含绝对性能承诺）
+const buildPoints = [
+  { t: "Silicone outer + PC support", d: "A flexible silicone feel over a structured shell (final structure confirmed per supplier and phone model)." },
+  { t: "Raised screen & camera edges", d: "Keeps the screen and lenses off flat surfaces." },
+  { t: "Covered, easy-press buttons", d: "Buttons are covered instead of left as open cutouts." },
+  { t: "Reinforced corner design", d: "Extra material at the corners." },
+  { t: "Made to order", d: "Your photo, name, or initials — UV-printed or laser-engraved." },
 ];
+
+// FAQ 结构化数据（SEO）
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.title,
+  description: product.metaDescription,
+  sku: product.sku,
+  material: product.material,
+  offers: {
+    "@type": "Offer",
+    price: String(product.price).replace("$", ""),
+    priceCurrency: "USD",
+    availability: "https://schema.org/MadeToOrder",
+    url: `https://yaopulife.com/product/${slug}`,
+  },
+};
 ---
 
-<Layout title={title} description={description} ogImage={mainImage} ogType="product" productPrice={price.replace('$', '')}>
+<Layout
+  title={product.metaTitle}
+  description={product.metaDescription}
+  ogType="product"
+  ogImage={img("main.png")}
+  productPrice={String(product.price).replace("$", "")}
+>
   <Navbar />
 
-  <!-- Schema.org Product Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": title,
-    "description": description,
-    "image": [`https://yaopulife.com${mainImage}`, ...gallery.map(g => `https://yaopulife.com${g}`)],
-    "brand": { "@type": "Brand", "name": "yaopulife DIY" },
-    "category": category,
-    "material": material,
-    "offers": {
-      "@type": "Offer",
-      "url": `https://yaopulife.com/product/${Astro.params.id}`,
-      "priceCurrency": "USD",
-      "price": price.replace(/[^0-9.]/g, ''),
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition",
-      "seller": { "@type": "Organization", "name": "yaopulife DIY" }
-    }
-  })} />
+  <main class="bg-white">
+    <!-- Breadcrumb -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-600">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/shop" class="hover:text-brand-600">Shop</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-700">Custom Photo Phone Case</span>
+    </nav>
 
-  <!-- Schema.org FAQ Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a }
-    }))
-  })} />
-
-  <section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12">
-        <!-- Image Gallery -->
-        <div>
-          <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden">
-            <img src={mainImage} alt={`${title} - Handcrafted ${category} by yaopulife DIY`} class="w-full h-full object-cover" />
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-2 gap-12">
+      <!-- Gallery -->
+      <div>
+        <div class="gallery-main relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 aspect-square">
+          <img src={img("main.png")} alt={product.altTags?.[0] || product.title}
+               class="w-full h-full object-cover" loading="eager"
+               onerror="this.closest('.gallery-main').classList.add('img-fallback')" />
+          <div class="fallback-note hidden absolute inset-0 flex-col items-center justify-center text-center p-8 text-gray-400">
+            <span class="text-sm font-medium">Product preview image</span>
           </div>
-          <div class="mt-4 grid grid-cols-3 gap-3">
-            {gallery.map((img, i) => (
-              <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                <img src={img} alt={`${title} - ${['Lifestyle shot', 'Gift presentation', 'Home decor display'][i]}`} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy" />
-              </div>
-            ))}
-          </div>
+          <span class="absolute bottom-3 left-3 rounded-md bg-black/60 px-2 py-1 text-[11px] font-medium text-white">
+            Digital render — design preview only, not a production photo
+          </span>
         </div>
-
-        <!-- Product Info -->
-        <div>
-          <p class="text-sm text-brand-600 font-medium">{category}</p>
-          <h1 class="mt-2 text-3xl font-bold text-gray-900">{title}</h1>
-          <p class="mt-4 text-2xl font-semibold text-brand-600">{price}</p>
-
-          <div class="mt-6 prose text-gray-600">
-            <p>{description}</p>
-          </div>
-
-          <div class="mt-8 space-y-3">
-            <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Material</span><span class="text-sm text-gray-900">{material}</span></div>
-            <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Size</span><span class="text-sm text-gray-900">{size}</span></div>
-            <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Production</span><span class="text-sm text-gray-900">{time}</span></div>
-            <div class="flex"><span class="w-24 text-sm font-medium text-gray-500">Delivery</span><span class="text-sm text-gray-900">Shipping: 7–21 business days after production</span></div>
-          </div>
-
-          <!-- Satisfaction Guarantee -->
-          <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-100">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <div>
-                <p class="text-sm font-medium text-green-800">100% Satisfaction Guaranteed</p>
-                <p class="text-xs text-green-600 mt-1">Get a free design preview first. If you're not happy with the final result, we'll make it right or refund your payment.</p>
-              </div>
+        <div class="mt-4 grid grid-cols-3 gap-3">
+          {["scene.png", "detail.png", "main.png"].map((n, i) => (
+            <div class="rounded-xl overflow-hidden bg-gray-50 border border-gray-100 aspect-square">
+              <img src={img(n)} alt={product.altTags?.[i] || product.title} class="w-full h-full object-cover" loading="lazy"
+                   onerror="this.style.display='none'" />
             </div>
-          </div>
-
-          <!-- Buy Buttons -->
-          <div class="mt-8 space-y-4">
-            <p class="text-sm font-medium text-gray-700">Ready to start? Here's how:</p>
-
-            <a href="/contact" class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-              Get Free Design Preview
-            </a>
-            <p class="mt-2 text-center text-xs text-gray-500">Send your photos & ideas, get a custom design mockup in 24h</p>
-
-            <div class="relative py-4">
-              <div class="absolute inset-0 flex items-center">
-                <div class="w-full border-t border-gray-200"></div>
-              </div>
-              <div class="relative flex justify-center text-sm">
-                <span class="px-2 bg-white text-gray-500">or pay now with</span>
-              </div>
-            </div>
-
-            <!-- Payment Options -->
-            <div class="space-y-3" id="paymentOptions">
-              <label class="flex items-center p-4 border-2 border-brand-500 rounded-lg bg-brand-50 payment-option" data-gateway="paypal">
-                <input type="radio" name="payment" value="paypal" class="w-5 h-5 text-brand-600" checked />
-                <div class="ml-3 flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="font-medium text-gray-900">PayPal</span>
-                    <span class="text-xs text-gray-500">3.7% + $0.30</span>
-                  </div>
-                  <p class="text-xs text-gray-500">PayPal, Credit Card, Bank Transfer</p>
-                </div>
-              </label>
-            </div>
-
-            <button
-              id="buyNowBtn"
-              data-product-id={Astro.props.id}
-              data-product-name={title}
-              data-price={price.replace('$', '')}
-              class="block w-full text-center px-8 py-4 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              Pay Now - {price}
-            </button>
-          </div>
-
-          <!-- Trust Badges -->
-          <div class="mt-6 pt-6 border-t border-gray-100">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="flex items-center gap-2 text-xs text-gray-600">
-                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Free Design Preview</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs text-gray-600">
-                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Handcrafted by Artisans</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs text-gray-600">
-                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Worldwide Shipping</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs text-gray-600">
-                <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Satisfaction Guaranteed</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+        <p class="mt-3 text-xs text-gray-500">All product images are digital renders for design preview only — not production photos. Final color, texture, and print placement may vary by phone model and approved artwork.</p>
       </div>
 
-      <!-- Process -->
-      <div class="mt-16 border-t pt-12">
-        <h2 class="text-2xl font-bold text-gray-900">How Your Custom Piece is Made</h2>
-        <div class="mt-8 grid sm:grid-cols-4 gap-6">
+      <!-- Info -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">Custom Gifts · Made to order</p>
+        <h1 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">{product.title}</h1>
+        <div class="mt-4 flex items-baseline gap-3">
+          <span class="text-3xl font-bold text-gray-900">{priceDisplay}</span>
+          <span class="text-sm text-gray-500">base price · personalization included</span>
+        </div>
+        <p class="mt-1 text-sm text-gray-500">Shipping, taxes, and any phone-model-specific changes are confirmed in your written quote before payment.</p>
+        <p class="mt-5 text-lg text-gray-600 leading-relaxed">{product.shortDescription}</p>
+
+        <ul class="mt-6 space-y-2">
+          {buildPoints.map((p) => (
+            <li class="flex gap-3 text-gray-700">
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <span><strong class="font-semibold text-gray-900">{p.t}</strong> — {p.d}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href={inquireHref} class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+            Request This Case
+          </a>
+          <a href={inquireHref} class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-brand-700 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors">
+            Ask a Question
+          </a>
+        </div>
+        <p class="mt-3 text-sm text-gray-500">
+          Made to order. Production: {product.productionTime}. Estimated delivery varies by destination after shipment.
+        </p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="bg-gray-50 border-y border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <h2 class="text-2xl font-bold text-gray-900 text-center">How It Works</h2>
+        <div class="mt-10 grid sm:grid-cols-3 gap-6">
           {[
-            { step: "1", label: "You Share", desc: "Send photos, ideas, or descriptions" },
-            { step: "2", label: "AI Preview", desc: "We create design previews in 24h" },
-            { step: "3", label: "Crafting", desc: "Artisans handmake your approved design" },
-            { step: "4", label: "Delivery", desc: "Quality checked & shipped worldwide" }
-          ].map(s => (
-            <div class="text-center">
-              <div class="w-10 h-10 mx-auto bg-brand-100 text-brand-600 rounded-full flex items-center justify-center font-bold">{s.step}</div>
-              <h3 class="mt-3 font-semibold text-gray-900">{s.label}</h3>
-              <p class="mt-1 text-sm text-gray-500">{s.desc}</p>
+            { n: "1", t: "Pick your phone model", d: "Tell us your iPhone or Samsung model in the request." },
+            { n: "2", t: "Share your design", d: "Upload a photo or send your name / initials and approve the proof." },
+            { n: "3", t: "We make it to order", d: `Production ${product.productionTime}. We confirm everything before anything is made.` },
+          ].map((s) => (
+            <div class="rounded-2xl bg-white border border-gray-100 p-7">
+              <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold">{s.n}</div>
+              <h3 class="mt-4 text-lg font-semibold text-gray-900">{s.t}</h3>
+              <p class="mt-2 text-gray-600">{s.d}</p>
             </div>
           ))}
         </div>
       </div>
+    </section>
 
-      <!-- Related Articles (Internal Links for SEO) -->
-      <div class="mt-16 border-t pt-12">
-        <h2 class="text-2xl font-bold text-gray-900">You Might Also Like to Read</h2>
-        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {category === "Pet Portraits" && (
-            <>
-              <a href="/blog/custom-pet-portrait-guide" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Custom Pet Portrait Gift Guide</p>
-              </a>
-              <a href="/blog/pet-portrait-memorial-guide" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Memorial Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Pet Portrait Memorial Gift Ideas</p>
-              </a>
-            </>
-          )}
-          {category === "Custom Gifts" && (
-            <>
-              <a href="/blog/trending-custom-gift-ideas-2026" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Gift Guide</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Trending Custom Gift Ideas</p>
-              </a>
-              <a href="/blog/how-to-customize-gifts" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">How It Works</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">How to Customize Gifts</p>
-              </a>
-            </>
-          )}
-          {category === "Home Decor" && (
-            <>
-              <a href="/blog/personalized-home-decor-trends" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Home Decor</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Personalized Home Decor Trends</p>
-              </a>
-              <a href="/blog/ocean-themed-home-decor-ideas" class="block p-4 bg-gray-50 rounded-lg hover:bg-brand-50 transition-colors">
-                <p class="text-sm font-medium text-brand-600">Inspiration</p>
-                <p class="mt-1 text-sm text-gray-900 font-semibold">Ocean Themed Home Decor Ideas</p>
-              </a>
-            </>
-          )}
+    <!-- Specifications -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900">Specifications</h2>
+        <dl class="mt-6 divide-y divide-gray-100 border-t border-gray-100">
+          {[
+            ["Material", product.material],
+            ["Fits", product.size],
+            ["Customization", "Photo, name, initials, or monogram (UV print / laser engraving)"],
+            ["Production time", product.productionTime],
+            ["Price", `${priceDisplay} base price — personalization included; shipping, taxes, and model-specific changes confirmed in your quote before payment`],
+          ].map(([k, v]) => (
+            <div class="py-3 grid grid-cols-3 gap-4">
+              <dt class="text-sm font-medium text-gray-500">{k}</dt>
+              <dd class="col-span-2 text-sm text-gray-800">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900">Returns</h2>
+        <div class="mt-6 rounded-2xl bg-brand-50 border border-brand-100 p-6 text-gray-700 leading-relaxed">
+          <p><strong>Covered:</strong> replacement or refund for defects, production errors, or items materially different from the proof you approved — verified by photos of the item you received.</p>
+          <p class="mt-3"><strong>Not covered:</strong> customer-entry mistakes (wrong text, low-resolution photo), change of mind, or normal variation already disclosed on this page.</p>
+          <p class="mt-3 text-sm text-gray-500">
+            The exact claim window, the photo evidence we ask for, and who pays return shipping are stated in the written quote or invoice you approve before any payment or production. This site has no automated checkout.
+          </p>
+        </div>
+        <div class="mt-4 rounded-xl border border-gray-100 p-4 text-sm text-gray-500">
+          <strong class="text-gray-700">A note on images:</strong> product images are digital renders for design
+          preview only — not production photos. Final color, texture, camera cutout, and print placement may vary by
+          phone model and approved artwork.
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- FAQ -->
+    {faqs.length > 0 && (
+      <section class="bg-gray-50 border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <h2 class="text-2xl font-bold text-gray-900 text-center">Frequently Asked Questions</h2>
+          <div class="mt-8 space-y-3">
+            {faqs.map((f) => (
+              <details class="group rounded-xl bg-white border border-gray-100 p-5">
+                <summary class="cursor-pointer list-none flex justify-between items-center font-semibold text-gray-900">
+                  {f.q}
+                  <svg class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <p class="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Bottom CTA -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Request a personalized case, made to your design</h2>
+      <p class="mt-3 text-lg text-gray-600">Send your photo or text and phone model — we reply on business days with a proof and a written quote before anything is made.</p>
+      <a href={inquireHref} class="mt-7 inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+        Request This Case
+      </a>
+    </section>
+  </main>
 
   <Footer />
 
-  <!-- PayPal Payment Script -->
-  <script>
-    document.getElementById('buyNowBtn')?.addEventListener('click', async function(e) {
-      const btn = e.target;
-      const productId = btn.dataset.productId;
-      const productName = btn.dataset.productName;
-      const price = parseFloat(btn.dataset.price);
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  {faqs.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
-      try {
-        btn.textContent = 'Redirecting to PayPal...';
-        btn.disabled = true;
-
-        const response = await fetch('/api/payment-gateway', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            gateway: 'paypal',
-            amount: price,
-            currency: 'USD',
-            productId,
-            productName,
-            description: 'Handcrafted custom gift from yaopulife'
-          })
-        });
-
-        const data = await response.json();
-
-        if (data.success && data.url) {
-          if (window.gtag) window.gtag('event', 'begin_checkout', { currency: 'USD', value: parseFloat(price.replace(/[^0-9.]/g, '')) || undefined, items: [{ item_name: productName }] });
-          window.location.href = data.url;
-        } else if (data.error && data.config) {
-          alert('PayPal not configured. Please add PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET to Vercel environment variables.');
-          btn.textContent = 'Pay Now - $' + price;
-          btn.disabled = false;
-        } else {
-          alert('Payment initialization failed. Please try again.');
-          btn.textContent = 'Pay Now - $' + price;
-          btn.disabled = false;
-        }
-      } catch (error) {
-        console.error('Purchase error:', error);
-        alert('Something went wrong. Please try again.');
-        btn.textContent = 'Pay Now - $' + price;
-        btn.disabled = false;
-      }
-    });
-  </script>
-
-  <!-- FAQ -->
-  <section class="py-12 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-gray-900 text-center">Frequently Asked Questions</h2>
-      <div class="mt-8 space-y-3">
-        {faqs.map((f) => (
-          <details class="group bg-white rounded-lg border border-gray-200 p-5">
-            <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-900 list-none">
-              <span>{f.q}</span>
-              <span class="ml-4 text-brand-600 group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-3 text-gray-600">{f.a}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
+  <style>
+    .img-fallback img { display: none; }
+    .img-fallback .fallback-note { display: flex; }
+  </style>
 </Layout>

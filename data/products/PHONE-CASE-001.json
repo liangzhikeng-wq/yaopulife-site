@@ -1,0 +1,41 @@
+{
+  "id": 11,
+  "sku": "PHONE-CASE-001",
+  "status": "PRICED_COMPLIANCE_FIXED — 合规返修(去绝对承诺改可验证结构描述)+定价$19.9(markup135%达标);弱卖点版可推进;真实样品图待补(优化非必须);部署到公开站=人审红线,部署前须过codex对抗审查闸复审",
+  "title": "Custom Silicone Phone Case – Personalized Photo & Name, Slim Protective Design",
+  "category": "Custom Gifts",
+  "price": "$19.9",
+  "material": "Liquid silicone outer layer with hard PC support (final structure confirmed per supplier & phone model)",
+  "size": "Made to fit current iPhone & Samsung flagship models",
+  "productionTime": "7-12 business days (production only)",
+  "customization": "照片/刻字/字母定制（UV print / laser engraving）",
+  "keywords": [
+    "custom silicone phone case",
+    "personalized photo phone case",
+    "custom phone case with name",
+    "personalized phone case",
+    "made to order phone case"
+  ],
+  "metaTitle": "Custom Silicone Phone Case – Personalized Photo & Name",
+  "metaDescription": "A made-to-order silicone phone case personalized with your photo, name, or initials. Slim design with raised screen/camera edges and covered buttons. UV-printed or laser-engraved.",
+  "shortDescription": "A made-to-order silicone phone case personalized with your photo, name, or initials. Slim design with raised screen and camera edges, covered buttons, and reinforced corners. UV-printed or laser-engraved.",
+  "fullDescription": "**Your Photo or Name, Made to Order.**\n\nPersonalize a slim silicone phone case with your own photo, name, or initials — UV-printed or laser-engraved to your specification.\n\n**Design & Build (verifiable structure):**\n- **Silicone outer layer with PC support** — a flexible silicone feel over a structured shell (final structure confirmed per supplier and phone model).\n- **Raised screen & camera edges** to keep the screen and lenses off flat surfaces.\n- **Covered, easy-press buttons** instead of open cutouts.\n- **Reinforced corner design.**\n- **Made to order** with your photo, name, or initials (UV print / laser engraving).\n\n**How It Works:**\n1. Pick your phone model.\n2. Upload a photo or enter your name / initials and approve the proof.\n3. We make it to order. Production: 7-12 business days; estimated delivery varies by destination after shipment.\n\n**Returns (summary — full terms confirmed in your written quote before payment):**\nMade-to-order items are eligible for replacement/refund for **defects, production errors, or items materially different from your approved proof**, verified by photos of the item received. Customer-side mistakes (wrong text entered, low-resolution photo, change of mind) are not covered. The exact claim window, required evidence, and who pays return shipping are stated in the written quote or invoice you approve before payment. This site has no automated checkout.\n\n**Note on images:** Product images are **digital renders for design preview only — not production photos**. Final color, texture, camera cutout, and print placement may vary by phone model and approved artwork.\n\n**Specifications:**\n- **Material:** Liquid silicone outer + hard PC support (per supplier/model)\n- **Fits:** Current iPhone & Samsung flagship models\n- **Production Time:** 7-12 business days (production only)\n- **Price:** $19.90 base price — personalization included; shipping, taxes, and phone-model-specific changes confirmed in your written quote before payment\n\nRequest a personalized case made to your design.",
+  "altTags": [
+    "Custom silicone phone case digital render with raised edges, design preview",
+    "Personalized photo phone case digital render, illustrative preview",
+    "Custom silicone phone case digital render on neutral background"
+  ],
+  "faq": [
+    "What is it made of? A liquid-silicone outer layer with a hard PC support; final structure is confirmed per supplier and phone model.",
+    "What protection does it have? It has raised screen and camera edges, covered buttons, and a reinforced corner design. (It is not marketed as a drop-proof or rugged case.)",
+    "Are the product images real photos? No — they are digital renders for design preview only. Final color, texture, and print placement may vary by phone model and approved artwork.",
+    "Can I return a personalized case? Made-to-order items are eligible for replacement/refund for defects, production errors, or items materially different from your approved proof; customer-entry mistakes are not covered. See full terms on this page.",
+    "What can I customize? Your photo, name, initials, or monogram, made to order (UV print / laser engraving)."
+  ],
+  "differentiation": "定制(照片/刻字)+可验证结构(硅胶外层+PC支撑/抬高边/包键/加固角)——不写无证据的绝对承诺(不脱皮/防摔/全保护)",
+  "demand_ref": "三源验证(SerpApi上升查询+TikTok实搜+Amazon3万+结果)",
+  "unitEconomics": "定价$19.9(用户2026-06-26选C提价达标)。完整成本≈$8.4/单(货源$2.1+物流$3.5+包材$0.6+退货/补发/争议备抵$0.9+客服$0.5+支付费$0.8)。口径=成本加成率markup(准入区间80-200%数学上只能是markup,因利润/售价不可能到200%):($19.9-$8.4)/$8.4≈135%达标;每单利润≈$11.4可扛一次退货补发;利润率(利润/售价)≈57%。",
+  "complianceNote": "codex对抗审查发现并修正:① 删除绝对性能承诺(won't peel/survives drop/full protection)→改可验证结构描述 ② AI图标注Digital render(英文显著)+建议补真实样品图 ③ 退货政策摘要上移产品页可见 ④ 生产期与送达期拆开。仍待人审:供应商材质证明/真实样品图/最终退货政策/定价口径。",
+  "reviewNote": "2026-06-26 codex(gpt-5.5) adversarial-review 拦截直接上架:绝对承诺无样品证据=FTC虚假宣传风险(高)、纯利146%口径错(实毛利59%)、成本漏算、退货藏checkout且站点Terms写checkout paused冲突。本文件已按合规返修。用户2026-06-26选C提价:$16.9→$19.9(完整成本$8.4,markup135%达标;口径厘清=准入区间80-200%数学上只能是成本加成率markup,非利润/售价)。卖点维持弱描述(未打样)。剩待:真实样品图(优化非必须)、退货政策最终版、部署前codex对抗审查闸复审、部署=人审红线。",
+  "generatedAt": "2026-06-26T00:00:00.000Z"
+}

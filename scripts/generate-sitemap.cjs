@@ -19,28 +19,10 @@ function getAllPages() {
   // 分类页
   pages.push({ url: '/shop', priority: '0.9', changefreq: 'weekly' });
   
-  // 产品页
-  const products = [
-    { id: 4, slug: 'custom-pet-embroidery-hoop' },
-    { id: 5, slug: 'floral-embroidery-hoop' },
-    { id: 6, slug: 'custom-wedding-embroidery' },
-    { id: 7, slug: 'custom-photo-moon-lamp' },
-    { id: 8, slug: 'engraved-text-moon-lamp' },
-    { id: 9, slug: 'ocean-resin-coaster-set' },
-    { id: 10, slug: 'personalized-family-name-sign' },
-    { id: 12, slug: 'custom-name-canvas' },
-    { id: 13, slug: 'dried-flower-bouquet' },
-    { id: 14, slug: 'custom-pet-name-puzzle' },
-    { id: 15, slug: 'custom-house-portrait' },
-    { id: 16, slug: 'pet-memorial-shadow-box' },
-    { id: 17, slug: 'custom-pet-photo-blanket' },
-    { id: 18, slug: 'custom-pet-photo-keychain' },
-    { id: 19, slug: 'custom-pet-name-necklace' },
-    { id: 20, slug: 'custom-pet-photo-mug' }
-  ];
-  
-  products.forEach(p => {
-    pages.push({ url: `/product/${p.id}`, priority: '0.8', changefreq: 'weekly' });
+  // 产品页：白名单（与 product/[id].astro / shop.astro 一致），用 sku slug 作 URL，避免退役品 404
+  const LIVE_SKUS = ['PHONE-CASE-001'];
+  LIVE_SKUS.forEach(sku => {
+    pages.push({ url: `/product/${sku.toLowerCase()}`, priority: '0.8', changefreq: 'weekly' });
   });
   
   // 博客页

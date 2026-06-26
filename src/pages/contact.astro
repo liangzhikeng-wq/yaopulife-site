@@ -2,16 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+
+export const prerender = true;
 ---
 
-<Layout title="Contact" description="Get in touch for custom orders, questions, or collaborations. We typically respond within 2 hours.">
+<Layout title="Contact yaopulife" description="Send a custom photo gift request, a personalized product idea, or a product question to yaopulife. We reply with a proof and a written quote before anything is made.">
   <Navbar />
 
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900">Get in Touch</h1>
-        <p class="mt-4 text-lg text-gray-600">Have an idea? We'd love to hear it. Response time: within 2 hours on business days.</p>
+        <h1 class="text-4xl font-bold text-gray-900">Start a Custom Product Request</h1>
+        <p class="mt-4 text-lg text-gray-600">Share your photo or text and the product you have in mind. We will reply on business days with a proof and a written quote before anything is made.</p>
       </div>
 
       <div class="mt-12 grid md:grid-cols-2 gap-12">
@@ -32,16 +34,18 @@ import Footer from "../components/Footer.astro";
               <label for="interest" class="block text-sm font-medium text-gray-700">Product Interest <span class="text-red-500">*</span></label>
               <select id="interest" name="interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
                 <option value="">Select a product type...</option>
-                <option>Custom Pet Portrait (Needle Felted)</option>
-                <option>Custom Pet Portrait (Embroidery)</option>
-                <option>Multi-Pet Portrait</option>
-                <option>Floral Embroidery Hoop</option>
-                <option>Custom Wedding Embroidery</option>
-                <option>Custom Photo Moon Lamp</option>
-                <option>Custom Text Moon Lamp</option>
-                <option>Ocean Resin Coasters</option>
-                <option>Personalized Family Name Sign</option>
-                <option>Other / Multiple Products</option>
+                <option>Custom Photo Phone Case</option>
+                <option>Custom Pet Memorial Portrait</option>
+                <option>Pet Memorial Shadow Box</option>
+                <option>Custom Pet Portrait Pillow</option>
+                <option>Embroidered Pet Portrait Apparel</option>
+                <option>Pet Paw or Nose Print Keepsake</option>
+                <option>Custom Pet Suncatcher</option>
+                <option>Pet Memorial Garden Plaque</option>
+                <option>Gotcha Day Pet Ornament</option>
+                <option>Family and Pet Line Art Portrait</option>
+                <option>Pet Loss Sympathy Gift Bundle</option>
+                <option>Not sure yet</option>
               </select>
             </div>
             <div class="grid md:grid-cols-2 gap-4">
@@ -68,7 +72,7 @@ import Footer from "../components/Footer.astro";
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements <span class="text-red-500">*</span></label>
-              <textarea id="message" name="message" rows="4" required placeholder="Tell us about your customization needs, preferred colors, size, any special requests..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us the product, your phone model or size, the photo or text to include, preferred style, and any date you need it by." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
             </div>
             <div class="flex items-start">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-brand-600 border-gray-300 rounded" />
@@ -88,7 +92,7 @@ import Footer from "../components/Footer.astro";
               </div>
               <div class="ml-3">
                 <p class="text-sm font-medium text-green-800">Message sent successfully!</p>
-                <p class="text-sm text-green-600 mt-1">We'll respond within 2 business hours.</p>
+                <p class="text-sm text-green-600 mt-1">We'll review the request and reply on business days.</p>
               </div>
             </div>
           </div>
@@ -138,6 +142,16 @@ import Footer from "../components/Footer.astro";
   <Footer />
 
   <script>
+    // 从 URL ?interest=... 预选产品意向（产品页询盘 CTA 带过来）
+    (function preselectInterest() {
+      const wanted = new URLSearchParams(window.location.search).get('interest');
+      if (!wanted) return;
+      const sel = document.getElementById('interest');
+      if (!sel) return;
+      const match = Array.from(sel.options).find(o => o.value === wanted || o.text === wanted);
+      if (match) sel.value = match.value || match.text;
+    })();
+
     document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
       e.preventDefault();
 
