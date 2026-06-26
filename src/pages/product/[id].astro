@@ -60,12 +60,18 @@ const productSchema = {
   description: product.metaDescription,
   sku: product.sku,
   material: product.material,
+  // 询盘制：不输出 Offer price，避免外部平台当作可直接成交价。最终价在书面报价确认。
   offers: {
     "@type": "Offer",
-    price: String(product.price).replace("$", ""),
-    priceCurrency: "USD",
     availability: "https://schema.org/MadeToOrder",
     url: `https://yaopulife.com/product/${slug}`,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: priceNum.toFixed(2),
+      priceCurrency: "USD",
+      valueAddedTaxIncluded: false,
+      description: "Base price. Final price, shipping, and taxes confirmed in a written quote before payment.",
+    },
   },
 };
 ---
@@ -75,7 +81,6 @@ const productSchema = {
   description={product.metaDescription}
   ogType="product"
   ogImage={img("main.png")}
-  productPrice={String(product.price).replace("$", "")}
 >
   <Navbar />
 
@@ -117,7 +122,7 @@ const productSchema = {
 
       <!-- Info -->
       <div>
-        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">Custom Gifts · Made to order</p>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">Custom Phone Case · Made to order</p>
         <h1 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">{product.title}</h1>
         <div class="mt-4 flex items-baseline gap-3">
           <span class="text-3xl font-bold text-gray-900">{priceDisplay}</span>

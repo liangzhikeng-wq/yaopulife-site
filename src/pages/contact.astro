@@ -6,14 +6,14 @@ import Footer from "../components/Footer.astro";
 export const prerender = true;
 ---
 
-<Layout title="Contact yaopulife" description="Send a custom photo gift request, a personalized product idea, or a product question to yaopulife. We reply with a proof and a written quote before anything is made.">
+<Layout title="Contact yaopulife" description="Send a custom phone case request — your photo or text and your phone model. We reply with a proof and a written quote before anything is made.">
   <Navbar />
 
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900">Start a Custom Product Request</h1>
-        <p class="mt-4 text-lg text-gray-600">Share your photo or text and the product you have in mind. We will reply on business days with a proof and a written quote before anything is made.</p>
+        <h1 class="text-4xl font-bold text-gray-900">Start a Custom Phone Case Request</h1>
+        <p class="mt-4 text-lg text-gray-600">Share your photo or text and your phone model. We will reply on business days with a proof and a written quote before anything is made.</p>
       </div>
 
       <div class="mt-12 grid md:grid-cols-2 gap-12">
@@ -33,18 +33,11 @@ export const prerender = true;
             <div>
               <label for="interest" class="block text-sm font-medium text-gray-700">Product Interest <span class="text-red-500">*</span></label>
               <select id="interest" name="interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                <option value="">Select a product type...</option>
+                <option value="">Select an option...</option>
                 <option>Custom Photo Phone Case</option>
-                <option>Custom Pet Memorial Portrait</option>
-                <option>Pet Memorial Shadow Box</option>
-                <option>Custom Pet Portrait Pillow</option>
-                <option>Embroidered Pet Portrait Apparel</option>
-                <option>Pet Paw or Nose Print Keepsake</option>
-                <option>Custom Pet Suncatcher</option>
-                <option>Pet Memorial Garden Plaque</option>
-                <option>Gotcha Day Pet Ornament</option>
-                <option>Family and Pet Line Art Portrait</option>
-                <option>Pet Loss Sympathy Gift Bundle</option>
+                <option>Custom case — different phone model</option>
+                <option>Bulk / multiple cases</option>
+                <option>Other phone case request</option>
                 <option>Not sure yet</option>
               </select>
             </div>
@@ -72,7 +65,7 @@ export const prerender = true;
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements <span class="text-red-500">*</span></label>
-              <textarea id="message" name="message" rows="4" required placeholder="Tell us the product, your phone model or size, the photo or text to include, preferred style, and any date you need it by." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us your phone model, the photo or text to include, preferred style, and any date you need it by." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
             </div>
             <div class="flex items-start">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-brand-600 border-gray-300 rounded" />
@@ -126,11 +119,11 @@ export const prerender = true;
             </div>
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 bg-brand-100 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <div>
-                <p class="text-sm font-medium text-gray-900">Live Chat</p>
-                <p class="text-sm text-gray-600">Click the chat bubble (bottom right)</p>
+                <p class="text-sm font-medium text-gray-900">Response time</p>
+                <p class="text-sm text-gray-600">We reply on business days with a proof and quote</p>
               </div>
             </div>
           </div>

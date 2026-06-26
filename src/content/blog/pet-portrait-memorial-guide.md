@@ -15,7 +15,7 @@ A custom pet portrait isn’t just a piece of art—it’s a heartfelt celebrati
 
 ### The Emotional Impact of a Personalized Tribute
 
-When you give a **pet memorial gift** like a custom portrait, you’re providing comfort and a tangible way to process grief. Studies show that visual reminders of happy memories can aid in healing. Plus, it’s a conversation starter—a beautiful way to share stories about the pet who meant so much.
+When you give a **pet memorial gift** like a custom portrait, you are offering a tangible way to remember a beloved companion. It can become a quiet place for stories, photos, and favorite details to live.
 
 ## Comparing Art Styles for Your Custom Portrait
 
@@ -45,7 +45,7 @@ Choosing the right art style is key to creating a tribute that feels authentic. 
 - **Why it works:** Digital art allows for endless customization—think a rainbow bridge scene or a cozy bed.
 - **Ideal for:** Creating a unique story around your pet’s life.
 
-**Pro Tip:** Browse our [custom pet portrait collection](https://yaopulife.com/collections/pet-portraits) to see examples of each style.
+**Pro Tip:** Start with the pet's clearest photo and a short note about what made them unforgettable. If you are not sure which format fits, [send a custom request](https://yaopulife.com/contact) first.
 
 ## Key Customization Options to Consider
 
@@ -73,7 +73,7 @@ A **pet memorial gift** is only as special as the details you include. Here are 
 
 Ready to create your tribute? Follow these simple steps:
 
-1. **Select your art style** from our [pet portrait gallery](https://yaopulife.com/collections/pet-portraits).
+1. **Select your preferred direction** from portrait print, keepsake display, pillow, ornament, or another pet memory format.
 2. **Upload your best photo** and note any customization requests.
 3. **Choose your size and frame** to match your decor.
 4. **Review the proof** (we’ll send a digital draft for approval).
@@ -83,7 +83,7 @@ Ready to create your tribute? Follow these simple steps:
 
 ### Q: How long does it take to receive my custom pet portrait?
 
-A: Typically, production takes 5-7 business days, plus shipping time. We’ll send a proof for your approval before final printing.
+A: Timing depends on the final format and supplier path. We send a design direction before production and confirm timeline before payment.
 
 ### Q: Can I include multiple pets in one portrait?
 
@@ -101,4 +101,4 @@ A: Yes! Our artists can work with any animal. Just provide a clear photo and we�
 
 A **pet memorial gift** is more than a purchase—it’s a way to keep your furry friend close forever. Whether you choose a watercolor masterpiece or a minimalist sketch, the thought and care you put into it will mean the world to you or your loved one.
 
-**Ready to start?** Explore our [custom pet portrait collection](https://yaopulife.com/collections/pet-portraits) and let us help you create a beautiful memory that lasts a lifetime.
+**Ready to start?** [Send a pet memory gift request](https://yaopulife.com/contact) with the photo, name, and the story you want the gift to hold.

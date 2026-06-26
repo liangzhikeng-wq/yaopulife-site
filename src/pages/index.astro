@@ -1,161 +1,158 @@
 ---
+import fs from "node:fs";
+import path from "node:path";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import Testimonials from "../components/Testimonials.astro";
-import NewsletterSignup from "../components/NewsletterSignup.astro";
 
-const categories = [
-  { name: "Custom Gifts", desc: "One-of-a-kind presents", slug: "custom-gifts", image: "/products/embroidery/emb-wedding-main.jpg" },
-  { name: "Home Decor", desc: "AI-designed interiors", slug: "home-decor", image: "/products/resin-coaster/rc-ocean-main.jpg" },
-  { name: "Pet Portraits", desc: "Your furry friend, reimagined", slug: "pet-portraits", image: "/products/needle-felt/nf-dog-main.jpg" },
-  { name: "Custom Gifts", desc: "One-of-a-kind presents", slug: "custom-gifts", image: "/products/moon-lamp/ml-text-main.jpg" }
+// 在售手机壳（白名单，与 product/[id].astro / shop.astro 一致）
+const LIVE_SKUS = ["PHONE-CASE-001"];
+const dir = path.join(process.cwd(), "data", "products");
+const cases = LIVE_SKUS.map((sku) => {
+  const p = JSON.parse(fs.readFileSync(path.join(dir, `${sku}.json`), "utf-8"));
+  const priceNum = Number(String(p.price).replace(/[^0-9.]/g, ""));
+  return { ...p, slug: sku.toLowerCase(), priceDisplay: isNaN(priceNum) ? p.price : `$${priceNum.toFixed(2)}` };
+});
+const hero = cases[0];
+
+export const prerender = true;
+
+const features = [
+  { t: "Your photo or name", d: "Upload a photo, or send a name, initials, or monogram. UV-printed or laser-engraved." },
+  { t: "Slim protective build", d: "Silicone outer with PC support, raised screen & camera edges, covered buttons, reinforced corners." },
+  { t: "Made to order", d: "Each case is produced after you approve a proof. Nothing is mass-printed in advance." },
+  { t: "Fits current flagships", d: "Made to fit current iPhone & Samsung flagship models. Tell us your model." },
 ];
 
-const trustPoints = [
-  { title: "Unique AI Design", desc: "Every piece starts with your idea, refined by AI" },
-  { title: "Handcrafted to Order", desc: "Real artisans bring the vision to life" },
-  { title: "Worldwide Shipping", desc: "From our workshop to your door, globally" }
-];
-
-const featuredProducts = [
-  { id: 4, title: "Custom Pet Embroidery Hoop", price: "$48", image: "/products/embroidery/emb-pet-main.jpg", tag: "Best Seller" },
-  { id: 7, title: "Custom Photo Moon Lamp", price: "$42", image: "/products/moon-lamp/ml-photo-main.jpg", tag: "Popular" },
-  { id: 16, title: "Pet Memorial Shadow Box", price: "$58", image: "/products/memorial-shadow/pms-main.jpg", tag: "New" },
-  { id: 12, title: "Custom Name Canvas", price: "$45", image: "/products/name_canvas_main.jpg", tag: "New" },
-  { id: 6, title: "Custom Wedding Embroidery", price: "$55", image: "/products/embroidery/emb-wedding-main.jpg", tag: "Gift" },
-  { id: 13, title: "Dried Flower Bouquet", price: "$58", image: "/products/dried_flower_main.jpg", tag: "New" }
+const steps = [
+  { n: "1", t: "Pick your phone model", d: "Tell us your iPhone or Samsung model when you send your request." },
+  { n: "2", t: "Share your design", d: "Upload a photo or send your name / initials. We send back a proof and a written quote." },
+  { n: "3", t: "We make it to order", d: "Approve the proof, and your case is produced and shipped to you." },
 ];
 ---
 
-<Layout 
-  title="Custom DIY Gifts & Handcrafted Products | yaopulife DIY"
-  description="Discover unique handcrafted DIY gifts: custom pet portraits, personalized moon lamps, wedding embroidery, and home decor. Made to order with AI design and artisan craftsmanship. Perfect for pet lovers, weddings, and special occasions."
+<Layout
+  title="Custom Photo Phone Cases, Made to Order"
+  description="yaopulife makes custom phone cases from your photo, name, or initials. Slim protective design, UV-printed or laser-engraved, made to order for iPhone & Samsung."
 >
   <Navbar />
-  
+
   <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-brand-50 via-white to-orange-50 py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
         <div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Handpicked DIY,<br />
-            <span class="text-brand-600">AI-Imagined Artistry</span>
+          <p class="inline-flex items-center gap-2 rounded-full bg-white border border-brand-100 px-3 py-1 text-sm font-semibold text-brand-600">
+            <span class="h-2 w-2 rounded-full bg-brand-600"></span> Custom phone cases · made to order
+          </p>
+          <h1 class="mt-6 text-5xl sm:text-6xl font-bold text-gray-900 leading-[1.05] tracking-tight">
+            Your photo.<br />Your case.
           </h1>
-          <p class="mt-6 text-lg text-gray-600 max-w-lg">
-            Discover unique handcrafted creations from China's finest DIY artisans, 
-            reimagined with cutting-edge AI design. Every piece tells your story.
+          <p class="mt-6 text-lg text-gray-600 max-w-xl leading-relaxed">
+            Personalize a slim, protective phone case with your own photo, name, or initials — UV-printed or
+            laser-engraved and made to order. Send your design, approve a proof, and we make it just for you.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/shop" class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-              Explore Collection
+            <a href={`/product/${hero.slug}`} class="inline-flex items-center px-7 py-3.5 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
+              Design your case
             </a>
-            <a href="/how-it-works" class="inline-flex items-center px-6 py-3 text-base font-medium text-brand-600 bg-white border border-brand-200 rounded-lg hover:bg-brand-50 transition-colors">
-              How It Works
+            <a href="/how-it-works" class="inline-flex items-center px-7 py-3.5 text-base font-semibold text-brand-700 bg-white border border-brand-200 rounded-lg hover:bg-brand-50 transition-colors">
+              How it works
             </a>
           </div>
+          <p class="mt-5 text-sm text-gray-500">From {hero.priceDisplay} base · final quote before payment · fits iPhone &amp; Samsung</p>
         </div>
+
         <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            <img src="/products/needle-felt/nf-cat-main.jpg" alt="Needle felted cat portrait - handcrafted DIY art" class="w-full h-full object-cover" />
-          </div>
-          <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white">
-            <img src="/products/embroidery/emb-flower-main.jpg" alt="Floral embroidery hoop" class="w-full h-full object-cover" />
-          </div>
-          <div class="absolute -top-4 -right-4 w-28 h-28 rounded-xl overflow-hidden shadow-md border-2 border-white">
-            <img src="/products/moon-lamp/ml-photo-main.jpg" alt="Custom moon lamp" class="w-full h-full object-cover" />
+          <div class="absolute -inset-4 rounded-[2rem] bg-brand-100/50 blur-2xl"></div>
+          <div class="relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-xl aspect-square">
+            <img src={`/images/products/${hero.slug}/main.png`} alt={hero.altTags?.[0] || hero.title}
+                 class="w-full h-full object-cover" loading="eager" />
+            <span class="absolute bottom-3 left-3 rounded-md bg-black/60 px-2 py-1 text-[11px] font-medium text-white">
+              Digital render — not a production photo
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Categories -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center text-gray-900">Shop by Category</h2>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map(cat => (
-          <a href={`/shop?category=${cat.slug}`} class="group block bg-gray-50 rounded-xl overflow-hidden hover:bg-brand-50 transition-colors">
-            <div class="aspect-[3/2] overflow-hidden">
-              <img src={cat.image} alt={cat.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{cat.name}</h3>
-              <p class="mt-1 text-sm text-gray-500">{cat.desc}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- Featured Products -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Bestselling Custom Gifts</h2>
-        <p class="mt-3 text-gray-600">Customer favorites – each made just for you</p>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-8">
-        {featuredProducts.map(p => (
-          <a href={`/product/${p.id}`} class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-            <div class="aspect-square bg-gray-100 overflow-hidden relative">
-              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-              <span class="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-brand-600 text-white rounded-full">
-                {p.tag}
-              </span>
-            </div>
-            <div class="p-5 text-center">
-              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600">{p.title}</h3>
-              <p class="mt-2 text-xl font-bold text-brand-600">{p.price}</p>
-              <p class="mt-2 text-sm text-brand-600 group-hover:underline">View Details →</p>
-            </div>
-          </a>
-        ))}
-      </div>
-      <div class="mt-10 text-center">
-        <a href="/shop" class="inline-flex items-center px-6 py-3 text-base font-medium text-brand-600 bg-white border border-brand-200 rounded-lg hover:bg-brand-50 transition-colors">
-          View All Products →
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Testimonials -->
-  <Testimonials />
-
-  <!-- Trust -->
-  <section class="py-20 bg-white">
+  <!-- Features -->
+  <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8">
-        {trustPoints.map(point => (
-          <div class="text-center">
-            <div class="w-12 h-12 mx-auto bg-brand-100 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map((f) => (
+          <div class="rounded-2xl border border-gray-100 p-6">
+            <div class="h-10 w-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h3 class="mt-4 text-lg font-semibold text-gray-900">{point.title}</h3>
-            <p class="mt-2 text-sm text-gray-500">{point.desc}</p>
+            <h3 class="mt-4 font-semibold text-gray-900">{f.t}</h3>
+            <p class="mt-2 text-sm text-gray-600 leading-relaxed">{f.d}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Signup -->
-  <NewsletterSignup />
+  <!-- Featured product -->
+  <section class="py-16 lg:py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">In the shop</p>
+          <h2 class="mt-2 text-3xl font-bold text-gray-900">Available now</h2>
+        </div>
+        <a href="/shop" class="hidden sm:inline text-sm font-semibold text-brand-600 hover:underline">View all cases →</a>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cases.map((p) => (
+          <a href={`/product/${p.slug}`} class="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="aspect-square bg-gray-50 overflow-hidden relative">
+              <img src={`/images/products/${p.slug}/main.png`} alt={p.altTags?.[0] || p.title}
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" />
+              <span class="absolute bottom-2 left-2 rounded bg-black/65 px-2 py-1 text-[11px] font-medium text-white">Digital render — not a production photo</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-base font-semibold text-gray-900 leading-snug">{p.title}</h3>
+              <div class="mt-2 flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-900">From {p.priceDisplay} <span class="text-xs font-normal text-gray-400">base · quote before payment</span></span>
+                <span class="text-sm font-medium text-brand-600 group-hover:underline">View &amp; request →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 text-center">How it works</h2>
+      <p class="mt-3 text-center text-gray-600">No automated checkout — every case starts with a proof and a written quote.</p>
+      <div class="mt-12 grid sm:grid-cols-3 gap-6">
+        {steps.map((s) => (
+          <div class="rounded-2xl border border-gray-100 p-7">
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold">{s.n}</div>
+            <h3 class="mt-4 text-lg font-semibold text-gray-900">{s.t}</h3>
+            <p class="mt-2 text-gray-600">{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="py-20 bg-brand-600">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-white">Ready to Create Something Unique?</h2>
-      <p class="mt-4 text-brand-100">Share your idea and receive a free AI design preview within 24 hours.</p>
-      <a href="/contact" class="mt-8 inline-flex items-center px-8 py-4 text-base font-medium text-brand-600 bg-white rounded-lg hover:bg-gray-100 transition-colors">
-        Start Your Custom Order
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to design your case?</h2>
+      <p class="mt-4 text-lg text-brand-100">Send your photo or text and phone model. We reply on business days with a proof and a written quote before anything is made.</p>
+      <a href={`/product/${hero.slug}`} class="mt-8 inline-flex items-center px-8 py-4 text-base font-semibold text-brand-600 bg-white rounded-lg hover:bg-gray-100 transition-colors">
+        Design your case
       </a>
     </div>
   </section>
-  
+
   <Footer />
 </Layout>

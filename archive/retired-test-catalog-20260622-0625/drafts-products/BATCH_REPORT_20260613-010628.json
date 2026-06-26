@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "generated_at": "2026-06-13T01:06:28.730932",
+  "id_prefix": "DIY-GIFT",
+  "total": 3,
+  "draft_count": 3,
+  "error_count": 0,
+  "drafts": [
+    {
+      "url": "https://books.toscrape.com/catalogue/the-grand-design_405/index.html",
+      "product_id": "DIY-GIFT-005",
+      "draft_path": "/Users/yaopulife/yaopuqoder/yaopulife-site/drafts/products/DIY-GIFT-005.md",
+      "method": "llm",
+      "todo_count": 3
+    },
+    {
+      "url": "https://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html",
+      "product_id": "DIY-GIFT-006",
+      "draft_path": "/Users/yaopulife/yaopuqoder/yaopulife-site/drafts/products/DIY-GIFT-006.md",
+      "method": "llm",
+      "todo_count": 3
+    },
+    {
+      "url": "https://books.toscrape.com/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+      "product_id": "DIY-GIFT-007",
+      "draft_path": "/Users/yaopulife/yaopuqoder/yaopulife-site/drafts/products/DIY-GIFT-007.md",
+      "method": "llm",
+      "todo_count": 3
+    }
+  ],
+  "errors": [],
+  "report_path": "/Users/yaopulife/yaopuqoder/yaopulife-site/drafts/products/BATCH_REPORT_20260613-010628.json",
+  "task_dir": "/Users/yaopulife/yaopuqoder/yaopulife-site/drafts/products"
+}

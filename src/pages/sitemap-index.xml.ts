@@ -3,24 +3,17 @@ import type { APIRoute } from 'astro';
 const pages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },
   { path: '/shop', priority: '0.9', changefreq: 'weekly' },
-  { path: '/blog', priority: '0.8', changefreq: 'daily' },
+  { path: '/product/phone-case-001', priority: '0.9', changefreq: 'weekly' },
   { path: '/how-it-works', priority: '0.7', changefreq: 'monthly' },
   { path: '/about', priority: '0.6', changefreq: 'monthly' },
   { path: '/contact', priority: '0.7', changefreq: 'monthly' },
+  { path: '/shipping-and-returns', priority: '0.4', changefreq: 'yearly' },
+  { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+  { path: '/terms-of-service', priority: '0.3', changefreq: 'yearly' },
 ];
 
-const products = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
-const blogPosts = [
-  'best-custom-pet-portrait-gifts',
-  'needle-felt-vs-embroidery-pet-portraits',
-  'personalized-wedding-anniversary-gift-ideas',
-  'how-custom-moon-lamps-are-made',
-  'why-handmade-gifts-are-more-meaningful',
-  'how-to-choose-perfect-custom-gift',
-  'best-fathers-day-gifts-2026-personalized',
-  'ocean-resin-art-handmade-coasters-guide',
-];
+// pet 博客已随纯手机壳店重定位下架，不再进 sitemap
+const blogPosts: string[] = [];
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://yaopulife.com';
@@ -28,7 +21,6 @@ export const GET: APIRoute = async () => {
 
   const urls = [
     ...pages.map(p => ({ loc: `${baseUrl}${p.path}`, changefreq: p.changefreq, priority: p.priority })),
-    ...products.map(id => ({ loc: `${baseUrl}/product/${id}`, changefreq: 'weekly', priority: '0.8' })),
     ...blogPosts.map(slug => ({ loc: `${baseUrl}/blog/${slug}`, changefreq: 'monthly', priority: '0.7' })),
   ];
 

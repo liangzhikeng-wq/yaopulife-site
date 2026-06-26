@@ -13,7 +13,7 @@ import CookieBanner from "../components/CookieBanner.astro";
 
 const {
   title,
-  description = "Handpicked DIY, AI-Imagined Artistry. Custom handcrafted gifts made to order.",
+  description = "yaopulife makes custom, made-to-order phone cases personalized with your photo, name, or initials. Slim protective design, proof and quote before anything is made.",
   ogImage = "/og-image.jpg",
   ogType = "website",
   articleAuthor,
@@ -51,7 +51,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
     }
   </script>
 
-  <title>{title} | yaopulife DIY</title>
+  <title>{title} | yaopulife</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
 
@@ -61,7 +61,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
   <meta property="og:image" content={fullOgImage} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:type" content={ogType} />
-  <meta property="og:site_name" content="yaopulife DIY" />
+  <meta property="og:site_name" content="yaopulife" />
   {ogType === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}
   {ogType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
   {productPrice && <meta property="product:price:amount" content={productPrice} />}
@@ -92,7 +92,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://yaopulife.co
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "yaopulife DIY",
+    "name": "yaopulife",
     "url": "https://yaopulife.com",
     "logo": "https://yaopulife.com/logo.png",
     "description": description

@@ -8,100 +8,83 @@ import Footer from "../components/Footer.astro";
 // 静态预渲染：build 时读 data/products（Vercel serverless 运行时无此文件，必须 prerender）
 export const prerender = true;
 
-// 已上架（可询盘）的产品：白名单，与 product/[id].astro 一致
+// 在售手机壳：白名单，与 product/[id].astro 一致
 const LIVE_SKUS = ["PHONE-CASE-001"];
 const dir = path.join(process.cwd(), "data", "products");
-const liveProducts = LIVE_SKUS.map((sku) => {
+const cases = LIVE_SKUS.map((sku) => {
   const p = JSON.parse(fs.readFileSync(path.join(dir, `${sku}.json`), "utf-8"));
   const priceNum = Number(String(p.price).replace(/[^0-9.]/g, ""));
   return { ...p, slug: sku.toLowerCase(), priceDisplay: isNaN(priceNum) ? p.price : `$${priceNum.toFixed(2)}` };
 });
-
-const validationQueue = [
-  "Custom pet memorial portrait",
-  "Pet memorial shadow box",
-  "Custom pet portrait pillow",
-  "Embroidered pet portrait apparel",
-  "Pet paw or nose print keepsake",
-  "Custom pet suncatcher",
-  "Pet memorial garden plaque",
-  "Gotcha day ornament",
-  "Family and pet line art portrait",
-  "Pet loss sympathy gift bundle"
-];
 ---
 
 <Layout
-  title="Shop Custom Photo Gifts | yaopulife"
-  description="Made-to-order custom photo gifts from yaopulife. Personalize a silicone phone case with your photo, name, or initials — request a proof before anything is made."
+  title="Shop Custom Phone Cases | yaopulife"
+  description="Shop made-to-order custom phone cases from yaopulife. Personalize a slim protective case with your photo, name, or initials — request a proof before anything is made."
 >
   <Navbar />
 
-  <!-- Available now -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Header -->
+  <section class="bg-gradient-to-b from-brand-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
       <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">Available now · made to order</p>
-        <h1 class="mt-3 text-4xl font-bold text-gray-900">Custom photo gifts</h1>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">The shop · made to order</p>
+        <h1 class="mt-3 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">Custom phone cases</h1>
         <p class="mt-4 text-lg text-gray-600">
-          Personalized, made to your design. Send your photo or text and we reply with a proof before anything is made.
+          Personalized with your photo, name, or initials. Pick a case, send your design, and we reply with a proof
+          and a written quote before anything is made.
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {liveProducts.map((p) => (
+  <!-- Product grid -->
+  <section class="py-12 lg:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cases.map((p) => (
           <a href={`/product/${p.slug}`} class="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg transition-shadow">
             <div class="aspect-square bg-gray-50 overflow-hidden relative">
               <img src={`/images/products/${p.slug}/main.png`} alt={p.altTags?.[0] || p.title}
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                   loading="lazy" onerror="this.style.opacity='0'" />
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" />
               <span class="absolute bottom-2 left-2 rounded bg-black/65 px-2 py-1 text-[11px] font-medium text-white">Digital render — not a production photo</span>
             </div>
             <div class="p-5">
               <h2 class="text-base font-semibold text-gray-900 leading-snug">{p.title}</h2>
               <div class="mt-2 flex items-center justify-between">
-                <span class="text-lg font-bold text-gray-900">From {p.priceDisplay}</span>
+                <span class="text-lg font-bold text-gray-900">From {p.priceDisplay} <span class="text-xs font-normal text-gray-400">base · quote before payment</span></span>
                 <span class="text-sm font-medium text-brand-600 group-hover:underline">View &amp; request →</span>
               </div>
             </div>
           </a>
         ))}
+
+        <!-- More designs coming -->
+        <div class="rounded-2xl border border-dashed border-gray-200 bg-gray-50/50 flex flex-col items-center justify-center text-center p-8">
+          <div class="h-10 w-10 rounded-xl bg-white border border-gray-100 text-brand-600 flex items-center justify-center">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+          </div>
+          <h2 class="mt-3 text-base font-semibold text-gray-900">More case styles coming</h2>
+          <p class="mt-2 text-sm text-gray-600">Want a specific finish, color, or phone model? Tell us and we'll quote it.</p>
+          <a href="/contact" class="mt-4 text-sm font-semibold text-brand-600 hover:underline">Request a custom case →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Coming soon: pet memory line -->
-  <section class="py-16 bg-gray-50 border-t border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">In validation</p>
-        <h2 class="mt-3 text-3xl font-bold text-gray-900">Pet memory gifts — coming soon</h2>
-        <p class="mt-4 text-lg text-gray-600">
-          We are building a pet memorial &amp; portrait line. Each candidate is checked for sample, supplier, image,
-          pricing, and delivery before it goes live. Want one now? Send the photo and story and we will recommend a
-          realistic path.
-        </p>
-      </div>
-
-      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {validationQueue.map((name, index) => (
-          <div class="rounded-xl bg-white border border-gray-100 p-5">
-            <p class="text-xs font-semibold text-brand-600">Candidate {index + 1}</p>
-            <h3 class="mt-2 text-base font-semibold text-gray-900">{name}</h3>
-            <p class="mt-3 text-sm text-gray-500">Drafting and validation</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 max-w-3xl rounded-xl bg-white border border-gray-100 p-8">
-        <h3 class="text-2xl font-bold text-gray-900">Custom requests are open</h3>
-        <p class="mt-3 text-gray-600">
-          Send your photo and details first. We will recommend a realistic product direction and a written quote before anything is made.
-        </p>
-        <a href="/contact" class="mt-6 inline-flex items-center px-6 py-3 text-base font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-          Request a Design Direction
-        </a>
-      </div>
+  <!-- Reassurance strip -->
+  <section class="py-12 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-6 text-center">
+      {[
+        { t: "Made to order", d: "Produced after you approve a proof — nothing printed in advance." },
+        { t: "No automated checkout", d: "Final price, shipping, and taxes are confirmed in a written quote before payment." },
+        { t: "Honest images", d: "Product images are digital renders for design preview, not production photos." },
+      ].map((x) => (
+        <div>
+          <h3 class="font-semibold text-gray-900">{x.t}</h3>
+          <p class="mt-2 text-sm text-gray-600">{x.d}</p>
+        </div>
+      ))}
     </div>
   </section>
 
