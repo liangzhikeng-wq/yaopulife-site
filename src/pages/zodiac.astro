@@ -1,15 +1,42 @@
 ---
+const faqs = [
+  { q: "Is the Chinese zodiac based on your birthday or your birth year?", a: "Mainly your birth year — specifically the lunar year you were born in. Unlike Western astrology, which is tied to the month and the position of the stars, the Chinese zodiac assigns one animal to each whole year in a repeating 12-year cycle." },
+  { q: "Does the Chinese zodiac year start on January 1?", a: "No. It starts on Lunar New Year, which falls between late January and mid-February. So someone born in early February might belong to the previous year's animal. The 2026 Horse year begins on February 17, 2026." },
+  { q: "What animal is 2026 in the Chinese zodiac?", a: "2026 is the Year of the Horse 马 — more precisely the Fire Horse (丙午). It begins on February 17, 2026 and runs to early February 2027." },
+  { q: "Is the Chinese zodiac fortune telling?", a: "Not in the strict sense. Traditionally it's used for personality association, year symbolism, and family conversation — not as a guaranteed prediction of your future. We write about it as culture, not as a promise about your life." },
+  { q: "What are the 12 zodiac animals in order?", a: "Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog and Pig — 鼠牛虎兔龙蛇马羊猴鸡狗猪." },
+  { q: "Why is there no cat in the Chinese zodiac?", a: "A famous legend says the animals raced to decide the order. The Rat tricked the Cat into missing the race (in some versions, by not waking it), which is why the Cat never made the twelve — and why cats and rats are said to be enemies ever since." },
+  { q: "What is Ben Ming Nian (本命年)?", a: "It's the year of your own zodiac animal, which comes around every 12 years. It's traditionally seen as a year to be careful, and many people wear red — red underwear, a red belt or a red bracelet — for protection and luck." },
+  { q: "How is the Chinese zodiac different from Western astrology?", a: "Western astrology is monthly and star-based (12 signs across one year). The Chinese zodiac is yearly and animal-based (12 animals across 12 years). They are not the same system and don't map onto each other." },
+  { q: "What does my zodiac animal say about compatibility?", a: "Tradition pairs certain animals as more or less harmonious, often used lightly when families talk about relationships. We treat this as cultural color, not relationship advice." },
+  { q: "Are these traits true about everyone born in that year?", a: "No — they're cultural associations, not rules. In Chinese tradition people born in a given animal's year are often associated with certain qualities, but it's a way of talking about character, not a fixed destiny." },
+];
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
     { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
-    { "@type": "CollectionPage", "name": "The Chinese Zodiac", "url": "https://yaopulife.com/zodiac", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "CollectionPage", "name": "The Chinese Zodiac", "url": "https://yaopulife.com/zodiac", "description": "The 12 animals of the Chinese zodiac — years, meanings, personalities, and the 2026 Year of the Horse, explained for curious readers worldwide.", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
     { "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
       { "@type": "ListItem", "position": 2, "name": "Zodiac", "item": "https://yaopulife.com/zodiac" }
-    ] }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
   ]
 };
+const animals = [
+  { zh: "鼠", en: "Rat", py: "shǔ", years: "1984 · 1996 · 2008 · 2020 · 2032", traits: "quick-witted, resourceful, charming", note: "First of the twelve — the clever survivor who won the race by riding on the Ox's back, then leaping off to the finish line. In Chinese culture the Rat stands for cleverness, adaptability and the kind of practical intelligence that turns a small chance into a win." },
+  { zh: "牛", en: "Ox", py: "niú", years: "1985 · 1997 · 2009 · 2021 · 2033", traits: "patient, dependable, hard-working", note: "The steady worker of the zodiac. The Ox carries the weight without complaint — a symbol of diligence, honesty and the quiet strength that farming culture prized above flash. When Chinese people praise someone as 老黄牛 (an 'old yellow ox'), it is high praise: a tireless, selfless worker." },
+  { zh: "虎", en: "Tiger", py: "hǔ", years: "1986 · 1998 · 2010 · 2022 · 2034", traits: "brave, confident, commanding", note: "The king of beasts in Chinese folklore — its forehead markings are read as the character 王 (king). The Tiger means courage, authority and protection; tiger images guard doorways and children's shoes and hats, warding off evil." },
+  { zh: "兔", en: "Rabbit", py: "tù", years: "1987 · 1999 · 2011 · 2023 · 2035", traits: "gentle, elegant, kind", note: "Gentle and lucky, the Rabbit is linked to the moon — the Jade Rabbit who pounds the elixir of immortality beside Chang'e. It stands for peace, grace and quiet good fortune rather than force." },
+  { zh: "龙", en: "Dragon", py: "lóng", years: "1988 · 2000 · 2012 · 2024 · 2036", traits: "powerful, ambitious, auspicious", note: "The only mythical animal in the twelve, and the most prestigious. The Chinese dragon is not an evil monster but a benevolent bringer of rain, rivers and imperial power. Parents often hope for a 'dragon baby,' and birth rates visibly rise in Dragon years." },
+  { zh: "蛇", en: "Snake", py: "shé", years: "1989 · 2001 · 2013 · 2025 · 2037", traits: "wise, intuitive, graceful", note: "Called the 'little dragon,' the Snake is a sign of wisdom, mystery and elegance. Far from sinister, snakes in Chinese myth can be powerful and good — the White Snake gives up immortality for love." },
+  { zh: "马", en: "Horse", py: "mǎ", years: "1990 · 2002 · 2014 · 2026 · 2038", traits: "energetic, free-spirited, warm", note: "The 2026 animal. The Horse means energy, freedom and forward motion — 马到成功 (mǎ dào chéng gōng) wishes you 'success the moment the horse arrives.' Horse people are seen as warm, sociable and a little restless, always chasing the open road." },
+  { zh: "羊", en: "Goat", py: "yáng", years: "1991 · 2003 · 2015 · 2027 · 2039", traits: "gentle, artistic, compassionate", note: "Sometimes translated Goat, Sheep or Ram — the same character 羊 covers all three. A sign of gentleness, creativity and peace, associated with people who are kind, tasteful and quietly determined." },
+  { zh: "猴", en: "Monkey", py: "hóu", years: "1992 · 2004 · 2016 · 2028 · 2040", traits: "clever, playful, inventive", note: "Mischief and brilliance in one. The Monkey's patron is Sun Wukong, the Monkey King who defied heaven itself. The sign means intelligence, wit and a refusal to sit still — clever enough to bend the rules, charming enough to be forgiven." },
+  { zh: "鸡", en: "Rooster", py: "jī", years: "1993 · 2005 · 2017 · 2029 · 2041", traits: "observant, confident, hard-working", note: "The Rooster crows in the dawn — a symbol of punctuality, honesty and keeping order. Its call is said to drive away darkness and evil, which is why the Rooster stands for reliability and a bright, on-time start." },
+  { zh: "狗", en: "Dog", py: "gǒu", years: "1994 · 2006 · 2018 · 2030 · 2042", traits: "loyal, honest, protective", note: "The most loyal of the twelve. The Dog means faithfulness, sincerity and protection — a friend who guards the home and never betrays. Dog-year people are trusted as honest and fair to a fault." },
+  { zh: "猪", en: "Pig", py: "zhū", years: "1995 · 2007 · 2019 · 2031 · 2043", traits: "generous, easy-going, sincere", note: "The last of the cycle, and one of the luckiest. The Pig means abundance, generosity and an honest, good-hearted nature. In a farming world a fat pig meant wealth and a full table, so the Pig carries warmth and plenty." },
+];
 import SiteAnalytics from '../components/SiteAnalytics.astro';
 import StoryCTA from '../components/StoryCTA.astro';
 ---
@@ -18,9 +45,14 @@ import StoryCTA from '../components/StoryCTA.astro';
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Chinese Zodiac 十二生肖 — 12 animals, 12 personalities | yaopulife</title>
-<meta name="description" content="The 12 animals of the Chinese zodiac, their years and what each one says about you. Hover to reveal the trait.">
+<title>The Chinese Zodiac 十二生肖 — 12 Animals, Years & Meanings (2026: Year of the Horse) | yaopulife</title>
+<meta name="description" content="The 12 animals of the Chinese zodiac explained — your year, your sign, what each animal means in Chinese culture, and a full guide to 2026, the Year of the Horse. Written for curious readers worldwide.">
 <link rel="canonical" href="https://yaopulife.com/zodiac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Chinese Zodiac 十二生肖 — 12 Animals, Years & Meanings">
+<meta property="og:description" content="Find your animal, learn what it means in Chinese culture, and meet 2026 — the Year of the Horse.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/zodiac">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 </head>
@@ -29,33 +61,88 @@ import StoryCTA from '../components/StoryCTA.astro';
   <a href="/" class="seal">蒲</a>
   <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
   <span class="links"><a href="/">Home</a><a href="/zodiac" class="on">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
-  <a class="btn" href="/myths">Explore myths →</a>
+  <a class="btn" href="#horse">2026: Year of the Horse →</a>
 </div></nav>
 
 <header class="hubhero"><div class="wrap">
   <div class="kicker">Which one are you?</div>
   <h1>The Chinese Zodiac</h1>
   <div class="zh">十 二 生 肖</div>
-  <p>Twelve animals, one for each year in a repeating cycle. Find your year below — and hover to see what your sign is said to reveal.</p>
+  <p>Twelve animals, one for each year in a repeating cycle. Find your year below, learn what your sign really means in Chinese culture — and meet 2026, the Year of the Horse.</p>
 </div></header>
 
 <main class="wrap">
 <section id="zodiac" class="sec">
   <div class="grid g6">
-    <div class="zcard"><div class="disc">鼠</div><div class="en">Rat</div><div class="yr">2020 · 2032</div></div>
-    <div class="zcard"><div class="disc">牛</div><div class="en">Ox</div><div class="yr">2021 · 2033</div></div>
-    <div class="zcard"><div class="disc">虎</div><div class="en">Tiger</div><div class="yr">2022 · 2034</div></div>
-    <div class="zcard"><div class="disc">兔</div><div class="en">Rabbit</div><div class="yr">2023 · 2035</div></div>
-    <div class="zcard"><div class="disc">龙</div><div class="en">Dragon</div><div class="yr">2024 · 2036</div></div>
-    <div class="zcard"><div class="disc">蛇</div><div class="en">Snake</div><div class="yr">2025 · 2037</div></div>
-    <div class="zcard"><div class="disc">马</div><div class="en">Horse</div><div class="yr">2026 · 2038</div></div>
-    <div class="zcard"><div class="disc">羊</div><div class="en">Goat</div><div class="yr">2027 · 2039</div></div>
-    <div class="zcard"><div class="disc">猴</div><div class="en">Monkey</div><div class="yr">2028 · 2040</div></div>
-    <div class="zcard"><div class="disc">鸡</div><div class="en">Rooster</div><div class="yr">2029 · 2041</div></div>
-    <div class="zcard"><div class="disc">狗</div><div class="en">Dog</div><div class="yr">2030 · 2042</div></div>
-    <div class="zcard"><div class="disc">猪</div><div class="en">Pig</div><div class="yr">2031 · 2043</div></div>
+    {animals.map(a => (
+      <a class="zcard" href={`#${a.en.toLowerCase()}`}><div class="disc">{a.zh}</div><div class="en">{a.en}</div><div class="yr">{a.years.split(' · ').slice(-2).join(' · ')}</div></a>
+    ))}
   </div>
-  <div class="callout" style="margin-top:30px;max-width:720px">2026 is the Year of the <b>Horse 马</b> — energy, freedom and the love of the open road. Born in a Horse year? You're in good company.</div>
+  <div class="callout" style="margin-top:30px;max-width:760px">Born in a <b>Horse year 马</b> (…1990, 2002, 2014, <b>2026</b>)? 2026 is yours. Tap any animal above to jump to its meaning, or read the guide below first.</div>
+</section>
+
+<section class="sec">
+  <h2 id="what">What is the Chinese zodiac?</h2>
+  <p>The Chinese zodiac — <span class="zh">生肖</span> <i>shēngxiào</i>, literally "birth likeness" — is a repeating cycle of twelve animals, one assigned to each year. Where Western astrology divides a single year into twelve star signs by month, the Chinese system stretches one animal across a whole year, and the wheel turns once every twelve years: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig.</p>
+  <p>Your sign comes from the <b>lunar year</b> you were born in — not the Gregorian calendar. That detail trips up a lot of people. The zodiac year doesn't begin on January 1; it begins on <b>Lunar New Year</b>, somewhere between late January and the middle of February. Someone born on February 5 could belong to last year's animal, depending on when the new moon fell.</p>
+  <p>In daily Chinese life the zodiac is everywhere and nowhere serious. It's how an aunt asks your age without asking your age ("Which animal are you?"). It's why parents time a baby for a Dragon year, why red bracelets sell out in your own animal's year, and why the whole country leans into one creature's symbolism every spring. It is closer to a shared cultural language than to a horoscope.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>The Great Race</b> — Ask a Chinese child why the order is Rat-first and they'll tell you the story: the Jade Emperor held a race, and the first twelve animals to cross the river would make the calendar. The Rat hitched a ride on the hard-working Ox, then jumped off at the last second to finish first. The Cat, tricked out of the race by the Rat, never made the list — which is why, the story goes, cats chase rats to this day.</p></div>
+  <div class="note"><span class="nlbl">Native note</span><b>It isn't fortune-telling</b> — Outside China the zodiac is often sold as prediction: "this is your year, here's what will happen." Inside the culture it's softer and more social — a way of talking about character and luck, not a contract about your future. We write it the same way: <i>associated with</i>, never <i>destined to</i>.</p></div>
+</section>
+
+<section class="sec">
+  <h2 id="horse">2026 · Year of the Horse 马</h2>
+  <p class="lead">2026 is the <b>Year of the Horse</b> — and not just any Horse. By the old sixty-year cycle it's the <b>Fire Horse</b> (<span class="zh">丙午</span> <i>bǐng wǔ</i>), the most spirited Horse of them all. The year begins on <b>February 17, 2026</b> and runs until early February 2027.</p>
+  <p>Of all twelve animals, the Horse is the one that means <b>motion</b>. Energy, freedom, speed, independence, the love of the open road — the Horse is never the creature that stays home. In a culture that often prizes patience and order, the Horse is the bright exception: warm, sociable, a little restless, happiest when it's going somewhere.</p>
+  <p>That spirit is baked into the language. <span class="zh">马到成功</span> <i>mǎ dào chéng gōng</i> — "success the moment the horse arrives" — is one of the most common New Year blessings you'll hear in 2026, a wish for fast, immediate wins. <span class="zh">龙马精神</span> <i>lóng mǎ jīng shén</i>, "the spirit of the dragon and the horse," is what you wish an elder: vigor, vitality, a body and mind still full of run.</p>
+  <h3>If you were born in a Horse year</h3>
+  <p>Horse years include 1942, 1954, 1966, 1978, 1990, 2002, 2014 and 2026. In Chinese tradition, Horse people are read as cheerful, energetic and free-spirited — the friend who fills the room and then suggests you all go somewhere else. The flip side of that fire: impatience, and a hard time sitting still. Remember, this is cultural color, not a personality test.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>Your own year is a careful year</b> — 2026 is a <span class="zh">本命年</span> <i>běn mìng nián</i> for Horse people: the return of your own animal, every twelfth year. Tradition says your zodiac year can be turbulent, so people born under the Horse will wear red all year — a red cord at the wrist, red socks, a red thread — to stay protected.</p></div>
+  <h3>How to explain it to a friend</h3>
+  <p>If someone asks what the Year of the Horse "means," the short version is this: it's a year the culture associates with energy and forward movement — a good year to start things, travel, and chase momentum. You don't have to believe it predicts anything to enjoy that it's the mood the whole country agrees to share for twelve months.</p>
+</section>
+
+<section class="sec">
+  <h2 id="animals">The 12 animals, one by one</h2>
+  <p>Each animal carries its own bundle of meanings — drawn from farming life, folklore and the myths we tell elsewhere on this site. Here's what each one is associated with in Chinese culture.</p>
+  {animals.map(a => (
+    <div class="charcard" id={a.en.toLowerCase()} style="margin:18px 0">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span class="zh" style="font-size:30px">{a.zh}</span>
+        <b style="font-size:19px">{a.en}</b>
+        <span class="py">{a.py}</span>
+        {a.en === "Horse" && <span class="chip">2026</span>}
+      </div>
+      <div class="yr" style="margin:4px 0 8px">{a.years}</div>
+      <div style="margin-bottom:6px"><b>Associated with:</b> {a.traits}</div>
+      <p style="margin:0">{a.note}</p>
+    </div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="myth">Don't read it like a Western horoscope</h2>
+  <div class="note"><span class="nlbl">Native note</span><b>It's yearly, not monthly</b> — There is no "what's my Chinese star sign by birthday." Your animal is set by the whole lunar year, full stop. If a site asks for your exact date, it's usually just to check which side of Lunar New Year you fall on.</p></div>
+  <div class="note"><span class="nlbl">Native note</span><b>Animals, not constellations</b> — Western zodiac signs are patterns of stars. Chinese zodiac animals are earthly creatures tied to a counting system for years. Different logic, different history — they don't translate onto each other.</p></div>
+  <div class="note"><span class="nlbl">Native note</span><b>Color, not command</b> — The traits here are how the culture <i>talks about</i> a sign, not a verdict on who you are. A Tiger can be shy; a Rabbit can be fierce. Treat it like the stories it comes from: meaningful, beloved, and not to be taken as literal fate.</p></div>
+</section>
+
+<section class="sec">
+  <h2 id="faq">Chinese zodiac FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="next">Where to go next</h2>
+  <p>The zodiac doesn't live alone — it's woven into the festivals and myths we tell across the site.</p>
+  <ul class="more">
+    <li>The zodiac year turns on Lunar New Year — read how the <a href="/festivals">Spring Festival and the Nian beast</a> ring it in.</li>
+    <li>The Rabbit's link to the moon comes from <a href="/changge">Chang'e and the Jade Rabbit</a>, the heart of the Mid-Autumn Festival.</li>
+    <li>The Monkey's patron is the rebel <a href="/wukong">Sun Wukong, the Monkey King</a> who declared war on heaven.</li>
+    <li>Why the Dragon is lucky, not evil, runs through all of <a href="/myths">Chinese mythology</a> — start there for the bigger picture.</li>
+  </ul>
 </section>
 </main>
 

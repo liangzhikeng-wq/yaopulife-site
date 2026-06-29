@@ -1,13 +1,24 @@
 ---
+const faqs = [
+  { q: "What is Chinese mythology?", a: "Not one tidy religion, but a vast, layered web of stories — creation myths, gods and immortals, monsters, ghosts, rebel heroes and tragic lovers — drawn from ancient legend, folk belief, Daoism, Buddhism and classic novels, retold and reshaped over thousands of years." },
+  { q: "Is Chinese mythology like Greek mythology?", a: "They rhyme but don't match. Both have gods, monsters and heroes, but Greek myth centers on a fixed pantheon on Mount Olympus, while Chinese myth is more like a sprawling bureaucracy — heaven runs like a government, immortals earn their rank, and many 'gods' were once humans who ascended." },
+  { q: "Who is the most famous Chinese mythological figure?", a: "Sun Wukong, the Monkey King — a stone-born trickster who declared war on heaven and is now known worldwide through Journey to the West. Nezha, the rebel child-god, is a close second." },
+  { q: "Are Chinese dragons evil?", a: "No — and this is the single biggest misunderstanding. Chinese dragons (龙) are benevolent: they bring rain and rivers, symbolize the emperor and good fortune, and are something to be proud to be born under. They are nothing like the fire-breathing villains of Western tales." },
+  { q: "What is heaven in Chinese mythology?", a: "Less a paradise, more a celestial government. 天庭 (the Heavenly Court) has an emperor, ministers, ranks and paperwork. A god's power comes with an official post — which is exactly what makes Sun Wukong's refusal to 'know his place' so radical." },
+  { q: "Are Chinese spirits demons?", a: "Not necessarily. A 妖 (yao) is a spirit or shapeshifter — often an animal or object that gained power over time. Some are dangerous, but many are good, wise, even heroic. The White Snake is a yao who gives up immortality for love. Translating yao as 'demon' loses all of that." },
+  { q: "Where should a beginner start?", a: "Start with Sun Wukong for rebellion, Chang'e for a tragic moon myth, and the Classic of Mountains and Seas for monsters. Those three open three different doors into the whole world." },
+  { q: "Are these stories still important in China today?", a: "Very. They live in festivals, idioms, films, games and everyday speech. A modern blockbuster about Nezha can break box-office records — these aren't dusty legends, they're a living culture." },
+];
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
     { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
-    { "@type": "CollectionPage", "name": "Chinese Myths & Legends", "url": "https://yaopulife.com/myths", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "CollectionPage", "name": "Chinese Myths & Legends", "url": "https://yaopulife.com/myths", "description": "An introduction to Chinese mythology — rebels who defied heaven, an ancient monster universe, forbidden love and the games of empire, told for curious readers worldwide.", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
     { "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
       { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" }
-    ] }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
   ]
 };
 import SiteAnalytics from '../components/SiteAnalytics.astro';
@@ -18,9 +29,14 @@ import StoryCTA from '../components/StoryCTA.astro';
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chinese Myths &amp; Legends — gods, rebels & monsters | yaopulife</title>
-<meta name="description" content="China's myths as dark fantasy: rebels who defied heaven, an ancient monster universe, forbidden love, empire and strategy. Told for curious minds.">
+<title>Chinese Myths &amp; Legends — Gods, Rebels, Monsters & Where to Start | yaopulife</title>
+<meta name="description" content="An introduction to Chinese mythology: what it is, how it differs from Greek and Norse myth, and where to start. Rebels who defied heaven, an ancient monster universe, forbidden love — told for curious minds.">
 <link rel="canonical" href="https://yaopulife.com/myths">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chinese Myths & Legends — Gods, Rebels, Monsters & Where to Start">
+<meta property="og:description" content="China's myths told like dark fantasy — and a beginner's map to the whole world of gods, rebels and monsters.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/myths">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 </head>
@@ -41,8 +57,17 @@ import StoryCTA from '../components/StoryCTA.astro';
 
 <main class="wrap">
 
+<section class="sec">
+  <h2 id="what">What is Chinese mythology?</h2>
+  <p>Chinese mythology is not a single, tidy religion with one holy book. It's a vast, layered world built up over <b>thousands of years</b> — creation myths and gods, immortals and ghosts, shapeshifting spirits, rebel heroes and doomed lovers — pulled together from ancient legend, folk belief, Daoism, Buddhism, local village gods, and classic novels that later fixed many stories in the form we know today.</p>
+  <p>Because it grew this way, the same character can appear in a dozen versions. There is rarely one "correct" telling. So on this site we'll often say <i>"in one common version…"</i> — telling the best-known story clearly, while being honest that other versions exist. We won't invent details for drama, and we won't flatten the culture into a Western mold.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>Heaven is a government, not a paradise</b> — The biggest thing outsiders miss: 天庭, the Heavenly Court, works like a vast celestial bureaucracy. There's an emperor, ranked ministers, official posts and rules. A god's power comes with a job title. That's why Sun Wukong's real crime was never violence — it was refusing to stay in his assigned place.</div>
+  <div class="note"><span class="nlbl">Native note</span><b>Not all spirits are demons</b> — A 妖 (yao) is a spirit, often an animal or object that gained power over centuries. Western translations love the word "demon," but many yao are wise, kind, even heroic. The White Snake is a yao who gives up immortality for love. Hold the word loosely.</div>
+</section>
+
 <section>
   <div class="serieslabel"><h2>Rebels of Chinese Mythology</h2><span class="han">神话反叛者</span><span class="en">defy fate · defy heaven</span></div>
+  <p style="color:var(--ink2);max-width:680px;margin:-6px 0 16px">The most loved corner of Chinese myth: heroes who were told to obey — fate, family, heaven — and refused. Start here if you want to feel why these stories still matter.</p>
   <div class="grid g3">
     <a class="card" href="/wukong"><div class="top"><div class="moonbg"></div><span>悟空</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Sun Wukong<span class="ready">Ready</span></h3><p>Born from stone with no name — so he declared war on heaven itself.</p><div class="rd">Read the story →</div></div></a>
     <a class="card" href="/nezha"><div class="top"><span>哪吒</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Nezha<span class="ready">Ready</span></h3><p>Told he was born a monster — he decided fate doesn't get to define him.</p><div class="rd">Read the story →</div></div></a>
@@ -55,6 +80,7 @@ import StoryCTA from '../components/StoryCTA.astro';
 
 <section>
   <div class="serieslabel"><h2>China's Ancient Monster Universe</h2><span class="han">怪物宇宙</span><span class="en">the bestiary</span></div>
+  <p style="color:var(--ink2);max-width:680px;margin:-6px 0 16px">Long before modern fantasy, China wrote down its monsters — in a 2,000-year-old field guide to gods, beasts and impossible lands. This is the original bestiary.</p>
   <div class="grid g3">
     <a class="card" href="/shanhaijing"><div class="top"><span>山海</span></div><div class="bd"><div class="tag">Bestiary</div><h3>Classic of Mountains &amp; Seas<span class="ready">Ready</span></h3><p>A 2,000-year-old field guide to gods, beasts and far lands — China's strangest book.</p><div class="rd">Enter the bestiary →</div></div></a>
     <div class="card"><div class="top"><span>狐</span></div><div class="bd"><div class="tag">Spirit</div><h3>The Fox Spirit<span class="soon">Coming soon</span></h3><p>A shapeshifter who became more human than the humans around her.</p></div></div>
@@ -64,6 +90,7 @@ import StoryCTA from '../components/StoryCTA.astro';
 
 <section>
   <div class="serieslabel"><h2>Forbidden Love</h2><span class="han">禁忌爱情</span><span class="en">love that broke the rules</span></div>
+  <p style="color:var(--ink2);max-width:680px;margin:-6px 0 16px">China's great tragedies are love stories — between mortals and gods, humans and spirits, two hearts the world refused to allow. Read these if you want to cry.</p>
   <div class="grid g3">
     <a class="card" href="/changge"><div class="top"><div class="moonbg"></div><span>嫦娥</span></div><div class="bd"><div class="tag">Moon myth</div><h3>Chang'e &amp; Hou Yi<span class="ready">Ready</span></h3><p>One choice sent her to the moon — alone, forever, within sight of home.</p><div class="rd">Read the story →</div></div></a>
     <a class="card" href="/whitesnake"><div class="top"><span>白蛇</span></div><div class="bd"><div class="tag">Love myth</div><h3>The White Snake<span class="ready">Ready</span></h3><p>A thousand-year-old snake spirit loved a human — the world refused to allow it.</p><div class="rd">Read the story →</div></div></a>
@@ -73,11 +100,30 @@ import StoryCTA from '../components/StoryCTA.astro';
 
 <section>
   <div class="serieslabel"><h2>Power, War &amp; Strategy</h2><span class="han">权谋帝国</span><span class="en">the empire game</span></div>
+  <p style="color:var(--ink2);max-width:680px;margin:-6px 0 16px">Where myth blurs into history: the men who united, ruled and out-thought an empire — legends built on real blood and real genius.</p>
   <div class="grid g3">
     <div class="card"><div class="top"><span>始皇</span></div><div class="bd"><div class="tag">Empire</div><h3>Qin Shi Huang<span class="soon">Coming soon</span></h3><p>The man who united China — and tried to make his power last forever.</p></div></div>
     <div class="card"><div class="top"><span>孔明</span></div><div class="bd"><div class="tag">Strategy</div><h3>Zhuge Liang<span class="soon">Coming soon</span></h3><p>A dying strategist who won wars with his mind against impossible odds.</p></div></div>
     <div class="card"><div class="top"><span>三国</span></div><div class="bd"><div class="tag">War saga</div><h3>Three Kingdoms<span class="soon">Coming soon</span></h3><p>An empire collapses into a 100-year game of loyalty, genius and betrayal.</p></div></div>
   </div>
+</section>
+
+<section class="sec">
+  <h2 id="start">Not sure where to start?</h2>
+  <ul class="more">
+    <li><b>Best first story</b> — <a href="/wukong">Sun Wukong</a>. The most famous, the most fun, and the clearest window into how Chinese myth works.</li>
+    <li><b>Best tragedy</b> — <a href="/changge">Chang'e</a> or <a href="/whitesnake">The White Snake</a>, if you want a story that aches.</li>
+    <li><b>Best monsters</b> — the <a href="/shanhaijing">Classic of Mountains and Seas</a>, China's original bestiary.</li>
+    <li><b>Best for children / classrooms</b> — <a href="/changge">Chang'e and the Mid-Autumn moon</a>, gentle and beautiful, with a free activity pack.</li>
+    <li><b>Best for a short video</b> — <a href="/nezha">Nezha</a>, a rebel child-god whose story is pure cinematic energy.</li>
+  </ul>
+</section>
+
+<section class="sec">
+  <h2 id="faq">Chinese mythology FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
 </section>
 
 </main>

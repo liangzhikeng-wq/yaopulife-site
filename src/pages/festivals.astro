@@ -1,13 +1,37 @@
 ---
+const festivals = [
+  { zh: "春节", en: "Lunar New Year", py: "Chūnjié", slug: "lunar-new-year", when: "Late Jan – mid Feb (2026: Feb 17)", emotion: "Reunion & renewal", story: "The Nian 年, a beast that came each winter to devour villages, until people learned it feared red, fire and loud noise.", body: "The biggest holiday in the Chinese world, and the reason for the largest annual human migration on Earth as hundreds of millions travel home. Families clean the house to sweep out the old year, paste red couplets on the door, share a reunion dinner, and give children red envelopes (红包 hóngbāo) of lucky money. The whole season is a 15-day arc from New Year's Eve to the Lantern Festival, all to chase off the old and welcome luck, wealth and togetherness.", food: "Dumplings (north) and rice cake 年糕 (south); whole fish for surplus", custom: "Red everywhere, firecrackers, family reunion, red envelopes" },
+  { zh: "元宵节", en: "Lantern Festival", py: "Yuánxiāo Jié", slug: "lantern-festival", when: "15th day of the 1st lunar month (~early Mar)", emotion: "Light & release", story: "The glowing finale of the New Year season — once the only night young women could walk out freely, making it China's oldest romance night.", body: "On the first full moon of the year, streets fill with lanterns and the sky with light. People solve riddles written on the lanterns (猜灯谜), watch dragon and lion dances, and eat round glutinous rice balls — 汤圆 tāngyuán — whose shape means wholeness and family unity. It marks the official end of the New Year holiday: the lights go up, the season lets go.", food: "Tangyuan 汤圆 — sweet round rice balls", custom: "Lantern displays, riddle-guessing, dragon dances" },
+  { zh: "清明节", en: "Qingming Festival", py: "Qīngmíng", slug: "qingming", when: "Around April 4–5", emotion: "Memory & respect", story: "Also called Tomb-Sweeping Day — the day families return to the graves of their ancestors to clean them and remember.", body: "Qingming sits at a solar turning point when spring is fully open. Families visit ancestral graves, sweep away weeds, lay out food and flowers, and burn paper offerings so the dead are cared for in the next world. It is solemn but not grim — afterward people fly kites and walk in the green spring, a quiet balance of mourning and renewal that captures how Chinese culture holds the living and the dead together.", food: "Qingtuan 青团 — green rice dumplings", custom: "Tomb sweeping, paper offerings, spring outings, kite flying" },
+  { zh: "端午节", en: "Dragon Boat Festival", py: "Duānwǔ", slug: "dragon-boat-festival", when: "5th day of the 5th lunar month (~Jun)", emotion: "Loyalty & protection", story: "The poet-minister Qu Yuan 屈原 drowned himself in despair when his kingdom fell. Villagers raced boats to save him and threw rice into the river so the fish would not eat his body.", body: "Today the rice has become 粽子 zòngzi — sticky rice wrapped in bamboo leaves — and the rescue has become dragon boat races, long narrow boats drumming down rivers all over China and now the world. The fifth lunar month was also seen as a dangerous, disease-prone time, so the day carries charms of protection: hanging mugwort, wearing fragrant pouches, warding off bad luck.", food: "Zongzi 粽子 — sticky rice in bamboo leaves", custom: "Dragon boat racing, hanging mugwort, scented pouches" },
+  { zh: "七夕节", en: "Qixi Festival", py: "Qīxī", slug: "qixi", when: "7th day of the 7th lunar month (~Aug)", emotion: "Love & separation", story: "The Cowherd 牛郎 and the Weaver Girl 织女 — a mortal and a goddess — were forced apart across the Milky Way, allowed to meet only one night a year on a bridge of magpies.", body: "Often called Chinese Valentine's Day, Qixi is older and sadder than its Western cousin. It celebrates a love that survives despite being forbidden, meeting just once each year. Traditionally young women prayed for skill in needlework and a good marriage. Today couples mark the night, but the heart of it is the bittersweet idea that real love endures distance and time.", food: "Qiaoguo 巧果 — crisp fried pastries", custom: "Stargazing for the two lovers, wishes for love and skill" },
+  { zh: "中元节", en: "Ghost Festival", py: "Zhōngyuán", slug: "ghost-festival", when: "15th day of the 7th lunar month (~Aug–Sep)", emotion: "Remembrance & care", story: "On this night the gate between worlds opens and spirits walk among the living — including ancestors returning home, and hungry ghosts with no family to feed them.", body: "Families burn paper money and offer food to honor their own ancestors and to comfort the wandering, forgotten dead. Floating lanterns are set on rivers to guide lost spirits. It can sound spooky to outsiders, but at its core it is an act of compassion: no soul, even a stranger's, should go hungry or unremembered. It is the Chinese answer to the question of what we owe the dead.", food: "Offerings of fruit, rice and symbolic dishes", custom: "Burning offerings, floating river lanterns, honoring ancestors" },
+  { zh: "中秋节", en: "Mid-Autumn Festival", py: "Zhōngqiū", slug: "mid-autumn-festival", when: "15th day of the 8th lunar month (~Sep–Oct)", emotion: "Reunion under the moon", story: "Chang'e 嫦娥, who swallowed the elixir of immortality and floated up to the moon — and her husband Hou Yi, who left out her favorite fruits and gazed up at her every year.", body: "On the night of the fullest, roundest moon of the year, families gather to eat mooncakes and look up together. The round moon means the round table — reunion — and even those far from home find comfort that they share the same moon with the people they miss. It is, after Lunar New Year, the most beloved family festival, and the easiest entry point into Chinese culture for newcomers.", food: "Mooncakes 月饼; pomelo, taro", custom: "Moon-gazing, family reunion, lanterns", link: "/changge" },
+  { zh: "重阳节", en: "Double Ninth Festival", py: "Chóngyáng", slug: "double-ninth-festival", when: "9th day of the 9th lunar month (~Oct)", emotion: "Longevity & elders", story: "Nine 九 is the highest single digit and a yang number; doubled, it stands for long life — so the day became China's festival of respect for the elderly.", body: "People climb mountains and high places for good fortune and clear autumn air, carry dogwood and drink chrysanthemum wine to drive off bad luck. In modern China it is officially Seniors' Day, a time to visit grandparents and honor the old. It quietly captures a core Chinese value: that age is to be revered, not hidden.", food: "Chongyang cake 重阳糕; chrysanthemum wine", custom: "Climbing heights, honoring elders, chrysanthemums" },
+  { zh: "冬至", en: "Winter Solstice", py: "Dōngzhì", slug: "winter-solstice", when: "Around December 21–22", emotion: "Warmth & family", story: "The longest night of the year — from here the days grow longer, so the ancients treated it as the return of light and warmth, almost a second New Year.", body: "There's an old saying — 冬至大如年 — the Winter Solstice is as big as New Year. Families gather to eat together against the cold: dumplings in the north (said to keep your ears from freezing), sweet tangyuan in the south. It marks the deep turn of the year, the promise that even on the darkest night, the light is already coming back.", food: "Dumplings (north) / tangyuan (south)", custom: "Family meal, marking the return of longer days" },
+];
+const faqs = [
+  { q: "What is the most important Chinese festival?", a: "Lunar New Year (Spring Festival) is by far the most important — a multi-day family reunion that triggers the largest annual human migration on Earth. Mid-Autumn is usually considered the second most beloved." },
+  { q: "Is Lunar New Year the same as Chinese New Year?", a: "Yes. 'Lunar New Year' and 'Chinese New Year' (春节, Spring Festival) refer to the same holiday. 'Lunar New Year' is the broader term, since several Asian cultures celebrate it." },
+  { q: "Why do Chinese festivals follow the lunar calendar?", a: "Traditional Chinese life ran on a lunisolar calendar tied to moons and farming seasons. Most festivals fall on specific lunar dates — like the 15th day (full moon) of a given month — which is why they shift against the Western calendar each year." },
+  { q: "What is the Mid-Autumn Festival?", a: "A harvest-moon festival of family reunion, celebrated under the fullest moon of the year with mooncakes and the legend of Chang'e, the lady who flew to the moon. It's one of the easiest Chinese festivals for newcomers to love." },
+  { q: "What is the Dragon Boat Festival?", a: "A summer festival of dragon boat races and sticky-rice zongzi, rooted in the story of the loyal poet Qu Yuan who drowned himself, and the villagers who tried to save him." },
+  { q: "What is Qingming?", a: "Tomb-Sweeping Day — a spring festival when families clean ancestral graves and make offerings to the dead, balanced with kite-flying and spring outings." },
+  { q: "What is Qixi?", a: "Often called Chinese Valentine's Day: the festival of the Cowherd and the Weaver Girl, two lovers separated across the Milky Way who meet only one night a year." },
+  { q: "What foods are eaten during Chinese festivals?", a: "Each festival has a signature food: dumplings and fish for New Year, tangyuan for the Lantern Festival and Winter Solstice, zongzi for Dragon Boat, and mooncakes for Mid-Autumn. The food usually carries a symbolic meaning like unity or surplus." },
+  { q: "Are Chinese festivals religious?", a: "Mostly no — they're cultural and family-centered, tied to seasons, ancestors and legends rather than a single religion, though folk beliefs, Daoism and Buddhism all leave traces." },
+  { q: "Which festival should beginners learn first?", a: "Start with Mid-Autumn (warm, simple, beautiful) and Lunar New Year (the big one). From there, Dragon Boat and Qingming round out the year." },
+];
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
     { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
-    { "@type": "CollectionPage", "name": "Chinese Festivals", "url": "https://yaopulife.com/festivals", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "CollectionPage", "name": "Chinese Festivals", "url": "https://yaopulife.com/festivals", "description": "The traditional festivals of China — their dates, stories, foods and meanings, from Lunar New Year to Mid-Autumn.", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
     { "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
       { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" }
-    ] }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
   ]
 };
 import SiteAnalytics from '../components/SiteAnalytics.astro';
@@ -18,9 +42,14 @@ import StoryCTA from '../components/StoryCTA.astro';
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chinese Festivals 传统节日 — the year, the Chinese way | yaopulife</title>
-<meta name="description" content="Mid-Autumn, Lunar New Year, Dragon Boat and more — the stories and meaning behind China's traditional festivals.">
+<title>Chinese Festivals 传统节日 — Dates, Stories, Food & Meaning | yaopulife</title>
+<meta name="description" content="The 9 great traditional Chinese festivals explained — Lunar New Year, Lantern, Qingming, Dragon Boat, Qixi, Ghost, Mid-Autumn, Double Ninth and Winter Solstice. Dates, legends, foods and what they really mean.">
 <link rel="canonical" href="https://yaopulife.com/festivals">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chinese Festivals 传统节日 — Dates, Stories, Food & Meaning">
+<meta property="og:description" content="The year, the Chinese way — every major festival, the legend behind it, and what it means to families today.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/festivals">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 </head>
@@ -36,19 +65,64 @@ import StoryCTA from '../components/StoryCTA.astro';
   <div class="kicker">The year, the Chinese way</div>
   <h1>Festivals</h1>
   <div class="zh">传 统 节 日</div>
-  <p>Every Chinese festival hides a story — a goddess on the moon, a beast that fears red, a poet who gave his life to a river. Start with the one closest to your heart.</p>
+  <p>Every Chinese festival hides a story — a goddess on the moon, a beast that fears red, a poet who gave his life to a river. Here is the whole year, with the legend, the food and the meaning behind each one.</p>
 </div></header>
 
 <main class="wrap">
 <section class="sec">
   <div class="grid g3">
-    <a class="card" href="/changge"><div class="top"><div class="moonbg"></div><span>中秋</span></div><div class="bd"><div class="tag">Autumn · Sept–Oct</div><h3>Mid-Autumn Festival<span class="ready">Ready</span></h3><p>Mooncakes, lanterns and the full-moon reunion — with the Chang'e legend at its heart.</p><div class="rd">Read the story →</div></div></a>
-    <div class="card"><div class="top"><span>春节</span></div><div class="bd"><div class="tag">Winter · Jan–Feb</div><h3>Lunar New Year<span class="soon">Coming soon</span></h3><p>Red envelopes, the Nian beast, and the world's largest annual celebration.</p></div></div>
-    <div class="card"><div class="top"><span>端午</span></div><div class="bd"><div class="tag">Summer · Jun</div><h3>Dragon Boat Festival<span class="soon">Coming soon</span></h3><p>Dragon boats, sticky rice dumplings, and the poet who gave his life to the river.</p></div></div>
-    <div class="card"><div class="top"><span>清明</span></div><div class="bd"><div class="tag">Spring · Apr</div><h3>Qingming<span class="soon">Coming soon</span></h3><p>The day families sweep the graves of their ancestors and remember.</p></div></div>
-    <div class="card"><div class="top"><span>七夕</span></div><div class="bd"><div class="tag">Summer · Aug</div><h3>Qixi<span class="soon">Coming soon</span></h3><p>China's Valentine's Day — two lovers allowed to meet only once a year.</p></div></div>
-    <div class="card"><div class="top"><span>元宵</span></div><div class="bd"><div class="tag">Winter · Feb</div><h3>Lantern Festival<span class="soon">Coming soon</span></h3><p>The glowing finale of the New Year — a sky full of riddles and light.</p></div></div>
+    {festivals.map(f => (
+      <a class="card" href={`#${f.slug}`}><div class="top"><span>{f.zh}</span></div><div class="bd"><div class="tag">{f.when.split('(')[0]}</div><h3>{f.en}{f.link ? <span class="ready">Ready</span> : <span class="soon">Guide</span>}</h3><p>{f.emotion}.</p></div></a>
+    ))}
   </div>
+</section>
+
+<section class="sec">
+  <h2 id="what">What are Chinese traditional festivals?</h2>
+  <p>Chinese festivals are the heartbeat of the traditional year — and almost all of them run on the <b>lunar calendar</b>, tied to moons, solar turning points and the rhythm of the farming seasons. That's why their dates slide against the Western calendar: a festival on "the 15th day of the 8th lunar month" lands on a different Gregorian day every year.</p>
+  <p>But the deeper pattern isn't the calendar — it's <b>family</b>. Chinese festivals are not performances staged for tourists. They are how families gather, how the living remember the dead, and how a culture passes its stories from one generation to the next around a table. Strip away the lanterns and the food, and what's left is the same few themes, repeating through the year:</p>
+  <ul class="more">
+    <li><b>Reunion</b> — Lunar New Year and Mid-Autumn both pull families back together, one in the cold, one under the harvest moon.</li>
+    <li><b>Remembrance</b> — Qingming and the Ghost Festival are about what we owe our ancestors and the dead.</li>
+    <li><b>Loyalty and protection</b> — Dragon Boat honors a loyal poet and wards off a dangerous season.</li>
+    <li><b>Love and longing</b> — Qixi celebrates a love that endures even when it's only allowed one night a year.</li>
+    <li><b>Light and renewal</b> — the Lantern Festival and Winter Solstice both mark the return of light after dark.</li>
+  </ul>
+  <div class="note"><span class="nlbl">Native note</span><b>Every festival has a story</b> — To a Chinese child, a festival isn't a date — it's a tale. Mid-Autumn <i>is</i> Chang'e on the moon; Dragon Boat <i>is</i> Qu Yuan in the river. That's how we tell them here: the legend first, then the food and customs that grew up around it.</div>
+</section>
+
+<section class="sec">
+  <h2 id="all">The nine great festivals</h2>
+  {festivals.map(f => (
+    <div class="charcard" id={f.slug} style="margin:18px 0">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span class="zh" style="font-size:28px">{f.zh}</span>
+        <b style="font-size:19px">{f.en}</b>
+        <span class="py">{f.py}</span>
+      </div>
+      <div class="yr" style="margin:4px 0 8px">{f.when} · <b>{f.emotion}</b></div>
+      <p style="margin:0 0 8px"><b>The story:</b> {f.story}</p>
+      <p style="margin:0 0 8px">{f.body}</p>
+      <div style="font-size:13.5px;color:var(--ink2)"><b>Food:</b> {f.food} &nbsp;·&nbsp; <b>Customs:</b> {f.custom}</div>
+      {f.link && <div class="rd" style="margin-top:8px"><a href={f.link}>Read the full Mid-Autumn &amp; Chang'e story →</a></div>}
+    </div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="faq">Chinese festivals FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="next">Where to go next</h2>
+  <ul class="more">
+    <li>The Mid-Autumn moon belongs to <a href="/changge">Chang'e and Hou Yi</a> — the fullest version of the legend, with a free classroom pack.</li>
+    <li>The festival year turns with the <a href="/zodiac">Chinese zodiac</a> — 2026 is the Year of the Horse.</li>
+    <li>Many festivals grew out of the same world as China's <a href="/myths">myths and legends</a> — gods, rebels and monsters.</li>
+  </ul>
 </section>
 </main>
 
