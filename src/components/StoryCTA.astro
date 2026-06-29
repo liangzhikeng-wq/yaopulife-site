@@ -1,0 +1,39 @@
+---
+// 通用邮件捕获 CTA,复用 /api/subscribe。自包含品牌色样式,注入神话页/首页把流量变留资。
+const source = Astro.props.source || 'site-newsletter';
+---
+<section style="max-width:640px;margin:48px auto;padding:30px 26px;background:#F4F1E8;border:1px solid #B0904D;border-radius:14px;text-align:center;font-family:'Noto Serif SC',Georgia,serif">
+  <div style="color:#A6362A;font-size:12px;letter-spacing:3px;text-transform:uppercase">耀蒲 · yaopulife</div>
+  <h3 style="color:#241E17;font-size:22px;margin:10px 0 6px">More myths, in your inbox</h3>
+  <p style="color:#5a5043;font-size:14px;margin:0 0 16px;font-family:system-ui,sans-serif">New Chinese myths &amp; free classroom packs — told by a native. No spam.</p>
+  <form class="yp-cta-form" data-source={source} style="display:flex;gap:8px;max-width:400px;margin:0 auto;flex-wrap:wrap;font-family:system-ui,sans-serif">
+    <input type="email" required autocomplete="email" placeholder="you@email.com" style="flex:1;min-width:190px;padding:11px 13px;border:1px solid #d9d2c2;border-radius:8px;font-size:14px;background:#fff;color:#241E17;box-sizing:border-box" />
+    <button type="submit" style="padding:11px 22px;background:#A6362A;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;white-space:nowrap">Subscribe</button>
+  </form>
+  <p class="yp-cta-done" hidden style="color:#2F6F5E;margin:12px 0 0;font-family:system-ui,sans-serif;font-size:14px">Thanks! New myths are on the way.</p>
+  <p class="yp-cta-err" hidden style="color:#A6362A;margin:12px 0 0;font-family:system-ui,sans-serif;font-size:13px">Something went wrong — please try again.</p>
+</section>
+<script is:inline>
+  document.querySelectorAll('.yp-cta-form').forEach(function (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var input = form.querySelector('input'); var email = input && input.value;
+      if (!email) return;
+      var btn = form.querySelector('button'); var src = form.getAttribute('data-source');
+      var box = form.parentElement;
+      box.querySelector('.yp-cta-err').hidden = true;
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      try {
+        var r = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: src }) });
+        var d = await r.json();
+        if (!d || !d.success) throw new Error('failed');
+        form.style.display = 'none';
+        box.querySelector('.yp-cta-done').hidden = false;
+        if (window.gtag) gtag('event', 'generate_lead', { method: src });
+      } catch (err) {
+        box.querySelector('.yp-cta-err').hidden = false;
+        btn.textContent = 'Subscribe'; btn.disabled = false;
+      }
+    });
+  });
+</script>

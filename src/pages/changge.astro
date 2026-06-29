@@ -1,0 +1,214 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yaopulife.com/#org",
+      "name": "yaopulife",
+      "alternateName": "耀蒲",
+      "url": "https://yaopulife.com",
+      "logo": "https://yaopulife.com/favicon.svg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" },
+        { "@type": "ListItem", "position": 3, "name": "Mid-Autumn · Chang'e", "item": "https://yaopulife.com/changge" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "The Legend of Chang'e",
+      "alternativeHeadline": "嫦娥奔月 — The Lady Who Flew to the Moon",
+      "description": "The Mid-Autumn Festival legend of Chang'e, the woman who swallowed the elixir of immortality and flew to the moon — and why families eat mooncakes under the full moon.",
+      "inLanguage": "en",
+      "articleSection": "Chinese Festivals",
+      "keywords": "Chang'e, Mid-Autumn Festival, 嫦娥, mooncakes, Hou Yi, Chinese mythology, moon",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/changge",
+      "author": { "@id": "https://yaopulife.com/#org" },
+      "publisher": { "@id": "https://yaopulife.com/#org" }
+    }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Legend of Chang'e 嫦娥 — Mid-Autumn Festival | yaopulife</title>
+<meta name="description" content="The Mid-Autumn legend of Chang'e, who swallowed the elixir of immortality and flew to the moon — and why families gather over mooncakes under the full moon.">
+<link rel="canonical" href="https://yaopulife.com/changge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Legend of Chang'e 嫦娥 — Mid-Autumn Festival">
+<meta property="og:description" content="The first love letter China ever wrote to the night sky.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/changge">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals" class="on">Festivals</a></span>
+  <a class="btn" href="/festivals">More festivals →</a>
+</div></nav>
+
+<header class="story-hero illus">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="kicker">Chinese Festivals · Mid-Autumn</div>
+      <h1>The Legend of Chang'e</h1>
+      <div class="han-t">嫦娥奔月 · Cháng'é Bēn Yuè — the lady who flew to the moon</div>
+      <p class="lead">When the moon is full, Chinese families gather to eat mooncakes and look up together. But on that bright moon lives a woman, alone for a thousand years. Her story is the first love letter China ever wrote to the night sky.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        <text x="250" y="232" font-family="'Noto Serif SC',serif" font-size="290" font-weight="600" fill="var(--ink)" opacity="0.05" text-anchor="middle" dominant-baseline="middle">月</text>
+        <circle cx="338" cy="148" r="80" fill="var(--surface)"></circle>
+        <circle cx="338" cy="148" r="80" fill="none" stroke="var(--gold)" stroke-width="1.4" opacity="0.55"></circle>
+        <path d="M336 150 q24 -12 50 -8 M356 142 l-4 -12 M370 144 l2 -12" stroke="var(--gold)" stroke-width="1.2" fill="none" opacity="0.4"></path>
+        <g fill="var(--ink)">
+          <circle cx="212" cy="126" r="11"></circle>
+          <path d="M205 118 C211 110 222 113 220 122 C214 118 209 118 205 121 Z"></path>
+          <path d="M208 136 C 228 142 238 172 232 214 C 226 262 204 318 174 358 C 166 369 158 378 150 388 C 162 354 178 310 188 268 C 194 234 198 190 194 160 C 192 148 198 138 208 136 Z"></path>
+          <path d="M220 146 C 248 132 276 122 300 110" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" fill="none"></path>
+        </g>
+        <path d="M156 382 C 148 408 170 420 160 438" stroke="var(--cinnabar)" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.9"></path>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Festivals</div>
+    <a href="/changge" class="on">Mid-Autumn · Chang'e</a>
+    <a href="/festivals">Lunar New Year · Nian</a>
+    <a href="/festivals">Qingming · Remembrance</a>
+    <a href="/festivals">Dragon Boat · Qu Yuan</a>
+    <a href="/festivals">Qixi · The Cowherd</a>
+    <div class="lbl">On this page</div>
+    <a href="#suns">The world had ten suns</a>
+    <a href="#flew">The night she flew</a>
+    <a href="#friends">Friends on the moon</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Festivals / Mid-Autumn · Chang'e</div>
+    <span class="chip">Myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 7 min read</span>
+
+    <div class="callout"><b>序 · Series guide</b> — This is the opening lesson of <i>Chinese Festivals</i>. We begin with one full moon; next up, <i>The Jade Rabbit 玉兔</i>, where you'll meet everyone who lives in the moon palace.</div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="suns">The world had ten suns</h2>
+    <p>Long ago, ten suns rose into the sky at once. Rivers dried, crops burned, and the people cried out for help. A great archer named <a href="/houyi" style="color:var(--clay)"><span class="zh">Hou Yi 后羿</span></a> climbed a mountain, drew his enormous bow, and shot down nine of them — leaving the single sun we still see today.</p>
+    <p>As a reward, the Queen Mother of the West gave Hou Yi a single pill: the <b>elixir of immortality</b>. Drink it, and you would rise to heaven and live forever. But Hou Yi loved his wife, <span class="zh">Chang'e 嫦娥</span>, more than he wanted to live forever alone. So he gave the elixir to her to keep safe, and said nothing more about it.</p>
+
+    <h2 id="flew">The night she flew</h2>
+    <p>One day, while Hou Yi was away hunting, a greedy apprentice broke into their home and demanded the elixir. Chang'e refused. Cornered, with no other way to keep it from him, she did the only thing she could — she swallowed the pill herself.</p>
+    <p>At once her body grew light. Her feet lifted from the floor; she drifted past the window, past the rooftops, up and up into the autumn night — until she came to rest on the moon: the place closest to the people she loved, and the farthest away.</p>
+
+    <div class="mi mi-fly" data-mi="fly" id="benyue">
+      <div class="mi-lbl">奔月 · Lift her to the moon</div>
+      <div class="mi-stage">
+        <div class="mi-moon2"></div>
+        <button class="mi-change" type="button" aria-label="Drag Chang'e up toward the moon">嫦</button>
+      </div>
+      <div class="mi-hint">Drag her upward — let her fly.</div>
+      <div class="mi-after">Up and up, until she rested on the moon — closest to those she loved, and the farthest away.</div>
+    </div>
+
+    <div class="note"><span class="nlbl">Native note</span><b>月饼 · why mooncakes?</b> — When Hou Yi came home and learned what had happened, he laid out her favourite fruits and cakes under the full moon as an offering. People copied him, and the round mooncake became a symbol of reunion <span class="zh">团圆</span> — the whole point of the festival.</div>
+
+    <h2 id="friends">Friends on the moon</h2>
+    <p>Chang'e is not entirely alone up there. Beside her lives the <span class="zh">Jade Rabbit 玉兔</span>, forever pounding herbs for the elixir of life, and a woodcutter named Wu Gang, endlessly chopping a self-healing cassia tree. We'll meet them both in the next lesson.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>团圆 · the word behind the festival</b> — <i>Tuányuán</i> means "round, together, reunited." The moon is roundest on this night, the mooncake is round, and the family circles one table. The shape <i>is</i> the message: everyone home, no gap in the ring.</div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:22px 0 6px;text-transform:uppercase">What you'll be able to do</div>
+    <p style="margin-bottom:6px">✓ Retell the complete Chang'e story to children, in the right order.<br>✓ Explain why mooncakes, the full moon and reunion belong together.<br>✓ Recognise the key names in pinyin: Hou Yi, Chang'e, Yu Tu (jade rabbit).</p>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#suns">· The world had ten suns</a></div>
+      <div><a href="#flew">· The night she flew</a></div>
+      <div><a href="#friends">· Friends on the moon</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Up next</div>
+      <h4 style="color:var(--clayd)">The Jade Rabbit 玉兔</h4>
+      <a class="next" href="/festivals">Next lesson →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Get the printable pack</div>
+      <h4>Chang'e activity pack</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">Story + comprehension + mooncake craft + coloring. For K–5 classrooms. Free PDF.</p>
+      <form id="pack-form" style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+        <input type="email" id="pack-email" name="email" required autocomplete="email" placeholder="you@school.edu"
+          style="padding:9px 11px;border:1px solid var(--line,#d9d2c2);border-radius:8px;background:var(--surface,#fff);color:var(--ink);font-size:13px;font-family:inherit;width:100%;box-sizing:border-box">
+        <button type="submit" class="btn" style="width:100%;text-align:center;cursor:pointer;border:none;font:inherit">Email me the pack →</button>
+      </form>
+      <div id="pack-done" hidden style="margin-top:10px">
+        <p style="font-size:12.5px;color:var(--ink2);margin:0 0 8px">Thanks! Your download is starting — or grab it here:</p>
+        <a class="btn" href="/downloads/midautumn-change-activity-pack.pdf" download style="width:100%;text-align:center">Download the PDF →</a>
+      </div>
+      <p id="pack-err" hidden style="font-size:12px;color:var(--clayd);margin:8px 0 0">Something went wrong — please try again.</p>
+      <p style="font-size:11px;color:var(--ink2);opacity:.72;margin:8px 0 0">No spam. K–5 print-and-go.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<script is:inline>
+  (function(){
+    var form = document.getElementById('pack-form');
+    if(!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var emailEl = document.getElementById('pack-email');
+      var email = emailEl && emailEl.value;
+      if(!email) return;
+      var btn = form.querySelector('button[type="submit"]');
+      var err = document.getElementById('pack-err');
+      if(err) err.hidden = true;
+      if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
+      try {
+        var res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'midautumn-change-pack' })
+        });
+        var data = await res.json();
+        if(!data || !data.success) throw new Error((data && data.error) || 'failed');
+        form.hidden = true;
+        var done = document.getElementById('pack-done');
+        if(done) done.hidden = false;
+        if(window.gtag) gtag('event', 'generate_lead', { method: 'midautumn-change-pack' });
+        var a = document.createElement('a');
+        a.href = '/downloads/midautumn-change-activity-pack.pdf';
+        a.setAttribute('download', '');
+        document.body.appendChild(a); a.click(); a.remove();
+      } catch(err2){
+        if(err) err.hidden = false;
+        if(btn){ btn.textContent = 'Email me the pack →'; btn.disabled = false; }
+      }
+    });
+  })();
+</script>
+<SiteAnalytics />
+</body>
+</html>

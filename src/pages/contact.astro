@@ -6,14 +6,14 @@ import Footer from "../components/Footer.astro";
 export const prerender = true;
 ---
 
-<Layout title="Contact yaopulife" description="Send a custom phone case request — your photo or text and your phone model. We reply with a proof and a written quote before anything is made.">
+<Layout title="Contact yaopulife" description="Questions, collaborations, licensing or custom culture packs — get in touch with yaopulife. We reply on business days.">
   <Navbar />
 
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900">Start a Custom Phone Case Request</h1>
-        <p class="mt-4 text-lg text-gray-600">Share your photo or text and your phone model. We will reply on business days with a proof and a written quote before anything is made.</p>
+        <h1 class="text-4xl font-bold text-gray-900">Get in touch</h1>
+        <p class="mt-4 text-lg text-gray-600">Story suggestions, collaborations, licensing, or a custom culture pack for your classroom or brand — tell us what you have in mind. We reply on business days.</p>
       </div>
 
       <div class="mt-12 grid md:grid-cols-2 gap-12">
@@ -31,14 +31,15 @@ export const prerender = true;
               </div>
             </div>
             <div>
-              <label for="interest" class="block text-sm font-medium text-gray-700">Product Interest <span class="text-red-500">*</span></label>
+              <label for="interest" class="block text-sm font-medium text-gray-700">What's it about? <span class="text-red-500">*</span></label>
               <select id="interest" name="interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
                 <option value="">Select an option...</option>
-                <option>Custom Photo Phone Case</option>
-                <option>Custom case — different phone model</option>
-                <option>Bulk / multiple cases</option>
-                <option>Other phone case request</option>
-                <option>Not sure yet</option>
+                <option>Content collaboration / partnership</option>
+                <option>Licensing &amp; education use</option>
+                <option>Custom culture pack (classroom / brand)</option>
+                <option>Press &amp; media</option>
+                <option>Story suggestion / feedback</option>
+                <option>Other</option>
               </select>
             </div>
             <div class="grid md:grid-cols-2 gap-4">
@@ -64,15 +65,15 @@ export const prerender = true;
               </div>
             </div>
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700">Custom Requirements <span class="text-red-500">*</span></label>
-              <textarea id="message" name="message" rows="4" required placeholder="Tell us your phone model, the photo or text to include, preferred style, and any date you need it by." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700">Your message <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell us what you have in mind — the project, the audience, and anything we should know." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500"></textarea>
             </div>
             <div class="flex items-start">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-4 w-4 text-brand-600 border-gray-300 rounded" />
               <label for="privacy" class="ml-2 text-sm text-gray-600">I agree to the <a href="/privacy" class="text-brand-600 hover:underline">Privacy Policy</a></label>
             </div>
             <button type="submit" id="submitBtn" class="w-full px-6 py-3 text-base font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-              Send Request
+              Send message
             </button>
           </form>
 
@@ -123,7 +124,7 @@ export const prerender = true;
               </div>
               <div>
                 <p class="text-sm font-medium text-gray-900">Response time</p>
-                <p class="text-sm text-gray-600">We reply on business days with a proof and quote</p>
+                <p class="text-sm text-gray-600">We reply on business days</p>
               </div>
             </div>
           </div>
@@ -186,7 +187,7 @@ export const prerender = true;
       } catch (error) {
         console.error('Form error:', error);
         formError.classList.remove('hidden');
-        submitBtn.textContent = 'Send Request';
+        submitBtn.textContent = 'Send message';
         submitBtn.disabled = false;
       }
     });

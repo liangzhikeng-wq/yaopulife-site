@@ -28,10 +28,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { email } = req.body || {};
+    const { email, source } = req.body || {};
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return res.status(400).json({ error: 'Valid email is required' });
     }
+    const src = escapeHtml((source ? String(source) : 'newsletter').slice(0, 60));
+    const isLead = src !== 'newsletter';
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const toEmail = process.env.CONTACT_TO_EMAIL || 'hello@yaopulife.com';
@@ -46,9 +48,9 @@ export default async function handler(req, res) {
           to: toEmail,
           from: fromEmail,
           replyTo: email,
-          subject: `[Newsletter] New subscriber: ${email}`,
-          html: `<h2>New newsletter subscriber</h2><p>Email: <a href="mailto:${safeEmail}">${safeEmail}</a></p><p style="color:#666;font-size:12px;">Submitted: ${new Date().toISOString()}<br>Source: yaopulife.com</p>`,
-          text: `New newsletter subscriber: ${email}\nSubmitted: ${new Date().toISOString()}`,
+          subject: isLead ? `[Lead · ${src}] ${email}` : `[Newsletter] New subscriber: ${email}`,
+          html: `<h2>${isLead ? 'New lead' : 'New newsletter subscriber'}</h2><p>Email: <a href="mailto:${safeEmail}">${safeEmail}</a></p><p style="color:#666;font-size:12px;">Source: ${src}<br>Submitted: ${new Date().toISOString()}</p>`,
+          text: `${isLead ? 'New lead' : 'New newsletter subscriber'}: ${email}\nSource: ${src}\nSubmitted: ${new Date().toISOString()}`,
         }),
       });
       if (!response.ok) {

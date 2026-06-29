@@ -1,0 +1,48 @@
+/* ============================================================
+   yaopulife · Brand Design Tokens (canonical source)
+   新中式治愈萌趣视觉生产系统 · 规范色板与基础 token
+   ------------------------------------------------------------
+   说明:
+   - 现网「运行时」token 在 public/yaopu.css :root(--paper / --ink / --cinnabar / --jade …),
+     已上线稳定、构成现有品牌识别 —— 一律保留不动(尊重现网稳定识别)。
+   - 本文件用 --color-* 命名空间,作为「视觉生产系统」的规范标准:
+     新组件、新插画、Claude Design、Yaopu Agent OS 数字员工统一引用这里。
+   - 两套同源(暖纸 / 墨 / 朱砂 / 玉青 / 月金),映射见
+     docs/brand/brand-visual-upgrade-summary.md。
+   - 这些 --color-* 已同步进 public/yaopu.css :root,故全站即时可用;
+     Tailwind 用户类见 tailwind.config.js 的 colors.yaopu.*。
+   ============================================================ */
+:root {
+  /* 基础色 */
+  --color-paper: #F7F1E8;        /* 宣纸白 */
+  --color-warm-paper: #EFE6D8;   /* 暖米白 */
+  --color-mist: #D8CEC0;         /* 浅雾灰 */
+  --color-ink-light: #8C8377;    /* 浅墨灰 */
+  --color-ink: #2F2A26;          /* 主墨色 */
+  --color-deep-ink: #1D1A17;     /* 深墨色 */
+
+  /* 品牌强调色 */
+  --color-cinnabar: #B6432A;     /* 朱砂红 */
+  --color-vermilion-light: #C95A3C; /* 柔朱红 */
+  --color-jade: #6F8F85;         /* 玉青 */
+  --color-bamboo-green: #829B6E; /* 竹青 */
+  --color-moon-gold: #C9A96B;    /* 月米金 */
+
+  /* 功能色 */
+  --color-success: #6E8B74;
+  --color-warning: #C58B39;
+  --color-error: #B04A3A;
+  --color-info: #688AA3;
+
+  /* 圆角 */
+  --radius-card: 24px;
+  --radius-button: 999px;
+  --radius-chip: 999px;
+
+  /* 阴影 */
+  --shadow-soft: 0 18px 60px rgba(29, 26, 23, 0.08);
+  --shadow-card: 0 12px 36px rgba(29, 26, 23, 0.10);
+
+  /* 描边 */
+  --border-soft: 1px solid rgba(47, 42, 38, 0.12);
+}

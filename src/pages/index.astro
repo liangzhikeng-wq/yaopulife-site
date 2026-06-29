@@ -1,158 +1,117 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
-
-// 在售手机壳（白名单，与 product/[id].astro / shop.astro 一致）
-const LIVE_SKUS = ["PHONE-CASE-001"];
-const dir = path.join(process.cwd(), "data", "products");
-const cases = LIVE_SKUS.map((sku) => {
-  const p = JSON.parse(fs.readFileSync(path.join(dir, `${sku}.json`), "utf-8"));
-  const priceNum = Number(String(p.price).replace(/[^0-9.]/g, ""));
-  return { ...p, slug: sku.toLowerCase(), priceDisplay: isNaN(priceNum) ? p.price : `$${priceNum.toFixed(2)}` };
-});
-const hero = cases[0];
-
-export const prerender = true;
-
-const features = [
-  { t: "Your photo or name", d: "Upload a photo, or send a name, initials, or monogram. UV-printed or laser-engraved." },
-  { t: "Slim protective build", d: "Silicone outer with PC support, raised screen & camera edges, covered buttons, reinforced corners." },
-  { t: "Made to order", d: "Each case is produced after you approve a proof. Nothing is mass-printed in advance." },
-  { t: "Fits current flagships", d: "Made to fit current iPhone & Samsung flagship models. Tell us your model." },
-];
-
-const steps = [
-  { n: "1", t: "Pick your phone model", d: "Tell us your iPhone or Samsung model when you send your request." },
-  { n: "2", t: "Share your design", d: "Upload a photo or send your name / initials. We send back a proof and a written quote." },
-  { n: "3", t: "We make it to order", d: "Approve the proof, and your case is produced and shipped to you." },
-];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yaopulife.com/#org",
+      "name": "yaopulife",
+      "alternateName": "耀蒲",
+      "url": "https://yaopulife.com",
+      "logo": "https://yaopulife.com/favicon.svg",
+      "description": "Authentic Chinese myths, festivals and culture — told by a native, for curious minds everywhere."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yaopulife.com/#site",
+      "url": "https://yaopulife.com",
+      "name": "yaopulife",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://yaopulife.com/#org" }
+    }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
 ---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>yaopulife — Chinese myths, festivals & zodiac, told by a native</title>
+<meta name="description" content="China's myths told like dark fantasy, its festivals and its zodiac — written by someone who grew up inside the culture, for curious minds everywhere.">
+<link rel="canonical" href="https://yaopulife.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yaopulife — Chinese myths, festivals & zodiac, told by a native">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/" class="on">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/wukong">Start: Monkey King →</a>
+</div></nav>
 
-<Layout
-  title="Custom Photo Phone Cases, Made to Order"
-  description="yaopulife makes custom phone cases from your photo, name, or initials. Slim protective design, UV-printed or laser-engraved, made to order for iPhone & Samsung."
->
-  <Navbar />
+<header class="hero"><div class="wrap">
+  <div class="moon"></div>
+  <div class="living-hanzi" aria-hidden="true">蒲</div>
+  <div class="kicker">Authentic · by a native</div>
+  <h1>China's stories,<br>told the way they're meant to be told</h1>
+  <div class="zh">中 国 五 千 年 文 化</div>
+  <p>Myths as dark fantasy, festivals with the legends behind them, a zodiac that says who you are — written by someone who grew up inside the culture.</p>
+  <a class="btn" href="/wukong" style="margin:0;display:inline-block">Meet the Monkey King →</a>
+  <svg class="cloud" width="240" height="18" viewBox="0 0 240 18"><path d="M2 9h78 M160 9h78" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M92 9c4-7 12-7 16 0c4-7 12-7 16 0c4 7 12 7 16 0c4-7 12-7 16 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+</div></header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
-        <div>
-          <p class="inline-flex items-center gap-2 rounded-full bg-white border border-brand-100 px-3 py-1 text-sm font-semibold text-brand-600">
-            <span class="h-2 w-2 rounded-full bg-brand-600"></span> Custom phone cases · made to order
-          </p>
-          <h1 class="mt-6 text-5xl sm:text-6xl font-bold text-gray-900 leading-[1.05] tracking-tight">
-            Your photo.<br />Your case.
-          </h1>
-          <p class="mt-6 text-lg text-gray-600 max-w-xl leading-relaxed">
-            Personalize a slim, protective phone case with your own photo, name, or initials — UV-printed or
-            laser-engraved and made to order. Send your design, approve a proof, and we make it just for you.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href={`/product/${hero.slug}`} class="inline-flex items-center px-7 py-3.5 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-              Design your case
-            </a>
-            <a href="/how-it-works" class="inline-flex items-center px-7 py-3.5 text-base font-semibold text-brand-700 bg-white border border-brand-200 rounded-lg hover:bg-brand-50 transition-colors">
-              How it works
-            </a>
-          </div>
-          <p class="mt-5 text-sm text-gray-500">From {hero.priceDisplay} base · final quote before payment · fits iPhone &amp; Samsung</p>
-        </div>
+<main class="wrap">
 
-        <div class="relative">
-          <div class="absolute -inset-4 rounded-[2rem] bg-brand-100/50 blur-2xl"></div>
-          <div class="relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-xl aspect-square">
-            <img src={`/images/products/${hero.slug}/main.png`} alt={hero.altTags?.[0] || hero.title}
-                 class="w-full h-full object-cover" loading="eager" />
-            <span class="absolute bottom-3 left-3 rounded-md bg-black/60 px-2 py-1 text-[11px] font-medium text-white">
-              Digital render — not a production photo
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="sec" id="myths">
+  <div class="sec-h"><h2>Myths &amp; Legends</h2><span class="han">神话传说</span><a class="more" href="/myths">all myths →</a></div>
+  <div class="grid g3">
+    <a class="card" href="/wukong"><div class="top"><div class="moonbg"></div><span>悟空</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Sun Wukong<span class="ready">Ready</span></h3><p>Heaven's greatest enemy was not a demon — but a monkey born from stone.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/changge"><div class="top"><div class="moonbg"></div><span>嫦娥</span></div><div class="bd"><div class="tag">Moon myth</div><h3>The Legend of Chang'e<span class="ready">Ready</span></h3><p>One choice sent her to the moon — alone, forever, within sight of home.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/nezha"><div class="top"><span>哪吒</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Nezha<span class="ready">Ready</span></h3><p>Told he was born a monster — he decided fate doesn't get to define him.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/houyi"><div class="top"><span>后羿</span></div><div class="bd"><div class="tag">Hero myth</div><h3>Hou Yi &amp; the Ten Suns<span class="ready">Ready</span></h3><p>The archer who shot down nine suns — and lost the woman he loved.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/shanhaijing"><div class="top"><span>山海</span></div><div class="bd"><div class="tag">Bestiary</div><h3>Classic of Mountains &amp; Seas<span class="ready">Ready</span></h3><p>A 2,000-year-old field guide to gods, beasts and far lands.</p><div class="rd">Enter the bestiary →</div></div></a>
+    <a class="card" href="/whitesnake"><div class="top"><span>白蛇</span></div><div class="bd"><div class="tag">Forbidden love</div><h3>The White Snake<span class="ready">Ready</span></h3><p>A snake spirit loved a human — the world refused to allow it.</p><div class="rd">Read the story →</div></div></a>
+  </div>
+</section>
 
-  <!-- Features -->
-  <section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((f) => (
-          <div class="rounded-2xl border border-gray-100 p-6">
-            <div class="h-10 w-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-            </div>
-            <h3 class="mt-4 font-semibold text-gray-900">{f.t}</h3>
-            <p class="mt-2 text-sm text-gray-600 leading-relaxed">{f.d}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+<section class="sec" id="zodiac">
+  <div class="sec-h"><h2>The Chinese Zodiac</h2><span class="han">十二生肖</span><a class="more" href="/zodiac">which one are you? →</a></div>
+  <div class="grid g6">
+    <a class="zcard" href="/zodiac"><div class="disc">鼠</div><div class="en">Rat</div><div class="yr">2020 · 2032</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">牛</div><div class="en">Ox</div><div class="yr">2021 · 2033</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">虎</div><div class="en">Tiger</div><div class="yr">2022 · 2034</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">兔</div><div class="en">Rabbit</div><div class="yr">2023 · 2035</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">龙</div><div class="en">Dragon</div><div class="yr">2024 · 2036</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">蛇</div><div class="en">Snake</div><div class="yr">2025 · 2037</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">马</div><div class="en">Horse</div><div class="yr">2026 · 2038</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">羊</div><div class="en">Goat</div><div class="yr">2027 · 2039</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">猴</div><div class="en">Monkey</div><div class="yr">2028 · 2040</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">鸡</div><div class="en">Rooster</div><div class="yr">2029 · 2041</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">狗</div><div class="en">Dog</div><div class="yr">2030 · 2042</div></a>
+    <a class="zcard" href="/zodiac"><div class="disc">猪</div><div class="en">Pig</div><div class="yr">2031 · 2043</div></a>
+  </div>
+</section>
 
-  <!-- Featured product -->
-  <section class="py-16 lg:py-20 bg-gray-50 border-y border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">In the shop</p>
-          <h2 class="mt-2 text-3xl font-bold text-gray-900">Available now</h2>
-        </div>
-        <a href="/shop" class="hidden sm:inline text-sm font-semibold text-brand-600 hover:underline">View all cases →</a>
-      </div>
+<section class="sec" id="festivals">
+  <div class="sec-h"><h2>Festivals</h2><span class="han">传统节日</span><a class="more" href="/festivals">all festivals →</a></div>
+  <div class="grid g3">
+    <a class="card" href="/changge"><div class="top"><div class="moonbg"></div><span>中秋</span></div><div class="bd"><div class="tag">Autumn</div><h3>Mid-Autumn Festival<span class="ready">Ready</span></h3><p>Mooncakes, lanterns and the full-moon reunion — with the Chang'e legend at its heart.</p><div class="rd">Explore →</div></div></a>
+    <a class="card" href="/festivals"><div class="top"><span>春节</span></div><div class="bd"><div class="tag">Winter</div><h3>Lunar New Year<span class="soon">Coming soon</span></h3><p>Red envelopes, the Nian beast, and the world's largest celebration.</p><div class="rd">See all festivals →</div></div></a>
+    <a class="card" href="/festivals"><div class="top"><span>端午</span></div><div class="bd"><div class="tag">Summer</div><h3>Dragon Boat Festival<span class="soon">Coming soon</span></h3><p>Dragon boats, rice dumplings, and the poet who gave his life to the river.</p><div class="rd">See all festivals →</div></div></a>
+  </div>
+</section>
 
-      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cases.map((p) => (
-          <a href={`/product/${p.slug}`} class="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg transition-shadow">
-            <div class="aspect-square bg-gray-50 overflow-hidden relative">
-              <img src={`/images/products/${p.slug}/main.png`} alt={p.altTags?.[0] || p.title}
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" />
-              <span class="absolute bottom-2 left-2 rounded bg-black/65 px-2 py-1 text-[11px] font-medium text-white">Digital render — not a production photo</span>
-            </div>
-            <div class="p-5">
-              <h3 class="text-base font-semibold text-gray-900 leading-snug">{p.title}</h3>
-              <div class="mt-2 flex items-center justify-between">
-                <span class="text-lg font-bold text-gray-900">From {p.priceDisplay} <span class="text-xs font-normal text-gray-400">base · quote before payment</span></span>
-                <span class="text-sm font-medium text-brand-600 group-hover:underline">View &amp; request →</span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+</main>
 
-  <!-- How it works -->
-  <section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 text-center">How it works</h2>
-      <p class="mt-3 text-center text-gray-600">No automated checkout — every case starts with a proof and a written quote.</p>
-      <div class="mt-12 grid sm:grid-cols-3 gap-6">
-        {steps.map((s) => (
-          <div class="rounded-2xl border border-gray-100 p-7">
-            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold">{s.n}</div>
-            <h3 class="mt-4 text-lg font-semibold text-gray-900">{s.t}</h3>
-            <p class="mt-2 text-gray-600">{s.d}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-20 bg-brand-600">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to design your case?</h2>
-      <p class="mt-4 text-lg text-brand-100">Send your photo or text and phone model. We reply on business days with a proof and a written quote before anything is made.</p>
-      <a href={`/product/${hero.slug}`} class="mt-8 inline-flex items-center px-8 py-4 text-base font-semibold text-brand-600 bg-white rounded-lg hover:bg-gray-100 transition-colors">
-        Design your case
-      </a>
-    </div>
-  </section>
-
-  <Footer />
-</Layout>
+<StoryCTA source="page-home" />
+<footer>
+  <div class="wrap row">
+    <div class="col" style="flex:1.4;min-width:220px"><h4>yaopulife <span style="font-family:var(--han);color:var(--cinnabar);font-size:13px">耀蒲</span></h4><p style="color:var(--ink2);max-width:300px">Authentic Chinese myths, festivals and culture — told by a native. New stories every week.</p></div>
+    <div class="col"><h4>Explore</h4><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></div>
+    <div class="col"><h4>Follow</h4><a href="/">YouTube</a><a href="/">TikTok</a><a href="/">Pinterest</a></div>
+    <div class="col"><h4>Read</h4><a href="/wukong">Sun Wukong</a><a href="/changge">Chang'e</a></div>
+  </div>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

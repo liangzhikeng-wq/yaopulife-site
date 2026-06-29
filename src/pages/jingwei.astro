@@ -1,0 +1,143 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Jingwei", "item": "https://yaopulife.com/jingwei" }
+    ] },
+    { "@type": "Article",
+      "headline": "Jingwei — The Drowned Girl Who Declared War on the Sea",
+      "alternativeHeadline": "精卫填海 — a small bird carrying stones to fill an endless ocean",
+      "description": "A little girl drowned in the Eastern Sea. She came back as a bird — and began carrying stones, one by one, to fill the entire ocean so it can never drown anyone again. She will never finish. She has never stopped.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "Jingwei, 精卫, 精卫填海, Classic of Mountains and Seas, Chinese mythology",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/jingwei",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jingwei 精卫 — The Drowned Girl Who Declared War on the Sea | yaopulife</title>
+<meta name="description" content="A little girl drowned in the Eastern Sea. She came back as a bird, carrying stones one by one to fill the entire ocean — a war she cannot win, and refuses to stop fighting.">
+<link rel="canonical" href="https://yaopulife.com/jingwei">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jingwei 精卫 — The Drowned Girl Who Declared War on the Sea">
+<meta property="og:description" content="One small bird, carrying stones to fill an endless ocean — and never once stopping.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/jingwei">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero">
+  <div class="living-hanzi" aria-hidden="true">精卫</div>
+  <div class="wrap">
+    <div class="kicker">Rebels of Chinese Mythology · 04</div>
+    <h1>The Drowned Girl Who Declared War on the Sea</h1>
+    <div class="han-t">精卫填海 · Jīngwèi Tián Hǎi — the bird who would fill the ocean</div>
+    <p class="lead">A little girl went down to the sea to play, and the sea drowned her. She came back as a bird — and declared a war on the entire ocean that she will keep losing, and refusing to stop losing, until the end of the world.</p>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Rebels of myth</div>
+    <a href="/wukong">Sun Wukong · the Monkey King</a>
+    <a href="/nezha">Nezha · the cursed child</a>
+    <a href="/houyi">Hou Yi · who shot the suns</a>
+    <a href="/jingwei" class="on">Jingwei · who fought the sea</a>
+    <a href="/xingtian">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#girl">The girl the sea took</a>
+    <a href="#bird">The bird that came back</a>
+    <a href="#war">A war she cannot win</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Jingwei</div>
+    <span class="chip">Tragic myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 4 min read</span>
+
+    <div class="callout"><b>序 · Series guide</b> — One of the oldest and shortest myths in China, from the ancient <a href="/shanhaijing" style="color:var(--clayd)">Classic of Mountains and Seas</a>. It is barely a paragraph long in the original — and it has haunted Chinese readers for two thousand years. Next: <i>Xingtian, the god who kept fighting after losing his head.</i></div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="girl">The girl the sea took</h2>
+    <p>Her name was <span class="zh">Nüwa 女娃</span>, and she was the youngest daughter of <span class="zh">Yan Di 炎帝</span>, one of the first god-emperors of China. She was a child like any child. One day she went down to the Eastern Sea to swim and play in the waves.</p>
+    <p>She never came home. The sea, vast and careless, pulled her under and kept her. A god's daughter, drowned — gone as easily as anyone, swallowed by water that did not even notice what it had taken.</p>
+
+    <h2 id="bird">The bird that came back</h2>
+    <p>But she did not stay gone. Her spirit refused the quiet of death and returned in a new shape — a small bird with a speckled head, a white beak and red feet. People named her after her own cry: <span class="zh">Jingwei 精卫</span>.</p>
+    <p>She did not come back to mourn. She came back furious — and with a plan so impossible it stops you cold.</p>
+
+    <div class="pull">She came back as something small, and set herself against something endless.</div>
+
+    <h2 id="war">A war she cannot win</h2>
+    <p>Every day, Jingwei flies from the western mountains to the Eastern Sea carrying a single pebble or a small twig in her beak. And every day, she drops it into the water — trying, one stone at a time, to fill in the entire ocean, so that it can never drown another child the way it drowned her.</p>
+
+    <div class="mi mi-fill" data-mi="fill" id="tianhai">
+      <div class="mi-lbl">填海 · Drop a stone into the sea</div>
+      <div class="mi-sea"><span class="mi-bird">精卫</span></div>
+      <button class="mi-drop" type="button">Drop a pebble · <span class="mi-count">0</span></button>
+      <div class="mi-after">The sea is no smaller. She lifts another stone and goes again — and has not stopped in a thousand years.</div>
+    </div>
+    <p>She will never finish. The sea is bottomless and she is one small bird; the maths is hopeless and always will be. And yet she has not stopped — not once, in thousands of years. Stone after stone after stone, a tiny act of defiance repeated forever against something that could never even feel it.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>精卫填海 · what this idiom means</b> — "Jingwei fills the sea" became one of China's most quoted phrases. It does <i>not</i> mean a foolish waste of effort. It means dogged, unbreakable determination in the face of impossible odds — the refusal to accept that something can't be done. In China, the will is admired, not the arithmetic.</div>
+
+    <div class="note"><span class="nlbl">Native note</span><b>女娃 ≠ 女娲</b> — Careful with the names. The drowned girl is <i>Nüwa 女娃</i>. She is <b>not</b> the great creator goddess <i>Nüwa 女娲</i>, who patched the broken sky — a different figure, one character apart. Even native readers mix them up.</div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ The story of Jingwei in its true, stark, two-thousand-year-old form.<br>✓ Why <span class="zh">精卫填海</span> stands for unbreakable will, not wasted effort.<br>✓ How to tell Nüwa the drowned girl from Nüwa the creator goddess.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Is Jingwei heroic, or is she trapped in her own grief forever? Where's the line between the two? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#girl">· The girl the sea took</a></div>
+      <div><a href="#bird">· The bird that came back</a></div>
+      <div><a href="#war">· A war she cannot win</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Up next</div>
+      <h4 style="color:var(--clayd)">Xingtian 刑天 · the headless warrior</h4>
+      <a class="next" href="/xingtian">Read his story →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">From the same ancient book</div>
+      <h4>Classic of Mountains &amp; Seas</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">China's strangest book — the source of this myth and a hundred monsters.</p>
+      <a class="next" href="/shanhaijing" style="margin-top:8px">Enter the bestiary →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-jingwei" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

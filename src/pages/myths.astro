@@ -1,0 +1,98 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "CollectionPage", "name": "Chinese Myths & Legends", "url": "https://yaopulife.com/myths", "isPartOf": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" }
+    ] }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chinese Myths &amp; Legends — gods, rebels & monsters | yaopulife</title>
+<meta name="description" content="China's myths as dark fantasy: rebels who defied heaven, an ancient monster universe, forbidden love, empire and strategy. Told for curious minds.">
+<link rel="canonical" href="https://yaopulife.com/myths">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/wukong">Start: Monkey King →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Authentic · by a native</div>
+  <h1>Myths &amp; Legends</h1>
+  <div class="zh">神 话 传 说</div>
+  <p>China's myths, told like dark fantasy — rebels who declared war on heaven, an ancient universe of monsters, love that broke every rule. No background required.</p>
+</div></header>
+
+<main class="wrap">
+
+<section>
+  <div class="serieslabel"><h2>Rebels of Chinese Mythology</h2><span class="han">神话反叛者</span><span class="en">defy fate · defy heaven</span></div>
+  <div class="grid g3">
+    <a class="card" href="/wukong"><div class="top"><div class="moonbg"></div><span>悟空</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Sun Wukong<span class="ready">Ready</span></h3><p>Born from stone with no name — so he declared war on heaven itself.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/nezha"><div class="top"><span>哪吒</span></div><div class="bd"><div class="tag">Rebel myth</div><h3>Nezha<span class="ready">Ready</span></h3><p>Told he was born a monster — he decided fate doesn't get to define him.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/houyi"><div class="top"><span>后羿</span></div><div class="bd"><div class="tag">Hero myth</div><h3>Hou Yi<span class="ready">Ready</span></h3><p>The archer who shot down nine suns — and lost the woman he loved.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/jingwei"><div class="top"><span>精卫</span></div><div class="bd"><div class="tag">Tragic myth</div><h3>Jingwei<span class="ready">Ready</span></h3><p>A drowned girl became a bird, vowing to fill the sea that killed her.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/xingtian"><div class="top"><span>刑天</span></div><div class="bd"><div class="tag">War myth</div><h3>Xingtian<span class="ready">Ready</span></h3><p>Beheaded by heaven, he kept fighting — with his chest as a face.</p><div class="rd">Read the story →</div></div></a>
+    <div class="card"><div class="top"><span>杨戬</span></div><div class="bd"><div class="tag">God myth</div><h3>Erlang Shen<span class="soon">Coming soon</span></h3><p>The three-eyed god who could match the Monkey King blow for blow.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="serieslabel"><h2>China's Ancient Monster Universe</h2><span class="han">怪物宇宙</span><span class="en">the bestiary</span></div>
+  <div class="grid g3">
+    <a class="card" href="/shanhaijing"><div class="top"><span>山海</span></div><div class="bd"><div class="tag">Bestiary</div><h3>Classic of Mountains &amp; Seas<span class="ready">Ready</span></h3><p>A 2,000-year-old field guide to gods, beasts and far lands — China's strangest book.</p><div class="rd">Enter the bestiary →</div></div></a>
+    <div class="card"><div class="top"><span>狐</span></div><div class="bd"><div class="tag">Spirit</div><h3>The Fox Spirit<span class="soon">Coming soon</span></h3><p>A shapeshifter who became more human than the humans around her.</p></div></div>
+    <div class="card"><div class="top"><span>聊斋</span></div><div class="bd"><div class="tag">Ghost tales</div><h3>Strange Tales of Liaozhai<span class="soon">Coming soon</span></h3><p>Scholars, ghosts and demons — China's most beautiful horror stories.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="serieslabel"><h2>Forbidden Love</h2><span class="han">禁忌爱情</span><span class="en">love that broke the rules</span></div>
+  <div class="grid g3">
+    <a class="card" href="/changge"><div class="top"><div class="moonbg"></div><span>嫦娥</span></div><div class="bd"><div class="tag">Moon myth</div><h3>Chang'e &amp; Hou Yi<span class="ready">Ready</span></h3><p>One choice sent her to the moon — alone, forever, within sight of home.</p><div class="rd">Read the story →</div></div></a>
+    <a class="card" href="/whitesnake"><div class="top"><span>白蛇</span></div><div class="bd"><div class="tag">Love myth</div><h3>The White Snake<span class="ready">Ready</span></h3><p>A thousand-year-old snake spirit loved a human — the world refused to allow it.</p><div class="rd">Read the story →</div></div></a>
+    <div class="card"><div class="top"><span>梁祝</span></div><div class="bd"><div class="tag">Tragic love</div><h3>The Butterfly Lovers<span class="soon">Coming soon</span></h3><p>Forbidden in life, they became two butterflies that would never part.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="serieslabel"><h2>Power, War &amp; Strategy</h2><span class="han">权谋帝国</span><span class="en">the empire game</span></div>
+  <div class="grid g3">
+    <div class="card"><div class="top"><span>始皇</span></div><div class="bd"><div class="tag">Empire</div><h3>Qin Shi Huang<span class="soon">Coming soon</span></h3><p>The man who united China — and tried to make his power last forever.</p></div></div>
+    <div class="card"><div class="top"><span>孔明</span></div><div class="bd"><div class="tag">Strategy</div><h3>Zhuge Liang<span class="soon">Coming soon</span></h3><p>A dying strategist who won wars with his mind against impossible odds.</p></div></div>
+    <div class="card"><div class="top"><span>三国</span></div><div class="bd"><div class="tag">War saga</div><h3>Three Kingdoms<span class="soon">Coming soon</span></h3><p>An empire collapses into a 100-year game of loyalty, genius and betrayal.</p></div></div>
+  </div>
+</section>
+
+</main>
+
+<StoryCTA source="page-myths" />
+<footer>
+  <div class="wrap row">
+    <div class="col" style="flex:1.4;min-width:220px"><h4>yaopulife <span style="font-family:var(--han);color:var(--cinnabar);font-size:13px">耀蒲</span></h4><p style="color:var(--ink2);max-width:300px">Authentic Chinese myths, festivals and culture — told by a native. New stories every week.</p></div>
+    <div class="col"><h4>Explore</h4><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></div>
+    <div class="col"><h4>Follow</h4><a href="/">YouTube</a><a href="/">TikTok</a><a href="/">Pinterest</a></div>
+    <div class="col"><h4>Read</h4><a href="/wukong">Sun Wukong</a><a href="/changge">Chang'e</a></div>
+  </div>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

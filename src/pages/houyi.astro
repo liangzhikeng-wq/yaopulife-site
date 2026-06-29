@@ -1,0 +1,161 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Hou Yi", "item": "https://yaopulife.com/houyi" }
+    ] },
+    { "@type": "Article",
+      "headline": "Hou Yi — The Archer Who Saved the World and Lost Everything",
+      "alternativeHeadline": "后羿 — who shot nine suns from the sky, and lost his wife to the moon",
+      "description": "Hou Yi shot down nine of the ten suns burning the world alive. Then he lost the one person he loved to the moon — and learned that the best archer alive cannot shoot down the distance of a goodbye.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "Hou Yi, 后羿, ten suns, Chang'e, Chinese mythology, divine archer",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/houyi",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hou Yi 后羿 — The Archer Who Saved the World and Lost Everything | yaopulife</title>
+<meta name="description" content="Hou Yi shot down nine of the ten suns burning the world alive — then lost the one person he loved to the moon. The best archer alive could not shoot down a goodbye.">
+<link rel="canonical" href="https://yaopulife.com/houyi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hou Yi 后羿 — The Archer Who Saved the World and Lost Everything">
+<meta property="og:description" content="He could shoot anything in the sky — except the distance between him and the moon.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/houyi">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero">
+  <div class="living-hanzi" aria-hidden="true">后羿</div>
+  <div class="wrap">
+    <div class="kicker">Rebels of Chinese Mythology · 03</div>
+    <h1>The Archer Who Saved the World and Lost Everything</h1>
+    <div class="han-t">后羿 · Hòu Yì — who shot nine suns from the sky</div>
+    <p class="lead">He could put an arrow through anything in the sky. So when ten suns rose at once and began to burn the world alive, the gods sent for him — and he saved every living thing on earth. Then he lost the only person he loved, and learned the one thing his bow could never do.</p>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Rebels of myth</div>
+    <a href="/wukong">Sun Wukong · the Monkey King</a>
+    <a href="/nezha">Nezha · the cursed child</a>
+    <a href="/houyi" class="on">Hou Yi · who shot the suns</a>
+    <a href="/jingwei">Jingwei · who fought the sea</a>
+    <a href="/xingtian">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#suns">Ten suns rose at once</a>
+    <a href="#archer">Nine arrows</a>
+    <a href="#gift">A gift that was a trap</a>
+    <a href="#moon">The distance he couldn't shoot</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Hou Yi</div>
+    <span class="chip">Hero myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 5 min read</span>
+
+    <div class="charcard" data-seal="弓">
+      <div class="ttl"><span class="zh">后羿</span><span class="en">Hou Yi</span><span class="py">Hòu Yì</span></div>
+      <dl>
+        <dt>Also known as</dt><dd>The Divine Archer — the man who never missed</dd>
+        <dt>Famous for</dt><dd>Shooting nine of the ten suns out of the sky and saving the world from fire.</dd>
+        <dt>Weapon</dt><dd>A great red bow and white arrows, a gift from heaven.</dd>
+        <dt>Lost</dt><dd><span class="zh">嫦娥</span> Chang'e, his wife — to the moon, forever within sight.</dd>
+        <dt>The hard truth</dt><dd>The best archer alive could not shoot down the distance of a goodbye.</dd>
+      </dl>
+    </div>
+
+    <div class="callout"><b>序 · Series guide</b> — You may already know <a href="/changge" style="color:var(--clayd)">the moon's side of this story</a>. This is the same legend told from the ground — from the man left behind. Next in <i>Rebels of Chinese Mythology</i>: <i>Jingwei, the girl who declared war on the sea.</i></div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="suns">Ten suns rose at once</h2>
+    <p>The sky was supposed to hold ten suns, but only ever one at a time — they took turns, one each day, crossing from east to west. Then one morning, for reasons no one could stop, all ten rose together.</p>
+    <p>The world began to die. Rivers boiled dry, forests turned to ash, crops blackened in the fields, and from the cracked, baking earth came droughts and monsters. People hid in caves and waited to cook. Heaven needed someone who could do the impossible — and there was exactly one man for it.</p>
+
+    <h2 id="archer">Nine arrows</h2>
+    <p>Hou Yi climbed the tallest mountain, planted his feet, and drew his enormous bow. Then, calmly, one by one, he shot the suns out of the sky. Each time an arrow struck home, a sun burst — and down fell a <span class="zh">three-legged golden crow 金乌</span>, for that is what each sun truly was.</p>
+
+    <div class="mi mi-shoot" data-mi="shoot" id="sheri">
+      <div class="mi-lbl">射日 · Shoot down the ten suns</div>
+      <div class="mi-suns"><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span><span class="sun"></span></div>
+      <button class="mi-bow" type="button">↟ Loose an arrow <span class="mi-count">10 suns</span></button>
+      <div class="mi-after">Nine suns fell. He left the last one — a world with no sun is as dead as a world with ten.</div>
+    </div>
+    <p>Nine times he drew, nine times he loosed, nine suns fell. He stopped at the last one — because a world with no sun is as dead as a world with ten. That final sun is the one that still rises today. In an afternoon, one archer had put the entire universe back on schedule.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>金乌 · what the suns really were</b> — Each of the ten suns was a <i>sānzú jīnwū</i> — a three-legged golden crow, and the children of an eastern god, meant to cross the sky one per day. Ten flying at once means the cosmic timetable has broken. Hou Yi shooting down nine isn't just heroism — it's repairing the clock of the universe.</div>
+
+    <h2 id="gift">A gift that was a trap</h2>
+    <p>For saving the world, Hou Yi was given a reward by the <span class="zh">Queen Mother of the West 西王母</span>: a single dose of the elixir of immortality. Drink it, and he would never die — he would rise and live forever among the gods.</p>
+    <p>But there was only one dose. To take it was to become deathless and rise to heaven <i>alone</i>, leaving his beloved wife <span class="zh">Chang'e 嫦娥</span> behind to grow old and die. He couldn't do it. So he gave the elixir to her to hide, and chose a short mortal life beside her over an endless one without.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>长生 · why immortality is usually a curse</b> — In Chinese myth, living forever is rarely a happy ending. It means watching everyone you love grow old and vanish while you cannot follow. That is exactly the fate waiting on the moon: deathless, untouchable, and completely alone.</div>
+
+    <h2 id="moon">The distance he couldn't shoot</h2>
+    <p>While Hou Yi was away, his apprentice <span class="zh">Feng Meng 逢蒙</span> broke in and demanded the elixir. Cornered, with no way to keep it from him, Chang'e swallowed it herself. Her body turned light; she lifted off the floor, out the window, up past the rooftops — and did not stop until she reached the moon.</p>
+    <p>Hou Yi came home to an empty house and a wife he could see but never reach: a small bright circle, hung impossibly high in the night sky. The greatest archer who ever lived — the man who shot nine suns out of heaven — stood in his courtyard and understood that there was one distance no arrow could ever close.</p>
+    <p>So he set out the cakes and fruit she had loved, under the full moon, and looked up. People saw him do it, and began to do the same. That quiet, heartbroken habit became a festival of reunion — the one we now call <a href="/changge" style="color:var(--clay)">Mid-Autumn</a>.</p>
+
+    <div class="pull">He could shoot anything in the sky — except the distance between himself and the moon.</div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ Who Hou Yi is, and how the "ten suns" disaster works.<br>✓ Why the suns were golden crows, and why nine had to fall.<br>✓ How his story and <a href="/changge" style="color:var(--clay)">Chang'e's</a> are two halves of the same heartbreak.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Did Hou Yi make the right choice giving up immortality for love — knowing how it ended? And whose side hits harder: his, or <a href="/changge" style="color:var(--clayd)">Chang'e's</a>? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#suns">· Ten suns rose at once</a></div>
+      <div><a href="#archer">· Nine arrows</a></div>
+      <div><a href="#gift">· A gift that was a trap</a></div>
+      <div><a href="#moon">· The distance he couldn't shoot</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">The other half</div>
+      <h4 style="color:var(--clayd)">Chang'e 嫦娥 · the lady on the moon</h4>
+      <a class="next" href="/changge">Read her side →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Watch the 60-second version</div>
+      <h4>On TikTok &amp; YouTube</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">Hou Yi and the ten suns, in 60 seconds.</p>
+      <a class="next" href="/" style="margin-top:8px">Follow @yaopulife →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-houyi" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

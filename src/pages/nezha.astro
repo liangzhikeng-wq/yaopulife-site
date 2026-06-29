@@ -1,0 +1,265 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Nezha", "item": "https://yaopulife.com/nezha" }
+    ] },
+    { "@type": "Article",
+      "headline": "Nezha — The Boy Who Gave His Body Back to Be Free",
+      "alternativeHeadline": "哪吒 — the child born a monster who chose his own fate",
+      "description": "His own father thought he was a demon. So Nezha gave his flesh and bones back to his parents, and chose to be reborn from a lotus — owing no one, his fate his own.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "Nezha, 哪吒, Chinese mythology, Investiture of the Gods, lotus, rebel myth",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/nezha",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nezha 哪吒 — The Boy Who Gave His Body Back to Be Free | yaopulife</title>
+<meta name="description" content="His own father thought he was a demon. So Nezha gave his flesh and bones back to his parents, and was reborn from a lotus — owing no one, his fate finally his own.">
+<link rel="canonical" href="https://yaopulife.com/nezha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nezha 哪吒 — The Boy Who Gave His Body Back to Be Free">
+<meta property="og:description" content="Born a monster, blamed, unwanted — so he chose to be born again as no one's child but his own.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/nezha">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero illus">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="kicker">Rebels of Chinese Mythology · 02</div>
+      <h1>The Boy Who Gave His Body Back to Be Free</h1>
+      <div class="han-t">哪吒 · Nézhā — the child who refused to be a monster</div>
+      <p class="lead">What if the first thing the world ever told you was that you were a monster — and the first hand raised against you was your own father's? Nezha was born armed, blamed and unwanted. So he did the one thing no son is ever supposed to do: he gave his body back, and chose to be born again as no one's child but his own.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        <text x="248" y="240" font-family="'Noto Serif SC',serif" font-size="290" font-weight="600" fill="var(--ink)" opacity="0.05" text-anchor="middle" dominant-baseline="middle">哪</text>
+        <!-- lotus leaf (far) -->
+        <ellipse cx="338" cy="300" rx="58" ry="17" fill="var(--jade)" opacity="0.4"></ellipse>
+        <path d="M338 300 L356 290 L356 310 Z" fill="var(--paper)"></path>
+        <path d="M338 300 L292 296 M338 300 L302 286 M338 300 L320 284 M338 300 L380 286 M338 300 L384 300" stroke="var(--jade)" stroke-width="1" opacity="0.3"></path>
+        <!-- water -->
+        <line x1="44" y1="332" x2="438" y2="332" stroke="var(--ink)" stroke-width="1.4" opacity="0.3"></line>
+        <path d="M250 344 q26 6 52 0 M78 346 q22 5 44 0" stroke="var(--ink)" stroke-width="1.1" fill="none" opacity="0.2"></path>
+        <!-- lotus: back petals -->
+        <g fill="var(--claybg)" stroke="var(--ink)" stroke-width="1" stroke-opacity="0.5" opacity="0.85">
+          <path d="M190 244 C 156 240 130 224 120 200 C 146 210 176 228 190 240 Z"></path>
+          <path d="M190 244 C 224 240 250 224 260 200 C 234 210 204 228 190 240 Z"></path>
+          <path d="M190 248 C 178 264 178 288 190 304 C 202 288 202 264 190 248 Z"></path>
+        </g>
+        <!-- Nezha figure rising from the bloom -->
+        <g stroke="var(--ink)" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M181 172 L199 172 L197 190 L183 190 Z" fill="var(--claybg)" stroke-width="2"></path>
+          <path d="M167 196 C 173 183 207 183 213 196 C 221 211 221 231 211 242 L169 242 C 159 231 159 211 167 196 Z" fill="var(--claybg)" stroke-width="2.2"></path>
+          <path d="M174 200 C 156 206 144 224 150 240 C 152 247 161 249 167 244 C 161 230 167 218 181 214 C 179 208 176 204 174 200 Z" fill="var(--claybg)" stroke-width="2"></path>
+          <path d="M210 200 C 225 196 241 176 253 124 C 255 115 248 109 242 114 C 238 151 223 179 206 215 C 208 210 209 205 210 200 Z" fill="var(--claybg)" stroke-width="2"></path>
+          <circle cx="160" cy="241" r="6.5" fill="var(--claybg)" stroke-width="2"></circle>
+          <circle cx="246" cy="117" r="6.5" fill="var(--claybg)" stroke-width="2"></circle>
+          <ellipse cx="233" cy="151" rx="13" ry="5" fill="none" stroke="var(--gold)" stroke-width="3" transform="rotate(-58 233 151)"></ellipse>
+          <path d="M177 196 C 185 192 197 192 205 196 L207 214 C 205 230 199 241 191 241 C 183 241 177 230 175 214 Z" fill="var(--cinnabar)" stroke-width="1.4"></path>
+          <path d="M179 196 L186 178 M203 196 L196 178" stroke="var(--cinnabar)" stroke-width="2.4" fill="none"></path>
+          <path d="M188 210 q3 4 6 0 q-3 5 -6 0 Z" fill="var(--gold)" stroke="none"></path>
+          <circle cx="191" cy="150" r="30" fill="var(--claybg)" stroke-width="2.5"></circle>
+          <path d="M161 147 C 159 123 175 109 191 109 C 207 109 223 123 221 147 C 213 139 203 137 195 143 C 193 137 189 137 187 143 C 179 137 169 139 161 147 Z" fill="var(--ink)" stroke="none"></path>
+          <circle cx="167" cy="116" r="13" fill="var(--ink)" stroke="none"></circle>
+          <circle cx="215" cy="116" r="13" fill="var(--ink)" stroke="none"></circle>
+          <circle cx="169" cy="127" r="3" fill="var(--gold)" stroke="none"></circle>
+          <circle cx="213" cy="127" r="3" fill="var(--gold)" stroke="none"></circle>
+          <ellipse cx="172" cy="161" rx="5" ry="3" fill="var(--clay)" stroke="none" opacity="0.32"></ellipse>
+          <ellipse cx="210" cy="161" rx="5" ry="3" fill="var(--clay)" stroke="none" opacity="0.32"></ellipse>
+          <path d="M173 141 L185 144 M197 144 L209 141" stroke="var(--ink)" stroke-width="3" fill="none"></path>
+          <ellipse cx="179" cy="153" rx="5.5" ry="6.5" fill="var(--surface)" stroke-width="1.2"></ellipse>
+          <ellipse cx="203" cy="153" rx="5.5" ry="6.5" fill="var(--surface)" stroke-width="1.2"></ellipse>
+          <circle cx="180" cy="153" r="3.4" fill="var(--ink)" stroke="none"></circle>
+          <circle cx="202" cy="153" r="3.4" fill="var(--ink)" stroke="none"></circle>
+          <circle cx="181.4" cy="151" r="1.2" fill="var(--surface)" stroke="none"></circle>
+          <circle cx="203.4" cy="151" r="1.2" fill="var(--surface)" stroke="none"></circle>
+          <path d="M189 161 q2 2.5 3.5 0" stroke="var(--ink)" stroke-width="1.4" fill="none"></path>
+          <path d="M184 168 C 188 172 194 172 198 168" stroke="var(--ink)" stroke-width="2" fill="none"></path>
+        </g>
+        <!-- lotus: front petals (white, figure emerges from them) -->
+        <g fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M190 242 C 168 232 150 214 146 190 C 168 200 184 218 190 238 Z"></path>
+          <path d="M190 246 C 162 240 140 230 130 214 C 150 222 176 236 190 244 Z"></path>
+          <path d="M188 248 C 168 252 150 264 144 282 C 162 270 180 258 188 250 Z"></path>
+          <path d="M190 242 C 212 232 230 214 234 190 C 212 200 196 218 190 238 Z"></path>
+          <path d="M190 246 C 218 240 240 230 250 214 C 230 222 204 236 190 244 Z"></path>
+          <path d="M192 248 C 212 252 230 264 236 282 C 218 270 200 258 192 250 Z"></path>
+          <path d="M190 252 C 180 240 178 222 190 208 C 202 222 200 240 190 252 Z"></path>
+        </g>
+        <!-- 混天绫 red ribbon (the cinnabar eye) -->
+        <path d="M246 120 C 214 100 216 68 248 60 C 280 52 300 66 306 44" fill="none" stroke="var(--cinnabar)" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M246 120 C 216 102 218 72 248 64 C 278 56 298 70 304 48" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linecap="round" opacity="0.65"></path>
+        <path d="M306 44 C 300 37 307 29 315 31 M306 44 C 312 51 322 50 327 43" fill="none" stroke="var(--cinnabar)" stroke-width="4" stroke-linecap="round"></path>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Rebels of myth</div>
+    <a href="/wukong">Sun Wukong · the Monkey King</a>
+    <a href="/nezha" class="on">Nezha · the cursed child</a>
+    <a href="/houyi">Hou Yi · who shot the suns</a>
+    <a href="/jingwei">Jingwei · who fought the sea</a>
+    <a href="/xingtian">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#born">Born holding weapons</a>
+    <a href="#sea">The sea remembers</a>
+    <a href="#price">Heaven sends the bill</a>
+    <a href="#lotus">Reborn from a lotus</a>
+    <a href="#timeline">His story in six beats</a>
+    <a href="#quiz">Test yourself</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Nezha</div>
+    <span class="chip">Rebel myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 6 min read</span>
+
+    <div class="charcard" data-seal="蓮">
+      <div class="ttl"><span class="zh">哪吒</span><span class="en">Nezha</span><span class="py">Nézhā</span></div>
+      <dl>
+        <dt>Also known as</dt><dd><span class="zh">三太子</span> the Third Prince · the Lotus Prince</dd>
+        <dt>Born from</dt><dd>A three-and-a-half-year pregnancy — born as a ball of light, then a boy already holding heaven's weapons.</dd>
+        <dt>Weapons</dt><dd><span class="zh">乾坤圈</span> the Universe Ring · <span class="zh">混天绫</span> the Red Sash · <span class="zh">风火轮</span> Wind-Fire Wheels he rides on.</dd>
+        <dt>Reborn from</dt><dd>Lotus root and petals — a body with no parent, and no debt.</dd>
+        <dt>Remembered for</dt><dd><span class="zh">我命由我不由天</span> — "My fate is mine, not heaven's."</dd>
+      </dl>
+    </div>
+
+    <div class="callout"><b>序 · Series guide</b> — Rebel #2 in <i>Rebels of Chinese Mythology</i>, after <a href="/wukong" style="color:var(--clayd)">the Monkey King</a>. Wukong rebelled against heaven's ranks. Nezha rebels against something closer to home: the family and the fate he was born into. Next: <i>Hou Yi, the archer who saved the world and lost everything.</i></div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="born">Born holding weapons</h2>
+    <p>His mother carried him for three and a half years. When the birth finally came, it was not a baby — it was a ball of light and flesh, glowing on the floor. His father, the general <span class="zh">Li Jing 李靖</span>, was certain a demon had been born into his house, and raised his sword over the cradle.</p>
+    <p>Then the ball split open, and a small boy stepped out — already wearing a golden ring on his arm and a band of red silk around his waist. He was a child, and he was armed, and the first thing he ever saw was his own father trying to kill him. That moment never leaves him. Everything Nezha does next comes from one furious question: <i>do I have to be the monster you decided I am?</i></p>
+
+    <div class="pull">He was a child, he was armed, and the first hand raised against him was his father's.</div>
+
+    <h2 id="sea">The sea remembers</h2>
+    <p>One hot day the boy went down to the ocean to cool off, dipping his red sash into the water to rinse it. But the sash was a heavenly weapon — and as he swirled it, the whole sea began to shake, all the way down to the crystal palace of the <span class="zh">Dragon King 龙王</span> on the seabed.</p>
+    <p>The Dragon King sent a soldier up to punish the rude child. Then he sent his own son, the dragon prince <span class="zh">Ao Bing 敖丙</span>. It ended badly for the prince: Nezha killed him, and pulled the living sinew from his body like a thread. A bored child had just murdered a son of heaven's sea-government — and heaven does not forget a thing like that.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>龙王 · why killing a dragon is a cosmic crime</b> — In these stories a dragon isn't a beast to be slain by a hero. The Dragon Kings are <i>civil servants of heaven</i> — they run the seas and deliver the rain, and they answer to the Jade Emperor. So a boy killing a dragon prince isn't a playground fight. It's an attack on the government of the universe itself.</div>
+
+    <h2 id="price">Heaven sends the bill</h2>
+    <p>The four Dragon Kings rose together and threatened to drown Nezha's entire town — every neighbour, every child, his own mother and father — unless the boy paid for the prince's death with his own life. Overnight, Nezha went from a strange child to the reason everyone he knew was about to die. Even his father looked at him the way you look at a curse.</p>
+    <p>So Nezha made a decision no son is ever meant to make. In front of the Dragon Kings, to lift the punishment from his family, he took his own life — and as he did, he said the words that break the deepest rule of his world:</p>
+    <div class="pull">"I give my bones back to my father, and my flesh back to my mother. Now I owe you nothing."</div>
+    <p>He didn't just die. He <i>returned himself</i> — handing his body back to the parents who gave it, so that no one could ever be punished for him again, and so that he would belong to no one.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>剔骨还父 · the most radical thing he could do</b> — In old Chinese culture your body is not your own; it's a gift from your parents that you're bound to protect — the root of <i>filial piety</i>. By literally giving his flesh and bones back, Nezha pays that debt in full and cuts the tie. It is the ancient world's most extreme way of saying: <i>I am not yours. I never agreed to this.</i></div>
+
+    <h2 id="lotus">Reborn from a lotus</h2>
+    <p>But the story doesn't end in a grave. His master, the immortal <span class="zh">Taiyi Zhenren 太乙真人</span>, gathered lotus root and lotus petals and built the boy a brand-new body — one not born of any mother, owing nothing to any father. Nezha opened his eyes again as a being made of the flower that grows clean and white straight up out of the mud.</p>
+    <p>He came back faster, fiercer, riding two wheels of wind and fire — and, for the first time, free. Not his father's curse. Not heaven's debtor. Just himself. The line people still quote from him is six words long:</p>
+    <div class="pull">我命由我不由天 — my fate is mine, not heaven's.</div>
+
+    <h2 id="timeline">His story in six beats</h2>
+    <div class="timeline">
+      <div class="tl"><div class="step">Beat 01</div><h4>Born armed <span class="zh">灵珠转世</span></h4><p>After a three-year pregnancy, a ball of light opens and a boy steps out, already holding heaven's weapons.</p></div>
+      <div class="tl"><div class="step">Beat 02</div><h4>The sea trembles <span class="zh">闹海</span></h4><p>Rinsing his magic sash cracks the Dragon King's palace far below the waves.</p></div>
+      <div class="tl"><div class="step">Beat 03</div><h4>He kills a dragon prince <span class="zh">抽龙筋</span></h4><p>The prince comes to punish him — and the boy kills him and pulls out his sinew.</p></div>
+      <div class="tl"><div class="step">Beat 04</div><h4>Heaven sends the bill <span class="zh">水淹陈塘关</span></h4><p>The Dragon Kings threaten to drown his whole town unless he pays with his life.</p></div>
+      <div class="tl"><div class="step">Beat 05</div><h4>He gives his body back <span class="zh">剔骨还父</span></h4><p>To free his family, he returns his flesh and bones to his parents and dies.</p></div>
+      <div class="tl"><div class="step">Beat 06</div><h4>Reborn from a lotus <span class="zh">莲花化身</span></h4><p>His master rebuilds him from lotus — owing no one, his fate finally his own.</p></div>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="qh">⚡ Test yourself</div>
+      <div class="qsub">Three quick questions. Tap an answer to see if you're right.</div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q1</span>When Nezha was born, what did his father think he was?</div>
+        <button class="opt">A god<span class="mark"></span></button>
+        <button class="opt" data-correct="1">A demon or a curse<span class="mark"></span></button>
+        <button class="opt">A dragon<span class="mark"></span></button>
+        <button class="opt">An ordinary boy<span class="mark"></span></button>
+        <div class="exp">After a three-and-a-half-year pregnancy, his mother gave birth to a glowing ball of flesh. His father raised a sword, certain it was a monster — and being treated as a curse from birth is the wound the whole story turns on.</div>
+      </div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q2</span>Why does Nezha give his own body back to his parents?</div>
+        <button class="opt">To become immortal<span class="mark"></span></button>
+        <button class="opt">To punish them<span class="mark"></span></button>
+        <button class="opt" data-correct="1">To stop his town being drowned for his crime<span class="mark"></span></button>
+        <button class="opt">To turn into a dragon<span class="mark"></span></button>
+        <div class="exp">The Dragon Kings threatened to flood his town unless he paid with his life. Returning his flesh and bones cut his debt to his parents — so they could never be punished for what he did.</div>
+      </div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q3</span>What is Nezha reborn from?</div>
+        <button class="opt">A dragon's egg<span class="mark"></span></button>
+        <button class="opt" data-correct="1">A lotus<span class="mark"></span></button>
+        <button class="opt">Stone<span class="mark"></span></button>
+        <button class="opt">Pure fire<span class="mark"></span></button>
+        <div class="exp">His master Taiyi Zhenren rebuilds him from lotus root and petals. The lotus grows clean out of the mud — a perfect symbol for a fresh start that owes nothing to anyone.</div>
+      </div>
+    </div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ Who Nezha is, and why he rebels against his own family and birth.<br>✓ Why killing a dragon is treated as a crime against heaven itself.<br>✓ What <span class="zh">剔骨还父</span> means, and why giving his body back is so radical.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Was Nezha right to give his body back — or was it the cruellest thing he could have done to his parents? And who should I tell next: <i>Hou Yi</i> or <i>Xingtian</i>? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#born">· Born holding weapons</a></div>
+      <div><a href="#sea">· The sea remembers</a></div>
+      <div><a href="#price">· Heaven sends the bill</a></div>
+      <div><a href="#lotus">· Reborn from a lotus</a></div>
+      <div><a href="#timeline">· His story in six beats</a></div>
+      <div><a href="#quiz">· Test yourself</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Up next</div>
+      <h4 style="color:var(--clayd)">Hou Yi 后羿 · who shot the suns</h4>
+      <a class="next" href="/houyi">Read his story →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Watch the 60-second version</div>
+      <h4>On TikTok &amp; YouTube</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">Nezha's story, told in 60 seconds.</p>
+      <a class="next" href="/" style="margin-top:8px">Follow @yaopulife →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-nezha" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

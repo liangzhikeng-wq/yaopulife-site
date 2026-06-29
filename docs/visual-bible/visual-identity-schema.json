@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yaopulife.com/schemas/visual-identity-schema.json",
+  "title": "Yaopulife Visual Identity Schema",
+  "description": "Canonical definition for every recurring myth character, creature, zodiac animal, festival symbol or cultural object. One file per subject. Drives form-likeness (shape_anchors), spirit-likeness (spirit_anchors) and originality (forbidden/negative). master_lineart_assets are filled only after a lineart master passes QA (>=90).",
+  "type": "object",
+  "required": [
+    "id",
+    "name_en",
+    "name_zh",
+    "category",
+    "identity_summary",
+    "shape_anchors",
+    "spirit_anchors",
+    "signature_symbols",
+    "allowed_variations",
+    "forbidden_variations",
+    "negative_constraints",
+    "master_lineart_assets"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "name_en": { "type": "string" },
+    "name_zh": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["myth-character", "zodiac", "creature", "festival-symbol", "object", "plant", "place"]
+    },
+    "identity_summary": { "type": "string" },
+    "shape_anchors": { "type": "array", "items": { "type": "string" } },
+    "facial_anchors": { "type": "array", "items": { "type": "string" } },
+    "body_or_structure_anchors": { "type": "array", "items": { "type": "string" } },
+    "costume_or_surface_anchors": { "type": "array", "items": { "type": "string" } },
+    "signature_symbols": { "type": "array", "items": { "type": "string" } },
+    "spirit_anchors": { "type": "array", "items": { "type": "string" } },
+    "emotion_range": { "type": "array", "items": { "type": "string" } },
+    "allowed_variations": { "type": "array", "items": { "type": "string" } },
+    "forbidden_variations": { "type": "array", "items": { "type": "string" } },
+    "negative_constraints": { "type": "array", "items": { "type": "string" } },
+    "master_lineart_assets": {
+      "type": "object",
+      "description": "Relative paths under assets/approved/. Empty string = not yet produced/approved.",
+      "properties": {
+        "front": { "type": "string" },
+        "three_quarter": { "type": "string" },
+        "dynamic": { "type": "string" }
+      }
+    },
+    "approved_color_assets": { "type": "array", "items": { "type": "string" } }
+  }
+}

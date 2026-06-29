@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Yaopulife Illustration Metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "series",
+    "topic",
+    "subject",
+    "emotion",
+    "symbols",
+    "palette",
+    "aspect_ratio",
+    "prompt",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "series": {
+      "type": "string",
+      "enum": ["zodiac", "myths", "festivals", "knowledge-card", "social-card", "character-sheet"]
+    },
+    "topic": { "type": "string" },
+    "subject": { "type": "string" },
+    "emotion": { "type": "string" },
+    "symbols": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "maxItems": 3
+    },
+    "palette": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 4
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": ["1:1", "4:5", "3:4", "16:9", "9:16"]
+    },
+    "prompt": { "type": "string" },
+    "caption_en": { "type": "string" },
+    "caption_zh": { "type": "string" },
+    "quality_score": { "type": "number", "minimum": 0, "maximum": 10 },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "approved", "archived"]
+    }
+  }
+}

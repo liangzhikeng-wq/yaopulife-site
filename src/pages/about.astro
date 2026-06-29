@@ -1,52 +1,57 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
 ---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About yaopulife — Chinese culture, told by a native</title>
+<meta name="description" content="yaopulife retells China's myths, festivals and zodiac for a global audience — story first, culture second, written by someone who grew up inside it.">
+<link rel="stylesheet" href="/yaopu.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/myths">Myths</a><a href="/zodiac">Zodiac</a><a href="/festivals">Festivals</a><a href="/about" class="on">About</a></span>
+  <a class="btn" href="/wukong">Start: Monkey King →</a>
+</div></nav>
 
-<Layout title="About yaopulife" description="yaopulife makes custom, made-to-order phone cases personalized with your photo, name, or initials — with a preview-first, no-surprises process.">
-  <Navbar />
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Authentic · by a native</div>
+  <h1>Our story</h1>
+  <div class="zh">关 于 耀 蒲</div>
+  <p>China has five thousand years of myths, monsters and legends. Most of the world never gets to meet them. We're changing that.</p>
+</div></header>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold text-gray-900">Our Story</h1>
+<main class="wrap" style="max-width:760px;padding-bottom:60px">
+  <div class="art">
+    <p class="lead" style="font-style:normal">yaopulife retells China's classic stories — its myths, festivals and zodiac — for a global audience. Not as a textbook, but the way these tales were always meant to be heard: a monkey who declared war on heaven, a woman who chose the moon, a girl who fought the sea.</p>
 
-      <div class="mt-8 prose prose-lg text-gray-600">
-        <p class="text-xl leading-relaxed">
-          yaopulife makes one thing well: custom phone cases built around the photo or text that matters to you.
-          A favorite photo, a name, your initials — made to order on a slim, protective case.
-        </p>
+    <h2>Story first, culture second</h2>
+    <p>Most people abroad don't bounce off Chinese culture because it's foreign — they bounce off it because it usually arrives as a lecture on dynasties and footnotes. So we start with what everyone already understands: a rebel who won't bow, a love the world forbids, a hero who pays for victory. The culture comes after the story has already pulled you in.</p>
 
-        <p>
-          We work preview-first. You send your design and phone model, we send back a proof and a written quote,
-          and only after you approve it do we make your case. There is no automated checkout and no surprise
-          charges — price, shipping, and timing are confirmed in writing before any payment.
-        </p>
+    <h2>Told by a native</h2>
+    <p>Everything here is written by someone who grew up inside the culture, in clear, modern English. We keep the soul of each story intact — the names, the meanings, the spirit — and translate only the barrier, not the substance. Authentic, never watered down.</p>
 
-        <h2 class="text-2xl font-bold text-gray-900 mt-12">What Makes Us Different</h2>
+    <div class="pull">You shouldn't need to study China to be moved by its stories. You should want to study it <em>because</em> you were.</div>
 
-        <ul class="mt-4 space-y-3">
-          <li><strong>Truly made to order:</strong> Each case is produced after you approve a proof — nothing is mass-printed in advance.</li>
-          <li><strong>Preview-first:</strong> You see a proof and a written quote before anything is produced or paid.</li>
-          <li><strong>Honest images:</strong> Product images are digital renders for design preview, not production photos — and we say so.</li>
-          <li><strong>Clear structure, no hype:</strong> We describe the case build (silicone outer, PC support, raised edges) without exaggerated protection claims.</li>
-        </ul>
+    <h2>What we make</h2>
+    <p>Free stories you can read here, short videos on YouTube and TikTok, and — for teachers and parents — printable culture packs that bring these legends into the classroom. New stories land every week, starting with the rebels of Chinese mythology.</p>
 
-        <h2 class="text-2xl font-bold text-gray-900 mt-12">Our Promise</h2>
+    <div class="callout"><b>注 · A note</b> — yaopulife is an independent, one-person studio. Stories are retellings of public-domain Chinese classics, with original writing and artwork. Questions or collaborations? <a href="/contact" style="color:#974428">Get in touch</a>.</div>
 
-        <p>
-          Personalized products should be made with care and described honestly. Our promise is to keep the process
-          transparent, avoid exaggerated claims, and confirm every detail with you before your case is made.
-        </p>
-      </div>
+    <div style="margin-top:26px"><a class="btn" href="/myths" style="display:inline-block;background:#BE5E38;color:#FBF1E5;padding:11px 22px;border-radius:9px;text-decoration:none">Explore the myths →</a></div>
+  </div>
+</main>
 
-      <div class="mt-10">
-        <a href="/shop" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 transition-colors">
-          Shop custom cases
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <Footer />
-</Layout>
+<StoryCTA source="page-about" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

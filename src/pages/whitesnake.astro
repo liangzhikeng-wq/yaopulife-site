@@ -1,0 +1,152 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "The White Snake", "item": "https://yaopulife.com/whitesnake" }
+    ] },
+    { "@type": "Article",
+      "headline": "The White Snake — A Love the World Refused to Allow",
+      "alternativeHeadline": "白蛇传 — a thousand-year-old snake spirit who loved a mortal man",
+      "description": "A snake spirit a thousand years old took the shape of a woman and fell in love with an ordinary man — and became kinder than almost any human in the story. A holy monk decided that love was a crime.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "White Snake, 白蛇传, Bai Suzhen, Fahai, forbidden love, Chinese mythology, Leifeng Pagoda",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/whitesnake",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The White Snake 白蛇 — A Love the World Refused to Allow | yaopulife</title>
+<meta name="description" content="A thousand-year-old snake spirit took the form of a woman, fell in love with an ordinary man, and became kinder than almost any human in the story. A holy monk called it a crime.">
+<link rel="canonical" href="https://yaopulife.com/whitesnake">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The White Snake 白蛇 — A Love the World Refused to Allow">
+<meta property="og:description" content="The 'monster' was kinder than the holy man. So who is the villain?">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/whitesnake">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero">
+  <div class="living-hanzi" aria-hidden="true">白蛇</div>
+  <div class="wrap">
+    <div class="kicker">Forbidden Love in Chinese Myth · 02</div>
+    <h1>A Love the World Refused to Allow</h1>
+    <div class="han-t">白蛇传 · Bái Shé Zhuàn — the snake who loved a man</div>
+    <p class="lead">A snake spirit a thousand years old took the shape of a woman, fell in love with an ordinary man, and became gentler and braver than almost any human in her story. For that — not for any evil, just for that — a holy monk set out to destroy her.</p>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Forbidden love</div>
+    <a href="/changge">Chang'e &amp; Hou Yi · the moon</a>
+    <a href="/whitesnake" class="on">The White Snake · Bai Suzhen</a>
+    <a href="/myths">The Butterfly Lovers</a>
+    <div class="lbl">On this page</div>
+    <a href="#rain">A meeting in the rain</a>
+    <a href="#wine">The cup that revealed her</a>
+    <a href="#flood">She flooded a temple</a>
+    <a href="#villain">So who is the villain?</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / The White Snake</div>
+    <span class="chip">Love myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 6 min read</span>
+
+    <div class="charcard" data-seal="蛇">
+      <div class="ttl"><span class="zh">白素贞</span><span class="en">Bai Suzhen</span><span class="py">Bái Sùzhēn</span></div>
+      <dl>
+        <dt>What she is</dt><dd>A white snake spirit, a thousand years in the making — now in the form of a woman.</dd>
+        <dt>Companion</dt><dd><span class="zh">小青</span> the Green Snake, her fierce younger sister-in-arms.</dd>
+        <dt>Loves</dt><dd><span class="zh">许仙</span> Xu Xian, a gentle, completely ordinary mortal man.</dd>
+        <dt>Enemy</dt><dd><span class="zh">法海</span> Fahai, a monk who calls their love a crime against the order of the world.</dd>
+        <dt>Sealed beneath</dt><dd><span class="zh">雷峰塔</span> Leifeng Pagoda, on the shore of West Lake.</dd>
+      </dl>
+    </div>
+
+    <div class="callout"><b>序 · Series guide</b> — China's most beloved love story, and its most quietly subversive — because the "monster" is the heroine and the holy man is the villain. Part of <i>Forbidden Love in Chinese Myth</i>, after <a href="/changge" style="color:var(--clayd)">Chang'e &amp; Hou Yi</a>.</div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="rain">A meeting in the rain</h2>
+    <p>For a thousand years a white snake practised the long, patient art of <span class="zh">cultivation 修炼</span> — slowly refining herself toward immortality — until at last she could take the form of a woman: poised, kind, and quietly powerful. With her travelled her companion, the <span class="zh">Green Snake 小青</span>.</p>
+    <p>It was raining over West Lake when she met him — <span class="zh">Xu Xian 许仙</span>, a soft-hearted, unremarkable young man. She had no umbrella; he offered to share his. That was all it took. They married, opened a small medicine shop, and gave cures to the poor for free. By every action that matters, she was a wonderful wife and a good person. The only thing wrong with her was what she had been born as.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>妖 · "spirit," not "demon"</b> — Western translations often call her a "demon," but the Chinese word <i>yāo 妖</i> means a <i>spirit</i> or <i>shapeshifter</i> — usually an animal or object that has cultivated power over a long time. It carries no automatic evil. A <i>yao</i> can be cruel or kind, exactly like a human. That ambiguity is the whole engine of this story.</div>
+
+    <h2 id="wine">The cup that revealed her</h2>
+    <p>Their happiness drew attention. A powerful monk named <span class="zh">Fahai 法海</span> looked at Xu Xian's wife and saw what she truly was — and decided that a marriage between a human and a spirit could not be allowed to stand. Not because she had done harm. Because the rules said so.</p>
+    <p>On the <a href="/changge" style="color:var(--clay)">Dragon Boat Festival</a>, when people drink <span class="zh">realgar wine 雄黄酒</span> to ward off poison and spirits, Xu Xian — nudged by Fahai's warning — coaxed his wife to drink. The wine undid her control, and for one helpless moment her true serpent body showed through. The shock of it stopped Xu Xian's heart on the spot. Her own nature had killed the man she loved.</p>
+    <p>So she did the bravest thing in the tale: she fought her way up a celestial mountain and <span class="zh">stole the herb of immortality 盗仙草</span> to bring him back to life — risking destruction to undo the harm her own body had done.</p>
+
+    <h2 id="flood">She flooded a temple</h2>
+    <p>Fahai struck again, taking Xu Xian and shutting him inside <span class="zh">Jinshan Temple 金山寺</span>, refusing to let husband and wife reunite. Desperate — and by now pregnant with their child — the White Snake called up the waters of the river and <span class="zh">flooded the temple 水漫金山</span> to reach him.</p>
+    <p>It is her most powerful moment and her great mistake: the flood that was meant to save her love also swept over innocent people. And that — finally — gave Fahai the one thing he never truly had before: a real crime to punish her for.</p>
+
+    <div class="pull">She broke the world's rules for love. The holy man broke a marriage to keep them.</div>
+
+    <h2 id="villain">So who is the villain?</h2>
+    <p>In the end Fahai sealed the White Snake beneath the <span class="zh">Leifeng Pagoda 雷峰塔</span> on the edge of West Lake, parting the lovers under a mountain of stone — heaven's order restored, two hearts broken to do it. (In the gentler endings, their son grows up to topple the pagoda and set her free.)</p>
+    <p>And here is why the story has lasted: almost everyone who hears it sides with the snake. She loved, she healed, she risked everything to fix her own mistakes. The monk followed every rule and enforced the cosmic order — and is remembered as the villain. <i>White Snake</i> is a quiet, centuries-old argument that love can be more righteous than the law that forbids it.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>法海 · why the monk is the bad guy</b> — Fahai never lies, never breaks a rule, and acts entirely in the name of cosmic order. That's exactly the point. For a thousand years Chinese audiences have judged him guilty — making this folk tale a remarkably bold piece of sympathy for the outsider, and a critique of authority that hides cruelty behind "the rules."</div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ The full arc of China's most famous love story.<br>✓ Why <span class="zh">妖</span> means "spirit," not "demon" — and why that matters.<br>✓ Why the rule-following monk, not the snake, is cast as the villain.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Was Fahai protecting the natural order, or just destroying a love he couldn't accept? And was the flood unforgivable? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#rain">· A meeting in the rain</a></div>
+      <div><a href="#wine">· The cup that revealed her</a></div>
+      <div><a href="#flood">· She flooded a temple</a></div>
+      <div><a href="#villain">· So who is the villain?</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">The other love story</div>
+      <h4 style="color:var(--clayd)">Chang'e &amp; Hou Yi</h4>
+      <a class="next" href="/changge">Read it →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Watch the 60-second version</div>
+      <h4>On TikTok &amp; YouTube</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">The White Snake, told in 60 seconds.</p>
+      <a class="next" href="/" style="margin-top:8px">Follow @yaopulife →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-whitesnake" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

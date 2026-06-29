@@ -1,0 +1,135 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Xingtian", "item": "https://yaopulife.com/xingtian" }
+    ] },
+    { "@type": "Article",
+      "headline": "Xingtian — The Warrior Who Kept Fighting After He Lost His Head",
+      "alternativeHeadline": "刑天 — beheaded by heaven, he grew a face on his chest and fought on",
+      "description": "Heaven cut off Xingtian's head and buried it in a mountain. He took his nipples for eyes and his navel for a mouth, picked up his shield and axe, and kept fighting — forever.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "Xingtian, 刑天, Yellow Emperor, Classic of Mountains and Seas, Chinese mythology, defiance",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/xingtian",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xingtian 刑天 — The Warrior Who Kept Fighting After He Lost His Head | yaopulife</title>
+<meta name="description" content="Heaven cut off Xingtian's head and buried it in a mountain. He took his nipples for eyes and his navel for a mouth, raised his shield and axe, and kept fighting — forever.">
+<link rel="canonical" href="https://yaopulife.com/xingtian">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xingtian 刑天 — The Warrior Who Kept Fighting After He Lost His Head">
+<meta property="og:description" content="They took his head and buried it in a mountain. It didn't stop him.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/xingtian">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero">
+  <div class="living-hanzi" aria-hidden="true">刑天</div>
+  <div class="wrap">
+    <div class="kicker">Rebels of Chinese Mythology · 05</div>
+    <h1>The Warrior Who Kept Fighting After He Lost His Head</h1>
+    <div class="han-t">刑天 · Xíngtiān — the headless god who would not fall</div>
+    <p class="lead">They cut off his head and buried it inside a mountain so deep he could never find it again. It did not stop him. He grew a face on his chest, picked his weapons back up, and kept swinging — and two thousand years later, he still hasn't stopped.</p>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Rebels of myth</div>
+    <a href="/wukong">Sun Wukong · the Monkey King</a>
+    <a href="/nezha">Nezha · the cursed child</a>
+    <a href="/houyi">Hou Yi · who shot the suns</a>
+    <a href="/jingwei">Jingwei · who fought the sea</a>
+    <a href="/xingtian" class="on">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#challenge">He challenged heaven</a>
+    <a href="#head">They took his head</a>
+    <a href="#dance">The warrior who would not fall</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Xingtian</div>
+    <span class="chip">War myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 4 min read</span>
+
+    <div class="callout"><b>序 · Series guide</b> — The fiercest image in Chinese mythology, preserved in the ancient <a href="/shanhaijing" style="color:var(--clayd)">Classic of Mountains and Seas</a>. If <a href="/jingwei" style="color:var(--clayd)">Jingwei</a> is grief that never quits, Xingtian is rage that death itself could not switch off. The last of our five rebels.</div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="challenge">He challenged heaven</h2>
+    <p>In the age when gods still fought over who would rule the world, a giant named <span class="zh">Xingtian 刑天</span> stood against the <span class="zh">Yellow Emperor 黄帝</span> — the supreme god-king of the heavens. It was not a small grudge. Xingtian wanted the throne of the cosmos itself, and he marched on heaven to take it.</p>
+    <p>He lost. Against the ruler of all the gods, one warrior — however mighty — could only lose. And the punishment for raising your weapon against heaven is not mercy.</p>
+
+    <h2 id="head">They took his head</h2>
+    <p>The Yellow Emperor cut off Xingtian's head. Then, to be sure it was over, he buried that head deep inside <span class="zh">Changyang Mountain 常羊山</span>, sealing it in stone so the giant could never become whole again. By every rule of life and death, that is the end of the story. A rebel defied heaven, heaven removed his head, the rebel is dead.</p>
+
+    <div class="pull">By every rule of life and death, that should have been the end.</div>
+
+    <h2 id="dance">The warrior who would not fall</h2>
+    <p>But Xingtian stood back up. Headless, blind, voiceless, he refused to be finished. So his body simply remade itself around his fury: his two nipples opened as eyes, his navel became a mouth — and with a face now set in his chest, he reached down and picked his weapons back up.</p>
+    <p>In one hand a <span class="zh">shield 干</span>, in the other a <span class="zh">battle-axe 戚</span>, the headless giant began to swing them at the empty sky — not to win, because there was nothing left to win, but because surrender was the one thing he would not do. The ancient text ends on that image: a beheaded warrior, dancing with shield and axe, forever.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>猛志固常在 · "his fierce will endures forever"</b> — A thousand years ago the poet Tao Yuanming wrote a line every educated Chinese person still knows: <i>刑天舞干戚，猛志固常在</i> — "Xingtian dances with shield and axe; his fierce will endures forever." Xingtian became China's symbol for the spirit that defeat cannot kill — the will that outlives even the body.</div>
+
+    <div class="note"><span class="nlbl">Native note</span><b>刑天 · a name that means his defeat</b> — His very name can be read as "the one whose head heaven cut off" — he is literally named after the punishment. Most heroes are named for a victory. Xingtian wears his beheading as his title, and keeps fighting anyway. That is the whole point of him.</div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ Who Xingtian is, and why a headless figure is a <i>hero</i> in China, not a horror.<br>✓ The famous line <span class="zh">猛志固常在</span> and what it stands for.<br>✓ Why his name itself is the name of his defeat.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Is Xingtian inspiring, or is he just unable to accept it's over? Which of our five rebels — Wukong, Nezha, Hou Yi, Jingwei, Xingtian — hits you hardest? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#challenge">· He challenged heaven</a></div>
+      <div><a href="#head">· They took his head</a></div>
+      <div><a href="#dance">· The warrior who would not fall</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Go deeper</div>
+      <h4 style="color:var(--clayd)">Classic of Mountains &amp; Seas</h4>
+      <a class="next" href="/shanhaijing">Enter the bestiary →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">A very different story</div>
+      <h4>The White Snake 白蛇</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">From war and defiance to a love that broke every rule.</p>
+      <a class="next" href="/whitesnake" style="margin-top:8px">Read the love story →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-xingtian" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

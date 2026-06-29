@@ -6,5 +6,15 @@ export default defineConfig({
   site: 'https://yaopulife.com',
   output: 'server',
   adapter: vercel(),
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  redirects: {
+    '/shop': '/myths',
+    '/how-it-works': '/',
+    '/shipping-and-returns': '/',
+    '/order/success': '/',
+    '/order/cancel': '/',
+    '/product/[id]': '/',
+    '/blog': '/myths',
+    '/blog/[slug]': '/myths'
+  }
 });

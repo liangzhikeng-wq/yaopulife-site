@@ -1,0 +1,66 @@
+{
+  "id": "sun-wukong",
+  "name_en": "Sun Wukong",
+  "name_zh": "孙悟空",
+  "category": "myth-character",
+  "identity_summary": "A stone-born monkey hero who embodies freedom, rebellion, intelligence and the refusal to be defined by heavenly order.",
+  "shape_anchors": [
+    "clearly monkey-like silhouette, not a normal human face",
+    "lean and agile body, never bulky",
+    "expressive monkey ears",
+    "sharp lively eyes",
+    "flexible posture with a sense of movement"
+  ],
+  "facial_anchors": [
+    "monkey facial structure (pronounced brow, short muzzle)",
+    "bright alert eyes",
+    "mischievous but heroic expression"
+  ],
+  "body_or_structure_anchors": [
+    "light agile body",
+    "ready-to-leap posture",
+    "long tail may be suggested but not over-emphasized"
+  ],
+  "costume_or_surface_anchors": [
+    "Chinese myth-inspired simple robe or travel garment",
+    "no heavy fantasy armor",
+    "details restrained and original"
+  ],
+  "signature_symbols": [
+    "ruyi jingu bang staff",
+    "cloud pattern",
+    "mountain stone",
+    "cinnabar sun or seal"
+  ],
+  "spirit_anchors": [
+    "rebellion",
+    "freedom",
+    "wit",
+    "defiance against imposed destiny",
+    "playful courage"
+  ],
+  "emotion_range": ["mischief", "courage", "defiance", "curiosity", "heroic calm"],
+  "allowed_variations": [
+    "standing on mountain stone",
+    "looking toward the sky",
+    "holding staff",
+    "resting before action",
+    "small smile or determined gaze"
+  ],
+  "forbidden_variations": [
+    "do not copy any film, animation, game or comic version",
+    "do not use golden armor overload",
+    "do not turn him into a Western monkey king",
+    "do not make him a generic anime boy",
+    "do not make him a bulky warrior"
+  ],
+  "negative_constraints": [
+    "no copyrighted character resemblance",
+    "no game poster style",
+    "no hyperrealistic fur",
+    "no crowded guochao decoration",
+    "no Western fantasy armor"
+  ],
+  "master_lineart_assets": { "front": "", "three_quarter": "", "dynamic": "" },
+  "approved_color_assets": []
+}

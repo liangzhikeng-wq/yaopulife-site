@@ -1,0 +1,35 @@
+---
+// 自包含 GA4 + cookie 同意横幅，供独立 HTML 页(不走 Layout)注入。
+// 与 Layout/CookieBanner 共用同一 localStorage key 'cookie-consent',行为一致、合规(GDPR:同意后才加载 GA)。
+// 内联样式,不依赖 Tailwind/yaopu.css,品牌色一致。
+---
+<script is:inline>
+  window.loadGtag = window.loadGtag || function () {
+    if (window.gtagLoaded) return; window.gtagLoaded = true;
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-44706DBXRP';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-44706DBXRP');
+  };
+  if (localStorage.getItem('cookie-consent') === 'accepted') window.loadGtag();
+</script>
+<div id="yp-consent" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#241E17;color:#F4F1E8;padding:14px 18px;font-size:13px;font-family:system-ui,-apple-system,sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.2)">
+  <div style="max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px">
+    <span style="flex:1;min-width:240px">We use essential cookies, and analytics cookies only if you accept. <a href="/privacy" style="color:#B0904D;text-decoration:underline">Learn more</a></span>
+    <button id="yp-accept" style="padding:8px 18px;background:#A6362A;color:#fff;border:none;border-radius:7px;font-size:13px;cursor:pointer">Accept</button>
+    <button id="yp-decline" style="padding:8px 16px;background:#5a5043;color:#fff;border:none;border-radius:7px;font-size:13px;cursor:pointer">Decline</button>
+  </div>
+</div>
+<script is:inline>
+  (function () {
+    var c = localStorage.getItem('cookie-consent');
+    var b = document.getElementById('yp-consent');
+    if (!c) { setTimeout(function () { if (b) b.style.display = 'block'; }, 1500); }
+    var a = document.getElementById('yp-accept'), d = document.getElementById('yp-decline');
+    if (a) a.onclick = function () { localStorage.setItem('cookie-consent', 'accepted'); if (b) b.style.display = 'none'; if (window.loadGtag) window.loadGtag(); };
+    if (d) d.onclick = function () { localStorage.setItem('cookie-consent', 'declined'); if (b) b.style.display = 'none'; };
+  })();
+</script>

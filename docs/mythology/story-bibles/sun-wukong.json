@@ -1,0 +1,25 @@
+{
+  "story_id": "sun-wukong",
+  "title_en": "Sun Wukong, the Monkey Who Defied Heaven",
+  "title_zh": "孙悟空",
+  "myth_system": "rebellion-myth",
+  "story_type": "rebellion / hero-of-disorder",
+  "core_summary": "A monkey born from stone, with no parents and no place in the cosmic order, seizes power, strikes his own name from the ledger of death, and wars against heaven itself — until the Buddha seals him under a mountain, and centuries later he is freed into a journey that gives his defiance meaning.",
+  "main_characters": ["Sun Wukong", "Jade Emperor", "Dragon King", "Buddha"],
+  "central_conflict": "An individual of immense power refusing the place a rigid celestial bureaucracy assigns him — freedom and self-definition versus imposed order and hierarchy.",
+  "cultural_meaning": "Wukong is China's oldest anti-hero: what happens when a system humiliates someone too powerful, too free and too proud to obey. His rebellion is not nihilism but a demand to matter on his own terms; his later journey is that wild force finding purpose without being broken.",
+  "emotional_tone": "defiant, electric, proud, with an undercurrent of loneliness — he has no family and no given place",
+  "global_reader_angle": "Everyone has felt unseen, boxed in, told to stay in their lane. Wukong is the part of us that refuses. Lead with that universal defiance, then explain the celestial bureaucracy he is rebelling against.",
+  "symbols": ["ruyi jingu bang (the staff)", "cloud somersault", "Flower-Fruit Mountain stone", "cinnabar sun", "the ledger of the dead"],
+  "must_keep_elements": ["stone-born origin", "true monkey nature (not human, not beast-warrior)", "the staff", "defiance of heaven", "wit over brute force"],
+  "allowed_adaptations": ["which scene (birth from stone, seizing the staff, war on heaven, sealed under mountain)", "calm vs. mid-action mood", "degree of stylization"],
+  "forbidden_adaptations": ["Western fantasy monkey-king", "armored game warrior", "anime boy", "cute mascot stripped of defiance", "any film or game likeness"],
+  "visual_potential": {
+    "best_scene_to_illustrate": "Wukong on a mountain stone, staff in hand, facing the vast sky — small against the cosmos but unbowed.",
+    "main_subject": "Sun Wukong",
+    "emotion": "proud defiance with quiet solitude",
+    "composition": "one-corner-half-side (Ma Yuan style), figure offset, vast negative-space sky, a single cinnabar sun as the visual eye",
+    "symbols": ["staff", "mountain stone", "cloud", "cinnabar sun"],
+    "color_mood": "warm rice paper, deep ink, one cinnabar accent"
+  }
+}

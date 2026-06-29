@@ -1,0 +1,154 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Classic of Mountains and Seas", "item": "https://yaopulife.com/shanhaijing" }
+    ] },
+    { "@type": "Article",
+      "headline": "The Classic of Mountains and Seas — China's Strangest Book",
+      "alternativeHeadline": "山海经 — a 2,000-year-old field guide to gods, monsters and far lands",
+      "description": "The Shan Hai Jing is a 2,000-year-old catalogue of impossible mountains, gods and beasts — the source of half of Chinese mythology. Meet five of its strangest creatures.",
+      "inLanguage": "en", "articleSection": "Chinese Mythology",
+      "keywords": "Shan Hai Jing, 山海经, Classic of Mountains and Seas, Chinese monsters, nine-tailed fox, Zhulong, bestiary",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/shanhaijing",
+      "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" } }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Classic of Mountains &amp; Seas 山海经 — China's Strangest Book | yaopulife</title>
+<meta name="description" content="A 2,000-year-old catalogue of impossible mountains, gods and beasts — the source of half of Chinese mythology. Meet five of the strangest creatures in the Shan Hai Jing.">
+<link rel="canonical" href="https://yaopulife.com/shanhaijing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Classic of Mountains & Seas 山海经 — China's Strangest Book">
+<meta property="og:description" content="A 2,000-year-old field guide to gods, monsters and the edges of the world.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/shanhaijing">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero">
+  <div class="living-hanzi" aria-hidden="true">山海</div>
+  <div class="wrap">
+    <div class="kicker">China's Ancient Monster Universe · 01</div>
+    <h1>China's Strangest Book</h1>
+    <div class="han-t">山海经 · Shān Hǎi Jīng — the Classic of Mountains and Seas</div>
+    <p class="lead">Two thousand years ago, someone in China wrote a field guide to a world that never existed — page after page of impossible mountains, distant tribes, forgotten gods and beasts that should not be able to live. Half of Chinese mythology was born inside this one strange book. Here are five of its inhabitants.</p>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">The monster universe</div>
+    <a href="/shanhaijing" class="on">Classic of Mountains &amp; Seas</a>
+    <a href="/myths">The Fox Spirit</a>
+    <a href="/myths">Strange Tales of Liaozhai</a>
+    <div class="lbl">Born in this book</div>
+    <a href="/jingwei">Jingwei · who fought the sea</a>
+    <a href="/xingtian">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#book">What this book is</a>
+    <a href="#beasts">Five strange creatures</a>
+    <a href="#index">The creature index</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Classic of Mountains and Seas</div>
+    <span class="chip">Bestiary</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 6 min read</span>
+
+    <div class="callout"><b>序 · Series guide</b> — This opens <i>China's Ancient Monster Universe</i>. Think of the Shan Hai Jing as the root file that later myths, ghost stories and even today's games and films keep pulling characters from. We've already met two of its residents: <a href="/jingwei" style="color:var(--clayd)">Jingwei</a> and <a href="/xingtian" style="color:var(--clayd)">Xingtian</a>.</div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="book">What this book is</h2>
+    <p>The <span class="zh">Shan Hai Jing 山海经</span> — literally "the Classic of Mountains and Seas" — is one of the oldest and oddest texts in China, pieced together more than two thousand years ago. On the surface it reads like a geography book: travel in this direction so many miles, and you reach this mountain; on it grows this plant, in its river swims this fish, and the god who lives there looks like <i>this</i>.</p>
+    <p>Except the geography is impossible and the wildlife is divine. No one is sure who wrote it, or whether it was meant as a real map, a ritual manual, or a record of dreams. What's certain is its influence: a huge share of Chinese myth — the ten suns, Jingwei, Xingtian, the nine-tailed fox — was first written down here. It is the source code of the Chinese imagination.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>经 · why it's called a "classic"</b> — The <i>jīng 经</i> in the title is the same word used for sacred and foundational texts. It frames this catalogue of monsters not as entertainment but as <i>knowledge worth preserving</i> — a serious attempt to map the edges of a world the ancient Chinese believed was genuinely full of gods and beasts.</div>
+
+    <h2 id="beasts">Five strange creatures</h2>
+
+    <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;margin:22px 0 6px">1 · The Nine-Tailed Fox <span class="zh" style="color:var(--cinnabar)">九尾狐</span></h3>
+    <p>In the Land of Green Hills lives a fox with nine tails and a cry like a human baby. In the oldest texts it can be a good omen — a sign of peace and many children. Only later did it evolve into the famous shapeshifting fox-spirit: a beautiful, dangerous woman who could undo kings. If you've met a nine-tailed fox in an anime or a game, this book is where its bloodline begins.</p>
+
+    <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;margin:22px 0 6px">2 · The Torch Dragon <span class="zh" style="color:var(--cinnabar)">烛龙</span></h3>
+    <p>A scarlet serpent-god a thousand miles long, with a human face. When <span class="zh">Zhulong 烛龙</span> opens his eyes, it is day; when he closes them, it is night. His breath is winter and summer; his exhale stirs the wind. He does not eat, sleep, or breathe like living things. He is not a creature that controls day and night — he simply <i>is</i> the turning of day into night.</p>
+
+    <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;margin:22px 0 6px">3 · Kui, the Thunder Beast <span class="zh" style="color:var(--cinnabar)">夔</span></h3>
+    <p>On a mountain in the eastern sea stands <span class="zh">Kui 夔</span>: an ox the colour of storm-cloud, with no horns and only one leg. When it moves in and out of the water it summons wind and rain, and its voice rolls like thunder. The Yellow Emperor is said to have killed one and stretched its hide into a war-drum whose beat could be heard for five hundred miles.</p>
+
+    <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;margin:22px 0 6px">4 · Hundun, the Faceless <span class="zh" style="color:var(--cinnabar)">帝江 / 混沌</span></h3>
+    <p>At the centre of the world sits a strange divine being — a fat, glowing sack of a creature with six legs and four wings, but <i>no face at all</i>: no eyes, no ears, no nose, no mouth. And yet it knows how to sing and dance. <span class="zh">Hundun 混沌</span> is the image of primordial chaos itself — the formless, featureless wholeness that came before the world was carved into shapes.</p>
+
+    <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;margin:22px 0 6px">5 · Qiongqi, the Wicked <span class="zh" style="color:var(--cinnabar)">穷奇</span></h3>
+    <p>A winged tiger that flies and devours people — but with a horrifying sense of justice turned inside out. <span class="zh">Qiongqi 穷奇</span> hunts down the honest and the good to eat them, and rewards the cruel and the liars by bringing them fresh kills. It is a monster of pure moral inversion, and one of the "Four Fiends" of ancient legend.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>How one book became a hundred stories</b> — Many of these beasts grew far beyond their single paragraph here. The nine-tailed fox became a whole genre of spirit-romance across China, Korea and Japan; Kui became the template for thunder-gods; Hundun became a cornerstone of Daoist philosophy. The Shan Hai Jing is less a book you read than a world other people keep moving into.</div>
+
+    <h2 id="index">The creature index</h2>
+    <div class="glossary">
+      <div class="gh">异 · Five beasts of the Shan Hai Jing</div>
+      <div class="gr"><span class="zh">九尾狐</span><span class="py">jiǔ wěi hú</span><span class="mn">Nine-tailed fox — omen, then shapeshifting spirit.</span></div>
+      <div class="gr"><span class="zh">烛龙</span><span class="py">zhú lóng</span><span class="mn">Torch Dragon — his eyes are day and night.</span></div>
+      <div class="gr"><span class="zh">夔</span><span class="py">kuí</span><span class="mn">One-legged thunder-ox; its hide became a war-drum.</span></div>
+      <div class="gr"><span class="zh">混沌</span><span class="py">hùn dùn</span><span class="mn">Hundun — the faceless god of primordial chaos.</span></div>
+      <div class="gr"><span class="zh">穷奇</span><span class="py">qióng qí</span><span class="mn">Winged man-eater that devours the good, feeds the wicked.</span></div>
+    </div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ What the Shan Hai Jing is, and why it matters so much to Chinese myth.<br>✓ Five of its strangest creatures — and the modern characters they seeded.<br>✓ Why a 2,000-year-old "geography book" reads like a monster archive.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Which of these five would you most want to see brought to life on screen — the Torch Dragon, the faceless Hundun, or the wicked Qiongqi? Tell me in the comments, and I'll do a full story on the winner.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#book">· What this book is</a></div>
+      <div><a href="#beasts">· Five strange creatures</a></div>
+      <div><a href="#index">· The creature index</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Born in this book</div>
+      <h4 style="color:var(--clayd)">Jingwei &amp; Xingtian</h4>
+      <a class="next" href="/jingwei">Read their myths →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Watch the 60-second version</div>
+      <h4>On TikTok &amp; YouTube</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">The monsters of the Shan Hai Jing, in 60 seconds.</p>
+      <a class="next" href="/" style="margin-top:8px">Follow @yaopulife →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-shanhaijing" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

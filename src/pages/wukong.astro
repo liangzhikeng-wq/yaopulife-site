@@ -1,0 +1,280 @@
+---
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yaopulife.com/#org",
+      "name": "yaopulife",
+      "alternateName": "耀蒲",
+      "url": "https://yaopulife.com",
+      "logo": "https://yaopulife.com/favicon.svg"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yaopulife.com/#site",
+      "url": "https://yaopulife.com",
+      "name": "yaopulife",
+      "publisher": { "@id": "https://yaopulife.com/#org" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Myths", "item": "https://yaopulife.com/myths" },
+        { "@type": "ListItem", "position": 3, "name": "Sun Wukong", "item": "https://yaopulife.com/wukong" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "The Monkey Who Declared War on Heaven",
+      "alternativeHeadline": "Sun Wukong 孙悟空 — the Monkey King",
+      "description": "He was born from stone, with no family and no name that mattered. So he declared war on heaven itself. The real story of Sun Wukong, the Monkey King.",
+      "inLanguage": "en",
+      "articleSection": "Chinese Mythology",
+      "keywords": "Sun Wukong, Monkey King, 孙悟空, Chinese mythology, Journey to the West, Great Sage Equal to Heaven",
+      "image": "https://yaopulife.com/og-image.jpg",
+      "mainEntityOfPage": "https://yaopulife.com/wukong",
+      "author": { "@id": "https://yaopulife.com/#org" },
+      "publisher": { "@id": "https://yaopulife.com/#org" }
+    }
+  ]
+};
+import SiteAnalytics from '../components/SiteAnalytics.astro';
+import StoryCTA from '../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sun Wukong 孙悟空 — The Monkey Who Declared War on Heaven | yaopulife</title>
+<meta name="description" content="He was born from stone, with no family and no name that mattered. So he declared war on heaven itself. The real story of Sun Wukong, the Monkey King.">
+<link rel="canonical" href="https://yaopulife.com/wukong">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sun Wukong 孙悟空 — The Monkey Who Declared War on Heaven">
+<meta property="og:description" content="Heaven's greatest enemy was not a demon, not a dragon — but a monkey born from stone.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/wukong">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+<style>
+/* Hero V2 图文融合 — 用现有品牌色 朱砂/暗金/玉绿/米白 点睛 */
+.story-hero.illus{position:relative}
+/* 云气 + 品牌色晕染贯穿整个 hero(从图区延伸到文字区背后,极淡) */
+.story-hero.illus::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 52% 62% at 76% 40%, rgba(176,144,77,.11), transparent 60%),
+    radial-gradient(ellipse 48% 54% at 58% 64%, rgba(47,111,94,.07), transparent 62%),
+    radial-gradient(circle at 30% 18%, rgba(166,54,42,.045), transparent 42%);}
+.story-hero.illus .wrap{position:relative;z-index:1}
+/* 图文软融合:去贴片硬边框,multiply 让白底融入纸张 + 羽化边缘渐隐(国画入纸感) */
+.story-hero.illus .hero-art .wk-hero-fig{margin:0;max-width:500px;margin-left:auto;position:relative}
+.story-hero.illus .hero-art img{width:100%;height:auto;display:block;
+  mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 78% 84% at 50% 47%, #000 64%, transparent 92%);
+  mask-image:radial-gradient(ellipse 78% 84% at 50% 47%, #000 64%, transparent 92%);
+  filter:drop-shadow(0 16px 26px rgba(36,30,23,.10));}
+/* 朱砂"蒲"印章点睛 — 替代硬边框,品牌记忆点(呼应 nav seal) */
+.story-hero.illus .hero-art .wk-hero-fig::after{content:"蒲";position:absolute;right:9%;bottom:15%;z-index:3;
+  font-family:var(--han);font-size:14px;font-weight:600;color:#F7EFE0;
+  background:var(--cinnabar);width:29px;height:29px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 10px rgba(166,54,42,.28);transform:rotate(-3deg)}
+.story-hero.illus .hero-art figcaption{font-family:var(--han);font-size:12px;color:var(--ink2);text-align:right;margin-top:2px;letter-spacing:.05em;opacity:.72}
+@media(max-width:760px){
+  .story-hero.illus .hero-art .wk-hero-fig{max-width:370px;margin:6px auto 0}
+  .story-hero.illus .hero-art figcaption{text-align:center}
+  .story-hero.illus .hero-art .wk-hero-fig::after{right:15%}}
+</style>
+</head>
+<body>
+<div class="fate-thread" aria-hidden="true"><i></i></div>
+
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths" class="on">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">More myths →</a>
+</div></nav>
+
+<header class="story-hero illus">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="kicker">Rebels of Chinese Mythology · 01</div>
+      <h1>The Monkey Who Declared War on Heaven</h1>
+      <div class="han-t">孙悟空 · Sūn Wùkōng — the Monkey King</div>
+      <p class="lead">What if heaven's greatest enemy was not a demon, not a dragon, not a fallen god — but a monkey? Born from a rock, with no parents and no name that mattered, he looked the entire universe in the eye and refused to bow.</p>
+    </div>
+    <div class="hero-art">
+      <figure class="wk-hero-fig">
+        <img src="/img/wukong-hero.jpg" alt="Sun Wukong the Monkey King standing on a mountain crag with his golden staff — gongbi baimiao fine-line ink illustration" width="980" height="980" loading="eager" decoding="async">
+        <figcaption>工笔白描 · gongbi baimiao ink — yaopulife original</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <aside class="side">
+    <div class="lbl">Rebels of myth</div>
+    <a href="/wukong" class="on">Sun Wukong · the Monkey King</a>
+    <a href="/nezha">Nezha · the cursed child</a>
+    <a href="/houyi">Hou Yi · who shot the suns</a>
+    <a href="/jingwei">Jingwei · who fought the sea</a>
+    <a href="/xingtian">Xingtian · the headless warrior</a>
+    <div class="lbl">On this page</div>
+    <a href="#stone">Born from stone</a>
+    <a href="#death">He erased his name from death</a>
+    <a href="#stables">The lowest job in heaven</a>
+    <a href="#war">One monkey vs. heaven</a>
+    <a href="#timeline">His story in six beats</a>
+    <a href="#glossary">The words that matter</a>
+    <a href="#quiz">Test yourself</a>
+  </aside>
+
+  <main class="art">
+    <div class="bc">Home / Myths / Sun Wukong</div>
+    <span class="chip">Rebel myth</span><span class="chip">Beginner</span><span style="font-size:12px;color:var(--ink2)">⏱ 6 min read</span>
+
+    <div class="charcard" data-seal="齊">
+      <div class="ttl"><span class="zh">孙悟空</span><span class="en">Sun Wukong</span><span class="py">Sūn Wùkōng</span></div>
+      <dl>
+        <dt>Also known as</dt><dd><span class="zh">美猴王</span> Handsome Monkey King · <span class="zh">齐天大圣</span> Great Sage Equal to Heaven</dd>
+        <dt>Born from</dt><dd>A stone egg on Flower-Fruit Mountain — no mother, no father, no family name.</dd>
+        <dt>Weapon</dt><dd><span class="zh">金箍棒</span> an iron staff that shrinks to a needle or grows to prop up the sky.</dd>
+        <dt>Powers</dt><dd>72 transformations · immortality · a cloud-somersault that crosses the world in one leap.</dd>
+        <dt>True weakness</dt><dd>His own pride — and, one day, a golden headband he cannot take off.</dd>
+      </dl>
+    </div>
+
+    <div class="callout"><b>序 · Series guide</b> — This opens <i>Rebels of Chinese Mythology</i>. Sun Wukong is China's oldest anti-hero — what happens when a system humiliates someone too powerful to obey. Next: <i>Nezha, the cursed child who refused fate</i>.</div>
+
+    <svg class="divider" width="100%" height="16" viewBox="0 0 600 16"><path d="M2 8h220 M378 8h220" stroke="#B0904D" stroke-width="1" opacity=".5"/><path d="M250 8c5-8 14-8 19 0c5-8 14-8 19 0c5 8 14 8 19 0c5-8 14-8 19 0c5 8 14 8 19 0" fill="none" stroke="#B0904D" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+    <h2 id="stone">Born from stone</h2>
+    <p>He had no mother. No father. No family name to inherit. On a wild mountain, a rock that had drunk in sunlight and moonlight for centuries simply cracked open — and out rolled a stone monkey, blinking at a world that had no place for him.</p>
+    <p>That wound never left him. Everything he did next — every theft, every title, every act of war — came from a single, very human hunger: to matter. To have a name the universe could not ignore.</p>
+
+    <div class="pull">He had no name that mattered. So he decided to make one — out of power, and out of chaos.</div>
+
+    <h2 id="death">He erased his name from death</h2>
+    <p>First he chased the one thing no creature is supposed to escape: death itself. He crossed oceans to learn the secrets of immortality. He stormed into the <span class="zh">Dragon King's 龙王</span> undersea palace and walked out with a staff of black iron banded in gold — a weapon that could shrink to a needle or grow tall enough to prop up the sky.</p>
+    <p>Then he did something even the gods found insulting: he marched into the <span class="zh">underworld 地府</span>, found the ledger where every soul's death is written, and struck out his own name.</p>
+
+    <div class="xiaoming" id="xiaoming">
+      <div class="xm-lbl">生死簿 · The Ledger of the Dead</div>
+      <button class="xm-name" type="button" aria-label="Strike his name from the ledger">孙悟空<svg class="xm-stroke" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg"><path d="M10 27 C 70 6, 150 36, 210 13" fill="none" stroke="var(--cinnabar)" stroke-width="4.5" stroke-linecap="round"></path></svg></button>
+      <div class="xm-hint">Tap his name — strike it from the book of the dead.</div>
+      <div class="xm-after">Gone. Just like that, he had cancelled his own ending.</div>
+    </div>
+
+    <h2 id="stables">The lowest job in heaven</h2>
+    <p>Heaven noticed. But instead of crushing him, the <span class="zh">Jade Emperor 玉帝</span> tried something more bureaucratic: he offered the monkey a job, hoping a title would keep him quiet. The job? Keeper of the heavenly stables. The most powerful being alive — handed a broom.</p>
+    <p>When Wukong realised he'd been given heaven's lowest rank as a joke, he didn't sulk. He walked out, raised a banner over his mountain, and gave himself a new title in letters tall enough for heaven to read:</p>
+    <div class="pull">齐天大圣 — the Great Sage Equal to Heaven.</div>
+    <p>It sounds like arrogance. It was actually a declaration of war.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>齐天大圣 · why this title is a threat</b> — Word by word it reads "equal-to-heaven great sage." In a culture where heaven outranks every emperor, naming yourself <i>its equal</i> isn't a boast — it's treason against the entire order of the universe.</div>
+
+    <h2 id="war">One monkey vs. the army of heaven</h2>
+    <p>Heaven sent its generals. He beat them. It sent its armies. He scattered them. He fought the gods to a standstill, raided the immortal peach banquet, swallowed the elixir of life, and survived being cooked in a furnace for forty-nine days — walking out with eyes that could see through any disguise.</p>
+    <p>For one impossible moment, a single creature with no family and no rank had brought the entire celestial order to its knees.</p>
+
+    <div class="note"><span class="nlbl">Native note</span><b>天庭 · what "heaven" really is</b> — Here's the part outsiders miss. In these stories, heaven isn't a paradise of clouds. It works like a vast government — a <i>celestial bureaucracy</i> where every god holds a rank and every being has an assigned place. Wukong's true crime was never violence. It was refusing to stay in his place.</div>
+
+    <h2>The mountain</h2>
+    <p>In the end, it took the <span class="zh">Buddha 如来</span> himself. He made the monkey a bet: leap out of my palm, and heaven is yours. Wukong soared to the edge of the world in a single jump — and found he had never left the Buddha's hand. The hand became a mountain. And under it, the Great Sage was sealed for five hundred years.</p>
+    <p>But this was not the end of him. Five centuries later, a monk would lift that mountain — and the most dangerous rebel in heaven would begin a very different journey. That's the next story.</p>
+
+    <h2 id="timeline">His story in six beats</h2>
+    <div class="timeline">
+      <div class="tl"><div class="step">Beat 01</div><h4>Born from stone <span class="zh">石猴</span></h4><p>A rock on Flower-Fruit Mountain cracks open. Out rolls a monkey with no name and nothing to lose.</p></div>
+      <div class="tl"><div class="step">Beat 02</div><h4>He cancels his own death <span class="zh">销名</span></h4><p>He storms the underworld and strikes his name from the ledger of the dead.</p></div>
+      <div class="tl"><div class="step">Beat 03</div><h4>Heaven hands him a broom <span class="zh">弼马温</span></h4><p>The Jade Emperor offers him its lowest rank — keeper of the stables — hoping a title will keep him quiet.</p></div>
+      <div class="tl"><div class="step">Beat 04</div><h4>He crowns himself <span class="zh">齐天大圣</span></h4><p>He raises a banner: Great Sage Equal to Heaven. Not a boast — a declaration of war.</p></div>
+      <div class="tl"><div class="step">Beat 05</div><h4>War on heaven <span class="zh">大闹天宫</span></h4><p>He beats heaven's armies, raids the peach banquet, and walks out of a furnace alive.</p></div>
+      <div class="tl"><div class="step">Beat 06</div><h4>Sealed under the mountain <span class="zh">五行山</span></h4><p>The Buddha traps him beneath a mountain for five hundred years — until a monk arrives.</p></div>
+    </div>
+
+    <h2 id="glossary">The words that matter</h2>
+    <div class="glossary">
+      <div class="gh">字 · The Chinese behind the story</div>
+      <div class="gr"><span class="zh">孙悟空</span><span class="py">Sūn Wùkōng</span><span class="mn">Sun Wukong — "monkey awakened to emptiness," the Monkey King.</span></div>
+      <div class="gr"><span class="zh">齐天大圣</span><span class="py">Qí Tiān Dà Shèng</span><span class="mn">"Great Sage Equal to Heaven" — the title he gave himself.</span></div>
+      <div class="gr"><span class="zh">金箍棒</span><span class="py">Jīn Gū Bàng</span><span class="mn">His golden-banded iron staff, shrinks to a needle.</span></div>
+      <div class="gr"><span class="zh">玉帝</span><span class="py">Yù Dì</span><span class="mn">The Jade Emperor, ruler of heaven.</span></div>
+      <div class="gr"><span class="zh">天庭</span><span class="py">Tiān Tíng</span><span class="mn">"Heaven" as a ranked celestial government.</span></div>
+      <div class="gr"><span class="zh">如来</span><span class="py">Rú Lái</span><span class="mn">The Buddha who finally sealed him under the mountain.</span></div>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="qh">⚡ Test yourself</div>
+      <div class="qsub">Three quick questions. Tap an answer to see if you're right.</div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q1</span>What was Sun Wukong born from?</div>
+        <button class="opt">A dragon's egg<span class="mark"></span></button>
+        <button class="opt" data-correct="1">A stone on a wild mountain<span class="mark"></span></button>
+        <button class="opt">A fallen star<span class="mark"></span></button>
+        <button class="opt">A god's dream<span class="mark"></span></button>
+        <div class="exp">He hatched from a rock that had soaked up sun and moonlight for centuries — which is exactly why he has no family and nothing to lose.</div>
+      </div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q2</span>What does his title 齐天大圣 mean?</div>
+        <button class="opt">Monkey of the Mountain<span class="mark"></span></button>
+        <button class="opt">Servant of the Jade Emperor<span class="mark"></span></button>
+        <button class="opt" data-correct="1">Great Sage Equal to Heaven<span class="mark"></span></button>
+        <button class="opt">Keeper of the Peaches<span class="mark"></span></button>
+        <div class="exp">齐天大圣 means "a sage the equal of heaven itself." Claiming it was the same as declaring war on the gods.</div>
+      </div>
+
+      <div class="q">
+        <div class="qq"><span class="n">Q3</span>In these myths, "heaven" works most like a…?</div>
+        <button class="opt">A paradise of clouds<span class="mark"></span></button>
+        <button class="opt" data-correct="1">A government, with ranks and paperwork<span class="mark"></span></button>
+        <button class="opt">An empty sky<span class="mark"></span></button>
+        <button class="opt">One all-powerful god<span class="mark"></span></button>
+        <div class="exp">天庭 is a celestial bureaucracy — every god holds a rank. Wukong's real crime was refusing to stay in his assigned place.</div>
+      </div>
+    </div>
+
+    <div class="lbl" style="font-size:11px;letter-spacing:1px;color:var(--ink3);margin:24px 0 6px;text-transform:uppercase">What you just learned</div>
+    <p style="margin-bottom:4px">✓ Who Sun Wukong is, and why he rebels — without needing any background.<br>✓ What "heaven" means in Chinese myth (a ranked bureaucracy, not paradise).<br>✓ Why the title <span class="zh">齐天大圣</span> was an act of war.</p>
+
+    <div class="callout cta-c" style="background:var(--claybg);border-color:#E5C9B6;border-left:3px solid var(--clay)"><b style="color:var(--clayd)">Your turn</b> — Was Sun Wukong a hero, or just the most dangerous rebel heaven ever made? And which rebel should I tell next — <i>Nezha</i> or <i>Hou Yi</i>? Tell me in the comments.</div>
+  </main>
+
+  <aside class="rrail">
+    <div class="lbl">On this page</div>
+    <div class="box" style="padding:10px 14px;font-size:13px;color:var(--ink2)">
+      <div style="color:var(--clayd)"><a href="#stone">· Born from stone</a></div>
+      <div><a href="#death">· He erased his name from death</a></div>
+      <div><a href="#stables">· The lowest job in heaven</a></div>
+      <div><a href="#war">· One monkey vs. heaven</a></div>
+      <div><a href="#timeline">· His story in six beats</a></div>
+      <div><a href="#quiz">· Test yourself</a></div>
+    </div>
+    <div class="box cta">
+      <div class="lbl" style="color:var(--clayd)">Up next</div>
+      <h4 style="color:var(--clayd)">Nezha 哪吒 · the cursed child</h4>
+      <a class="next" href="/nezha">Read his story →</a>
+    </div>
+    <div class="box">
+      <div class="lbl">Watch the 60-second version</div>
+      <h4>On TikTok &amp; YouTube</h4>
+      <p style="font-size:12.5px;color:var(--ink2)">The Monkey King story, told in 60 seconds.</p>
+      <a class="next" href="/" style="margin-top:8px">Follow @yaopulife →</a>
+    </div>
+  </aside>
+</div>
+
+<StoryCTA source="page-wukong" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>
