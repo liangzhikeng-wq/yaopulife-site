@@ -1,0 +1,120 @@
+---
+const faqs = [
+  { q: "Are Chinese dragons evil?", a: "No. Chinese dragons (龙, lóng) are benevolent and auspicious — they bring rain and water, symbolize the emperor and good fortune, and are a source of pride, not fear. The 'evil dragon' is a Western idea that got attached to a completely different creature by a shared English word." },
+  { q: "Why are Chinese and Western dragons so different?", a: "They come from opposite roots. Western dragons descend from serpents and hoards — fire-breathing monsters a hero must slay. Chinese dragons descend from water, rivers and sky — divine rulers of rain and fortune. They were never the same animal; English just translates both as 'dragon.'" },
+  { q: "What do Chinese dragons symbolize?", a: "Water, rain and rivers; imperial authority (the emperor sat on the 'dragon throne'); yang energy, strength, and good luck. The Dragon is also the most prestigious sign in the Chinese zodiac." },
+  { q: "Are Chinese dragons gods?", a: "Often, yes. The Dragon Kings (龙王) are divine rulers of the seas and rain, prayed to by farmers for good weather. Dragons sit among the gods and spirits of the celestial order rather than among monsters." },
+  { q: "Do Chinese people really call themselves descendants of the dragon?", a: "Yes — 龙的传人 (lóng de chuán rén), 'descendants of the dragon,' is a common, proud way Chinese people describe their shared heritage. You'd never call yourself the descendant of a creature you thought was evil." },
+];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "Article", "headline": "Why Chinese Dragons Are Not Evil", "description": "Chinese dragons aren't the fire-breathing monsters of Western myth — they're benevolent gods of rain, rivers and good fortune. Here's why the two are completely different creatures.", "inLanguage": "en", "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "mainEntityOfPage": "https://yaopulife.com/explainers/why-chinese-dragons-are-not-evil" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "Why Chinese Dragons Are Not Evil", "item": "https://yaopulife.com/explainers/why-chinese-dragons-are-not-evil" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why Chinese Dragons Are Not Evil 龙 — The Real Meaning | yaopulife</title>
+<meta name="description" content="Chinese dragons aren't the fire-breathing villains of Western myth. They're benevolent gods of rain, rivers, the emperor and good fortune. Here's why the two 'dragons' are completely different creatures.">
+<link rel="canonical" href="https://yaopulife.com/explainers/why-chinese-dragons-are-not-evil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why Chinese Dragons Are Not Evil 龙">
+<meta property="og:description" content="Not a monster to slay — a god of rain and fortune. The two 'dragons' were never the same creature.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/explainers/why-chinese-dragons-are-not-evil">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Why Chinese dragons are not evil</h1>
+  <div class="zh">龙</div>
+  <p>In the West, a dragon is a monster you send a hero to kill. In China, the dragon is a god you pray to for rain. Same English word — completely different creature.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px">The Chinese dragon (<span class="zh">龙</span> <i>lóng</i>) is <b>benevolent, auspicious and divine</b>. It rules water and rain, stands for the emperor and good fortune, and is something Chinese people are proud to descend from. It is nothing like the hoard-guarding, fire-breathing monster of European legend. The confusion is almost entirely an accident of translation: one English word, "dragon," got stuck onto two creatures that were never related.</p>
+</section>
+
+<section class="sec">
+  <h2 id="confuse">Why this confuses Western readers</h2>
+  <p>If you grew up on European stories, "dragon" means one thing: a giant reptile that hoards gold, breathes fire, and exists to be slain. Beowulf dies fighting one. Saint George is sainted for killing one. Smaug is greed with wings. The whole arc of a Western dragon story is <b>kill the monster, win the prize</b>.</p>
+  <p>So when newcomers see dragons everywhere in Chinese culture — on emperors' robes, in New Year parades, raced as boats, claimed as ancestors — it short-circuits. Why would a civilization decorate itself with the monster? The answer is that it isn't a monster at all. The two "dragons" share a translation, not a meaning.</p>
+</section>
+
+<section class="sec">
+  <h2 id="context">What the dragon really means in China</h2>
+  <p>The Chinese dragon is, at its core, a <b>water god</b>. It lives in rivers, lakes and the sea, rides the clouds, and brings the rain that crops — and a whole agricultural civilization — depend on. In a land where drought meant famine, the creature that controlled rain wasn't feared. It was worshipped.</p>
+  <p>From that root, the dragon grew into the symbol of <b>imperial power</b>. The emperor was the 真龙天子 — the "true dragon, son of heaven." He sat on the dragon throne, wore the dragon robe, and ruled with the dragon's authority. To use dragon imagery was, for centuries, an imperial privilege.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>龙的传人 — descendants of the dragon</b> — One of the most common, heartfelt ways Chinese people describe their shared identity is <i>lóng de chuán rén</i>, "descendants of the dragon." It's in songs, speeches and everyday pride. Think about what that means: you would never, ever call yourself the descendant of a creature you believed was evil.</div>
+</section>
+
+<section class="sec">
+  <h2 id="examples">Where you'll meet dragons in the myths</h2>
+  <ul class="more">
+    <li><b>The Dragon Kings (龙王)</b> — divine rulers of the four seas, in charge of rain and storms. Farmers prayed to them; emperors built them temples. You meet them across <a href="/myths">Chinese mythology</a>, from Journey to the West to the story of Nezha.</li>
+    <li><b>The Dragon in the zodiac</b> — the single most prestigious of the twelve animals, and the only mythical one. Parents hope for a <a href="/zodiac">"dragon baby,"</a> and birth rates visibly rise in Dragon years.</li>
+    <li><b>The bestiary</b> — the ancient <a href="/shanhaijing">Classic of Mountains and Seas</a> is full of dragon-kin and rain-bringing serpents, long before any of them were "monsters."</li>
+  </ul>
+</section>
+
+<section class="sec">
+  <h2 id="misunderstand">What not to misunderstand</h2>
+  <div class="note"><span class="nlbl">Native note</span><b>"Slaying the dragon" makes no sense here</b> — There's no Chinese tradition of a hero whose glory is killing a dragon. A dragon can be a rival or an obstacle in a story (a Dragon King can be proud or wrong), but it isn't evil-by-nature, and defeating one isn't the point of the tale.</div>
+  <div class="note"><span class="nlbl">Native note</span><b>It's not a dinosaur, and not just a big snake</b> — The Chinese dragon is a composite: often described with the antlers of a deer, the body of a snake, the scales of a fish and the claws of an eagle. It's a symbolic fusion of auspicious animals, not a single beast.</div>
+</section>
+
+<section class="sec">
+  <h2 id="remember">The simplest way to remember it</h2>
+  <div class="callout" style="max-width:760px"><b>Western dragon</b> = fire + greed + a monster to kill.<br><b>Chinese dragon</b> = water + luck + a god you're proud to descend from.</div>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Meet the dragon as a zodiac sign in the <a href="/zodiac">Chinese zodiac guide</a> — the most auspicious of the twelve.</li>
+    <li>See dragons as gods and rivals across <a href="/myths">Chinese mythology</a>.</li>
+    <li>Find dragon-kin among the monsters of the <a href="/shanhaijing">Classic of Mountains and Seas</a>.</li>
+    <li>Read how the rebel <a href="/nezha">Nezha</a> tangles with a Dragon King — and why the dragon there isn't a simple villain.</li>
+  </ul>
+</section>
+</main>
+
+<StoryCTA source="explainer-dragons" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

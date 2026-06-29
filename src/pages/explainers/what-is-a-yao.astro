@@ -1,0 +1,119 @@
+---
+const faqs = [
+  { q: "What is a yao in Chinese folklore?", a: "A 妖 (yāo) is a spirit — usually an animal, plant or object that gained power, consciousness and often a human form over a very long time. It's a category of being, not a moral verdict: a yao can be dangerous, kind, or simply otherworldly." },
+  { q: "Does yao mean demon?", a: "No — and 'demon' is a misleading translation. A demon implies pure evil. A yao is morally open: the White Snake is a yao who gives up immortality for love, while other yao do prey on humans. The word names what something is, not whether it's good." },
+  { q: "How does something become a yao?", a: "Through time and cultivation. An old fox, a thousand-year-old snake, even a long-worshipped object can absorb energy (qi) over centuries, gain a spirit, learn to shapeshift, and eventually take human form. Age and practice, not birth, make a yao." },
+  { q: "What's the difference between a yao, a ghost and a god?", a: "A 妖 (yao) is a spirit-being that cultivated power, often from an animal. A 鬼 (gui) is a ghost — the spirit of a dead human. A 神 (shen) is a god with an official place in the heavenly order. They're three different categories, often mistranslated into the single English word 'spirit' or 'demon.'" },
+  { q: "Are yao always villains?", a: "Far from it. Some of China's most beloved characters are yao — the White Snake, sympathetic fox spirits, loyal animal companions. A yao can absolutely be the hero of the story." },
+];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "Article", "headline": "What Is a Yao in Chinese Folklore?", "description": "A 妖 (yao) isn't a demon — it's a spirit, often an animal that gained power and a human form over centuries. It can be your enemy, your lover, or your hero.", "inLanguage": "en", "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "mainEntityOfPage": "https://yaopulife.com/explainers/what-is-a-yao" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "What Is a Yao", "item": "https://yaopulife.com/explainers/what-is-a-yao" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is a Yao 妖 in Chinese Folklore? (It's Not a Demon) | yaopulife</title>
+<meta name="description" content="A 妖 (yao) isn't a demon — it's a spirit, usually an animal or object that gained power and a human form over centuries. It can be a villain, a lover or a hero. Here's what the word really means.">
+<link rel="canonical" href="https://yaopulife.com/explainers/what-is-a-yao">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is a Yao 妖 in Chinese Folklore?">
+<meta property="og:description" content="Not a demon — a spirit that grew power over time. It can be your enemy, your lover, or your hero.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/explainers/what-is-a-yao">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What is a "yao"?</h1>
+  <div class="zh">妖</div>
+  <p>English subtitles love to call them "demons." But a 妖 can be a villain, a tragic lover, or the hero of the whole story. The word names <i>what</i> a being is — never whether it's good or evil.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px">A 妖 (<i>yāo</i>) is a <b>spirit</b> — most often an animal, plant or object that, over a very long time, gained energy, consciousness and frequently the power to take human form. It is a <b>category of being</b>, not a moral judgment. Some yao are dangerous and prey on humans; others are wise, loving and heroic. Translating the word as "demon" throws away half of what it means.</p>
+</section>
+
+<section class="sec">
+  <h2 id="confuse">Why this confuses Western readers</h2>
+  <p>Subtitles and translations almost always render 妖 as "demon" or "monster" — words that, in English, mean <i>evil by definition</i>. So Western audiences meet a fox spirit or a snake spirit already braced for a villain. Then the story makes that "demon" the most sympathetic, most human character in it, and something feels broken.</p>
+  <p>Nothing's broken. The translation just smuggled in a verdict the original word never carried. In Chinese, calling something a yao tells you its <b>nature and origin</b> — a spirit grown from an animal — not its alignment. Good or evil is left for the story to decide.</p>
+</section>
+
+<section class="sec">
+  <h2 id="context">How a yao is made</h2>
+  <p>The key idea is <b>cultivation over time</b>. In Chinese belief, a creature or even an object can slowly absorb energy — 气 (qì) — across centuries. An old fox, a thousand-year-old snake, a long-venerated tree: with enough age and practice, it awakens a spirit, learns to shapeshift, and may take on human shape and human longing. Some pursue this path to eventually become immortal.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>Yao, gui, shen — three different things</b> — English blurs them all into "spirit" or "demon," but Chinese keeps them apart. A 妖 (yao) is a cultivated spirit, usually from an animal. A 鬼 (guǐ) is a ghost — the soul of a dead human. A 神 (shén) is a god with a rank in the heavenly order. Knowing which one you're reading about changes the whole story.</div>
+</section>
+
+<section class="sec">
+  <h2 id="examples">Famous yao you'll meet</h2>
+  <ul class="more">
+    <li><b>The White Snake</b> — the most beloved yao of all: a snake spirit who cultivates for a thousand years, takes human form, and loves a mortal man so deeply she gives up everything for him. She is the heroine, not the monster. Read <a href="/whitesnake">her story</a>.</li>
+    <li><b>The Fox Spirit (狐狸精)</b> — often cast as a seductress, but in the best tales a fox spirit is lonely, loyal and more humane than the humans around her.</li>
+    <li><b>The bestiary</b> — the <a href="/shanhaijing">Classic of Mountains and Seas</a> is full of strange beings on the long road between animal and spirit.</li>
+  </ul>
+</section>
+
+<section class="sec">
+  <h2 id="misunderstand">What not to misunderstand</h2>
+  <div class="note"><span class="nlbl">Native note</span><b>Yao is not the same as 魔 (mo)</b> — If you want the genuinely demonic, that's 魔 (mó) — a force of evil and inner temptation, closer to the Western "demon." A yao is not that. Mixing the two flattens a whole spectrum of beings into one menacing blur.</div>
+  <div class="note"><span class="nlbl">Native note</span><b>The "demon" label kills the twist</b> — Half the power of a yao story is that the creature you were told to fear turns out to love, grieve and sacrifice. Pre-judging it as a demon spoils exactly the reversal the story is built on.</div>
+</section>
+
+<section class="sec">
+  <h2 id="remember">The simplest way to remember it</h2>
+  <div class="callout" style="max-width:760px">A <b>yao 妖</b> is a spirit that grew its power over time — usually from an animal. It can be your enemy, your lover, or your hero. The word tells you <i>what</i> it is, never whether it's good.</div>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>The greatest yao love story is <a href="/whitesnake">The White Snake</a> — a spirit who chooses love over immortality.</li>
+    <li>Meet more spirits and beasts in the <a href="/shanhaijing">Classic of Mountains and Seas</a>.</li>
+    <li>See where yao fit in the wider world of <a href="/myths">Chinese mythology</a>.</li>
+    <li>While you're here: <a href="/explainers/why-chinese-dragons-are-not-evil">why Chinese dragons are not evil</a>, and <a href="/explainers/what-is-heaven-in-chinese-mythology">what "heaven" really means</a>.</li>
+  </ul>
+</section>
+</main>
+
+<StoryCTA source="explainer-yao" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>
