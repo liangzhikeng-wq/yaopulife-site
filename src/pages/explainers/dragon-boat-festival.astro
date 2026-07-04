@@ -1,0 +1,87 @@
+---
+const faqs = [
+  { q: "Is the Dragon Boat Festival just a sporting event?", a: "No, while dragon boat racing is a major and highly visible component, the festival is a traditional holiday with over two thousand years of history that includes eating specific foods and performing rituals to ward off bad luck." },
+  { q: "Did Qu Yuan actually exist and start the festival?", a: "Qu Yuan was a real historical figure, but scholars note that dragon boat racing was likely practiced before his time, meaning the festival's origins are tied to older agricultural and spiritual rituals rather than just his legend." },
+  { q: "Why is it sometimes called the Double Fifth Festival?", a: "It is called the Double Fifth Festival because it falls on the fifth day of the fifth month of the traditional Chinese lunisolar calendar." },
+  { q: "What do people eat during the Dragon Boat Festival?", a: "People traditionally eat sticky rice dumplings wrapped in bamboo or reed leaves, which are symbolically linked to the rice thrown into the water in the Qu Yuan legend to keep fish away from his body." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/dragon-boat-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "item": "https://yaopulife.com/explainers/dragon-boat-festival"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Dragon Boat Festival and Why Is It Celebrated?</title>
+<meta name="description" content="The Dragon Boat Festival (Duānwǔ Jié) is a traditional Chinese holiday on the fifth day of the fifth lunar month. It is celebrated with team dragon boat ra">
+<link rel="canonical" href="https://yaopulife.com/explainers/dragon-boat-festival">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is the Dragon Boat Festival and Why Is It Celebrated?</h1>
+  <div class="zh">端午节</div>
+  <p>The Dragon Boat Festival (Duānwǔ Jié) is a traditional Chinese holiday on the fifth day of the fifth lunar month. It is celebrated with team dragon boat races and eating sticky rice dumplings. In one common version, it honors the ancient poet Qu Yuan, but scholars note it also originated from ancient summer rituals to ward off disease and bad luck.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Basics: What is the Dragon Boat Festival?</h2>
+  <p>The Dragon Boat Festival, known in Chinese as 端午节 (Duānwǔ Jié), is a prominent traditional holiday with more than two thousand years of history. The name translates roughly to 'Opening Fifth Festival,' as it falls on the fifth day of the fifth month of the traditional Chinese lunisolar calendar. Because of this date, it is also widely called the Double Fifth Festival.</p>
+  <p>For Western readers, it helps to think of Duānwǔ Jié as a blend of a summer solstice celebration and a Memorial Day. It is a time to honor the past and remember cultural heroes, while also enjoying a festive long weekend with family, specific seasonal foods, and outdoor community events.</p>
+</section>
+<section class="sec">
+  <h2>The Legend of Qu Yuan</h2>
+  <p>In one common version of the festival's origin story, the holiday commemorates Qu Yuan, a patriotic poet and government official from ancient China. According to the legend, after his state was conquered, a heartbroken Qu Yuan drowned himself in the Miluo River. Local villagers, who admired him, raced out in their boats to save him and threw lumps of sticky rice into the water to feed the fish so they would not eat his body.</p>
+  <p>While this is the most famous folk story associated with the holiday, it is important to remember that folk stories have many variants. Scholars note that dragon boat racing was likely practiced in organized celebrations before the legend of Qu Yuan became attached to them in the 5th or 6th century A.D.</p>
+</section>
+<section class="sec">
+  <h2>Dragon Boat Racing and Sticky Rice Dumplings</h2>
+  <p>The most visible modern tradition of the festival is dragon boat racing. This is a highly coordinated team sport in which a long, narrow boat decorated with a dragon head and tail is propelled by a large team of paddlers. A drummer sits at the front to keep the stroke rate synchronized, making it a powerful display of teamwork and community spirit.</p>
+  <p>The traditional food of the festival is the sticky rice dumpling, known as zongzi. These are made of glutinous rice stuffed with various sweet or savory fillings, wrapped in bamboo or reed leaves, and tied with string. Eating zongzi today is a direct culinary nod to the rice thrown into the river in the Qu Yuan legend.</p>
+</section>
+<section class="sec">
+  <h2>Older Roots: Warding Off Summer Disease</h2>
+  <p>Beyond the legends of poets and patriots, the Dragon Boat Festival has much older, practical roots tied to the changing of the seasons. In ancient times, the fifth lunar month was considered the beginning of midsummer, a period associated with extreme heat, the emergence of venomous insects, and the spread of disease.</p>
+  <p>To protect themselves, people would hang mugwort and calamus on their doors, drink realgar wine, and wear perfumed medicine pouches. Therefore, at its core, the festival originated at least 1,500 years ago as a vital public health and spiritual ritual to ward off evil spirits and summer illnesses.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>asia-archive.si.edu — <a href="https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/videos/dragon-boat-festival/" rel="nofollow">Dragon Boat Festival - National Museum of Asian Art</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/video/dragon-boating-introduction-boat-sport-team-paddlers/-219569" rel="nofollow">What is dragon boat racing?</a></li>
+    <li>Smithsonian Magazine — <a href="https://www.smithsonianmag.com/arts-culture/the-legends-behind-the-dragon-boat-festival-135634582/" rel="nofollow">The Legends Behind the Dragon Boat Festival</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Dragon-Boat-Festival" rel="nofollow">Dragon Boat Festival | Traditions, Legends, &amp; Races</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-dragon-boat-festival" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

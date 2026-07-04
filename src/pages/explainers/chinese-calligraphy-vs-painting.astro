@@ -1,0 +1,117 @@
+---
+const faqs = [
+  { q: "How is Chinese calligraphy different from Chinese painting?", a: "Both use the same brush and ink and are closely related, but calligraphy is the art of writing Chinese characters, while painting depicts scenes or objects. The difference is focus: writing beautifully versus depicting something. They're siblings, not the same art." },
+  { q: "Why is Chinese calligraphy respected as an art form?", a: "Because good calligraphy expresses the writer's character, discipline and emotion through the movement of the brush. In China it has long been treated as a high art — studied, collected and judged much like painting — not as mere decorative handwriting." },
+  { q: "What are the main styles of Chinese calligraphy?", a: "There are several script styles, ranging from formal, regular forms to freer, flowing cursive — for example seal, clerical, regular, running and cursive scripts. Each has its own feel, from highly structured to loose and expressive." },
+  { q: "Is calligraphy just fancy handwriting?", a: "No — that's a common misunderstanding. Legible, skilled writing is the starting point, but the art lies in rhythm, balance and the character revealed in each stroke. It's a distinct, respected art form." },
+  { q: "Do calligraphy and painting use the same tools?", a: "Yes — both use brush and ink (and share aesthetics), which is a big reason the two arts are so closely linked and often appreciated side by side." },
+];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "Article", "headline": "How Chinese Calligraphy Differs from Painting", "description": "Chinese calligraphy is the art of writing characters with a brush — distinct from painting, though they share brush and ink. The key difference, why it's respected as art, and the main script styles.", "inLanguage": "en", "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "mainEntityOfPage": "https://yaopulife.com/explainers/chinese-calligraphy-vs-painting" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "How Chinese Calligraphy Differs from Painting", "item": "https://yaopulife.com/explainers/chinese-calligraphy-vs-painting" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chinese Calligraphy vs Painting 书法 — What's the Difference</title>
+<meta name="description" content="Chinese calligraphy is writing characters as art with brush and ink — distinct from painting. The real difference, why it's high art, and the main styles.">
+<link rel="canonical" href="https://yaopulife.com/explainers/chinese-calligraphy-vs-painting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chinese Calligraphy vs Painting 书法 — What's the Difference">
+<meta property="og:description" content="Same brush, same ink — but one writes and one depicts. Why calligraphy is treated as high art, not fancy handwriting.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/explainers/chinese-calligraphy-vs-painting">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Chinese calligraphy vs painting</h1>
+  <div class="zh">书法</div>
+  <p>Same brush, same ink — but one <i>writes</i> and one <i>depicts</i>. And calligraphy isn't "fancy handwriting": in China it's a high art.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px"><b>Chinese calligraphy</b> (<span class="zh">书法</span> <i>shūfǎ</i>) is the <b>art of writing characters</b> with a brush, while Chinese painting <b>depicts</b> scenes or objects. They share the same brush and ink and are often appreciated together, but the focus is different. And calligraphy is a genuinely respected art form — valued for expression and discipline, not just for being neat.</p>
+</section>
+
+<section class="sec">
+  <h2 id="difference">Calligraphy vs painting</h2>
+  <p>The core difference is <b>focus</b>. Calligraphy is the art of writing Chinese characters expressively; painting is the art of depicting the world — mountains, birds, figures. Because both are made with the same brush and ink, and judged by the same feel for line and rhythm, they're deeply related — in fact calligraphy is often described as the standard by which Chinese painting is measured. But the line between them isn't a wall; the two arts constantly influence each other.</p>
+</section>
+
+<section class="sec">
+  <h2 id="art">Why it's treated as high art</h2>
+  <p>In Chinese culture, calligraphy has long been a <b>high art</b> — studied, collected and prized like painting. The reason is that the brush records everything: the writer's impulsiveness or restraint, elegance or boldness. A single stroke shows the hand behind it. Good calligraphy is legible script, but the artistry is in balance, rhythm and the character that comes through the ink.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>You "read" the person in the strokes</b> — Chinese connoisseurs talk about seeing someone's temperament in their brushwork. It's not mysticism; it's that a fast, confident line and a careful, upright one really do look different — and both are choices.</div>
+</section>
+
+<section class="sec">
+  <h2 id="styles">The main script styles</h2>
+  <p>Calligraphy spans several <b>script styles</b>, from highly structured to loose and flowing — for instance seal, clerical, regular, running and cursive scripts. Regular script is upright and clear; running and cursive scripts move faster and more freely, sometimes to the edge of legibility. Learning to tell them apart is one of the first joys of the art.</p>
+</section>
+
+<section class="sec">
+  <h2 id="misunderstand">The common misunderstanding</h2>
+  <div class="callout" style="max-width:760px">It's <b>not</b> just fancy handwriting, and it's <b>not</b> the same as painting.<br>It's the respected art of <b>writing characters</b> — a distinct tradition of its own.</div>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/art/Chinese-calligraphy" rel="nofollow">Chinese calligraphy</a></li>
+    <li>The Metropolitan Museum of Art — <a href="https://www.metmuseum.org/essays/chinese-calligraphy" rel="nofollow">Chinese Calligraphy (essay)</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Chinese_calligraphy" rel="nofollow">Chinese calligraphy</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General knowledge of an art tradition backed by the reputable references above. Script-style specifics are kept general.</p>
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Another idea foreigners often misread: <a href="/explainers/what-is-yin-and-yang">what yin and yang really means</a>.</li>
+    <li>Why one lucky colour is everywhere in Chinese design — <a href="/explainers/why-red-means-luck-in-china">red means luck</a>.</li>
+    <li>Explore the stories behind the symbols in <a href="/myths">Chinese mythology</a>.</li>
+  </ul>
+</section>
+</main>
+
+<StoryCTA source="explainer-chinese-calligraphy" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

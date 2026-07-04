@@ -12,9 +12,9 @@ export default defineConfig({
     '/how-it-works': '/',
     '/shipping-and-returns': '/',
     '/order/success': '/',
-    '/order/cancel': '/',
-    '/product/[id]': '/',
-    '/blog': '/myths',
-    '/blog/[slug]': '/myths'
+    '/order/cancel': '/'
   }
+  // NOTE: /product/* and /blog/* are intentionally NOT redirected here.
+  // They return 410 Gone via src/pages/product/[...path].ts and src/pages/blog/[...path].ts
+  // (old DIY commerce/blog, permanently removed — a 301-to-home would read as a soft 404).
 });

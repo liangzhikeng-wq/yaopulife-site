@@ -2,6 +2,7 @@
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
+    {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Classic of Mountains and Seas?", "acceptedAnswer": {"@type": "Answer", "text": "The 山海经 (Shān Hǎi Jīng) is an ancient Chinese text — part geography, part bestiary, part myth — cataloging hundreds of mountains, lands, gods and fantastical creatures. It's the original source for much of Chinese mythology's monster lore."}}, {"@type": "Question", "name": "How old is it?", "acceptedAnswer": {"@type": "Answer", "text": "Its layers date roughly from the Warring States period to the Han dynasty — over 2,000 years old — compiled by many unknown hands rather than a single author."}}, {"@type": "Question", "name": "Is it a story or a reference book?", "acceptedAnswer": {"@type": "Answer", "text": "A reference book. It reads like a surveyor's notes on an impossible world: this mountain, that river, the god who lives there, the beast you'll meet and what it means if you do."}}, {"@type": "Question", "name": "Is any of it real?", "acceptedAnswer": {"@type": "Answer", "text": "It mixes real geography with pure myth. Some places and animals are exaggerated versions of real ones; others are entirely fantastical. It's best read as a map of the ancient Chinese imagination."}}, {"@type": "Question", "name": "What famous creatures come from it?", "acceptedAnswer": {"@type": "Answer", "text": "The nine-tailed fox, the taotie (a gluttonous mouth-beast), winged dragons, and many gods and hybrid animals that still appear in films, games and art today."}}]},
     { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
     { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
     { "@type": "BreadcrumbList", "itemListElement": [
@@ -28,11 +29,11 @@ import StoryCTA from '../components/StoryCTA.astro';
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Classic of Mountains &amp; Seas 山海经 — China's Strangest Book | yaopulife</title>
-<meta name="description" content="A 2,000-year-old catalogue of impossible mountains, gods and beasts — the source of half of Chinese mythology. Meet five of the strangest creatures in the Shan Hai Jing.">
+<title>Classic of Mountains and Seas 山海经 — China's Strangest Book</title>
+<meta name="description" content="A 2,000-year-old catalogue of impossible mountains, gods and beasts — the source of half of Chinese mythology. Meet five of its strangest creatures.">
 <link rel="canonical" href="https://yaopulife.com/shanhaijing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Classic of Mountains & Seas 山海经 — China's Strangest Book">
+<meta property="og:title" content="Classic of Mountains and Seas 山海经 — China's Strangest Book">
 <meta property="og:description" content="A 2,000-year-old field guide to gods, monsters and the edges of the world.">
 <meta property="og:image" content="https://yaopulife.com/og-image.jpg">
 <meta property="og:url" content="https://yaopulife.com/shanhaijing">
@@ -159,6 +160,15 @@ import StoryCTA from '../components/StoryCTA.astro';
     <li><a href="/myths">The wider world of Chinese mythology</a></li>
   </ul></section>
 
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Shanhaijing" rel="nofollow">Shanhaijing</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Classic_of_Mountains_and_Seas" rel="nofollow">Classic of Mountains and Seas</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version and notes variations where relevant.</p>
+</section>
 </main>
 
   <aside class="rrail">

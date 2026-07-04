@@ -1,0 +1,123 @@
+---
+const faqs = [
+  { q: "What is Journey to the West about?", a: "It's a classic Ming-dynasty Chinese novel about a monk, Tang Sanzang, and his three disciples — the Monkey King Sun Wukong, the pig Zhu Bajie, and the steady Sha Wujing — travelling west to fetch Buddhist scriptures. Every stage of the road throws a new demon or temptation at them. It's an adventure novel, not a scripture." },
+  { q: "Who wrote Journey to the West?", a: "It's traditionally attributed to Wu Cheng'en, a Ming-dynasty writer, but the attribution is debated and not firmly settled — much of the material came from older folk tales, and the novel was first published anonymously. It's safest to say 'traditionally attributed to Wu Cheng'en,' not to state authorship as certain fact." },
+  { q: "Who are the four pilgrims?", a: "The monk Tang Sanzang leads; his disciples are Sun Wukong (the Monkey King), Zhu Bajie (a pig-like disciple), and Sha Wujing (a loyal 'sand' disciple). English translations vary — you may also see them as Tripitaka, Monkey, Pigsy and Sandy." },
+  { q: "Is Journey to the West a religious text?", a: "No. It draws on Buddhist and Daoist motifs, but it is a work of fiction from the Ming dynasty — a novel, not a sacred scripture. It was, however, loosely inspired by the real historical journey of a monk who travelled to obtain Buddhist texts." },
+  { q: "When was it written?", a: "It dates to the Ming dynasty; the earliest surviving edition was published in 1592. Like other vernacular novels of its time, it was written in everyday language rather than the classical style." },
+];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "Article", "headline": "What Journey to the West Is About", "description": "Journey to the West is a classic Ming-dynasty Chinese novel about a monk and his three disciples travelling west to fetch Buddhist scriptures. Here's the story, the four pilgrims, and who really wrote it.", "inLanguage": "en", "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "mainEntityOfPage": "https://yaopulife.com/explainers/what-is-journey-to-the-west" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths" },
+      { "@type": "ListItem", "position": 3, "name": "What Journey to the West Is About", "item": "https://yaopulife.com/explainers/what-is-journey-to-the-west" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Journey to the West Is About 西游记 — Story and Pilgrims</title>
+<meta name="description" content="Journey to the West is a Ming-dynasty Chinese novel — a monk and his three disciples travel west for Buddhist scriptures. The story, pilgrims and author.">
+<link rel="canonical" href="https://yaopulife.com/explainers/what-is-journey-to-the-west">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Journey to the West Is About 西游记 — Story and Pilgrims">
+<meta property="og:description" content="A monk, a rebel monkey, a pig and a sand-demon walk west to fetch scriptures. China's greatest adventure novel, explained.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/explainers/what-is-journey-to-the-west">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Journey to the West is about</h1>
+  <div class="zh">西游记</div>
+  <p>One monk, three superpowered disciples, and one very long road trip to fetch sacred books. It's China's greatest adventure novel — not a holy scripture.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px"><b>Journey to the West</b> (<span class="zh">西游记</span> <i>Xīyóujì</i>) is a classic <b>Ming-dynasty novel</b> about a gentle monk, Tang Sanzang, and his three disciples travelling west to bring back Buddhist scriptures. Along the way they face demons, tricksters and temptations. It's an adventure story — fiction — even though it borrows freely from Buddhist and Daoist ideas.</p>
+</section>
+
+<section class="sec">
+  <h2 id="story">The story in brief</h2>
+  <p>A monk sets out from China to travel "to the West" — toward India — to retrieve Buddhist scriptures. He can't make the journey alone, so he's protected by three disciples with unusual powers. Each stage of the road brings a new obstacle, usually a demon or a moral test, that the group has to overcome together. The real spine of the book isn't the destination; it's the transformation of the travellers along the way.</p>
+</section>
+
+<section class="sec">
+  <h2 id="pilgrims">The four pilgrims</h2>
+  <ul class="more">
+    <li><b>Tang Sanzang (唐三藏)</b> — the gentle, sometimes helpless monk leading the pilgrimage. Known in English translations as Tripitaka.</li>
+    <li><b><a href="/wukong">Sun Wukong</a> (孙悟空)</b> — the Monkey King: powerful, rebellious, and the reason most people know the book at all.</li>
+    <li><b>Zhu Bajie (猪八戒)</b> — a pig-like disciple, comic and appetite-driven; "Pigsy" in English.</li>
+    <li><b>Sha Wujing (沙悟净)</b> — the steady, loyal "sand" disciple; "Sandy" in English.</li>
+  </ul>
+  <div class="note"><span class="nlbl">Native note</span><b>Names shift between translations</b> — Depending on which English version you read, the same four can appear as Tripitaka, Monkey, Pigsy and Sandy. It's the same team — the labels just travel differently.</div>
+</section>
+
+<section class="sec">
+  <h2 id="author">Who actually wrote it?</h2>
+  <p>The novel is <b>traditionally attributed to Wu Cheng'en</b>, a Ming-dynasty writer — but this is debated and not firmly settled. Much of the material grew out of older folk tales, and the book was first published <b>anonymously</b> (vernacular novels were looked down on, so authors protected their reputations). The Wu Cheng'en attribution was argued much later, in the early 20th century, from textual analysis. So the honest phrasing is "traditionally attributed to Wu Cheng'en," not "written by Wu Cheng'en, full stop."</p>
+</section>
+
+<section class="sec">
+  <h2 id="religious">Is it scripture? Is it true?</h2>
+  <p>Neither. It draws on Buddhist and Daoist motifs, but it's a <b>novel</b>, not a sacred text — and it's fiction, not history. That said, it has a real seed: it was loosely inspired by the historical travels of a monk who journeyed to obtain Buddhist scriptures. The fantastical version — flying clouds, shape-shifting monkeys, sea-dragon kings — is the storyteller's invention.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Journey-to-the-West" rel="nofollow">Journey to the West</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/biography/Wu-Chengen" rel="nofollow">Wu Cheng'en</a> (on the debated authorship)</li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Journey_to_the_West" rel="nofollow">Journey to the West</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General literary knowledge backed by the reputable references above. Authorship is presented as "traditionally attributed," and character English names vary by translation.</p>
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Meet the breakout star: <a href="/wukong">Sun Wukong, the Monkey King</a> — what he really represents.</li>
+    <li>Another rebel from the same world of gods and demons: <a href="/nezha">Nezha</a>.</li>
+    <li>The Dragon Kings the pilgrims keep running into aren't villains — see <a href="/explainers/why-chinese-dragons-are-not-evil">why Chinese dragons are not evil</a>.</li>
+    <li>Start anywhere in <a href="/myths">Chinese mythology</a>.</li>
+  </ul>
+</section>
+</main>
+
+<StoryCTA source="explainer-journey-to-the-west" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

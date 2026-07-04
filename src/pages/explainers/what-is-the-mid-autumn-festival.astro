@@ -1,0 +1,117 @@
+---
+const faqs = [
+  { q: "Why is the Mid-Autumn Festival important to Chinese families?", a: "It's a major reunion festival. Families gather under the full moon, share mooncakes, and celebrate being together — the round, full moon stands for wholeness and family unity. It matters because it's a time to come home." },
+  { q: "Is the Mid-Autumn Festival the same as Chinese Thanksgiving?", a: "Not really. Calling it 'Chinese Thanksgiving' is misleading — the emphasis is reunion and the moon, not a specific harvest-feast myth from another culture. It's best understood on its own terms." },
+  { q: "What is the story of Chang'e?", a: "Chang'e is a woman associated with the moon. In one common version she rises to the moon after taking an elixir — but the legend has several versions with different details, so it's best treated as folklore rather than a single fixed story." },
+  { q: "When is the Mid-Autumn Festival?", a: "It falls on the 15th day of the 8th month of the Chinese lunar calendar, when the moon is full — so its date on the Western calendar shifts each year, usually landing in September or early October." },
+  { q: "What do people eat during the festival?", a: "Mooncakes (月饼) are the signature food — round pastries, often filled with sweet-bean or lotus-seed paste, shared and cut so everyone gets a piece. Families also gather for a larger reunion meal." },
+];
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
+    { "@type": "Article", "headline": "What the Mid-Autumn Festival Is (and Why It Matters)", "description": "The Mid-Autumn Festival is a Chinese reunion festival centered on the full moon and mooncakes. Here's what it means, the Chang'e legend, and why it isn't 'Chinese Thanksgiving.'", "inLanguage": "en", "author": { "@id": "https://yaopulife.com/#org" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "mainEntityOfPage": "https://yaopulife.com/explainers/what-is-the-mid-autumn-festival" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" },
+      { "@type": "ListItem", "position": 3, "name": "What the Mid-Autumn Festival Is", "item": "https://yaopulife.com/explainers/what-is-the-mid-autumn-festival" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Mid-Autumn Festival? 中秋节 — Moon and Mooncakes</title>
+<meta name="description" content="The Mid-Autumn Festival is a Chinese reunion festival centered on the full moon and mooncakes. What it means, the Chang'e legend, and when it falls.">
+<link rel="canonical" href="https://yaopulife.com/explainers/what-is-the-mid-autumn-festival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is the Mid-Autumn Festival? 中秋节 — Moon and Mooncakes">
+<meta property="og:description" content="Families come home, look up at the fullest moon of the year, and share round mooncakes. The Moon Festival, explained.">
+<meta property="og:image" content="https://yaopulife.com/og-image.jpg">
+<meta property="og:url" content="https://yaopulife.com/explainers/what-is-the-mid-autumn-festival">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/festivals">All festivals →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What is the Mid-Autumn Festival?</h1>
+  <div class="zh">中秋节</div>
+  <p>Once a year, China looks up at the fullest moon — together. Families come home, share round mooncakes, and celebrate being whole.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px">The <b>Mid-Autumn Festival</b> (<span class="zh">中秋节</span> <i>Zhōngqiū Jié</i>) is one of China's most important festivals, built around <b>family reunion under the full moon</b> and sharing <b>mooncakes</b>. It falls on the 15th day of the 8th lunar month. It matters because it's a time to gather, appreciate togetherness, and honour the symbolism of the round, complete moon.</p>
+</section>
+
+<section class="sec">
+  <h2 id="meaning">What the festival is really about</h2>
+  <p>At its heart, the festival is about <b>reunion</b>. The full moon is round and complete, and roundness in Chinese culture suggests wholeness and family togetherness. People travel home to be with relatives, share a meal, and admire the moon together. The mood is warm and quiet rather than loud — closer to a family gathering than a street party.</p>
+  <div class="note"><span class="nlbl">Native note</span><b>The moon is the whole point</b> — "Mid-Autumn" is timed to the brightest, roundest moon of the year on purpose. Looking at the same moon, even far apart, is the emotional core: separated family members are said to share the moon.</div>
+</section>
+
+<section class="sec">
+  <h2 id="mooncakes">Mooncakes and customs</h2>
+  <p>The signature food is the <b>mooncake</b> (<span class="zh">月饼</span> <i>yuèbǐng</i>) — a rich, round pastry, often filled with sweet-bean or lotus-seed paste, shared and cut so everyone gets a part. Common customs include <b>moon-viewing</b>, gathering outdoors, and giving mooncakes as gifts. Fillings and traditions vary widely by region and family.</p>
+</section>
+
+<section class="sec">
+  <h2 id="change">The Chang'e legend</h2>
+  <p>The festival is often linked to the story of <b>Chang'e</b> (<span class="zh">嫦娥</span>), a woman associated with the moon. In one common version she takes an elixir and rises to the moon, where she remains. But the story has <b>several versions</b> with different details, so treat it as legend, not fixed history — one of the many tellings that give the festival its glow.</p>
+</section>
+
+<section class="sec">
+  <h2 id="thanksgiving">Is it "Chinese Thanksgiving"?</h2>
+  <div class="callout" style="max-width:760px">You'll sometimes hear it called "Chinese Thanksgiving." That's <b>misleading</b>.<br>The emphasis is <b>reunion and the moon</b> — not a harvest-feast myth from another culture. Understand it on its own terms.</div>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Zhongqiu-Jie" rel="nofollow">Zhongqiu Jie (Mid-Autumn Festival)</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/moon-cake" rel="nofollow">moon cake</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Mid-Autumn_Festival" rel="nofollow">Mid-Autumn Festival</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above. The Chang'e legend has several versions and is presented as folklore.</p>
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>See it alongside other celebrations in the <a href="/festivals">Chinese festivals guide</a>.</li>
+    <li>Why one colour dominates Chinese celebrations — <a href="/explainers/why-red-means-luck-in-china">red means luck</a>.</li>
+    <li>The archer whose wife flies to the moon: read about <a href="/houyi">Houyi</a> and the Chang'e legend.</li>
+  </ul>
+</section>
+</main>
+
+<StoryCTA source="explainer-mid-autumn-festival" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

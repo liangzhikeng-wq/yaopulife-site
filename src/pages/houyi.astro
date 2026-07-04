@@ -2,6 +2,7 @@
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
+    {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who is Hou Yi?", "acceptedAnswer": {"@type": "Answer", "text": "Hou Yi (后羿) is the great archer of Chinese mythology — the hero who shot down nine of the ten suns scorching the earth, and the husband of Chang'e, the lady of the moon."}}, {"@type": "Question", "name": "Why were there ten suns?", "acceptedAnswer": {"@type": "Answer", "text": "In the myth, ten sun-birds rose into the sky at once instead of taking turns, burning the crops and boiling the rivers. Hou Yi shot down nine, leaving the single sun we see today."}}, {"@type": "Question", "name": "What did Hou Yi get for saving the world?", "acceptedAnswer": {"@type": "Answer", "text": "The Queen Mother of the West gave him the elixir of immortality — enough for one person to ascend to heaven, or for two to live a long mortal life together."}}, {"@type": "Question", "name": "What happened to Chang'e?", "acceptedAnswer": {"@type": "Answer", "text": "His wife swallowed the elixir and floated up to the moon, where she lives immortal but alone. In the kindest versions she takes it to keep it from a thief, not from greed."}}, {"@type": "Question", "name": "Did Hou Yi become immortal?", "acceptedAnswer": {"@type": "Answer", "text": "No. He stayed on earth, mortal, and mourned. Each year he set out her favorite fruits and gazed up at the moon — the root of the Mid-Autumn Festival."}}, {"@type": "Question", "name": "How does this connect to the Mid-Autumn Festival?", "acceptedAnswer": {"@type": "Answer", "text": "Chang'e on the moon is the legend behind Mid-Autumn: families gather under the full moon, eat mooncakes, and look up at the same moon she lives on."}}]},
     { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg" },
     { "@type": "WebSite", "@id": "https://yaopulife.com/#site", "url": "https://yaopulife.com", "name": "yaopulife", "publisher": { "@id": "https://yaopulife.com/#org" } },
     { "@type": "BreadcrumbList", "itemListElement": [
@@ -28,11 +29,11 @@ import StoryCTA from '../components/StoryCTA.astro';
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hou Yi 后羿 — The Archer Who Saved the World and Lost Everything | yaopulife</title>
-<meta name="description" content="Hou Yi shot down nine of the ten suns burning the world alive — then lost the one person he loved to the moon. The best archer alive could not shoot down a goodbye.">
+<title>Hou Yi 后羿 — The Archer Who Saved the World, Lost Everything</title>
+<meta name="description" content="Hou Yi shot down nine of the ten suns burning the world — then lost the one he loved to the moon. The best archer alive could not shoot down a goodbye.">
 <link rel="canonical" href="https://yaopulife.com/houyi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hou Yi 后羿 — The Archer Who Saved the World and Lost Everything">
+<meta property="og:title" content="Hou Yi 后羿 — The Archer Who Saved the World, Lost Everything">
 <meta property="og:description" content="He could shoot anything in the sky — except the distance between him and the moon.">
 <meta property="og:image" content="https://yaopulife.com/og-image.jpg">
 <meta property="og:url" content="https://yaopulife.com/houyi">
@@ -166,6 +167,15 @@ import StoryCTA from '../components/StoryCTA.astro';
     <li><a href="/myths">More Chinese myths of gods and mortals</a></li>
   </ul></section>
 
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Hou-Yi" rel="nofollow">Hou Yi</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Hou_Yi" rel="nofollow">Hou Yi</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version and notes variations where relevant.</p>
+</section>
 </main>
 
   <aside class="rrail">
