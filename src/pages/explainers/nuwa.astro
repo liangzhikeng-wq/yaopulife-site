@@ -1,0 +1,89 @@
+---
+const faqs = [
+  { q: "Is Nüwa a real historical figure?", a: "No, Nüwa is a mythological deity and culture hero. Her stories are foundational folklore with many regional variants, not confirmed historical accounts." },
+  { q: "Why does Nüwa have a snake tail?", a: "In ancient Chinese cosmology, the serpent symbolizes water, fertility, and rebirth. Unlike in some Western traditions where snakes represent evil, Nüwa's serpent form highlights her primordial divine power and connection to the earth." },
+  { q: "How did Nüwa create humans?", a: "In one common version of the myth, she hand-molded the first humans from yellow clay and water. To create more people quickly, she flicked mud from a rope, and the drops turned into humans." },
+  { q: "What is Nüwa's relationship to Fu Xi?", a: "Fu Xi is a legendary emperor closely associated with Nüwa. Depending on the specific folk variant, he is usually described as either her brother or her husband, and together they established norms for marriage." },
+  { q: "Is Nüwa still worshipped today?", a: "Yes, she remains a significant figure and is recognized as a goddess in Chinese folk religion, as well as within Chinese Buddhism, Confucianism, and Taoism." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Nüwa, the Goddess Who Created Humanity and Patched the Sky?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-07-23", "dateModified": "2026-07-24", "mainEntityOfPage": "https://yaopulife.com/explainers/nuwa"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Nüwa, the Goddess Who Created Humanity and Patched the Sky?", "item": "https://yaopulife.com/explainers/nuwa"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Nüwa, the Goddess Who Created Humanity and Patched the Sky? | yaopulife</title>
+<meta name="description" content="Nüwa (女娲, Nǚwā) is a foundational mother goddess in Chinese mythology credited with creating humanity from clay and repairing the collapsed pillars of heav">
+<link rel="canonical" href="https://yaopulife.com/explainers/nuwa">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Nüwa, the Goddess Who Created Humanity and Patched the Sky?</h1>
+  <div class="zh">女娲</div>
+  <p>Nüwa (女娲, Nǚwā) is a foundational mother goddess in Chinese mythology credited with creating humanity from clay and repairing the collapsed pillars of heaven. Revered across Chinese folk religion, Buddhism, Confucianism, and Taoism, she is also the patroness of matchmakers. Often depicted with a serpent's tail, she symbolizes fertility and cosmic protection rather than evil, acting as both a divine artisan and a savior of the world.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-07-23 · Updated 2026-07-24</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Mother Goddess and Creator of Humanity</h2>
+  <p>The Chinese name for this deity is <b>女娲</b> (*Nǚwā*). The character 女 (*nǚ*) means 'woman' or 'female', while 娲 (*wā*) is an ancient term associated with goddesses and creation. In Western mythology, she shares similarities with <b>Gaia</b> (the Greek earth mother) and <b>Prometheus</b> (who also molded humans from clay), but she uniquely acts as both the divine artisan and the cosmic protector.</p>
+  <ul class="more"><li>- <b>Creation from Clay</b>: In one common version of the myth, Nüwa felt lonely and began hand-molding little figures out of yellow mud and water. When she breathed on them, they came to life as the first humans.</li><li>- <b>The Rope Method</b>: To populate the earth faster, she eventually dipped a rope in mud and flicked it; the drops that fell also transformed into people, which in some folk variants was used to explain the origins of different social classes.</li></ul>
+</section>
+<section class="sec">
+  <h2>Patching the Sky and Saving the Cosmos</h2>
+  <p>Nüwa is perhaps most famous for her role as a savior who repaired the cosmos. According to legend, a catastrophic battle between other gods caused the pillars holding up the heavens to collapse. The sky tore open, leading to massive floods, raging fires, and predatory beasts roaming the earth.</p>
+  <p>To save her creation, Nüwa gathered <b>five-colored stones</b> and melted them down to patch the hole in the sky. She then cut the legs off a giant cosmic turtle to prop up the heavens at the four corners of the earth. It is important to remember that these are foundational folk stories with many variants, not confirmed historical events, but they cement her status as a supreme protector.</p>
+</section>
+<section class="sec">
+  <h2>The Patroness of Marriage and Society</h2>
+  <p>Beyond creation and cosmic repair, Nüwa is deeply tied to the establishment of human society. She is revered as the <b>patroness of matchmakers</b>. She is closely associated with <b>Fu Xi</b> (伏羲, *Fúxī*), a legendary cultural hero and emperor.</p>
+  <p>Depending on the specific regional variant, Fu Xi is described as either her brother or her husband. Together, they are usually credited with teaching humanity essential survival skills and establishing the foundational norms for marriage, thereby bringing order and structure to early human civilization.</p>
+</section>
+<section class="sec">
+  <h2>Understanding the Serpent Symbolism</h2>
+  <p>In classical art and folklore, Nüwa is frequently depicted with the upper body of a beautiful woman and the lower body of a <b>serpent or dragon</b>. A common misunderstanding among Western readers is to view the snake as evil or demonic, due to its associations in Abrahamic traditions.</p>
+  <p>However, in ancient Chinese cosmology, the serpent was a highly revered symbol of water, fertility, rebirth, and primordial divine power. Her snake tail represents her deep, elemental connection to the earth and the untamed forces of nature, highlighting her status as an ancient, sovereign deity rather than a monstrous figure.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/N%C3%BCwa" rel="nofollow">Nüwa</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Nu-Gua" rel="nofollow">Nu Gua | Creator Goddess, Chinese Dragon &amp; Snake ...</a></li>
+    <li>folklore.usc.edu — <a href="https://folklore.usc.edu/nuwas-creation-of-humanity-chinese-myth/" rel="nofollow">Nuwa's Creation of Humanity – Chinese Myth</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-nuwa" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

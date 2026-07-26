@@ -1,0 +1,86 @@
+---
+const faqs = [
+  { q: "What does the name Erlang Shen literally mean?", a: "The characters 二郎神 (Èrláng Shén) translate roughly to 'Second Son God' or 'Second Young Master God.' However, because it functions as a proper title rather than a literal description, it is usually left as Erlang Shen in English." },
+  { q: "Is Erlang Shen based on a real historical person?", a: "Folk stories have variants, but he is largely a mythological composite. One common version links him to the legendary son of Li Bing, a real historical governor from the 3rd century BCE, but Erlang Shen himself is a figure of myth, not confirmed history." },
+  { q: "Why does Erlang Shen have a third eye?", a: "His third eye is a heavenly eye that grants him true sight. It allows him to see through magical illusions, shapeshifting, and the disguises of demons, making him an incredibly effective demon hunter." },
+  { q: "Who wins the fight between Erlang Shen and the Monkey King?", a: "In the novel Journey to the West, Erlang Shen and Sun Wukong fight to a standstill in martial arts and magic, but Erlang Shen ultimately captures the Monkey King with the help of his celestial hound and a surprise attack from another deity." },
+  { q: "What is the name of Erlang Shen's dog?", a: "His magical companion is the Xiaotian Quan, which translates to the Howling Celestial Dog or Heavenly Hound. It is a fierce, loyal beast that helps him track and bite demons." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Erlang Shen, the Three-Eyed God of Chinese Mythology?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/erlang-shen"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Erlang Shen, the Three-Eyed God of Chinese Mythology?", "item": "https://yaopulife.com/explainers/erlang-shen"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Erlang Shen, the Three-Eyed God of Chinese Mythology? | yaopulife</title>
+<meta name="description" content="Erlang Shen (二郎神, Èrláng Shén) is a prominent warrior and water deity in Chinese folk religion and Daoism. Usually depicted with a third eye on his forehea">
+<link rel="canonical" href="https://yaopulife.com/explainers/erlang-shen">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Erlang Shen, the Three-Eyed God of Chinese Mythology?</h1>
+  <div class="zh">二郎神</div>
+  <p>Erlang Shen (二郎神, Èrláng Shén) is a prominent warrior and water deity in Chinese folk religion and Daoism. Usually depicted with a third eye on his forehead and accompanied by a loyal celestial hound, he is associated with flood control, justice, and demon-subduing. While his exact origins vary in folklore—often identified as Yang Jian or a legendary son of a historical governor—he is most famous for his epic battles against the Monkey King.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Origins and Identity: Who is Erlang?</h2>
+  <p>The name 二郎神 (Èrláng Shén) breaks down to "Er" (二, meaning two or second), "lang" (郎, meaning young man or son), and "shen" (神, meaning god). The plain meaning is roughly "Second Son God," though it is best left untranslated as Erlang Shen. In Chinese mythology, folk stories have many variants regarding his true identity. In one common version, he is Li Erlang, the legendary son of Li Bing, a historical governor who built a famous irrigation system. In other Daoist traditions, he is Yang Jian, a deity born of a mortal and a goddess.</p>
+  <p>For Western readers, Erlang Shen can be compared to a mix of Hercules and Apollo—a divine warrior with immense physical strength, a specific domain over water and hunting, and a complex lineage bridging the mortal and divine realms. It is important to remember that these are mythological legends, not confirmed historical facts.</p>
+</section>
+<section class="sec">
+  <h2>The Third Eye and Divine Attributes</h2>
+  <p>Erlang Shen is most visually recognized by his third eye, known as the *Tianyan* (Heavenly Eye), located in the middle of his forehead. Unlike the destructive third eye of the Hindu god Shiva, Erlang Shen's third eye is usually depicted as a tool of divine perception. It allows him to see through illusions, shapeshifting, and demonic disguises, making him an ultimate judge of justice and a fearsome demon hunter.</p>
+  <p>He is typically armed with a three-pointed, double-edged lance and wears golden armor. He is also rarely seen without his loyal companion, the *Xiaotian Quan* (Howling Celestial Dog), a magical hound that assists him in subduing powerful monsters and demons.</p>
+</section>
+<section class="sec">
+  <h2>Domains of Power: Water, Justice, and Hunting</h2>
+  <p>As a deity, Erlang Shen governs several distinct domains. His association with water and flood control stems from the Li Erlang legend, where he is said to have tamed a destructive river dragon to protect the local people from floods. Because of this, he was historically worshipped by communities living near volatile rivers.</p>
+  <p>Beyond water, he is a god of warriorhood, hunting, and justice. In folk religion, he acts as a celestial marshal who leads heavenly armies to root out evil spirits. His martial prowess is considered unmatched among the younger generation of heavenly generals.</p>
+</section>
+<section class="sec">
+  <h2>Erlang Shen in Literature: Journey to the West</h2>
+  <p>In the West, Erlang Shen is most widely recognized through his appearance in the classic 16th-century novel *Journey to the West*. In this epic, he is one of the few celestial warriors capable of going toe-to-toe with Sun Wukong, the Monkey King.</p>
+  <p>Their famous battle of wits and magical transformations is a highlight of the novel. While Sun Wukong is a chaotic and rebellious mythological character, Erlang Shen represents the disciplined, authoritative, and highly skilled military arm of the heavenly court. Ultimately, it is Erlang Shen's tactical brilliance and his celestial hound that help capture the seemingly invincible Monkey King.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Erlang_Shen" rel="nofollow">Erlang Shen - Wikipedia</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Sun-Wukong" rel="nofollow">Sun Wukong | Character, Origins, &amp; Cultural Impact - Britannica</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-erlang-shen" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

@@ -1,0 +1,86 @@
+---
+const faqs = [
+  { q: "Who wrote Strange Tales from a Chinese Studio?", a: "It was written by Pu Songling, a Chinese fiction writer during the Qing dynasty, who largely completed the initial collection by 1679 and continued to refine it throughout his life." },
+  { q: "How many stories are in the Liaozhai collection?", a: "Depending on the specific manuscript and edition, the collection usually contains between 431 and 491 individual tales of the unusual and supernatural." },
+  { q: "What does the word 'Liaozhai' actually mean?", a: "'Liaozhai' translates roughly to the 'Studio of Leisure' or the 'Studio where one chats,' which was the name of Pu Songling's personal study where he wrote and compiled the tales." },
+  { q: "Are the stories in Liaozhai considered true historical events?", a: "No, while they reflect the social realities and anxieties of the Qing dynasty, the tales themselves are works of fiction, folklore, and literary invention, not confirmed historical events." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is Strange Tales from a Chinese Studio (Liaozhai)?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/liaozhai-strange-tales"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is Strange Tales from a Chinese Studio (Liaozhai)?", "item": "https://yaopulife.com/explainers/liaozhai-strange-tales"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is Strange Tales from a Chinese Studio (Liaozhai)? | yaopulife</title>
+<meta name="description" content="Strange Tales from a Chinese Studio (Liáozhāi Zhìyì) is a landmark collection of classical Chinese fiction written by Pu Songling during the Qing dynasty. ">
+<link rel="canonical" href="https://yaopulife.com/explainers/liaozhai-strange-tales">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is Strange Tales from a Chinese Studio (Liaozhai)?</h1>
+  <div class="zh">聊斋志异</div>
+  <p>Strange Tales from a Chinese Studio (Liáozhāi Zhìyì) is a landmark collection of classical Chinese fiction written by Pu Songling during the Qing dynasty. Usually containing over 400 short stories, it explores the supernatural, featuring fox-fairies, ghosts, and spirits. Much like Western gothic literature or fairy tales, it uses these fantastical elements to explore human nature, romance, and social satire.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Understanding the Title and Origins</h2>
+  <p><b>Strange Tales from a Chinese Studio</b> is the most common English title for the <b>聊斋志异</b> (Liáozhāi Zhìyì). The title breaks down into three parts: *Liáozhāi* refers to the author's study, often translated as the 'Studio of Leisure' or 'Studio where one chats'; *Zhì* means to record; and *Yì* means the strange or unusual. Therefore, a plain meaning translation is 'Records of the Strange from the Studio of Leisure.'</p>
+  <p>The collection was written by Pu Songling, a Chinese fiction writer during the Qing dynasty. He largely completed the manuscript by 1679, though he continued to add stories over his lifetime. The work stands as one of the most important pieces of classical Chinese literature, blending folklore with sharp literary craftsmanship.</p>
+</section>
+<section class="sec">
+  <h2>Themes: Foxes, Ghosts, and Scholars</h2>
+  <p>The anthology is famous for its vivid depictions of the supernatural. In one common version of these tales, the dominant themes revolve around fox-fairies, flower-spirits, ghosts, and goblins interacting with the human world. These spirits are usually portrayed with deep emotions, complex moral codes, and a desire for connection.</p>
+  <p>Human characters, particularly impoverished scholars and corrupt officials, frequently serve as foils to the supernatural beings. While the ghosts and foxes often display loyalty, love, and righteousness, the human officials are usually depicted as greedy or foolish. Through this contrast, Pu Songling used fantasy to deliver biting social satire against the rigid examination system and corrupt bureaucracy of his time.</p>
+</section>
+<section class="sec">
+  <h2>Western Comparisons and Literary Style</h2>
+  <p>For Western readers with zero background in Chinese literature, *Liaozhai* can be compared to the fairy tale collections of the <b>Brothers Grimm</b> or the macabre, psychological short stories of <b>Edgar Allan Poe</b>. Like the Grimm tales, it gathers and elevates local folklore; like Poe, it explores the eerie, the romantic, and the psychological depths of human fear and desire.</p>
+  <p>Unlike later Chinese novels written in the vernacular, Pu Songling wrote *Liaozhai* in classical Chinese (*wenyanwen*). This gave the stories a concise, poetic, and highly elevated tone, which made the collection immensely popular among the educated elite of the Qing dynasty and cemented its legacy in Chinese high culture.</p>
+</section>
+<section class="sec">
+  <h2>Common Misconceptions</h2>
+  <p>A frequent misunderstanding among international readers is assuming *Liaozhai* is a single, continuous novel with a recurring cast of characters. In reality, it is a massive anthology of hundreds of distinct, standalone short stories. Depending on the edition, it usually contains between 431 and 491 individual tales.</p>
+  <p>Another misconception is labeling it purely as 'horror' or 'ghost stories.' While it features the supernatural, many tales are deeply romantic, comedic, or philosophical. The spirits are rarely just monsters to be feared; they are often sympathetic protagonists navigating a complex moral universe.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Strange-Stories-from-a-Chinese-Studio" rel="nofollow">Strange Stories from a Chinese Studio | work by Pu Songling</a></li>
+    <li>Library of Congress — <a href="https://blogs.loc.gov/international-collections/2018/10/the-strange-tales-from-liaozhai/" rel="nofollow">The Strange Tales from Liaozhai | 4 Corners of the World</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/biography/Pu-Songling" rel="nofollow">Pu Songling | Fantastical Fiction, Qing Dynasty, Liaozhai Zhiyi</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-liaozhai-strange-tales" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

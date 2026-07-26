@@ -1,0 +1,89 @@
+---
+const faqs = [
+  { q: "Is Chang'e the same as the Moon Rabbit?", a: "No, Chang'e is the goddess of the moon, while the Moon Rabbit (or Jade Rabbit) is usually depicted as her companion who pounds herbs on the lunar surface." },
+  { q: "Why did Chang'e fly to the moon?", a: "In one common version of the legend, she drank an elixir of immortality to protect it from a thief, which caused her to float up to the moon, though other variants suggest she took it out of curiosity." },
+  { q: "How is Chang'e connected to modern space exploration?", a: "China's lunar exploration probes are named after her; for example, the Chang'e 4 probe made history by landing on the far side of the moon." },
+  { q: "Is Chang'e a historical figure?", a: "No, Chang'e is a mythological and literary character from Chinese folklore, not a confirmed historical person." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Chang'e, the Chinese Moon Goddess?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-07-15", "dateModified": "2026-07-15", "mainEntityOfPage": "https://yaopulife.com/explainers/chang-e"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Chang'e, the Chinese Moon Goddess?", "item": "https://yaopulife.com/explainers/chang-e"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Chang'e, the Chinese Moon Goddess? | yaopulife</title>
+<meta name="description" content="According to Chinese legend, Chang'e (嫦娥, Cháng'é) is the goddess of the Moon. In one common version of the myth, she lives on the moon after drinking an e">
+<link rel="canonical" href="https://yaopulife.com/explainers/chang-e">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Chang'e, the Chinese Moon Goddess?</h1>
+  <div class="zh">嫦娥</div>
+  <p>According to Chinese legend, Chang'e (嫦娥, Cháng'é) is the goddess of the Moon. In one common version of the myth, she lives on the moon after drinking an elixir of immortality, which caused her to float up to the lunar palace. She is a central figure in Chinese folklore, celebrated in poetry, and serves as the namesake for China's modern lunar space probes.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-07-15</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Who is Chang'e?</h2>
+  <p>Chang'e (Chinese: 嫦娥; pinyin: Cháng'é) is the goddess of the Moon in Chinese mythology. Her name roughly translates to 'Beautiful Moon' or 'Moon Goddess.' She is one of the most prominent goddesses in Chinese folk religion and literature.</p>
+  <p>Western readers might compare her to the Greek moon goddesses Selene or Artemis. However, unlike those figures who were born as deities, Chang'e is usually depicted in folklore as a mortal woman who ascended to godhood. She is traditionally known as the wife of Hou Yi, a legendary and heroic archer.</p>
+</section>
+<section class="sec">
+  <h2>The Legend of the Elixir</h2>
+  <p>The story of why Chang'e lives on the moon centers around an elixir of immortality. According to legend, her husband Hou Yi obtained this magical potion. Folk stories have many variants regarding what happened next.</p>
+  <p>In one common version, a thief tried to steal the elixir while Hou Yi was away. To protect it, Chang'e drank the potion herself. In other variants, she drank it out of curiosity or selfishness. Regardless of the version, the elixir caused her to become weightless, and she floated up into the sky, ultimately taking refuge on the moon.</p>
+</section>
+<section class="sec">
+  <h2>Life on the Moon</h2>
+  <p>Once on the moon, Chang'e is said to reside in a beautiful lunar palace. She is not alone in her celestial home; in most versions of the myth, she is accompanied by the Jade Rabbit (or Moon Rabbit), who constantly pounds herbs to create more of the elixir of life.</p>
+  <p>Her story is deeply embedded in Chinese culture. Chang'e's loveliness and her eternal separation from her husband are frequently celebrated in classical Chinese poems and novels, especially during the Mid-Autumn Festival when the moon is at its fullest.</p>
+</section>
+<section class="sec">
+  <h2>Modern Legacy in Space</h2>
+  <p>Chang'e's legacy extends far beyond ancient mythology into modern science. The China National Space Administration named its series of lunar exploration probes 'Chang'e' in honor of the goddess who, according to legend, flew to the moon.</p>
+  <p>These missions have achieved major milestones in space exploration. Most notably, the Chang'e 4 spacecraft made history by becoming the first spacecraft to successfully land on the far side of the Moon, touching down in the Von Kármán crater.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Chang%27e" rel="nofollow">Chang'e</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Change-Chinese-deity" rel="nofollow">Chang'e | Moon Goddess, Lunar Goddess, Chinese Mythology</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/technology/Change-Chinese-lunar-probes" rel="nofollow">Chang'e | Missions &amp; Facts</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Change-4" rel="nofollow">Chang'e 4 | Chinese lunar probe</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-chang-e" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

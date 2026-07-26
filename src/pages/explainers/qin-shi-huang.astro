@@ -1,0 +1,86 @@
+---
+const faqs = [
+  { q: "What does the name Qin Shi Huang actually mean?", a: "It translates to 'First Sovereign Emperor' of the Qin dynasty. It was not his birth name, but a grand title he created from the word 'huangdi' to show his unprecedented power after unifying the realm." },
+  { q: "How is Qin Shi Huang similar to Roman emperors?", a: "Like Augustus Caesar, who transitioned Rome into a centralized empire, Qin Shi Huang transitioned China from divided feudal states to a centralized empire, standardizing laws, infrastructure, and administration." },
+  { q: "Was Qin Shi Huang a good or bad ruler?", a: "Historians view him as highly complex; while his unification and standardization laid the foundation for modern China, his rule was notoriously cruel, harsh, and heavily reliant on strict, punitive laws." },
+  { q: "Why did he build the Terracotta Army?", a: "He commissioned the massive Terracotta Army to protect him in the afterlife, reflecting his obsession with immortality and his desire to maintain his imperial military power even after death." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Was Qin Shi Huang, China's First Emperor?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/qin-shi-huang"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Was Qin Shi Huang, China's First Emperor?", "item": "https://yaopulife.com/explainers/qin-shi-huang"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Was Qin Shi Huang, China's First Emperor? | yaopulife</title>
+<meta name="description" content="Qin Shi Huang (秦始皇, Qín Shǐ Huáng), born Ying Zheng, was the founder of the Qin dynasty and the first person to unify China into a single empire in 221 BCE">
+<link rel="canonical" href="https://yaopulife.com/explainers/qin-shi-huang">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Was Qin Shi Huang, China's First Emperor?</h1>
+  <div class="zh">秦始皇</div>
+  <p>Qin Shi Huang (秦始皇, Qín Shǐ Huáng), born Ying Zheng, was the founder of the Qin dynasty and the first person to unify China into a single empire in 221 BCE. Rather than just calling himself a king, he invented the title huangdi (emperor), meaning 'First Sovereign Emperor.' Much like Augustus in Rome, he centralized power, standardized weights, measures, and writing, but is also remembered as a harsh, autocratic ruler.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Rise of the First Sovereign Emperor</h2>
+  <p>Before he was known as Qin Shi Huang, he was born as <b>Ying Zheng</b>, the king of the State of Qin. During the Warring States period, China was divided into several competing feudal kingdoms. Aided by his brilliant chancellor Li Si, Ying Zheng systematically conquered the other states until Qin ruled supreme in 221 BCE.</p>
+  <p>This monumental victory made him the first person to unify the Chinese cultural sphere into a single, centralized empire. To Western readers, his rise is often compared to <b>Augustus Caesar</b>, who similarly transitioned Rome from a fractured republic into a centralized, unified empire, fundamentally altering the course of Western history.</p>
+</section>
+<section class="sec">
+  <h2>Inventing the Title 'Huangdi'</h2>
+  <p>Upon unifying the realm, Ying Zheng felt that the traditional title of 'king' (wang) was insufficient for his unprecedented achievements. He combined the titles of mythical sage kings to invent a new word: <b>皇帝 (huángdì)</b>, which translates to 'emperor' or 'sovereign.'</p>
+  <p>By calling himself <b>Shihuangdi</b> (First Sovereign Emperor), he signaled that he was the first of a lineage that would theoretically rule for ten thousand generations. The 'Qin' in Qin Shi Huang refers to his dynasty, while 'Shi' means first, making his full title the 'First Emperor of the Qin Dynasty.'</p>
+</section>
+<section class="sec">
+  <h2>Unification and Standardization</h2>
+  <p>Qin Shi Huang's legacy extends far beyond military conquest. To hold his vast new empire together, he implemented sweeping reforms that laid the foundation for modern China. He standardized the writing system, weights, measures, and even the width of cart axles to ensure smooth trade and communication across the realm.</p>
+  <p>He also connected existing regional fortifications to create an early version of the <b>Great Wall of China</b> to defend against northern nomadic tribes. These centralizing policies created a unified cultural and administrative identity that survived long after his dynasty fell.</p>
+</section>
+<section class="sec">
+  <h2>A Harsh Legacy and the Terracotta Army</h2>
+  <p>Despite his monumental achievements, Qin Shi Huang is historically remembered as a deeply controversial figure. He ruled using <b>Legalism</b>, a strict philosophy that demanded absolute obedience and punished minor infractions with severe cruelty. He famously ordered the burning of many philosophical books and the execution of scholars who opposed his rule.</p>
+  <p>His obsession with immortality and the afterlife led to the creation of his massive mausoleum, guarded by the world-famous <b>Terracotta Army</b>. This vast underground force of life-sized clay soldiers was built to protect him in the afterlife, reflecting his desire to maintain his imperial military power even after death.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/summary/Qin-Shi-Huang" rel="nofollow">Shihuangdi summary</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Qin_Shi_Huang" rel="nofollow">Qin Shi Huang</a></li>
+    <li>scalar.usc.edu — <a href="https://scalar.usc.edu/works/terracotta-army/life-and-death-of-the-first-emperor" rel="nofollow">The Fall and Death Of the First Emperor</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-qin-shi-huang" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

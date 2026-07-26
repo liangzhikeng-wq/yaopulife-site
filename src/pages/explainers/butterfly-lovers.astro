@@ -1,0 +1,90 @@
+---
+const faqs = [
+  { q: "Is the Butterfly Lovers a true historical story?", a: "No, it is a folk legend rather than confirmed history. While some regions in China have physical sites claiming to be the lovers' tombs or schools, the story evolved over centuries through oral tradition, literature, and opera, resulting in many regional variants." },
+  { q: "Why is the Butterfly Lovers called China's Romeo and Juliet?", a: "It earns this nickname because both stories feature young, star-crossed lovers whose romance is forbidden by their families and ends in a double tragedy. However, the Chinese legend adds unique cultural elements like cross-dressing for education and a magical transformation into butterflies." },
+  { q: "What happens at the end of the Butterfly Lovers story?", a: "In the most famous version, after Liang Shanbo dies of a broken heart, Zhu Yingtai throws herself into his miraculously opening tomb on her wedding day. Their spirits then emerge from the grave as a pair of butterflies, flying away together forever." },
+  { q: "Is the Butterfly Lovers the same as Madama Butterfly?", a: "No, they are completely different. The Butterfly Lovers is a Chinese folk legend about two students. Madama Butterfly is a 1904 Italian opera by Puccini set in Japan, focusing on a Japanese woman and an American naval officer." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Story of the Butterfly Lovers?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/butterfly-lovers"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Story of the Butterfly Lovers?", "item": "https://yaopulife.com/explainers/butterfly-lovers"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Story of the Butterfly Lovers? | yaopulife</title>
+<meta name="description" content="The Butterfly Lovers (梁祝, Liáng Zhù) is a famous Chinese legend about Zhu Yingtai, a woman who disguises herself as a man to study, and her classmate Liang">
+<link rel="canonical" href="https://yaopulife.com/explainers/butterfly-lovers">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is the Story of the Butterfly Lovers?</h1>
+  <div class="zh">梁祝</div>
+  <p>The Butterfly Lovers (梁祝, Liáng Zhù) is a famous Chinese legend about Zhu Yingtai, a woman who disguises herself as a man to study, and her classmate Liang Shanbo. When Liang discovers her true identity, they fall in love, but Zhu is betrothed to another. After Liang dies of a broken heart, Zhu throws herself into his tomb, and their spirits emerge as a pair of butterflies. It is often called China's Romeo and Juliet.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Legend of Liang and Zhu</h2>
+  <p>The Butterfly Lovers (梁祝, *Liáng Zhù*) is one of China's most beloved folk legends. In one common version of the story, Zhu Yingtai (祝英臺), a young woman from a wealthy family, disguises herself as a man to attend school, as women were usually not permitted to study. She meets Liang Shanbo (梁山伯), and the two become close schoolmates and sworn brothers.</p>
+  <p>Eventually, Liang discovers Zhu's true identity, and they fall deeply in love. However, Zhu's parents have already betrothed her to a wealthy nobleman. Heartbroken, Liang falls ill and dies. On her wedding day, Zhu visits Liang's tomb, which miraculously opens. She leaps inside, and the two lovers emerge as a pair of butterflies, symbolizing their eternal union. Because folk stories have many variants, details like their hometowns or the exact circumstances of their deaths can differ across regions.</p>
+</section>
+<section class="sec">
+  <h2>China's Romeo and Juliet?</h2>
+  <p>Western readers often compare the Butterfly Lovers to Shakespeare's *Romeo and Juliet* because both feature young, star-crossed lovers whose romance is thwarted by family expectations and ends in tragic death. The comparison is so common that the legend is frequently marketed to international audiences as 'China's Romeo and Juliet.'</p>
+  <p>However, the cultural themes differ significantly. While *Romeo and Juliet* focuses on feuding families and impulsive youth, the Butterfly Lovers emphasizes Confucian filial piety, the pursuit of education, and spiritual transcendence. The lovers' transformation into butterflies offers a Daoist or Buddhist sense of eternal spiritual liberation, rather than just a tragic end.</p>
+</section>
+<section class="sec">
+  <h2>Cultural Impact and the Violin Concerto</h2>
+  <p>The legend has inspired countless adaptations across the Chinese-speaking world, including:
+- <b>Operas and Films</b>: Traditional Yue opera and modern cinematic retellings.
+- <b>Television</b>: Numerous dramatic series exploring their school days.
+- <b>Music</b>: Most notably, the famous orchestral concerto.</p>
+  <p>One of its most famous modern adaptations is the *Butterfly Lovers' Violin Concerto*, composed in 1958. This piece brilliantly blends traditional Chinese musical elements, such as pentatonic scales and the sliding tones of the *erhu* (a two-stringed fiddle), with the structure of a Western symphony. Although scholars note the concerto still uses Western tonal harmonies and borrows from the Western classical tradition, these elements give the piece a distinctive Chinese sound.</p>
+</section>
+<section class="sec">
+  <h2>Clearing Up Common Confusions</h2>
+  <p>A frequent mix-up among Western audiences is confusing the Butterfly Lovers with *Madama Butterfly*. It is important to note that *Madama Butterfly* is a tragic opera by Giacomo Puccini set in 1904 in Nagasaki, Japan. It tells the story of Cio-Cio-San, a young Japanese girl, and an American naval officer, which is an entirely different narrative with no connection to the Chinese legend of Liang and Zhu.</p>
+  <p>Another misconception is treating the Butterfly Lovers as confirmed history. While some local shrines or tombs claim to belong to the historical figures, the story is fundamentally a mythological and literary legend that evolved over centuries of oral storytelling and theatrical performances.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Butterfly_Lovers" rel="nofollow">Butterfly Lovers</a></li>
+    <li>sites.gatech.edu — <a href="https://sites.gatech.edu/china-cultural-odyssey/2025/04/15/the-butterfly-lovers-chinese-romeo-juliet/" rel="nofollow">The Butterfly Lovers: Chinese Romeo &amp; Juliet</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Butterfly_Lovers%27_Violin_Concerto" rel="nofollow">Butterfly Lovers' Violin Concerto</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Madama-Butterfly" rel="nofollow">Madama Butterfly | Puccini's Tragic Opera</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-butterfly-lovers" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

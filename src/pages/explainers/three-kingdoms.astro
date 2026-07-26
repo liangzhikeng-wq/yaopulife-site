@@ -1,0 +1,87 @@
+---
+const faqs = [
+  { q: "Is the 'Romance of the Three Kingdoms' a true history?", a: "No, it is a 14th-century historical novel that blends confirmed history with folklore and legend. While based on real figures like Cao Cao and Sun Quan, many famous events are fictionalized or exaggerated for dramatic effect." },
+  { q: "Are China's Three Kingdoms the same as Korea's Three Kingdoms?", a: "No, they are entirely different. China's Three Kingdoms (Wei, Shu-Han, Wu) occurred from 220 to 280 AD, while Korea's Three Kingdoms (Silla, Goguryeo, Baekje) lasted from roughly 57 BCE to 668 CE." },
+  { q: "Who were the three main states in the Chinese Three Kingdoms?", a: "The three states were Cao Wei (often just called Wei), Shu Han, and Eastern Wu. They emerged as dominant powers following the collapse of the Han dynasty." },
+  { q: "Why is Cao Cao often seen as a villain in Chinese culture?", a: "In the classic novel, Cao Cao is depicted as a ruthless, ambitious tyrant to contrast with the virtuous heroes of Shu-Han. However, historically, he was a brilliant general and administrator who laid the groundwork for a unified China." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Three Kingdoms Period and Why Does It Matter?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/three-kingdoms"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Three Kingdoms Period and Why Does It Matter?", "item": "https://yaopulife.com/explainers/three-kingdoms"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Three Kingdoms Period and Why Does It Matter? | yaopulife</title>
+<meta name="description" content="The Three Kingdoms (Sān Guó) was a historical period from 220 to 280 AD when China was divided into three warring states: Wei, Shu-Han, and Wu, following t">
+<link rel="canonical" href="https://yaopulife.com/explainers/three-kingdoms">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is the Three Kingdoms Period and Why Does It Matter?</h1>
+  <div class="zh">三国</div>
+  <p>The Three Kingdoms (Sān Guó) was a historical period from 220 to 280 AD when China was divided into three warring states: Wei, Shu-Han, and Wu, following the fall of the Han dynasty. It matters profoundly in Chinese culture because it inspired China's first great classical novel. Much like Arthurian legends in the West, it provides foundational archetypes for loyalty, strategy, and heroism that still influence modern media.</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Historical Reality</h2>
+  <p>The Three Kingdoms (三国, Sān Guó, literally 'Three States') refers to a specific era in Chinese history lasting from 220 to 280 AD. Following the collapse of the Han dynasty, China fractured into a trio of warring states: Cao Wei, Shu Han, and Eastern Wu.</p>
+  <p>This era was marked by intense military conflict, shifting alliances, and brilliant strategic maneuvering. While it was a time of immense bloodshed and political instability, it also laid the groundwork for the eventual reunification of China under subsequent dynasties.</p>
+</section>
+<section class="sec">
+  <h2>The Literary Epic and Cultural Mythos</h2>
+  <p>In Chinese culture, the historical period is almost entirely overshadowed by its literary adaptation. Centuries later, the 14th-century novel *Romance of the Three Kingdoms* transformed these historical events into China's first great classical novel.</p>
+  <p>Much like the Arthurian legends in the West—where post-Roman British history blends with myth and magic—the novel elevated real warlords into larger-than-life archetypes. It established enduring cultural ideals regarding brotherhood, loyalty, and cunning statecraft that remain deeply embedded in the Chinese consciousness today.</p>
+</section>
+<section class="sec">
+  <h2>Key Figures and Archetypes</h2>
+  <p>The era produced legendary figures who became cultural touchstones. <b>Cao Cao</b>, the founder of the Wei state, was historically a brilliant general, administrator, and poet. However, in the classic novel, he is usually depicted as a ruthless, ambitious villain to contrast with the heroes of Shu-Han.</p>
+  <p>Similarly, <b>Sun Quan</b>, the ruler of Eastern Wu, is remembered as a masterful strategist and pragmatic leader who successfully defended his southern territories. These figures are rarely viewed just as historical men; they are archetypes used in modern business, politics, and storytelling to illustrate different leadership styles.</p>
+</section>
+<section class="sec">
+  <h2>A Common Point of Confusion: Korea's Three Kingdoms</h2>
+  <p>When researching this topic, Western readers often stumble upon a completely different historical era. The 'Three Kingdoms period' in Korean history is entirely separate from the Chinese one.</p>
+  <p>The Korean period lasted from approximately 57 BCE to 668 CE and was composed of the states Silla, Goguryeo, and Baekje. While both regions use the English translation 'Three Kingdoms,' they refer to distinct geographic regions, timelines, and cultural spheres.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Three_Kingdoms" rel="nofollow">Three Kingdoms - Wikipedia</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/biography/Cao-Cao" rel="nofollow">Cao Cao | Three Kingdoms, Warlord, Strategist - Britannica</a></li>
+    <li>sunypress.edu — <a href="https://sunypress.edu/Books/T/Three-Kingdoms-and-Chinese-Culture" rel="nofollow">Three Kingdoms and Chinese Culture - SUNY Press</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Three-Kingdoms-period" rel="nofollow">Three Kingdoms period | Korea, History, Silla, Goguryeo, &amp; Baekje</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-three-kingdoms" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

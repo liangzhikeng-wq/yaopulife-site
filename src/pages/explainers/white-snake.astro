@@ -1,0 +1,89 @@
+---
+const faqs = [
+  { q: "Is the Legend of the White Snake a true historical story?", a: "No, it is a folktale and legend, not a confirmed historical event. While it is set in real locations like Hangzhou and Mount Emei, the characters and magical events are fictional, evolving through centuries of oral and literary traditions [8]." },
+  { q: "Why is the snake spirit considered a good character in Chinese culture?", a: "In this specific legend, the white snake spirit, Bai Suzhen, is portrayed as compassionate, loyal, and devoted to healing the sick. This subverts the common Western association of snakes with deceit, showing how animal symbolism can vary greatly across different cultural storytelling traditions [6]." },
+  { q: "Who is the villain in the Legend of the White Snake?", a: "The Buddhist monk Fahai is typically viewed as the antagonist because he separates the loving couple. However, in older versions of the tale, he was sometimes depicted as a righteous figure trying to maintain the boundary between the human and spirit worlds [6]." },
+  { q: "How has the White Snake story changed over time?", a: "The story has evolved significantly from its early origins in the Tang Dynasty to modern times. While early versions sometimes focused more on the dangers of spirits, later adaptations, including modern films and animations, heavily emphasize the romantic and tragic elements of the forbidden love story [7]." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Legend of the White Snake?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-07-21", "dateModified": "2026-07-22", "mainEntityOfPage": "https://yaopulife.com/explainers/white-snake"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Legend of the White Snake?", "item": "https://yaopulife.com/explainers/white-snake"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Legend of the White Snake? | yaopulife</title>
+<meta name="description" content="The Legend of the White Snake (白蛇传, Bái Shé Zhuàn) is one of China's most famous folktales, centering on a forbidden romance between a human scholar, Xu Xi">
+<link rel="canonical" href="https://yaopulife.com/explainers/white-snake">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is the Legend of the White Snake?</h1>
+  <div class="zh">白蛇传</div>
+  <p>The Legend of the White Snake (白蛇传, Bái Shé Zhuàn) is one of China's most famous folktales, centering on a forbidden romance between a human scholar, Xu Xian, and a female snake spirit, Bai Suzhen. After centuries of spiritual cultivation, she takes human form to experience love. However, their marriage faces fierce opposition from a Buddhist monk who believes humans and spirits cannot mix, leading to a tragic and magical conflict.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-07-21 · Updated 2026-07-22</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>The Core Tale of Forbidden Love</h2>
+  <p>The Legend of the White Snake (白蛇传, Bái Shé Zhuàn, literally 'Tale of the White Snake') is a foundational Chinese folktale. In one common version, a white snake and a green snake engage in ascetic practices for centuries to gain magical powers and take human form [8].</p>
+  <p>The white snake, named Bai Suzhen, meets and falls in love with a human scholar named Xu Xian. They marry and open a medicine shop, using her magical knowledge to heal the sick. However, their peaceful life is disrupted when a Buddhist monk named Fahai discovers her true identity and attempts to separate them, arguing that humans and spirits must not mix [6].</p>
+</section>
+<section class="sec">
+  <h2>Key Characters and Their Symbolism</h2>
+  <p><b>Bai Suzhen (白素贞, Bái Sùzhēn)</b> is the titular white snake spirit. She is usually described as a highly cultivated spirit who is deeply compassionate, loyal, and fiercely protective of her family [8]. Unlike many Western depictions of snakes, she represents pure devotion and self-sacrifice.</p>
+  <p><b>Xu Xian (许仙, Xǔ Xiān)</b> is the mortal husband. He is often depicted as kind but easily swayed, representing the vulnerability of humans when faced with the supernatural. <b>Fahai (法海, Fǎhǎi)</b> is the monk who acts as the antagonist. While modern audiences often view him as a cruel villain breaking up a loving family, in older traditional contexts, he was sometimes seen as a righteous figure upholding the cosmic order [6].</p>
+</section>
+<section class="sec">
+  <h2>Western Comparisons and Snake Symbolism</h2>
+  <p>For Western readers, the Legend of the White Snake can be understood through familiar literary lenses. The central theme of a human falling in love with a non-human being who hides their true nature strongly echoes *Beauty and the Beast*. Both stories explore the idea that true humanity and love are defined by one's actions and heart, not their outward form or origins.</p>
+  <p>Additionally, the intense opposition the couple faces from an authority figure mirrors the feuding families in *Romeo and Juliet*. It is important to note a major cultural difference in animal symbolism: while snakes in Western traditions are often associated with deceit or evil, Bai Suzhen subverts this by being the moral and emotional center of the story [2].</p>
+</section>
+<section class="sec">
+  <h2>Evolution from Folktale to Modern Media</h2>
+  <p>Because it originated as an oral tradition, there is no single 'original' text of the White Snake legend. The ancient legend dates back to the Tang Dynasty, and the earliest written versions appeared in later story collections [7]. The story has evolved over centuries, appearing in Ming dynasty literature, traditional Peking opera, and regional storytelling.</p>
+  <p>Today, the legend remains highly relevant in pop culture. It has been adapted into countless television dramas, films, and modern animations, proving its status as a timeless story of forbidden love that continues to resonate with new generations [7].</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Legend_of_the_White_Snake" rel="nofollow">Legend of the White Snake</a></li>
+    <li>sites.gatech.edu — <a href="https://sites.gatech.edu/china-cultural-odyssey/2025/04/04/white-snake-legend-to-modern-animation/" rel="nofollow">White Snake: Legend to Modern Animation</a></li>
+    <li>pages.ucsd.edu — <a href="https://pages.ucsd.edu/~dkjordan/chin/chtales/story010.html" rel="nofollow">Tale of the White Snake (Bái Shé Zhuàn 白蛇传)</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/animal/snake" rel="nofollow">Snake | Description, Facts, &amp; Types</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-white-snake" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>
