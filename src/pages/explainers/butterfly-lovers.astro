@@ -5,7 +5,7 @@ const faqs = [
   { q: "What happens at the end of the Butterfly Lovers story?", a: "In the most famous version, after Liang Shanbo dies of a broken heart, Zhu Yingtai throws herself into his miraculously opening tomb on her wedding day. Their spirits then emerge from the grave as a pair of butterflies, flying away together forever." },
   { q: "Is the Butterfly Lovers the same as Madama Butterfly?", a: "No, they are completely different. The Butterfly Lovers is a Chinese folk legend about two students. Madama Butterfly is a 1904 Italian opera by Puccini set in Japan, focusing on a Japanese woman and an American naval officer." }
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Story of the Butterfly Lovers?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/butterfly-lovers"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Story of the Butterfly Lovers?", "item": "https://yaopulife.com/explainers/butterfly-lovers"}]}]};
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "What Is the Story of the Butterfly Lovers?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/butterfly-lovers"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Story of the Butterfly Lovers?", "item": "https://yaopulife.com/explainers/butterfly-lovers"}]}]};
 ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
 import StoryCTA from '../../components/StoryCTA.astro';
@@ -16,7 +16,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What Is the Story of the Butterfly Lovers? | yaopulife</title>
-<meta name="description" content="The Butterfly Lovers (梁祝, Liáng Zhù) is a famous Chinese legend about Zhu Yingtai, a woman who disguises herself as a man to study, and her classmate Liang">
+<meta name="description" content="The Butterfly Lovers (梁祝, Liáng Zhù) is a famous Chinese legend: Zhu Yingtai disguises herself as a man to study and falls in love with classmate Liang Shanbo.">
 <link rel="canonical" href="https://yaopulife.com/explainers/butterfly-lovers">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
@@ -53,7 +53,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 - <b>Operas and Films</b>: Traditional Yue opera and modern cinematic retellings.
 - <b>Television</b>: Numerous dramatic series exploring their school days.
 - <b>Music</b>: Most notably, the famous orchestral concerto.</p>
-  <p>One of its most famous modern adaptations is the *Butterfly Lovers' Violin Concerto*, composed in 1958. This piece brilliantly blends traditional Chinese musical elements, such as pentatonic scales and the sliding tones of the *erhu* (a two-stringed fiddle), with the structure of a Western symphony. Although scholars note the concerto still uses Western tonal harmonies and borrows from the Western classical tradition, these elements give the piece a distinctive Chinese sound.</p>
+  <p>One of its most famous modern adaptations is the *Butterfly Lovers' Violin Concerto*, premiered in 1959. This piece brilliantly blends traditional Chinese musical elements, such as pentatonic scales and the sliding tones of the *erhu* (a two-stringed fiddle), with the structure of a Western symphony. Although scholars note the concerto still uses Western tonal harmonies and borrows from the Western classical tradition, these elements give the piece a distinctive Chinese sound.</p>
 </section>
 <section class="sec">
   <h2>Clearing Up Common Confusions</h2>

@@ -5,7 +5,7 @@ const faqs = [
   { q: "Why is it sometimes called the Double Fifth Festival?", a: "It is called the Double Fifth Festival because it falls on the fifth day of the fifth month of the traditional Chinese lunisolar calendar." },
   { q: "What do people eat during the Dragon Boat Festival?", a: "People traditionally eat sticky rice dumplings wrapped in bamboo or reed leaves, which are symbolically linked to the rice thrown into the water in the Qu Yuan legend to keep fish away from his body." }
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/dragon-boat-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "item": "https://yaopulife.com/explainers/dragon-boat-festival"}]}]};
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/dragon-boat-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Dragon Boat Festival and Why Is It Celebrated?", "item": "https://yaopulife.com/explainers/dragon-boat-festival"}]}]};
 ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
 import StoryCTA from '../../components/StoryCTA.astro';
@@ -16,7 +16,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What Is the Dragon Boat Festival and Why Is It Celebrated?</title>
-<meta name="description" content="The Dragon Boat Festival (Duānwǔ Jié) is a traditional Chinese holiday on the fifth day of the fifth lunar month. It is celebrated with team dragon boat ra">
+<meta name="description" content="The Dragon Boat Festival (Duānwǔ Jié) is a traditional Chinese holiday on the fifth day of the fifth lunar month, celebrated with dragon boat races and zongzi.">
 <link rel="canonical" href="https://yaopulife.com/explainers/dragon-boat-festival">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />

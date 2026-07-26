@@ -7,6 +7,20 @@
   "regions": [
     "iad1"
   ],
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.yaopulife.com"
+        }
+      ],
+      "destination": "https://yaopulife.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

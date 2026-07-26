@@ -5,7 +5,7 @@ const faqs = [
   { q: "Who were the three main states in the Chinese Three Kingdoms?", a: "The three states were Cao Wei (often just called Wei), Shu Han, and Eastern Wu. They emerged as dominant powers following the collapse of the Han dynasty." },
   { q: "Why is Cao Cao often seen as a villain in Chinese culture?", a: "In the classic novel, Cao Cao is depicted as a ruthless, ambitious tyrant to contrast with the virtuous heroes of Shu-Han. However, historically, he was a brilliant general and administrator who laid the groundwork for a unified China." }
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Three Kingdoms Period and Why Does It Matter?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/three-kingdoms"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Three Kingdoms Period and Why Does It Matter?", "item": "https://yaopulife.com/explainers/three-kingdoms"}]}]};
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "What Is the Three Kingdoms Period and Why Does It Matter?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/three-kingdoms"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Three Kingdoms Period and Why Does It Matter?", "item": "https://yaopulife.com/explainers/three-kingdoms"}]}]};
 ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
 import StoryCTA from '../../components/StoryCTA.astro';
@@ -16,7 +16,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What Is the Three Kingdoms Period and Why Does It Matter? | yaopulife</title>
-<meta name="description" content="The Three Kingdoms (Sān Guó) was a historical period from 220 to 280 AD when China was divided into three warring states: Wei, Shu-Han, and Wu, following t">
+<meta name="description" content="The Three Kingdoms (Sān Guó) was the period from 220 to 280 AD when China was divided into three warring states — Wei, Shu-Han, and Wu — after the Han fell.">
 <link rel="canonical" href="https://yaopulife.com/explainers/three-kingdoms">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />

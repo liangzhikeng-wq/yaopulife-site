@@ -33,6 +33,7 @@ function toPath(file: string): string {
 const discovered = Object.keys({
   ...import.meta.glob('./*.astro'),
   ...import.meta.glob('./explainers/*.astro'),
+  ...import.meta.glob('./zodiac/*.astro'),
 })
   .filter(f => !/\/_/.test(f))
   .map(toPath)
@@ -48,15 +49,16 @@ const pages = discovered.map(path => {
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://yaopulife.com';
-  const now = new Date().toISOString();
 
+  // No <lastmod>: we have no reliable per-page updatedAt yet. A fake build-time
+  // lastmod marks every page "just updated" on every crawl, which is worse for
+  // crawlers than omitting the field. Reintroduce only from real content dates.
   const urls = pages.map(p => ({ loc: `${baseUrl}${p.path}`, changefreq: p.changefreq, priority: p.priority }));
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(u => `  <url>
     <loc>${u.loc}</loc>
-    <lastmod>${now}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`).join('\n')}

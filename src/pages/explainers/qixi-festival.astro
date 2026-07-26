@@ -5,7 +5,7 @@ const faqs = [
   { q: "What do people traditionally eat or do on Qixi?", a: "Traditionally, people eat 'Qiaoguo' (巧果), a type of thin, fried pastry or sweet dough twist. Historically, women also engaged in 'Qiqiao' (pleading for skills) by threading needles in moonlight and carving melons to pray for dexterity in weaving and needlework." },
   { q: "Is Qixi the only romantic holiday in modern China?", a: "No, modern China actually has several romantic holidays. Alongside Qixi and the Western Valentine's Day (February 14th), many young people also celebrate '520' (May 20th), a modern internet slang holiday where '520' sounds like 'I love you' in Mandarin." }
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Qixi Festival, China's Valentine's Day?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/qixi-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Qixi Festival, China's Valentine's Day?", "item": "https://yaopulife.com/explainers/qixi-festival"}]}]};
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "What Is the Qixi Festival, China's Valentine's Day?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/qixi-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Qixi Festival, China's Valentine's Day?", "item": "https://yaopulife.com/explainers/qixi-festival"}]}]};
 ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
 import StoryCTA from '../../components/StoryCTA.astro';
@@ -16,7 +16,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What Is the Qixi Festival, China's Valentine's Day? | yaopulife</title>
-<meta name="description" content="The Qixi Festival (七夕, Qīxī), often called the Double Seventh Festival, is a traditional Chinese holiday celebrating the mythological romance between the W">
+<meta name="description" content="The Qixi Festival (七夕, Qīxī), or Double Seventh Festival, is a traditional Chinese holiday celebrating the romance of the Weaver Girl and the Cowherd.">
 <link rel="canonical" href="https://yaopulife.com/explainers/qixi-festival">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
@@ -53,12 +53,6 @@ import StoryCTA from '../../components/StoryCTA.astro';
   <p>However, equating the two perfectly is a common misunderstanding. While both celebrate romantic love, Western Valentine's Day has roots in early Christian martyrdom and later European courtly love traditions, whereas Qixi is fundamentally a lunar agricultural festival tied to a specific celestial myth and historical gender roles. Understanding this distinction helps appreciate Qixi as a unique cultural event rather than just a localized copy of a Western holiday.</p>
 </section>
 <section class="sec">
-  <h2>Linguistic Footprint and Cultural Context</h2>
-  <p>The name Qixi (七夕) literally translates to 'Seventh Evening,' referring to its timing on the lunar calendar. While it is overwhelmingly associated with the romantic festival today, the syllables 'qi' and 'xi' can appear in other unrelated Chinese cultural and historical contexts. For example, the term has been used in naming specific historical events or theatrical works, such as the 1964 revolutionary opera 'Qixi baihutuan' (Raid on the White Tiger Regiment), where it likely denotes a specific date or location rather than the romantic holiday.</p>
-  <p>This broader linguistic footprint shows how deeply embedded lunar dates and numerical naming conventions are in Chinese culture, extending far beyond just festival celebrations.</p>
-</section>
-
-<section class="sec">
   <h2 id="faq">FAQ</h2>
   {faqs.map(f => (
     <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
@@ -69,7 +63,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
   <h2 id="sources">Sources</h2>
   <ul class="more">
     <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Qixi_Festival" rel="nofollow">Qixi Festival - Wikipedia</a></li>
-    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/art/yangbanxi" rel="nofollow">Yangbanxi | Revolutionary Opera, Propaganda, Mao Zedong</a></li>
+    <li>Queen's University Belfast Language Centre — <a href="https://blogs.qub.ac.uk/mandarinchinese/2020/08/24/happy-qixi-festival" rel="nofollow">Happy Qixi Festival</a></li>
   </ul>
   <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
 </section>

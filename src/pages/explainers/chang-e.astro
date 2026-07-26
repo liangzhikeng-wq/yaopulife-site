@@ -5,7 +5,7 @@ const faqs = [
   { q: "How is Chang'e connected to modern space exploration?", a: "China's lunar exploration probes are named after her; for example, the Chang'e 4 probe made history by landing on the far side of the moon." },
   { q: "Is Chang'e a historical figure?", a: "No, Chang'e is a mythological and literary character from Chinese folklore, not a confirmed historical person." }
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Chang'e, the Chinese Moon Goddess?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-07-15", "dateModified": "2026-07-15", "mainEntityOfPage": "https://yaopulife.com/explainers/chang-e"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Chang'e, the Chinese Moon Goddess?", "item": "https://yaopulife.com/explainers/chang-e"}]}]};
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "Who Is Chang'e, the Chinese Moon Goddess?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-07-15", "dateModified": "2026-07-15", "mainEntityOfPage": "https://yaopulife.com/explainers/chang-e"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Chang'e, the Chinese Moon Goddess?", "item": "https://yaopulife.com/explainers/chang-e"}]}]};
 ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
 import StoryCTA from '../../components/StoryCTA.astro';
@@ -16,7 +16,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Who Is Chang'e, the Chinese Moon Goddess? | yaopulife</title>
-<meta name="description" content="According to Chinese legend, Chang'e (嫦娥, Cháng'é) is the goddess of the Moon. In one common version of the myth, she lives on the moon after drinking an e">
+<meta name="description" content="According to Chinese legend, Chang'e (嫦娥, Cháng'é) is the goddess of the Moon, living there after drinking an elixir of immortality in the most common myth.">
 <link rel="canonical" href="https://yaopulife.com/explainers/chang-e">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
@@ -40,7 +40,7 @@ import StoryCTA from '../../components/StoryCTA.astro';
 <main class="wrap">
 <section class="sec">
   <h2>Who is Chang'e?</h2>
-  <p>Chang'e (Chinese: 嫦娥; pinyin: Cháng'é) is the goddess of the Moon in Chinese mythology. Her name roughly translates to 'Beautiful Moon' or 'Moon Goddess.' She is one of the most prominent goddesses in Chinese folk religion and literature.</p>
+  <p>Chang'e (Chinese: 嫦娥; pinyin: Cháng'é) is the goddess of the Moon in Chinese mythology, and one of the most prominent goddesses in Chinese folk religion and literature.</p>
   <p>Western readers might compare her to the Greek moon goddesses Selene or Artemis. However, unlike those figures who were born as deities, Chang'e is usually depicted in folklore as a mortal woman who ascended to godhood. She is traditionally known as the wife of Hou Yi, a legendary and heroic archer.</p>
 </section>
 <section class="sec">
