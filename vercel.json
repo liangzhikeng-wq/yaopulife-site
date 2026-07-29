@@ -10,6 +10,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.yaopulife.com"
+        }
+      ],
+      "destination": "https://yaopulife.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
