@@ -1,0 +1,114 @@
+---
+const faqs = [
+  { q: "When is the Double Ninth Festival?", a: "It falls on the ninth day of the ninth month in the traditional Chinese calendar. Its Gregorian date changes from year to year." },
+  { q: "Why is it called Double Ninth?", a: "In the traditional yin-yang classification of numbers, nine is associated with yang. Two nines together make 'double yang' — chongyang (重阳)." },
+  { q: "Why does modern China mark the festival as Older Persons' Day?", a: "Article 12 of China's Law on the Protection of the Rights and Interests of Older Persons designates the ninth day of the ninth lunar month as Older Persons' Day, giving the traditional date a specific modern civic role." },
+  { q: "What do people traditionally do for Chongyang?", a: "Customs recorded by the Palace Museum include climbing to a high place, wearing zhuyu sprigs, viewing chrysanthemums, drinking chrysanthemum wine, and eating flower cakes. Practice varies by region and family." },
+];
+
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png" },
+    { "@type": "Article", "headline": "What Is the Double Ninth Festival? Chongyang Explained", "description": "A sourced guide to the Double Ninth Festival (重阳节): its ninth-day date, Double Yang name, climbing and chrysanthemum customs, and modern Older Persons' Day role.", "inLanguage": "en", "author": { "@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "datePublished": "2026-10-22", "dateModified": "2026-10-22", "mainEntityOfPage": "https://yaopulife.com/explainers/double-ninth-festival" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" },
+      { "@type": "ListItem", "position": 3, "name": "Double Ninth Festival", "item": "https://yaopulife.com/explainers/double-ninth-festival" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Double Ninth Festival? Chongyang Explained | yaopulife</title>
+<meta name="description" content="A sourced guide to the Double Ninth Festival (重阳节): its ninth-day date, Double Yang name, climbing and chrysanthemum customs, and modern Older Persons' Day role.">
+<link rel="canonical" href="https://yaopulife.com/explainers/double-ninth-festival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is the Double Ninth Festival? Chongyang Explained">
+<meta property="og:description" content="Why Chongyang falls on the ninth day of the ninth lunar month, which customs institutional sources record, and what Chinese law says about Older Persons' Day.">
+<meta property="og:url" content="https://yaopulife.com/explainers/double-ninth-festival">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/festivals">All festivals →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What is the Double Ninth Festival?</h1>
+  <div class="zh">重阳节</div>
+  <p>A ninth-day autumn festival shaped by high places, chrysanthemums, seasonal customs, and a modern commitment to older people.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-10-22 · Updated 2026-10-22</p>
+</div></header>
+
+<main class="wrap">
+<p style="color:#6a6153;font-size:13px;margin:18px 0"><a href="/">Home</a> · <a href="/festivals">Festivals</a> · Double Ninth Festival</p>
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px">The <b>Double Ninth Festival</b> (<span class="zh">重阳节</span> <i>Chóngyáng Jié</i>) falls on the <b>ninth day of the ninth lunar month</b>. Its name means “Double Yang”: traditional number symbolism associates nine with yang, so two nines make <i>chongyang</i>. Longstanding customs include climbing to a high place, viewing chrysanthemums, wearing sprigs of the plant <i>zhuyu</i> (<span class="zh">茱萸</span> <i>zhūyú</i>), and sharing flower cakes (<span class="zh">花糕</span> <i>huāgāo</i>) or chrysanthemum wine. In modern China, the date is also legally designated <b>Older Persons' Day</b>.</p>
+</section>
+
+<section class="sec">
+  <h2 id="name">What “Double Ninth” means</h2>
+  <p>The name starts with the calendar. <i>Chóng</i> (<span class="zh">重</span>) means repeated or doubled, while <i>yáng</i> (<span class="zh">阳</span>) is the yang side of the yin-yang pairing. A Palace Museum account explains that nine was treated as a yang number; the ninth day of the ninth month therefore becomes “Double Yang.”</p>
+  <div class="note"><span class="nlbl">Language note</span><b>“Ninth month” means the lunar month.</b> The festival does not fall on September 9 in the Gregorian calendar. Its Western-calendar date moves each year.</div>
+</section>
+
+<section class="sec">
+  <h2 id="customs">Customs recorded together on this autumn date</h2>
+  <p>Many Chongyang customs belong to an autumn day spent outdoors. The Palace Museum in Beijing records <b>climbing to high places</b>, wearing sprigs of <i>zhuyu</i> (<span class="zh">茱萸</span>), viewing chrysanthemums, drinking chrysanthemum wine, and eating flower cakes. Another Palace Museum study describes climbing and an outdoor feast as a durable core of the festival.</p>
+  <p>The sources record a group of historical customs, not a required checklist for every person celebrating today.</p>
+</section>
+
+<section class="sec">
+  <h2 id="elders">What Chinese law says about Older Persons' Day</h2>
+  <p>The festival's modern civic role is precise: Article 12 of China's <i>Law on the Protection of the Rights and Interests of Older Persons</i> designates the ninth day of the ninth lunar month as <b>Older Persons' Day</b> (<span class="zh">老年节</span> <i>Lǎonián Jié</i>). That legal designation reinforces a public emphasis on spending time with, caring for, and respecting older people.</p>
+  <p>Calling Chongyang “China's Grandparents Day” can be a useful first analogy, but it is incomplete. Chongyang has a much older seasonal and ritual history, and Older Persons' Day includes older people generally—not only grandparents.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources and scope</h2>
+  <ul class="more">
+    <li>Palace Museum — <a href="https://www.dpm.org.cn/lemmas/239949.html">重九承应</a> (Chinese-language source; date, name, and recorded customs)</li>
+    <li>Palace Museum — <a href="https://www.dpm.org.cn/Uploads/pdf/6182/T00190_00.pdf">重阳节的节俗及历史演变</a> (Chinese-language source; historical customs)</li>
+    <li>Shanghai Municipal People's Government — <a href="https://www.shanghai.gov.cn/ylfwflfg/20230420/0ac960451d34416ab2a2d64659ae76a7.html">Law on the Protection of the Rights and Interests of Older Persons</a> (Chinese-language source), Article 12 (Older Persons' Day)</li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">This page paraphrases institutional sources and does not reproduce their images or extended text. Customs are presented as historically recorded practices, with regional and family variation made explicit.</p>
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Place Chongyang in the year with the <a href="/festivals">guide to nine major Chinese festivals</a>.</li>
+    <li>Compare another reunion-centered autumn celebration: <a href="/explainers/what-is-the-mid-autumn-festival">the Mid-Autumn Festival</a>.</li>
+    <li>See how traditional number symbolism works in <a href="/explainers/what-is-yin-and-yang">the guide to yin and yang</a>.</li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds. · <a href="/about" style="color:inherit">About</a> · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

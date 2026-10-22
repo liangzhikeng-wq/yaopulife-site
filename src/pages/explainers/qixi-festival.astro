@@ -1,23 +1,39 @@
 ---
 const faqs = [
-  { q: "When is the Qixi Festival celebrated?", a: "The Qixi Festival falls on the seventh day of the seventh month in the traditional Chinese lunisolar calendar. Because it follows the lunar cycle rather than the Gregorian calendar, its exact date changes every year, usually landing in August." },
-  { q: "Why is Qixi called Chinese Valentine's Day?", a: "It is called Chinese Valentine's Day because its underlying myth centers on a tragic, enduring romance between two star-crossed lovers. In recent decades, modern marketers and businesses have heavily promoted it as a day for couples to exchange gifts, mirroring Western Valentine's Day customs." },
-  { q: "What do people traditionally eat or do on Qixi?", a: "Traditionally, people eat 'Qiaoguo' (巧果), a type of thin, fried pastry or sweet dough twist. Historically, women also engaged in 'Qiqiao' (pleading for skills) by threading needles in moonlight and carving melons to pray for dexterity in weaving and needlework." },
-  { q: "Is Qixi the only romantic holiday in modern China?", a: "No, modern China actually has several romantic holidays. Alongside Qixi and the Western Valentine's Day (February 14th), many young people also celebrate '520' (May 20th), a modern internet slang holiday where '520' sounds like 'I love you' in Mandarin." }
+  { q: "When is the Qixi Festival?", a: "Qixi falls on the seventh day of the seventh month in the traditional Chinese lunisolar calendar. Its Gregorian date therefore changes from year to year." },
+  { q: "Is Qixi simply Chinese Valentine's Day?", a: "That label captures the festival's love story, but not its full history. Qixi also grew around qiqiao: customs through which women and girls asked for skill and dexterity." },
+  { q: "Who are Niulang and Zhinü?", a: "They are the Cowherd and Weaver Girl in a Chinese myth. In a common version, the Milky Way separates them and magpies form a bridge so they can meet once a year on Qixi." },
+  { q: "What did people traditionally do for Qixi?", a: "Practices varied by place. Institutional records describe offerings of fruit, needle-threading contests, worship connected with the Cowherd and Weaver Girl, and other ways of asking for skill." },
 ];
-const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png"}, {"@type": "Article", "headline": "What Is the Qixi Festival, China's Valentine's Day?", "inLanguage": "en", "author": {"@id": "https://yaopulife.com/#org"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "mainEntityOfPage": "https://yaopulife.com/explainers/qixi-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Qixi Festival, China's Valentine's Day?", "item": "https://yaopulife.com/explainers/qixi-festival"}]}]};
-ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png" },
+    { "@type": "Article", "headline": "What Is Qixi? More Than Chinese Valentine's Day", "description": "A sourced guide to Qixi (七夕): its seventh-night date, Cowherd and Weaver Girl myth, qiqiao customs, and why the Valentine's Day label is incomplete.", "inLanguage": "en", "author": { "@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "datePublished": "2026-07-26", "dateModified": "2026-10-22", "mainEntityOfPage": "https://yaopulife.com/explainers/qixi-festival" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" },
+      { "@type": "ListItem", "position": 3, "name": "Qixi Festival", "item": "https://yaopulife.com/explainers/qixi-festival" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+
 import SiteAnalytics from '../../components/SiteAnalytics.astro';
-import StoryCTA from '../../components/StoryCTA.astro';
 ---
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>What Is the Qixi Festival, China's Valentine's Day? | yaopulife</title>
-<meta name="description" content="The Qixi Festival (七夕, Qīxī), or Double Seventh Festival, is a traditional Chinese holiday celebrating the romance of the Weaver Girl and the Cowherd.">
+<title>What Is Qixi? More Than Chinese Valentine's Day | yaopulife</title>
+<meta name="description" content="A sourced guide to Qixi (七夕): its seventh-night date, Cowherd and Weaver Girl myth, qiqiao customs, and why the Valentine's Day label is incomplete.">
 <link rel="canonical" href="https://yaopulife.com/explainers/qixi-festival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Qixi? More Than Chinese Valentine's Day">
+<meta property="og:description" content="Qixi links the Cowherd and Weaver Girl story with qiqiao traditions of asking for skill. The romance is real, but it is not the whole festival.">
+<meta property="og:url" content="https://yaopulife.com/explainers/qixi-festival">
 <link rel="stylesheet" href="/yaopu.css">
 <script type="application/ld+json" set:html={JSON.stringify(ld)} />
 </head>
@@ -26,32 +42,44 @@ import StoryCTA from '../../components/StoryCTA.astro';
   <a href="/" class="seal">蒲</a>
   <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
   <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
-  <a class="btn" href="/myths">All myths →</a>
+  <a class="btn" href="/festivals">All festivals →</a>
 </div></nav>
 
 <header class="hubhero"><div class="wrap">
   <div class="kicker">Cultural explainer</div>
-  <h1>What Is the Qixi Festival, China's Valentine's Day?</h1>
+  <h1>What is the Qixi Festival?</h1>
   <div class="zh">七夕</div>
-  <p>The Qixi Festival (七夕, Qīxī), often called the Double Seventh Festival, is a traditional Chinese holiday celebrating the mythological romance between the Weaver Girl and the Cowherd. Falling on the seventh day of the seventh lunar month, it is frequently described as the traditional Chinese equivalent of Valentine's Day. While historically focused on women's needlework and stargazing, today it is widely celebrated with romantic gifts and dates.</p>
+  <p>A seventh-night festival shaped by a love story in the stars and by older traditions of asking for skill.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-07-26 · Updated 2026-10-22</p>
 </div></header>
 
 <main class="wrap">
+<p style="color:#6a6153;font-size:13px;margin:18px 0"><a href="/">Home</a> · <a href="/festivals">Festivals</a> · Qixi Festival</p>
+
 <section class="sec">
-  <h2>The Legend of the Celestial Lovers</h2>
-  <p>The Qixi Festival is deeply tied to one of China's most famous folktales. In one common version of the legend, a mortal cowherd named Niulang (牛郎, Niúláng) and a celestial weaver girl named Zhinü (织女, Zhīnǚ) fall in love and marry. However, the Goddess of Heaven separates them by creating a massive river of stars—the Milky Way—allowing them to reunite only once a year on the seventh day of the seventh lunar month, when a bridge of magpies forms across the sky.</p>
-  <p>It is important to remember that this is a mythological folktale with many regional variants, not confirmed history. The story serves as an allegory for the stars Altair (the Cowherd) and Vega (the Weaver Girl), which appear brightest and closest to each other in the night sky during this time of the lunar year.</p>
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px"><b>Qixi</b> (<span class="zh">七夕</span> <i>Qīxī</i>) falls on the <b>seventh day of the seventh month</b> in the traditional Chinese lunisolar calendar. It is linked with the myth of the Cowherd and Weaver Girl, who meet across the Milky Way once a year. Yet the festival is more than a romance: it is also known as <b>Qiqiao</b> (<span class="zh">乞巧</span> <i>qǐqiǎo</i>), “asking for skill,” after customs through which women and girls sought dexterity.</p>
 </section>
+
 <section class="sec">
-  <h2>Traditional Customs and 'Pleading for Skills'</h2>
-  <p>Historically, Qixi was not primarily about romantic courtship in the modern sense. Instead, it was largely a festival for young women to demonstrate and pray for domestic skills, particularly needlework and weaving. This practice was known as Qiqiao (乞巧, qǐqiǎo), which translates to 'pleading for skills' or 'begging for cleverness'.</p>
-  <p>In ancient times, women would thread needles in the dim light of the moon or carve intricate designs into melon rinds to prove their dexterity. They would also offer fruits and pastries to Zhinü, hoping the celestial weaver would bless them with the same exceptional handicraft abilities. These traditional practices highlight the festival's original focus on women's labor and domestic virtue rather than romantic gift-giving.</p>
+  <h2 id="legend">The Cowherd and Weaver Girl</h2>
+  <p>In a common version of the myth, Niulang (<span class="zh">牛郎</span>), the Cowherd, and Zhinü (<span class="zh">织女</span>), the Weaver Girl, are separated by the Milky Way. Magpies form a bridge so they can reunite on the seventh night of the seventh lunar month.</p>
+  <p>Institutional accounts do not tell every detail in exactly the same way. The stable core is the annual meeting of the two figures; other plot details belong to different versions of a folktale, not to confirmed history.</p>
+  <div class="note"><span class="nlbl">Calendar note</span><b>“Seventh month” means the lunar month.</b> Qixi is not fixed to July 7 on the Gregorian calendar, so its Western-calendar date changes each year.</div>
 </section>
+
 <section class="sec">
-  <h2>The Modern 'Valentine's Day' Comparison</h2>
-  <p>Today, the Qixi Festival is frequently described as the traditional Chinese equivalent of Valentine's Day. This Western comparison is highly visible in modern urban China, where couples exchange roses, chocolates, and expensive gifts, and restaurants offer special romantic dinners. The commercialization of Qixi has heavily mirrored Western February 14th traditions over the last few decades.</p>
-  <p>However, equating the two perfectly is a common misunderstanding. While both celebrate romantic love, Western Valentine's Day has roots in early Christian martyrdom and later European courtly love traditions, whereas Qixi is fundamentally a lunar agricultural festival tied to a specific celestial myth and historical gender roles. Understanding this distinction helps appreciate Qixi as a unique cultural event rather than just a localized copy of a Western holiday.</p>
+  <h2 id="qiqiao">Why Qixi is also the “festival of asking for skill”</h2>
+  <p>The Chinese Intangible Cultural Heritage project record identifies Qixi as both <i>Qiqiao Festival</i> and a festival historically important to women. It records customs that vary by region, including worship connected with the Cowherd and Weaver Girl, skill-seeking activities, and objects associated with “asking for cleverness.”</p>
+  <p>A Palace Museum account gives a more concrete scene: fruit offerings in a courtyard beneath the night sky, with women competing to thread needles. These records support the festival's link with dexterity and women's work without suggesting that every household followed one fixed ritual.</p>
 </section>
+
+<section class="sec">
+  <h2 id="valentines-day">Why “Chinese Valentine's Day” is only shorthand</h2>
+  <p>Calling Qixi “Chinese Valentine's Day” points to the Cowherd and Weaver Girl love story and to romance associated with the day. It can be a useful introduction, but it narrows a festival whose documented traditions also include prayer, craft, skill and women's aspirations.</p>
+  <p>That older dimension is not only archival. An Associated Press report from Beijing's Folk Custom Museum in 2026 described families taking part in craft activities inspired by <i>qiqiao</i>, including making decorative <i>qiaoguo</i> pastries. The example shows how institutions can present historical practices today; it does not make one museum program a universal modern custom.</p>
+</section>
+
 <section class="sec">
   <h2 id="faq">FAQ</h2>
   {faqs.map(f => (
@@ -60,18 +88,27 @@ import StoryCTA from '../../components/StoryCTA.astro';
 </section>
 
 <section class="sec">
-  <h2 id="sources">Sources</h2>
+  <h2 id="sources">Sources and scope</h2>
   <ul class="more">
-    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Qixi_Festival" rel="nofollow">Qixi Festival - Wikipedia</a></li>
-    <li>Queen's University Belfast Language Centre — <a href="https://blogs.qub.ac.uk/mandarinchinese/2020/08/24/happy-qixi-festival" rel="nofollow">Happy Qixi Festival</a></li>
+    <li>China Intangible Cultural Heritage Network — <a href="https://www.ihchina.cn/project_details/14926/">七夕节</a> (Chinese-language project record; calendar, names, legend, regional practices and heritage status)</li>
+    <li>Palace Museum — <a href="https://www.dpm.org.cn/lemmas/239937.html">七夕承应</a> (Chinese-language source; the seventh-day date, needle-threading and court observance)</li>
+    <li>Associated Press — <a href="https://apnews.com/article/qixi-festival-china-valentines-day-af53f01f7a524d026792c54e1ad612e0">Chinese Valentine's Day is rooted in legend and tradition, not just romance</a> (2026 reporting on living museum practice)</li>
   </ul>
-  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+  <p style="color:#6a6153;font-size:14px">This page paraphrases the sources and uses no source images or extended quotations. Folklore is identified as folklore; documented practices are presented as examples that vary by time, region and family.</p>
+</section>
+
+<section class="sec">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Place Qixi in the year with the <a href="/festivals">guide to nine major Chinese festivals</a>.</li>
+    <li>Meet another festival figure in <a href="/explainers/chang-e">the guide to Chang'e</a>.</li>
+    <li>Explore the wider story world through <a href="/myths">Chinese myths and legendary figures</a>.</li>
+  </ul>
 </section>
 </main>
 
-<StoryCTA source="explainer-qixi-festival" />
 <footer>
-  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.</div>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds. · <a href="/about" style="color:inherit">About</a> · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
 </footer>
 <script is:inline src="/yaopu.js"></script>
 <SiteAnalytics />
