@@ -1,0 +1,128 @@
+---
+const faqs = [
+  { q: "When is the Lantern Festival?", a: "It falls on the fifteenth day of the first month in the traditional Chinese lunisolar calendar. Its Gregorian date changes from year to year." },
+  { q: "Why is it called Yuanxiao Festival?", a: "Yuan (元) refers here to the first lunar month, while xiao (宵) means night. The name points to the night of the first full moon in the traditional year." },
+  { q: "What do people do for the Lantern Festival?", a: "Lantern viewing and lantern riddles are widely recorded customs. Depending on the place and community, celebrations can also include dragon or lion dances, stilt walking, and other performances." },
+  { q: "Are yuanxiao and tangyuan the same food?", a: "Both are round glutinous-rice foods associated with the festival and reunion. A common modern distinction is that yuanxiao are rolled around a filling in dry glutinous rice flour, while tangyuan are wrapped in a moistened glutinous-rice dough. Naming and practice vary by region." },
+];
+
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/logo.png" },
+    { "@type": "Article", "headline": "What Is the Lantern Festival? Yuanxiao Explained", "description": "A sourced guide to the Lantern Festival (元宵节): its lunar date and names, lanterns and riddles, regional performances, and the yuanxiao–tangyuan distinction.", "inLanguage": "en", "author": { "@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy" }, "publisher": { "@id": "https://yaopulife.com/#org" }, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://yaopulife.com/explainers/lantern-festival" },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Festivals", "item": "https://yaopulife.com/festivals" },
+      { "@type": "ListItem", "position": 3, "name": "Lantern Festival", "item": "https://yaopulife.com/explainers/lantern-festival" }
+    ] },
+    { "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+  ]
+};
+
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Lantern Festival? Yuanxiao Explained | yaopulife</title>
+<meta name="description" content="A sourced guide to the Lantern Festival (元宵节): its lunar date and names, lanterns and riddles, regional performances, and the yuanxiao–tangyuan distinction.">
+<link rel="canonical" href="https://yaopulife.com/explainers/lantern-festival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is the Lantern Festival? Yuanxiao Explained">
+<meta property="og:description" content="Why the fifteenth night matters, how lanterns and riddles became central, and why yuanxiao and tangyuan are not always the same thing.">
+<meta property="og:url" content="https://yaopulife.com/explainers/lantern-festival">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+<style>
+  .content-links a { color:var(--clayd); text-decoration:underline; text-underline-offset:3px; }
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/festivals">All festivals →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What is the Lantern Festival?</h1>
+  <div class="zh">元宵节</div>
+  <p>The first full-moon celebration of the traditional year: lantern light, riddles, round rice foods, and customs that vary across China.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-10-23 · Updated 2026-10-23</p>
+</div></header>
+
+<main class="wrap art">
+<p style="color:#6a6153;font-size:13px;margin:18px 0"><a href="/">Home</a> · <a href="/festivals">Festivals</a> · Lantern Festival</p>
+
+<section class="sec">
+  <h2 id="answer">The quick answer</h2>
+  <p class="lead" style="max-width:780px">The <b>Lantern Festival</b> (<span class="zh">元宵节</span> <i>Yuánxiāo Jié</i>) falls on the <b>fifteenth day of the first lunar month</b>, traditionally the first full-moon night of the new year. Lantern viewing, riddles, and round glutinous-rice foods are widely associated with the date, but the performances and food names differ by region.</p>
+</section>
+
+<section class="sec">
+  <h2 id="name">What “Yuanxiao” means</h2>
+  <p>The name begins with the calendar. <i>Yuan</i> (<span class="zh">元</span>) refers here to the first lunar month, and <i>xiao</i> (<span class="zh">宵</span>) means night. The China Intangible Cultural Heritage project record explains that the fifteenth night of that month—the first full-moon night of the traditional year—is called Yuanxiao Festival.</p>
+  <p>The same source records other names, including <b>Shangyuan Festival</b> (<span class="zh">上元节</span>) and <b>Lantern Festival</b> (<span class="zh">灯节</span>). These are overlapping historical names, not separate dates.</p>
+  <div class="note"><span class="nlbl">Calendar note</span><b>The Gregorian date moves every year.</b> “First month” means the first month of the traditional Chinese calendar, not January. The festival therefore falls on a different Western-calendar date each year.</div>
+</section>
+
+<section class="sec">
+  <h2 id="lanterns">Why lanterns and riddles are central</h2>
+  <p>The national heritage record traces lantern lighting for Yuanxiao back to the Han period and describes the custom as increasingly prominent in later dynasties. The Palace Museum offers a concrete Qing-court example: its record for <i>Qianlong Emperor Enjoying the Lantern Festival</i> describes the emperor and imperial family celebrating, and its festival notes list lanterns, fireworks, riddles, and round rice foods.</p>
+  <p>Lantern riddles (<span class="zh">猜灯谜</span> <i>cāi dēngmí</i>) turn a display into a public word game. The heritage record dates the established practice of hanging riddles for people to solve to the Song period. It also records later and regional additions such as dragon and lion dances, stilt walking, land-boat dances, and drums.</p>
+  <p>These examples describe a living family of festival practices, not one required program. A neighborhood lantern display, a temple fair, and a museum event can all look different. Practice varies by region, community, and period.</p>
+</section>
+
+<section class="sec">
+  <h2 id="food">Yuanxiao, tangyuan, and the meaning of roundness</h2>
+  <p>Round glutinous-rice foods are the festival's best-known dish. The heritage record connects eating yuanxiao with family unity and harmony; the Palace Museum likewise describes the food's association with reunion.</p>
+  <p>The words <i>yuanxiao</i> (<span class="zh">元宵</span>) and <i>tangyuan</i> (<span class="zh">汤圆</span>) are sometimes used loosely, but a common modern distinction concerns how they are made. A Xinhua explainer says <b>yuanxiao are rolled in dry glutinous rice flour</b> around a prepared filling, while <b>tangyuan are wrapped in a moistened glutinous-rice dough</b>. The result is similar in outline—a filled, round rice food—but the method and texture differ.</p>
+  <p>That distinction is useful, not absolute. Naming and practice vary by region, and institutional accounts sometimes use the terms together when describing the festival. It is safer to explain the preparation than to claim that one word is always “northern” and the other always “southern.”</p>
+</section>
+
+<section class="sec">
+  <h2 id="history">What the historical sources do—and do not—prove</h2>
+  <p>The cited records support a long history of lantern lighting, public celebration, riddles, and round rice foods. They also show change: customs expanded, and local performance traditions developed in different ways.</p>
+  <p>They do not establish a single dramatic origin story for the whole festival. Popular retellings may connect Yuanxiao with an emperor, a celestial official, or a young woman whose name was Yuanxiao. Those stories are better presented as later legends unless a page identifies a particular text and version. This guide therefore keeps the documented calendar and customs separate from unverified single-start claims.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec content-links">
+  <h2 id="sources">Sources and scope</h2>
+  <ul class="more">
+    <li>China Intangible Cultural Heritage Network — <a href="https://www.ihchina.cn/project_details/15069.html">元宵节</a> (Chinese-language national project record; date, names, historical development, riddles, food, and regional practices)</li>
+    <li>Palace Museum — <a href="https://www.dpm.org.cn/collection/paint/233757.html">乾隆帝元宵行乐图轴</a> (Chinese-language collection record; Qing-court celebration, lanterns, riddles, and reunion symbolism)</li>
+    <li>Xinhua via China Xiong'an — <a href="https://www.xiongan.gov.cn/2018-03/02/c_129821320.htm">元宵是汤圆吗？元宵节学知识、猜灯谜</a> (Chinese-language explainer; the preparation difference between yuanxiao and tangyuan)</li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">This page paraphrases institutional sources and uses no source images or extended quotations. Historical records are separated from popular origin legends, and regional variation is made explicit.</p>
+</section>
+
+<section class="sec content-links">
+  <h2 id="next">Related reading</h2>
+  <ul class="more">
+    <li>Place Yuanxiao in the year with the <a href="/festivals">guide to major Chinese festivals</a>.</li>
+    <li>Compare another lunar-calendar festival shaped by a night-sky story: <a href="/explainers/qixi-festival">the Qixi Festival</a>.</li>
+    <li>Follow the symbolism of a round moon and family reunion in <a href="/explainers/what-is-the-mid-autumn-festival">the Mid-Autumn Festival guide</a>.</li>
+    <li>See why one festival color carries so much meaning in <a href="/explainers/why-red-means-luck-in-china">the guide to red and good fortune</a>.</li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds. · <a href="/about" style="color:inherit">About</a> · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>
