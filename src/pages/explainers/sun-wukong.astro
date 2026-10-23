@@ -1,0 +1,102 @@
+---
+const faqs = [
+  { q: "Is Sun Wukong a god, a demon, or a real historical person?", a: "Sun Wukong is a fictional character in Chinese literature and mythic storytelling, not a confirmed historical person. Labels like god or demon do not fit neatly: in Journey to the West he is a stone-born monkey of vast power who later serves as the monk Tang Sanzang's disciple." },
+  { q: "Who created Sun Wukong?", a: "The Monkey King as we know him first appears in the 16th-century novel Journey to the West. Chinese reference works treat him as a character in the Ming writer Wu Cheng'en's novel. The book draws on broader cultural and religious motifs, which is not the same thing as Sun Wukong being an ancient scriptural deity." },
+  { q: "How does Sun Wukong's story in Journey to the West begin?", a: "In one common version, he is an intelligent monkey born from a stone who gains supernatural powers and rebels before joining the pilgrimage to fetch Buddhist scriptures. Later retellings vary in emphasis, so opening episodes belong to story tradition, not confirmed history." },
+  { q: "What does 孙悟空 mean, and how do you pronounce it?", a: "The Chinese name is 孙悟空, pronounced Sūn Wùkōng. English readers usually say Sun Wukong or the Monkey King. Sun here is a family-style name inside the story, not the English word for the star." },
+  { q: "Is the Monkey King the same as a Western superhero?", a: "No. Superheroes usually defend an existing order; Sun Wukong is typically introduced as a rebel and trickster whose later fame includes learning discipline on a Buddhist-inspired pilgrimage. Comparing him only to Superman hides the second half of the plot." },
+  { q: "Does Sun Wukong exist only in the old novel?", a: "He first became famous through Journey to the West, but later media keep adapting him. Britannica notes a range of modern adaptations, and course materials even discuss a modern hero, Jin Mori, as a Sun Wukong figure." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Sun Wukong, the Monkey King?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-08-28", "dateModified": "2026-08-31", "mainEntityOfPage": "https://yaopulife.com/explainers/sun-wukong"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Sun Wukong, the Monkey King?", "item": "https://yaopulife.com/explainers/sun-wukong"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Sun Wukong, the Monkey King? | yaopulife</title>
+<meta name="description" content="Sun Wukong (孙悟空, Sūn Wùkōng), the Monkey King, is a fictional character in Chinese literature, created by Ming writer Wu Cheng'en for the 16th-century nove">
+<link rel="canonical" href="https://yaopulife.com/explainers/sun-wukong">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Sun Wukong, the Monkey King?</h1>
+  <div class="zh">孙悟空</div>
+  <p>Sun Wukong (孙悟空, Sūn Wùkōng), the Monkey King, is a fictional character in Chinese literature, created by Ming writer Wu Cheng'en for the 16th-century novel Journey to the West. In the usual telling he is a stone-born monkey of vast powers who rebels, then helps the monk Tang Sanzang fetch scriptures. He is China's most famous legend because that novel — and later retellings — made rebellion, wit, and spiritual change unforgettable, not because he was a historical person.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-08-28 · Updated 2026-08-31</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Who Is Sun Wukong?</h2>
+  <p><b>Sun Wukong (孙悟空, Sūn Wùkōng)</b> is a fictional character in Chinese mythology and literature, known in English as the <b>Monkey King</b>. The three characters are a story-name, not a title you will find on a historical census: <b>Sun</b> is the family-style name he takes in the tale, and <b>Wukong</b> is the rest of that name. English speakers usually just say Sun Wukong or the Monkey King.</p>
+  <p>Sun Wukong is a fictional character created by the author Wu Cheng'en for the novel *Journey to the West* (西游记, Xīyóujì); he is not a figure from ancient Chinese mythology or religious texts, though the novel draws on broader cultural and religious motifs. Encyclopædia Britannica describes him as a Chinese mythological character who first appeared in that 16th-century book. In the usual telling he is a stone-born monkey spirit of enormous power who becomes a disciple of the pilgrim monk <b>Tang Sanzang (唐三藏)</b> — the novel's version of the historical monk Xuanzang (玄奘) — and helps complete a journey to fetch Buddhist scriptures.</p>
+  <p>If you have no Chinese background, picture a brilliant, impulsive trickster, not a Western-style superhero in a cape. A common misunderstanding is that he is an ancient god, a historical companion of Xuanzang, or only a cute children's mascot. He is none of those: he is a literary creation whose fame comes from the novel and later retellings.</p>
+</section>
+<section class="sec">
+  <h2>How Does His Story in Journey to the West Begin?</h2>
+  <p>In one common version of the novel, Sun Wukong begins as an intelligent monkey <b>born from a stone</b>. He then acquires supernatural powers. Chinese reference works on the novel often mention that he can make <b>seventy-two transformations</b> (七十二变) — meaning, in the usual telling, that he can change shape with astonishing range — and that he is a rebellious figure before he is pulled into the pilgrimage.</p>
+  <p>That opening is story tradition, not confirmed history. Folk plays, later abridgments, and modern adaptations retell the start with different emphasis, so exact powers, episode order, and numbers should be treated cautiously. Britannica frames him as a character who *first appeared* in the 16th-century novel, which is the right scale: we are talking about a book, not a biography.</p>
+  <p>The pilgrimage frame is what turns the rebel into a companion. In Wu Cheng'en's telling, Sun Wukong's later job is to use wit and force to subdue demons, get the monk out of trouble, and help the scripture quest succeed. The chaos is the hook; the road west is the plot.</p>
+</section>
+<section class="sec">
+  <h2>What Does the Monkey King Represent?</h2>
+  <p>A university overview of Chinese culture puts the usual reading in three words that have lasted: for centuries Sun Wukong has represented the spirit of <b>rebellion</b>, <b>wit</b>, and eventual <b>spiritual transformation</b>. He does not have a single official job title such as "god of monkeys." People keep returning to him because those three traits sit in one character.</p>
+  <ul class="more"><li>- <b>Rebellion</b> — in the early part of the tale he challenges authority, including Heaven itself.</li><li>- <b>Wit</b> — he gets through crises by cleverness as much as by raw power.</li><li>- <b>Transformation</b> — he changes shape in the plot, and he is also often read as changing in character: from unrestrained power toward discipline.</li></ul>
+  <p>That last point is one common reading of the novel, not a religious dogma. Reducing him to "China's rebel mascot" misses the second half of the story. The interesting tension is that the same figure can look like a chaotic troublemaker *and* like someone being trained.</p>
+</section>
+<section class="sec">
+  <h2>Why Is He Called China's Most Famous Legend?</h2>
+  <p>Calling Sun Wukong China's most famous legend is fair as cultural shorthand. It is not a measured ranking, and no source here offers a statistic. His fame rests on things the sources *do* support: he is the standout figure of a 16th-century classic novel; Chinese dictionaries treat him as a household character — a stone-monkey spirit of vast powers, one of Xuanzang's disciples in the story, who helps Tang Sanzang finish the quest; and later media keep recycling him.</p>
+  <p>He stays current because each generation can lean on a different side. Some retellings stress the rebel who will not bow. Some stress the comic fighter. Some stress the pilgrim who learns restraint. Britannica notes that Sun Wukong has many modern adaptations. A classroom discussion of global Chinese culture even points to a modern hero, <b>Jin Mori</b>, whose hidden identity is the legendary Monkey King — one example of how the figure travels when Chinese stories travel.</p>
+  <p>He is not famous because archaeologists unearthed him, and not because an ancient religious canon names him as a historical deity. He is famous because a novel made him unforgettable, and stages, screens, and new stories kept retelling him.</p>
+</section>
+<section class="sec">
+  <h2>How Is He Different from a Western Superhero?</h2>
+  <p>It is tempting to file Sun Wukong next to Superman or a Marvel hero. The comparison only half works. A typical Western superhero is already aligned with public order: power plus a mission to protect the city. Sun Wukong, in the usual novel arc, <b>starts by overturning order</b> and is only later turned toward a disciplined purpose.</p>
+  <p>A rougher Western comparison is a trickster who is forced onto a long apprenticeship — comic, dangerous, and only slowly useful to anyone else. Even that is an analogy, not an equation. *Journey to the West* is at once a comic adventure, a monster-of-the-road travel tale, and a story about cultivation. It is not an ancient Buddhist scripture, even though it borrows Buddhist and other religious color.</p>
+  <p>The mix-up to avoid is treating the Monkey King as the same kind of being as a temple god with a fixed cult, or as a historical bodyguard of the real Xuanzang. In the sources used here, he is a novel character. The pilgrimage is fiction built around a real monk's reputation; the monkey is not a documented person.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/question/Who-is-Sun-Wukong" rel="nofollow">Who is Sun Wukong?</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Sun_Wukong" rel="nofollow">Sun Wukong</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://zdic.net/hans/%E5%AD%99%E6%82%9F%E7%A9%BA" rel="nofollow">孙悟空词语解释</a></li>
+    <li>sites.gatech.edu — <a href="https://sites.gatech.edu/china-cultural-odyssey/global-chinese-culture/" rel="nofollow">CHIN3400 China: A Cultural Odyssey</a></li>
+    <li>sites.gatech.edu — <a href="https://sites.gatech.edu/china-cultural-odyssey/tag/monkey-king/" rel="nofollow">Monkey King | CHIN3400 China: A Cultural Odyssey</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-sun-wukong" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

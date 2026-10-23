@@ -1,0 +1,84 @@
+---
+const faqs = [
+  { q: "Who is Nezha?", a: "Nezha (哪吒) is a youthful figure of Chinese mythology and literature, known for rebellion and defying fate. His best-known classic source is the novel Investiture of the Gods; he also appears in Journey to the West." },
+  { q: "Is there one true Nezha story?", a: "No. Nezha appears across several classic works and many adaptations with different details — it's best to say \"in one version…\" rather than treat any single telling (including a recent film) as definitive." },
+  { q: "Why is Nezha reborn from a lotus?", a: "A famous part of his legend gives him a lotus body, symbolizing rebirth and transformation. The details vary by version." },
+  { q: "What does Nezha represent?", a: "He's often read as a symbol of youthful rebellion and defiance of a fate imposed on him." },
+  { q: "Is Nezha a god?", a: "He's a deity-like mythological-literary figure; depictions of his exact status vary across works." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Nezha Is and What His Story Means", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-08-29", "dateModified": "2026-08-29", "mainEntityOfPage": "https://yaopulife.com/explainers/nezha"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Nezha Is and What His Story Means", "item": "https://yaopulife.com/explainers/nezha"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Nezha Is and What His Story Means | yaopulife</title>
+<meta name="description" content="Nezha (哪吒) is a youthful figure of Chinese mythology and literature, famous for rebellion and defying fate.">
+<link rel="canonical" href="https://yaopulife.com/explainers/nezha">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Nezha Is and What His Story Means</h1>
+  <div class="zh">哪吒</div>
+  <p>Nezha (哪吒) is a youthful figure of Chinese mythology and literature, famous for rebellion and defying fate.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-08-29</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Who Is Nezha?</h2>
+  <p>Nezha is a young deity-like character from Chinese literature and folklore. His best-known classic source is the novel <b>*Investiture of the Gods* (封神演义)</b>, and he also appears in *Journey to the West*. He's often depicted as a powerful child or youth.</p>
+</section>
+<section class="sec">
+  <h2>What He Represents</h2>
+  <p>Nezha is commonly read as a symbol of <b>youthful rebellion</b> and <b>defiance of fate</b> — standing up against authority, and sometimes against his own destiny. *(This is one common interpretation; emphasis shifts between versions.)*</p>
+</section>
+<section class="sec">
+  <h2>The Lotus Rebirth</h2>
+  <p>One famous part of his legend is a <b>rebirth with a body made from lotus</b>, an image of transformation and renewal. *(How and why this happens differs across versions, so treat it as legend rather than fixed history.)*</p>
+</section>
+<section class="sec">
+  <h2>There Isn't One "True" Version</h2>
+  <p>Because Nezha appears across several classic works and many modern films and shows, details vary a lot. It's best to say "in one version…" rather than presenting any single telling — including a recent movie — as the definitive story.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Nezha" rel="nofollow">Nezha</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Investiture_of_the_Gods" rel="nofollow">Investiture of the Gods (Fengshen Yanyi)</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-nezha" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

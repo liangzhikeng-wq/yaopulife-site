@@ -1,0 +1,102 @@
+---
+const faqs = [
+  { q: "Was Guan Yu a real person?", a: "The sources here treat him as a real military general under Liu Bei in the late Eastern Han, with his death given as 220 and his birth year unknown. Guandi is a later divine status. Many famous adventures belong to lore and to the Romance of the Three Kingdoms, not to the short early biography." },
+  { q: "Are Guan Yu and Guandi the same figure?", a: "Guan Yu (关羽, Guān Yǔ) is the man's name. Guandi (关帝, Guāndì), \"Emperor Guan,\" is the title used once he was worshipped as a god of war. Same remembered person, two layers: general first, god afterward." },
+  { q: "Did Guan Yu, Liu Bei, and Zhang Fei really swear an oath of brotherhood?", a: "In one common version, yes: Britannica calls Zhang Fei and Guan Yu Liu Bei's oath brothers. The early biography excerpt only says the two defended Liu Bei and later each commanded his own troops. It is safer to call the oath a later tradition than confirmed history." },
+  { q: "Why call him a god of war if the praise is about loyalty?", a: "Because after his death he was deified as Guandi, and English references gloss that god as a god of war. Chinese court titles and moral praise in these sources also stress righteous courage and the cluster 忠孝节义 — loyalty, filial piety, integrity, and righteousness — so the cult is wider than battle." },
+  { q: "What does the courtesy name Yunchang mean?", a: "A courtesy name (字, zì) is a formal adult name used beside the given name. Yunchang (云长, Yúncháng) is written with the characters for \"cloud\" and \"long.\" The early biography also records an original courtesy name, Changsheng (长生, Chángshēng), \"long life.\"" },
+  { q: "Who gave Guan Yu the title Yiyong Wu'an Wang?", a: "A Palace Museum account of his honors says Song Huizong (宋徽宗) granted the title 义勇武安王 (Yìyǒng Wǔ'ān Wáng), roughly \"Righteous and Brave King Who Secures Peace by Arms.\" The same account says Yuan rulers added a further title, but the excerpt breaks off at 壮穆 (Zhuàngmù), so the full Yuan wording is not available here." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Guan Yu, and Why Is He Worshipped as a God in China?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-09-26", "dateModified": "2026-09-26", "mainEntityOfPage": "https://yaopulife.com/explainers/guan-yu"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Guan Yu, and Why Is He Worshipped as a God in China?", "item": "https://yaopulife.com/explainers/guan-yu"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Guan Yu, and Why Is He Worshipped as a God in China? | yaopulife</title>
+<meta name="description" content="Guan Yu (关羽, Guān Yǔ), courtesy name Yunchang, was a military general under Liu Bei in the late Eastern Han, in the Three Kingdoms era of the 3rd century C">
+<link rel="canonical" href="https://yaopulife.com/explainers/guan-yu">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Guan Yu, and Why Is He Worshipped as a God in China?</h1>
+  <div class="zh">关羽</div>
+  <p>Guan Yu (关羽, Guān Yǔ), courtesy name Yunchang, was a military general under Liu Bei in the late Eastern Han, in the Three Kingdoms era of the 3rd century CE. Lore, drama, and the Romance of the Three Kingdoms later romanticized him as a model of loyalty. From the Song dynasty onward, rulers granted him higher titles, and he was deified as Guandi, known in English as a Chinese god of war.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-09-26</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Who Guan Yu was</h2>
+  <p>Guan Yu (关羽, Guān Yǔ) is remembered on two levels: as a soldier, and later as a god. English references describe him as a military general under Liu Bei (刘备, Liú Bèi) in the late Eastern Han dynasty, serving alongside Zhang Fei (张飞, Zhāng Fēi). His courtesy name — the formal adult name, called a zi (字, zì) — was Yunchang (云长, Yúncháng). The two characters mean "cloud" and "long."</p>
+  <p>A Palace Museum summary places his home at Xie county in Hedong (河东解县, Hédōng Xiè xiàn; 解 is read Xiè, not Jiě), in what it identifies as the area southwest of present-day Linyi in Shanxi. It describes a splendid beard (美须髯, měi xū rán), high martial skill, and a bond with Zhang Fei as close as hands and feet (情若手足, qíng ruò shǒu zú). It gives his death as 220 and leaves the birth year unknown.</p>
+  <p>Worshippers address him as Guandi (关帝, Guāndì), "Emperor Guan." That is a divine title. It is not the name he used as a general.</p>
+</section>
+<section class="sec">
+  <h2>What the early biography says</h2>
+  <p>The earliest connected account in this set of sources is his biography in the Sanguozhi (三国志, Sānguózhì), often called the Records of the Three Kingdoms in English. The source heading places that biography in the Shu book (蜀书, Shǔ shū). It says Guan Yu, courtesy name Yunchang, originally bore the courtesy name Changsheng (长生, Chángshēng), "long life," and was a man of Xie in Hedong. He fled as a fugitive to Zhuo commandery (涿郡, Zhuōjùn). The excerpt does not say why he fled.</p>
+  <p>When the man that text calls the First Ruler (先主, xiānzhǔ) — Liu Bei, as the other sources here identify Guan Yu's lord — gathered followers at home, Guan Yu and Zhang Fei shielded him (为之御侮, wèi zhī yù wǔ). In plain terms, they were the ones who stood up for him against insult and attack. When Liu Bei became the chief minister of Pingyuan (平原相, Píngyuán xiàng), he made both men biebu sima (别部司马, biébù sīmǎ): commanders of separate contingents, each with his own troops.</p>
+  <p>That is a short military career. It does not read like a god's origin story, and it does not include every scene later plays and novels attach to his name.</p>
+</section>
+<section class="sec">
+  <h2>How lore enlarged the general</h2>
+  <p>Britannica's article on Guandi says Guan Yu lived in what it calls the chivalrous era of the Three Kingdoms (三国, Sānguó) in the 3rd century CE, and that he has been romanticized in popular lore, in drama, and especially in the Ming period. The sentence breaks off there, so the missing words should not be filled in.</p>
+  <p>A Palace Museum article names the usual channel for the famous stories: they spread through the Romance of the Three Kingdoms (《三国演义》, Sānguó Yǎnyì). In one common version, the one Britannica's Three Kingdoms overview uses, Zhang Fei and Guan Yu are Liu Bei's oath brothers and play important roles. The early biography agrees that the three were bound together in war. It does not, in the lines we have, describe an oath. Folk stories have variants. The oath is a later, beloved telling, not something to state as confirmed history.</p>
+  <p>A useful reading habit follows from that gap. Vivid, ritualized, highly moral scenes usually belong to the novel, the stage, or local lore. The biography is the shorter soldier's record.</p>
+</section>
+<section class="sec">
+  <h2>Why he is worshipped as Guandi</h2>
+  <p>Britannica states the religious outcome directly: Guan Yu became deified as the god of war, Guandi. Deified means later generations treated a dead man as a god. The worship, as these sources describe it, is not only about winning battles. A Palace Museum entry headed Fumo Dadi (伏魔大帝, Fúmó Dàdì) — character by character, "Great Emperor Who Subdues Demons" — calls him a model who gathers loyalty, filial piety, integrity, and righteousness in one person (忠、孝、节、义, zhōng, xiào, jié, yì).</p>
+  <p>Those four words are the plain key to the cult. <b>忠 (zhōng)</b> is loyalty, especially to one's lord. <b>孝 (xiào)</b> is filial piety, duty to parents. <b>节 (jié)</b> is moral constancy. <b>义 (yì)</b> is righteousness, doing right by others. The excerpt uses the Fumo Dadi heading for this moral portrait; it does not tell a demon-fighting story, so that story should not be invented from the title alone.</p>
+  <p>The same entry says that from the Song dynasty (宋代, Sòng dài) onward, rulers kept raising his rank. Song Huizong (宋徽宗, Sòng Huīzōng) granted him the title Yiyong Wu'an Wang (义勇武安王, Yìyǒng Wǔ'ān Wáng), a royal honor whose words stress righteous courage and peace won by arms. It also says the Yuan dynasty (元代, Yuán dài) granted a further title, and the visible words begin with Zhuangmu (壮穆, Zhuàngmù). The excerpt is cut off, so the rest of that Yuan title is not given here. Court titles show that the cult was publicly encouraged. They do not confirm every miracle later storytellers added.</p>
+</section>
+<section class="sec">
+  <h2>God of war, and a Western comparison</h2>
+  <p><b>God of war</b> is the English frame Britannica uses, and it is a fair front door. It becomes misleading if it is heard as "the Chinese Mars" or "the Chinese Ares," the Roman and Greek gods who personify war itself. Nothing in these sources describes Guan Yu as a divine appetite for slaughter. They describe a remembered general whose loyalty and righteousness later drew temple honors and official titles.</p>
+  <p>A closer Western comparison is a historical knight or commander whom later centuries dressed in saintly legend. The person came first. The altar came afterward. People pray to the legend, but the legend still points back to a named officer of the Three Kingdoms era.</p>
+  <p>Two mix-ups are worth catching early. One is to treat the Romance of the Three Kingdoms as a transcript of the biography. The other is to decide that, because the novel is literature, Guan Yu never lived. These sources support a middle statement: a real late-Han commander, dead in 220, was romanticized, then worshipped as Guandi.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/event/Three-Kingdoms-ancient-kingdoms-China" rel="nofollow">Three Kingdoms | History, Chinese States, &amp; Facts</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/Guandi" rel="nofollow">Guandi | Chinese God of War</a></li>
+    <li>Chinese Text Project (中国哲学书电子化计划) — <a href="https://ctext.org/text.pl?node=603534&if=gb&remap=gb" rel="nofollow">关羽传- 三國志: 蜀書六: 關羽傳</a></li>
+    <li>The Palace Museum (故宫博物院) — <a href="https://www.dpm.org.cn/lemmas/240727.html" rel="nofollow">关羽</a></li>
+    <li>The Palace Museum (故宫博物院) — <a href="https://www.dpm.org.cn/lemmas/244133.html" rel="nofollow">伏魔大帝</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-guan-yu" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

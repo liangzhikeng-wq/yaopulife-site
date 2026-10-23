@@ -1,0 +1,102 @@
+---
+const faqs = [
+  { q: "Did Meng Jiangnu really bring down the Great Wall?", a: "No — the wall's collapse is an episode in a folk legend, not a documented event. English and Chinese reference works describe Meng Jiangnu as a figure in a Chinese tale with many variations and introduce the plot with 相傳 (\"according to tradition\")." },
+  { q: "What does the name 孟姜女 mean?", a: "孟 (Mèng) is a surname, 姜 (Jiāng) is part of her personal name, and 女 (nǚ) means \"woman,\" so the name reads roughly as \"the woman Meng Jiang\" — which is why English usually renders it \"Lady Meng Jiang.\" The 姜 here is a name element and should not be translated as \"ginger.\"" },
+  { q: "Who was her husband in the legend?", a: "It depends on the version: standard Chinese dictionary summaries call him Qi Liang (杞良), while another folk retelling names him Wan Xiliang (万喜良). Because the name varies, it is best to say which version you are following." },
+  { q: "When is the story of Meng Jiangnu set?", a: "Later versions of the tale are usually set in the Qin dynasty, in the era of the First Emperor, Qin Shi Huang — though the setting is part of the storytelling tradition rather than a dated historical record." },
+  { q: "Why does the legend end with her collecting bones?", a: "In one common literary version, her tears of grief not only topple the wall but expose her husband's bones, which she gathers for proper burial — making the story as much about the duty owed to the dead as about the collapse itself." },
+  { q: "Is there only one version of the story?", a: "No. A scholarly collection published by the University of Washington Press brings together ten versions of the legend, and details such as the husband's name, a warning dream, and a later confrontation with the emperor appear in some versions but not others." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Who Is Meng Jiangnu, and Why Did Her Tears Bring Down the Great Wall?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-09-30", "dateModified": "2026-10-01", "mainEntityOfPage": "https://yaopulife.com/explainers/meng-jiangnu"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Who Is Meng Jiangnu, and Why Did Her Tears Bring Down the Great Wall?", "item": "https://yaopulife.com/explainers/meng-jiangnu"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Is Meng Jiangnu, and Why Did Her Tears Bring Down the Great Wall? | yaopulife</title>
+<meta name="description" content="According to the legend, Meng Jiangnu (孟姜女) is a folk heroine whose husband was forced to work on the Great Wall and died there. The story tells that she t">
+<link rel="canonical" href="https://yaopulife.com/explainers/meng-jiangnu">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Who Is Meng Jiangnu, and Why Did Her Tears Bring Down the Great Wall?</h1>
+  <div class="zh">孟姜女</div>
+  <p>According to the legend, Meng Jiangnu (孟姜女) is a folk heroine whose husband was forced to work on the Great Wall and died there. The story tells that she traveled an enormous distance to find him, learned he was already dead, and wept at the foot of the wall until it collapsed — in one common literary version exposing his bones so she could bury them. It is a tale with many variations, not recorded history.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-09-30 · Updated 2026-10-01</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Who is Meng Jiangnu?</h2>
+  <p><b>Meng Jiangnu</b> (孟姜女, Mèng Jiāngnǚ) is the woman at the center of a Chinese folk legend. Read the name in three parts: <b>孟 (Mèng)</b> is a surname, <b>姜 (Jiāng)</b> belongs to her personal name, and <b>女 (nǚ)</b> means "woman." English-language retellings usually call her <b>Lady Meng Jiang</b> or <b>Meng Jiang Nü</b>.</p>
+  <p>It matters where she sits on the shelf. Reference works describe her as a *tale* rather than a biography: an English encyclopedia entry calls Lady Meng Jiang "a Chinese tale with many variations," and Chinese dictionary entries introduce her as a figure 民間故事中的人物 — "a character in folk stories" — before summarizing the plot with 相傳 (xiāng chuán), "according to tradition." That little phrase is the boundary marker, and good English retellings keep it.</p>
+  <ul class="more"><li>- <b>What she is:</b> a legendary heroine, widely known across many regions of China</li><li>- <b>What she is not:</b> a person attested in the sources here as historically documented</li><li>- <b>When the story is usually set:</b> later versions are generally placed in the <b>Qin dynasty</b> (秦, Qín), in the time of the First Emperor, <b>Qin Shi Huang</b> (秦始皇, Qín Shǐhuáng)</li></ul>
+</section>
+<section class="sec">
+  <h2>What happens in one common version of the legend?</h2>
+  <p>In the outline given by standard Chinese dictionaries, the legend runs like this. Her husband — named <b>Qi Liang</b> (杞良, Qǐ Liáng) in these entries — is forced to labor on the Great Wall and does not come home for years. The story tells that she sets out on a journey described as <b>万里寻夫 (wàn lǐ xún fū)</b>, "searching ten thousand *li* for her husband." <b>里 (lǐ)</b> is a traditional Chinese unit of distance; "ten thousand li" is not a measurement but an idiom for *impossibly far*, the way English says "I'd walk a thousand miles." According to the legend, she reaches the wall, hears that her husband is already dead, weeps at its foot, and the wall falls.</p>
+  <p>In another folk retelling the husband is called <b>Wan Xiliang</b> (万喜良, Wàn Xǐliáng; traditional 萬喜良). In that version, the tale adds a dream: after the midday meal she lies down and dreams that he is gravely ill and that the overseers are beating and cursing him. In the story she wakes sobbing, alarms her two elderly parents, tells them the dream, and resolves to go to the Great Wall herself. That dream is what sets her on the road *in this telling* — it belongs with the name Wan Xiliang and should not be mixed into the dictionary outline above.</p>
+  <p>The variation is the documented fact here. A University of Washington Press volume, *Meng Jiangnü Brings Down the Great Wall*, gathers <b>ten versions</b> of the legend, described as a popular Chinese story that has intrigued readers and listeners for hundreds of years; Project MUSE lists the same title as a 2012 book by W. L. Idema. So whenever a name, a dream or an ending appears in only one stream, say which stream it came from.</p>
+</section>
+<section class="sec">
+  <h2>Why, inside the legend, do her tears bring the wall down?</h2>
+  <p>Within the story, the collapse is an image of grief, not an engineering claim. The published description of Idema's collection puts the sequence plainly: in the tale, <b>her tears of grief cause the wall to collapse and expose his bones, which she collects for proper burial.</b> Dictionary summaries stop one step earlier — according to tradition, 乃哭於城下，長城因此而倒: she wept beneath the wall, and the wall therefore fell. Both agree on the central image: in the legend, weeping is the act that breaks the structure that had swallowed her husband's death.</p>
+  <p>So the answer the legend gives is moral rather than physical. The wall, in the story, is the state project that took a man and hid his body. Her mourning is what makes that hidden death public and lets him be buried as a person. Readers sometimes hear the episode as a claim that a real woman once cried down a measured section of the fortifications visitors walk today; the sources here do not say that. They say "a tale with many variations," and "according to tradition."</p>
+  <p>Some versions continue past the rubble. Idema's summary notes that <b>in some versions she tricks the lecherous emperor</b> — a branch of the legend, not a universal final chapter. Retell that confrontation only when you are working inside a version that contains it, and label it as such.</p>
+</section>
+<section class="sec">
+  <h2>A Western comparison that helps — and its limits</h2>
+  <p>For readers with no background in Chinese folklore, two Western parallels make the shape of the legend recognizable. One is <b>Orpheus</b>, who goes after a vanished spouse instead of accepting the loss: the engine of both stories is a love that refuses to stay home. The other is <b>Antigone</b>, who insists on funeral rites for a body a ruler would rather leave unmourned — which is close to what the Idema version has Meng Jiangnu do when, in the tale, she gathers her husband's bones for proper burial.</p>
+  <p>These comparisons are reading aids, not claims of influence. Nothing in the sources here suggests the Chinese legend borrowed from a Greek myth or a Greek play, and it would be wrong to imply a shared origin. The useful point is narrower: in all three stories, private grief is set against a public order, and the grief is treated as the stronger thing.</p>
+  <p>Where the Chinese legend differs is the antagonist. It is not death itself or a single king but a <b>building project</b> — in the story, forced labor on the Great Wall. That is why the tale is so often read as a protest story about the human cost of monumental construction.</p>
+</section>
+<section class="sec">
+  <h2>How should English retellings handle her name and story?</h2>
+  <p><b>Give the full name on first use:</b> Meng Jiangnu (孟姜女, Mèng Jiāngnǚ), also known as Lady Meng Jiang — the heroine of a Chinese folk legend whose tears are said to bring down the Great Wall. "Lady Meng Jiang" reads naturally in English and is the form used in English reference works.</p>
+  <p><b>Do not translate 姜 (Jiāng) as "ginger."</b> In this name it functions as a name, and renderings like "Lady Ginger" are misleading labels the story never supports. Likewise, keep the husband's name matched to the version you are telling: <b>Qi Liang</b> in the dictionary outline, <b>Wan Xiliang</b> in the retelling that includes the dream.</p>
+  <p><b>Keep version labels.</b> Phrases like "in one common version," "in some versions" and "usually set in the Qin dynasty" are cheap and they prevent a single local telling from being presented as the only telling. When a reader asks whether it "really happened," answer directly: this is a folk legend with many variants, and the sources present the wall's collapse as part of the tale.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Lady_Meng_Jiang" rel="nofollow">Lady Meng Jiang</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://zdic.net/hant/%E5%AD%9F%E5%A7%9C%E5%A5%B3" rel="nofollow">漢典「孟姜女」詞語解釋</a></li>
+    <li>muse.jhu.edu — <a href="https://muse.jhu.edu/book/17259/" rel="nofollow">Meng Jiangnü Brings Down the Great Wall - Project MUSE</a></li>
+    <li>uwapress.uw.edu — <a href="https://uwapress.uw.edu/book/9780295987842/meng-jiangnu-brings-down-the-great-wall/" rel="nofollow">Meng Jiangnü Brings Down the Great Wall - UW Press</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://hl.zdic.net/msjr/minsu/1120/fac911c9a8b57df4c9fc1f4db99b8c7f.html" rel="nofollow">孟姜女哭長城</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-meng-jiangnu" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

@@ -1,0 +1,103 @@
+---
+const faqs = [
+  { q: "What is a hongbao (red envelope)?", a: "A hongbao (红包, hóngbāo, literally “red packet”) is cash presented inside a red paper cover. According to Handian, it is 礼金 (lǐjīn, gift money) or 奖金 (jiǎngjīn, a bonus); as noted in English overviews, it is given at holidays and special occasions such as weddings." },
+  { q: "How much money should you put in a red envelope?", a: "None of the dictionary, encyclopedia, or classroom pages cited here name a dollar or yuan figure. How much to put in commonly depends on the occasion, the relationship, and local custom, so asking a host or a local friend is usually safer than copying a stranger’s number." },
+  { q: "Who gets red envelopes at Chinese New Year?", a: "According to Handian, one dictionary sense of 紅包 is Spring Festival 压岁钱 (yāsuìqián, New Year lucky money) given to children. As described on a university museum teaching page, a common holiday pattern is that married elders give packets to younger relatives who have not yet married; that is a widespread custom, not a rule every household must copy." },
+  { q: "Is a hongbao the same as Christmas money or cash in a greeting card?", a: "No. Unlike Christmas money, which is often tied to a single religious holiday and gift exchange, a hongbao (红包, hóngbāo) is, as noted in English overviews, used at a wider range of holidays and special occasions such as weddings. Unlike cash in a greeting card, where the card carries the message and money is an optional extra, the red packet itself is the named gift." },
+  { q: "Are lai see and ang pau different from a hongbao?", a: "Usually no: as noted in English overviews, lai see, ang pau, red packet, and red pocket are community names for the same kind of money gift as 红包 (hóngbāo). According to Handian, 红包 is also called 红封包, and in Cantonese 利是." },
+  { q: "Can hongbao mean a bribe?", a: "According to Handian, 紅包 can mean festive gift money, a reward, or—in a separate, non-festive register—an improper payment. That last gloss is why “bribe bag” is a poor default translation for the New Year or wedding custom, even though the same characters can appear in that darker sense." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is a Hongbao (Red Envelope) and How Much Money Should You Put in It?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-09-01", "dateModified": "2026-09-20", "mainEntityOfPage": "https://yaopulife.com/explainers/red-envelope-hongbao"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is a Hongbao (Red Envelope) and How Much Money Should You Put in It?", "item": "https://yaopulife.com/explainers/red-envelope-hongbao"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is a Hongbao (Red Envelope) and How Much Money Should You Put in It? | yaopulife</title>
+<meta name="description" content="A hongbao (红包, hóngbāo) is money in a red paper packet given as a present or bonus. According to Chinese dictionaries, it is 礼金 (lǐjīn, gift money) or 奖金 (">
+<link rel="canonical" href="https://yaopulife.com/explainers/red-envelope-hongbao">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is a Hongbao (Red Envelope) and How Much Money Should You Put in It?</h1>
+  <div class="zh">红包</div>
+  <p>A hongbao (红包, hóngbāo) is money in a red paper packet given as a present or bonus. According to Chinese dictionaries, it is 礼金 (lǐjīn, gift money) or 奖金 (jiǎngjīn, a bonus); one entry also records New Year money for children. As noted in English overviews, the custom appears at holidays and weddings. None of the sources here name a fixed sum. How much to put in commonly depends on the occasion, the relationship, and local custom.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-09-01 · Updated 2026-09-20</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>What is a hongbao?</h2>
+  <p><b>Hongbao</b> (红包, *hóngbāo*, literally “red packet”) is the everyday Chinese name for cash presented inside a red paper cover. According to 汉典 (Handian), a standard Chinese dictionary, 红包 is glossed as <b>礼金</b> (*lǐjīn*, gift money) or <b>奖金</b> (*jiǎngjīn*, a bonus) wrapped in a red paper bag, and the same source also supplies the English label “red envelope.” As noted in a traditional-character Handian entry, festive gift money takes this name because it is packed in a red sleeve.</p>
+  <p>If you have never seen one, a rough Western comparison is cash slipped into a greeting card. The likeness stops there: unlike a greeting card, where cash is an optional extra and the card itself carries the message, the hongbao’s red packet is the named gift, the cover is usually meant to be red, and the money is given across Chinese holidays and life-cycle events such as weddings rather than as a Western stationery insert.</p>
+  <p>A common misunderstanding is that the red paper is only packaging, or that this is “Chinese Christmas money.” Unlike Christmas money, which is often tied to a single religious holiday and to gift exchange around that day, the hongbao—as described in the dictionary and English overviews cited here—is a named money gift used at a wider range of celebrations, including the Spring Festival (春节, *Chūnjié*, Lunar New Year) and weddings. Dictionary definitions describe a named money gift, not a billed fare and not a Western holiday with a red wrapper.</p>
+</section>
+<section class="sec">
+  <h2>When do people give red envelopes?</h2>
+  <p>According to Handian’s traditional-character entry, two festive dictionary senses are recorded: gift money at celebrations, and Spring Festival money given to children as <b>压岁钱</b> (*yāsuìqián*, New Year lucky money). As noted in English encyclopedia and college Lunar New Year overviews, the custom is placed among holidays and special occasions, and those pages name weddings among those occasions.</p>
+  <p>A close Western comparison is cash from older relatives at Christmas or on a birthday. The warmth can feel familiar, but the practices are not equivalent: Christmas or birthday cash is usually tied to one religious or personal date and often arrives without a prescribed color or named packet, whereas the hongbao, as those overviews describe it, is a red-sleeved money gift used across a Chinese festive calendar and at life-cycle events such as weddings.</p>
+  <p>Those pages describe widely recognized festive timing. Regional variations and household habits are common, so there is no single calendar every family uses.</p>
+</section>
+<section class="sec">
+  <h2>Who typically receives them?</h2>
+  <p>According to Handian, children are named as the receivers of 压岁钱 (*yāsuìqián*, New Year lucky money). That is a traditionally recorded dictionary sense of the word, not a census of every household. As described on a university museum teaching page on Chinese New Year customs, one common, socially recognized holiday pattern is that in many families, married elders—grandma, grandpa, uncles—hand packets to younger relatives who have not yet married. Read that as a classroom snapshot of a widespread custom, not as a script every home is required to copy.</p>
+  <p>As noted in English overviews, weddings and other special occasions are also named, so the receivers are not only children. Who gives and who receives commonly varies by household and region.</p>
+  <p>A common mix-up is assuming only kids get them, or that marriage automatically ends all giving. In many families the New Year pattern is tied to age and marital status; other occasions follow different, still widely recognized scripts.</p>
+</section>
+<section class="sec">
+  <h2>How much money should you put in?</h2>
+  <p>The dictionary, encyclopedia, and classroom pages cited here describe the custom’s form and timing. According to Handian, the contents are labeled 礼金 (*lǐjīn*, gift money) or 奖金 (*jiǎngjīn*, a bonus)—the social role of the cash, not a price. None of those pages attach a dollar or yuan figure.</p>
+  <p>How much people put in commonly depends on the occasion, the relationship, and local custom. Regional variations are normal and socially recognized; asking a host or a local friend is usually safer than copying a stranger’s number from the internet.</p>
+  <p>A common misunderstanding is that a larger bill is always more respectful, or that there is one figure everyone uses. The listed sources do not publish such a figure. In spirit it is closer to cash inside a greeting card than to a billed price—but unlike a card insert, where the amount is a private extra and the card is the gift, the red packet itself is the named present, and the amount is a social judgment, not a menu price.</p>
+</section>
+<section class="sec">
+  <h2>Other names—and easy mix-ups</h2>
+  <p>As noted in English overviews, several community names are listed for the same kind of money gift:</p>
+  <ul class="more"><li>- *lai see*</li><li>- *ang pau*</li><li>- red packet</li><li>- red pocket</li></ul>
+  <p>Those labels sit alongside 红包 / *hóngbāo* as the Chinese name. They point to the same kind of present, not to a different object. According to Handian, 红包 is also called 红封包, and in Cantonese 利是 (often written *lai see* in English).</p>
+  <p>The same characters travel with more than one sense. According to Handian, a 紅包 can be a reward, a festive gift, or—in a separate, non-festive register—an improper payment. That last gloss is why <b>bribe bag</b> is a poor default translation for the New Year custom, even though the word can appear in that darker register. Another mix-up is treating any red pouch as a hongbao. As described in Handian, a hongbao is a red paper bag wrapping cash.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Red_envelope" rel="nofollow">Red envelope</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://zdic.net/hans/%E7%BA%A2%E5%8C%85" rel="nofollow">红包的意思|汉典「红包」词语解释</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://zdic.net/hant/%E7%B4%85%E5%8C%85" rel="nofollow">紅包的意思|漢典「紅包」詞語解釋 - 汉典</a></li>
+    <li>library.miracosta.edu — <a href="https://library.miracosta.edu/lunar_new_year_2016/hongbao" rel="nofollow">Journey to the West: Lunar New Year (2016): Hongbao (Red ...</a></li>
+    <li>lammuseum.wfu.edu — <a href="https://lammuseum.wfu.edu/education/teachers/chinese-new-year/chinese-new-year-traditions/chinese-new-year-red-envelopes/" rel="nofollow">Chinese New Year Red Envelopes - Timothy S. Y. Lam ...</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-red-envelope-hongbao" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

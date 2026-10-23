@@ -1,0 +1,102 @@
+---
+const faqs = [
+  { q: "When is the Mid-Autumn Festival?", a: "It falls on the 15th day of the eighth lunar month (农历八月十五, nónglì bā yuè shíwǔ), when the moon is usually at its fullest. The date on the Western calendar changes each year and typically lands in September or early October." },
+  { q: "Why do Chinese people eat mooncakes?", a: "Mooncakes (月饼, yuèbǐng, “moon pastry”) are the festival’s signature food. Families commonly share a round cake while viewing the moon; the round shape is widely read as a wish for completeness and togetherness. Fillings and styles vary by region and household." },
+  { q: "What does 中秋节 mean?", a: "中秋节 (Zhōngqiū Jié) breaks down as 中 (zhōng, “middle”) + 秋 (qiū, “autumn”) + 节 (jié, “festival”). A standard explanation is that the day sits in the middle of autumn’s three months, which is why it is called the Mid-Autumn Festival." },
+  { q: "Is the Chang'e story historically true?", a: "No. Chang'e (嫦娥, Cháng'é) is a legendary woman associated with the moon, and 嫦娥奔月 (“Chang'e flies to the moon”) is a festival tale with several versions. Palace Museum Mid-Autumn pages treat it as a seasonal story, not as confirmed history." },
+  { q: "Is the Mid-Autumn Festival the same as Thanksgiving?", a: "No. Both can involve autumn family gatherings, but Mid-Autumn is built around the full moon, reunion, and mooncakes, not a turkey harvest feast. “Chinese Thanksgiving” is a misleading shorthand." },
+  { q: "What else do people do besides eat mooncakes?", a: "The most widely cited customs are family reunion and moon-viewing (赏月, shǎng yuè). Historical Qing court practice also included mooncakes, moon-viewing, and offerings to a moon deity, but ordinary families today usually mark the night more simply, and local extras vary." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Is the Mid-Autumn Festival and Why Do Chinese People Eat Mooncakes?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-08-27", "dateModified": "2026-08-29", "mainEntityOfPage": "https://yaopulife.com/explainers/mid-autumn-festival"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Is the Mid-Autumn Festival and Why Do Chinese People Eat Mooncakes?", "item": "https://yaopulife.com/explainers/mid-autumn-festival"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is the Mid-Autumn Festival and Why Do Chinese People Eat Mooncakes? | yaopulife</title>
+<meta name="description" content="The Mid-Autumn Festival (中秋节, Zhōngqiū Jié, literally “the mid-autumn festival”) is a Chinese family-reunion holiday on the 15th day of the eighth lunar mo">
+<link rel="canonical" href="https://yaopulife.com/explainers/mid-autumn-festival">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Is the Mid-Autumn Festival and Why Do Chinese People Eat Mooncakes?</h1>
+  <div class="zh">中秋节</div>
+  <p>The Mid-Autumn Festival (中秋节, Zhōngqiū Jié, literally “the mid-autumn festival”) is a Chinese family-reunion holiday on the 15th day of the eighth lunar month, when the moon is usually at its fullest. People gather, admire the moon, and share round mooncakes (月饼, yuèbǐng). The round cake is commonly treated as a symbol of togetherness. Stories linking the day to Chang'e (嫦娥, Cháng'é) are legends with several versions, not confirmed history.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-08-27 · Updated 2026-08-29</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>What Is the Mid-Autumn Festival?</h2>
+  <p>The <b>Mid-Autumn Festival</b> is <b>中秋节</b> (<b>Zhōngqiū Jié</b>). <b>中 (zhōng)</b> means “middle,” <b>秋 (qiū)</b> means “autumn,” and <b>节 (jié)</b> means a festival or seasonal holiday. In plain English: the holiday that sits in the middle of autumn. A standard Chinese dictionary places it on the <b>15th day of the eighth lunar month</b> and notes that families commonly reunite, eat mooncakes, and admire the moon.</p>
+  <p>English names you will also see include <b>Moon Festival</b> and <b>Mooncake Festival</b>. Britannica and the Smithsonian both describe it as China’s Mid-Autumn or Moon Festival on that lunar date. Wikipedia calls it a harvest festival celebrated in Chinese culture. None of these labels is a secret “real” name; they are different English handles for the same day.</p>
+  <p>A useful Western comparison is a <b>harvest-moon evening</b> that also works as a <b>family-reunion holiday</b>. A common misunderstanding is that <b>中秋</b> means “Chinese Thanksgiving,” or that it always falls on the same September date. It follows the lunar calendar (<b>农历</b>, <b>nónglì</b>), so the Western-calendar date usually lands in September or early October and changes from year to year.</p>
+</section>
+<section class="sec">
+  <h2>Why Do Chinese People Eat Mooncakes?</h2>
+  <p>The food most closely tied to the day is the <b>mooncake</b> — <b>月饼</b> (<b>yuèbǐng</b>). <b>月 (yuè)</b> means “moon”; <b>饼 (bǐng)</b> means a round cake or pastry. Palace Museum material on the festival treats <b>eating mooncakes</b> and <b>viewing the moon</b> as long-standing customs. The dictionary entry for 中秋节 says the same in one line: on this day families gather, eat mooncakes, and enjoy the moon.</p>
+  <p>Why a cake? The usual folk reading is visual. The moon that night is typically full and round; a round pastry can stand for completeness and for the family being together. People often share one cake, cutting it so each person has a piece. That sharing is the point more than any single filling. Styles vary widely — lotus-seed paste, red bean, nuts, salted egg yolk, and many newer flavors — and not every household treats mooncakes as the main meal.</p>
+  <p>A common misunderstanding is that mooncakes are “the Chinese dessert for autumn,” eaten like pie after dinner, or that there is one official recipe. They function more like a <b>seasonal gift and reunion token</b>. Some visitors find traditional cakes dense or very sweet; that reaction is normal. If you are explaining the festival, lead with sharing and roundness, not with a bakery list.</p>
+</section>
+<section class="sec">
+  <h2>Reunion, Moon-Viewing, and the Lunar Date</h2>
+  <p>The date is the <b>15th day of the eighth lunar month</b> — <b>农历八月十五</b> (<b>nónglì bā yuè shíwǔ</b>). <b>农历</b> is the traditional lunisolar calendar still used to schedule many Chinese festivals. Mid-month in that calendar is when the moon is usually at its fullest and brightest, which is why moon-viewing (<b>赏月</b>, <b>shǎng yuè</b>, “to appreciate the moon”) sits at the center of the night.</p>
+  <p>Smithsonian teaching material notes that the Moon Festival falls on that fifteenth night of the eighth lunar month. Britannica’s account of the Mid-Autumn Festival (<b>Zhongqiu Jie</b>) likewise places it on the 15th day of the eighth lunar month. Think of it the way Easter moves on a Western calendar: the holiday is “fixed” on a lunar count, not on a single September date.</p>
+  <p>Customs usually cluster around <b>reunion</b>. People who can, travel to be with family; those who cannot may still look at the same moon and share mooncakes later. Qing-dynasty palace records preserved by the Palace Museum show that court celebration also included moon-viewing and mooncakes, and additionally offerings to a moon deity known as <b>太阴星君</b> (<b>Tàiyīn Xīngjūn</b>, a traditional title for the moon as a divine star). That palace layer is historical court practice. It does not mean every family today holds a formal moon sacrifice.</p>
+</section>
+<section class="sec">
+  <h2>Chang'e and the Moon: A Legend With Variants</h2>
+  <p>The festival is often paired with the story of <b>嫦娥</b> (<b>Cháng'é</b>), a woman associated with the moon. Palace Museum Mid-Autumn pages treat <b>嫦娥奔月</b> (“Chang'e flies to the moon”) as a seasonal topic, alongside mooncakes and court theatre. That tells us the legend is culturally linked to the holiday. It does not make the story confirmed history.</p>
+  <p>Folktales of this kind usually exist in more than one version. In one common telling, Chang'e consumes an elixir and rises to the moon, where she remains. Other tellings change motives, companions, or endings. Treat names, magic, and plot points as <b>legend</b>, the way Western readers already treat stories of the man in the moon: meaningful, repeated, and not a courtroom fact.</p>
+  <p>A common misunderstanding is that “the Chinese believe” one official moon myth, or that Chang'e is a historical empress. Many people know the story as a festival tale, a poem image, or a children’s cartoon, without taking it as literal astronomy. When you mention her, give <b>嫦娥 / Cháng'é / a legendary woman of the moon</b>, then add that versions differ.</p>
+</section>
+<section class="sec">
+  <h2>Why “Chinese Thanksgiving” Is a Misleading Label</h2>
+  <p>Because the day falls in autumn and brings families together, English-language explainers sometimes call it <b>“Chinese Thanksgiving.”</b> The overlap is real: both often involve going home, if you can, and eating something that marks the season. The comparison still misleads. Thanksgiving, in the U.S. sense, is organized around a harvest-feast story and a turkey dinner. Mid-Autumn is organized around the <b>full moon</b>, <b>reunion</b>, and <b>mooncakes</b>. Wikipedia’s “harvest festival” label names a cultural type; it is not a promise that the holiday is a Chinese copy of Thanksgiving.</p>
+  <p>A better Western picture is a <b>harvest moon</b> plus a <b>family full-circle evening</b>. Britannica’s own framing, “Shine On, Harvest Moon Festival,” points at that moon-in-autumn feeling rather than at pilgrims and stuffing. If you only say “Chinese Thanksgiving,” readers will look for gravy, a founding myth, and a fixed November date — and miss 月饼, 赏月, and the lunar 15th.</p>
+  <p>Practice varies. Some cities hold lantern displays; some families emphasize gifts of mooncakes to friends and colleagues; some people mark the night quietly with fruit and a window view. Present <b>中秋节</b> as a living custom with a shared core (moon, roundness, reunion) and local extras, not as a single national script.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/story/shine-on-harvest-moon-festival" rel="nofollow">Shine On, Harvest Moon Festival | Britannica</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Mid-Autumn_Festival" rel="nofollow">Mid-Autumn Festival - Wikipedia</a></li>
+    <li>Handian Chinese Dictionary (汉典) — <a href="https://zdic.net/hans/%E4%B8%AD%E7%A7%8B%E8%8A%82" rel="nofollow">中秋节词语解释</a></li>
+    <li>asia-archive.si.edu — <a href="https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/videos/moon-festival/" rel="nofollow">Moon Festival - Smithsonian's National Museum of Asian Art</a></li>
+    <li>The Palace Museum (故宫博物院) — <a href="https://www.dpm.org.cn/lemmas/239948.html" rel="nofollow">中秋承应</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-mid-autumn-festival" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

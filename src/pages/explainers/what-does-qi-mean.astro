@@ -1,0 +1,110 @@
+---
+const faqs = [
+  { q: "What does qi literally mean?", a: "Qi (气, qì) literally covers vapor, air, gas, or breath. A classical dictionary gloss quoted in digital editions is 雲氣, “cloud vapor.” According to the Qing scholar Duan Yucai's commentary, as reproduced in those editions, that sense was later extended to qi in general. English texts usually add the translation “vital energy” or “life force.”" },
+  { q: "Is qi the same as energy in physics?", a: "“Energy” is a convenient English translation, not a physics unit. Encyclopedia and medical-school pages describe a cultural and philosophical idea, including energies said to permeate the universe. They do not show that qi has been measured like heat or electricity, and this explanation is not a scientific or medical claim." },
+  { q: "How do you pronounce qi, and why do books spell it ch'i?", a: "Say qì, a short falling fourth tone. Ch'i and chi are older romanizations of the same word; a student encyclopedia notes the spelling ch'i. Simplified 气 and traditional 氣 are two writings of that one word. Qì is a different syllable from qī (seven) and qǐ (to rise)." },
+  { q: "What does qi mean in Chinese medicine?", a: "In traditional Chinese medicine, qi is usually translated as “vital energy” or “life force,” and it is taught beside yin and yang, the harmony of opposite qualities. That is how public explanations from a university health project and an acupuncture school present it. Describing the tradition is not clinical proof and not health advice." },
+  { q: "How is qi related to prana or to the word spirit?", a: "Britannica, explaining feng shui, says qi, like prana in Indian culture, is a vital life force. Greek pneuma, Latin spiritus, and Hebrew ruach are helpful Western breath-words, but they often slid toward an immaterial soul, while Chinese accounts keep vapor and “matter-energy” in the same idea. The likeness is a bridge, not an equation." },
+  { q: "What did Duan Yucai say about the character 气?", a: "According to the Qing scholar Duan Yucai's commentary, as reproduced in digital editions of the Shuowen Jiezi, qi originally meant cloud vapor and was extended to be the general term for all kinds of qi. Traditional scholarship treats that as a dictionary explanation. It is one scholarly reading, not a definition of every later medical or religious use." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "What Does Qi (气) Mean in Chinese Culture?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-10-04", "dateModified": "2026-10-05", "mainEntityOfPage": "https://yaopulife.com/explainers/what-does-qi-mean"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "What Does Qi (气) Mean in Chinese Culture?", "item": "https://yaopulife.com/explainers/what-does-qi-mean"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Does Qi (气) Mean in Chinese Culture? | yaopulife</title>
+<meta name="description" content="Qi (气, qì) is the Chinese name for a breath-like flow that philosophy treats as filling the universe and composing things. Literally it covers vapor, air, ">
+<link rel="canonical" href="https://yaopulife.com/explainers/what-does-qi-mean">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>What Does Qi (气) Mean in Chinese Culture?</h1>
+  <div class="zh">气</div>
+  <p>Qi (气, qì) is the Chinese name for a breath-like flow that philosophy treats as filling the universe and composing things. Literally it covers vapor, air, gas, and breath; English texts usually translate it as “vital energy” or “life force.” In one common medical account it is the energy traditional Chinese medicine describes, alongside yin and yang. Schools differ, and explaining the idea is not a claim that qi is a measured physical force.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-10-04 · Updated 2026-10-05</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>Breath and vapor first, “energy” second</h2>
+  <p>If you remember one thing, remember that <b>qi (气, qì)</b> starts as breath and vapor. A classical character dictionary, the *Shuowen Jiezi* (《说文解字》), as quoted on the Chinese Text Project, glosses 气 as 雲氣 (yún qì), “cloud vapor.” According to the Qing scholar Duan Yucai's (段玉裁) commentary, as reproduced in digital editions of that dictionary, the word originally meant cloud vapor and was then extended into a general name for every kind of qi ([Chinese Text Project](https://ctext.org/dictionary.pl?if=gb&amp;char=%E6%B0%94)).</p>
+  <p>From that picture the word spread. Modern English sources usually translate it as <b>“vital energy”</b> or <b>“life force,”</b> while still listing the literal senses vapor, air, gas, and breath ([Wikipedia](https://en.wikipedia.org/wiki/Qi); [Yo San University](https://yosan.edu/what-is-qi/)). Britannica calls qi the psychophysical energies that permeate the universe — in plain words, a flow treated as both bodily and mental and present through the world — and, in one common philosophical account, the ethereal substance of which everything is composed ([Britannica](https://www.britannica.com/topic/qi-Chinese-philosophy); [Britannica Kids](https://kids.britannica.com/students/article/qi/319338)). Those lines describe a tradition. They do not report a lab measurement.</p>
+  <p>A fair plain-English gloss is: qi is whatever is flowing, breathing, and animating, in a body, in the air, or in the feel of a place. Periods and schools stretch the word differently, so “in one common version” is more accurate than one rigid definition.</p>
+</section>
+<section class="sec">
+  <h2>The character 气: hanzi, pinyin, and the literal sense</h2>
+  <p>The form most common in mainland China today is the simplified character <b>气</b>. The traditional form is <b>氣</b>. Both are pronounced <b>qì</b>: fourth tone, a short falling syllable. Older English books often spell the same word <b>ch'i</b> or <b>chi</b>.</p>
+  <ul class="more"><li>- <b>Pinyin:</b> qì</li><li>- <b>Also spelled:</b> ch'i, chi</li><li>- <b>Traditional hanzi:</b> 氣</li><li>- <b>Literal range:</b> vapor, air, gas, breath</li></ul>
+  <p>The dictionary line is short: “气，雲氣也,” “qi is cloud vapor.” Traditional scholarship, such as the commentary by the Qing scholar Duan Yucai (段玉裁), holds that this cloud-vapor sense was extended until 气 could name qi in general. That reading is a philological opinion preserved in digital editions of the *Shuowen Jiezi*. It does not force later doctors, Daoists, and popular writers to mean one identical thing. For a reader, 气 and 氣 are the simplified and traditional writings of one word, not two ideas.</p>
+  <p>Because the core image is something airy that moves, “energy” is only a bridge. Keep “vapor” or “breath” in view, or the word collapses into physics.</p>
+</section>
+<section class="sec">
+  <h2>Qi in philosophy and Chinese medicine</h2>
+  <p>In philosophy, qi is not a nickname for one body part. One Britannica account calls it a complex concept referring to air or vapor, breath, and the primordial matter-energy constituting everything in the universe ([Britannica on jing](https://www.britannica.com/topic/jing-Chinese-philosophy)). Another describes psychophysical energies permeating the universe. A student encyclopedia states that, in Chinese philosophy, qi is the ethereal substance of which everything is composed, and that early Daoist philosophers regarded qi (also spelled ch'i) as vital. The public wording breaks off at “vital,” so this page does not invent the missing words. Daoist texts are not all the same; this is one common version.</p>
+  <p>Traditional Chinese medicine is where many Western readers first meet the word. The University of Minnesota’s Taking Charge project says two ideas fundamental to Chinese medicine are qi, usually translated as “vital energy,” and yin and yang, the harmony of opposite qualities ([Taking Charge](https://www.takingcharge.csh.umn.edu/what-qi-and-other-concepts)). An acupuncture school’s public explanation likewise says qi (氣) can be translated as “vital energy” or “life force,” and that the idea is deeply embedded in Chinese culture and philosophy ([Yo San University](https://yosan.edu/what-is-qi/)).</p>
+  <p>Two limits belong in plain language. Explaining what a tradition means by qi is separate from proving a measurable force, and nothing here is medical advice. Medicine is one use of the word, not the whole word.</p>
+</section>
+<section class="sec">
+  <h2>Feng shui and the qi in everyday words</h2>
+  <p><b>Feng shui</b> (风水, fēng shuǐ, literally “wind water”) is another place English readers see qi. Britannica says qi, like <b>prana</b> in Indian culture, is a vital life force, and that feng shui maintains that wind can disperse qi ([Britannica on feng shui](https://www.britannica.com/art/fengshui)). The public extract stops in the middle of the next clause, and popular versions of feng shui differ, so this page stops at the claim that is actually printed: wind, in that practice, can scatter qi.</p>
+  <p>The same syllable is ordinary vocabulary, which is why “vital energy” alone is incomplete. Common modern compounds include:</p>
+  <ul class="more"><li>- <b>天气</b> (tiānqì) — “sky-qi,” weather</li><li>- <b>空气</b> (kōngqì) — air</li><li>- <b>生气</b> (shēngqì) — usually “to get angry”</li><li>- <b>力气</b> (lìqì) — physical strength</li><li>- <b>气氛</b> (qìfēn) — the atmosphere of a room or event</li><li>- <b>客气</b> (kèqì) — polite, standing on ceremony</li></ul>
+  <p>A speaker can use these all week with no medical theory in view. If you only know the clinic sense, this range stays invisible. When you write the word, say which qi you mean.</p>
+</section>
+<section class="sec">
+  <h2>A Western comparison, and where it breaks down</h2>
+  <p>A useful on-ramp for English readers is the family of words that also began as breath: Greek <b>pneuma</b> (breath, wind, spirit), Latin <b>spiritus</b> (breath — behind English spirit, inspire, and respiration), and Hebrew <b>ruach</b> (wind, breath, spirit). English still says someone is inspired or dispirited, or that a room has an atmosphere. The journey looks similar at the first step: a moving-air word becomes a word for what animates a living being. This is a reader’s comparison, not a claim that classical Chinese authors defined qi by those Western terms.</p>
+  <p>The comparison breaks down if you turn it into an equation. Spiritus and pneuma often drifted toward an immaterial soul set apart from matter. Qi, as the Chinese accounts here present it, can stay vapor or breath and, in the philosophical phrasing, the matter-energy of which things are made. The comparison those sources themselves draw is Indian <b>prana</b>, also called a vital life force in the feng shui explanation.</p>
+  <p>Treat the breath-words and prana as bridges. “Qi is basically the Chinese word for spirit,” or a likeness to a movie “Force,” loads on a split the term does not require. In one common version, qi is physical and lively at the same time.</p>
+</section>
+<section class="sec">
+  <h2>How to use the word without flattening it</h2>
+  <p>For a general reader, keep the word and gloss it on first mention: <b>qi (气, qì, “vital energy”; literally vapor, air, or breath)</b>. Replacing it silently with “energy” drags in physics the Chinese word does not claim. Add one clause for the setting: philosophy, medicine, feng shui, or ordinary speech.</p>
+  <p>Mind the sound. Qì is fourth tone, falling. It is separate from <b>七</b> (qī, seven) and from <b>起</b> (qǐ, to rise). Older spellings ch'i and chi are the same Chinese word. The same character is often read *ki* in Japanese, which is why it shows up inside borrowed words such as aikido; that is a Japanese pronunciation, not a second Chinese definition.</p>
+  <p>Expect variation. Daoist, medical, and feng shui usages overlap, and they are not copies of one definition. “Usually” and “in one common account” are the honest phrasing. Present qi as a cultural idea. Leave it out of settled science, and leave traditional teachings out of confirmed history.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/qi-Chinese-philosophy" rel="nofollow">Qi | Definition &amp; Facts</a></li>
+    <li>Chinese Text Project (中国哲学书电子化计划) — <a href="https://ctext.org/dictionary.pl?if=gb&char=%E6%B0%94" rel="nofollow">气- 中國哲學書電子化計劃</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Qi" rel="nofollow">Qi</a></li>
+    <li>takingcharge.csh.umn.edu — <a href="https://www.takingcharge.csh.umn.edu/what-qi-and-other-concepts" rel="nofollow">What Is Qi? (and Other Concepts)</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/art/fengshui" rel="nofollow">Feng shui | Meaning, Definition, Facts, &amp; Chinese Religion</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-what-does-qi-mean" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>

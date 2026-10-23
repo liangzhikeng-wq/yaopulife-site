@@ -1,0 +1,102 @@
+---
+const faqs = [
+  { q: "Why did Qin Shi Huang build the Terracotta Army?", a: "He had it made as funerary art for his tomb: a life-size clay army usually understood as a guard for the afterlife. According to some historical interpretations, he may have been seeking immortality and built a vast underground city; that motive is an interpretation, not proven personal testimony." },
+  { q: "What does 兵马俑 (Bīngmǎyǒng) mean?", a: "兵 (bīng) means troops, 马 (mǎ) means horses, and 俑 (yǒng) means a figurine buried with the dead. A dictionary-style English gloss is figurines of warriors and horses buried with the dead, commonly called the Terracotta Army." },
+  { q: "Were the Terracotta Warriors real soldiers buried alive?", a: "No. Surviving descriptions treat them as terracotta sculptures—funerary figurines—not living men. They depict Qin Shi Huang's armies in clay and were placed in pits as tomb art." },
+  { q: "How many terracotta soldiers are there?", a: "Counts vary by source and by how much of the pits has been reported. One commonly cited figure is over 7,000 warriors, plus hundreds of horses and about 100 chariots; four pits have been found. Treat exact totals as estimates, not a single official census." },
+  { q: "Were the Terracotta Warriors always gray?", a: "Usually not. They were once painted with mineral colors. The bare clay look familiar today is typically what remains after that paint was lost." },
+  { q: "Is the Terracotta Army the same thing as Qin Shi Huang's coffin chamber?", a: "No. The figures belong to the wider Qin tomb complex—pits east of the mausoleum—rather than standing in for the emperor's own burial chamber. They are the army attached to the tomb, not the whole tomb." }
+];
+const ld = {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yaopulife.com/#org", "name": "yaopulife", "alternateName": "耀蒲", "url": "https://yaopulife.com", "logo": "https://yaopulife.com/favicon.svg"}, {"@type": "Article", "headline": "Why Did Qin Shi Huang Build the Terracotta Army?", "inLanguage": "en", "author": {"@type": "Organization", "name": "yaopulife Editorial", "url": "https://yaopulife.com/editorial-policy"}, "publisher": {"@id": "https://yaopulife.com/#org"}, "datePublished": "2026-08-28", "dateModified": "2026-09-01", "mainEntityOfPage": "https://yaopulife.com/explainers/terracotta-army"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yaopulife.com/"}, {"@type": "ListItem", "position": 2, "name": "Explainers", "item": "https://yaopulife.com/myths"}, {"@type": "ListItem", "position": 3, "name": "Why Did Qin Shi Huang Build the Terracotta Army?", "item": "https://yaopulife.com/explainers/terracotta-army"}]}]};
+ld["@graph"].push({ "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) });
+import SiteAnalytics from '../../components/SiteAnalytics.astro';
+import StoryCTA from '../../components/StoryCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why Did Qin Shi Huang Build the Terracotta Army? | yaopulife</title>
+<meta name="description" content="Qin Shi Huang, the first emperor of a unified China, commissioned the Terracotta Army as funerary art for his tomb: life-size clay warriors, horses, and ch">
+<link rel="canonical" href="https://yaopulife.com/explainers/terracotta-army">
+<link rel="stylesheet" href="/yaopu.css">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <a href="/" class="seal">蒲</a>
+  <a href="/" class="brand">yaopulife<small>耀蒲</small></a>
+  <span class="links"><a href="/">Home</a><a href="/zodiac">Zodiac</a><a href="/myths">Myths</a><a href="/festivals">Festivals</a></span>
+  <a class="btn" href="/myths">All myths →</a>
+</div></nav>
+
+<header class="hubhero"><div class="wrap">
+  <div class="kicker">Cultural explainer</div>
+  <h1>Why Did Qin Shi Huang Build the Terracotta Army?</h1>
+  <div class="zh">兵马俑</div>
+  <p>Qin Shi Huang, the first emperor of a unified China, commissioned the Terracotta Army as funerary art for his tomb: life-size clay warriors, horses, and chariots meant to guard him after death. Historians interpret the project as part of his quest for immortality, with a vast underground city built for the afterlife. The figures are sculptures, not buried living soldiers, and they were usually arranged in military formation.</p>
+  <p style="color:#6a6153;font-size:13px;margin-top:10px">By <a href="/editorial-policy" style="color:inherit">yaopulife Editorial</a> · Published 2026-08-28</p>
+</div></header>
+
+<main class="wrap">
+<section class="sec">
+  <h2>What is the Terracotta Army (兵马俑)?</h2>
+  <p>The <b>Terracotta Army</b> is known in Chinese as <b>兵马俑</b> (<b>Bīngmǎyǒng</b>). <b>兵</b> (bīng) means troops or soldiers, <b>马</b> (mǎ) means horses, and <b>俑</b> (yǒng) means a figurine made to be buried with the dead. In plain English: clay warriors and horses placed in a tomb, not toys and not a living army.</p>
+  <p>It is a collection of life-size terracotta sculptures depicting the armies of <b>Qin Shi Huang</b> (秦始皇, Qín Shǐ Huáng; also called Shihuangdi), the first emperor of China. Accessible reference works describe the figures as <b>funerary art</b>—objects made for burial—found in his tomb complex and interred for more than 2,000 years.</p>
+  <p>A useful Western comparison is an Egyptian royal tomb stocked with goods and guardian figures for the next world. The Qin project is military in scale: an underground army rather than a household of servants. A common misunderstanding is that these were real men buried alive; the surviving objects are clay sculptures.</p>
+</section>
+<section class="sec">
+  <h2>Why did Qin Shi Huang build it?</h2>
+  <p>The reason usually given is funerary. Qin Shi Huang had a vast tomb built for himself, and the terracotta figures were meant to stand as his army after death—warriors, infantrymen, horses, and related equipment—guarding an underground city.</p>
+  <p>According to some historical interpretations, he may have been seeking immortality, and the mausoleum was part of that quest. That is an interpretation of motive, not a laboratory fact and not a claim that the clay army actually made him immortal. Ancient royal burials in China often included models of people, animals, and goods; this is an unusually large example of that practice, not a confirmed scene from a single eyewitness diary.</p>
+  <p>The pits lie east of the Qin mausoleum near Xiyang Village in Lintong, Shaanxi. Construction is usually said to have begun before Qin unified China and to have stopped in 209 BCE. That long timeline supports reading the army as a state-scale tomb project, not a last-minute grave marker.</p>
+</section>
+<section class="sec">
+  <h2>What was placed in the pits?</h2>
+  <p>The figures were arranged in a <b>military formation</b> and were once painted with mineral colors. The gray clay look in many photographs is usually a later appearance after paint was lost. Life-size warriors and horses are the famous core; nearby chambers held more of the underground complex.</p>
+  <p>Four pits have been found. The sculptures are usually described as following the organization of the Qin army. One commonly cited inventory speaks of over 7,000 warriors, about 600 horses, and about 100 chariots; treat those numbers as a widely repeated count, not a figure every source measures the same way.</p>
+  <p>Think of the pits less as a sculpture gallery and more as a frozen parade ground underground: ranks meant to function, in tomb logic, as an army for the emperor.</p>
+</section>
+<section class="sec">
+  <h2>How this compares with Western tomb stories</h2>
+  <p>Western readers often map <b>兵马俑</b> onto the Egyptian pyramids: a famous tomb, a powerful king, a wonder built for the afterlife. That comparison helps at the level of royal burial. It misleads if it suggests mummies, a single pyramid chamber, or the Egyptian practice of wrapping the body.</p>
+  <p>Another mismatch is the English word <b>terracotta</b>. In a Western art class it can mean a small clay sketch. Here the figures are life-size military sculptures. The Chinese term <b>俑</b> already names the job: they are burial figurines, closer in function to tomb attendants than to decorative garden statues.</p>
+  <p>A closer (still imperfect) comparison is Egyptian *ushabti*—small servant figures meant to work for the dead—scaled up into a full army. The Qin version is not a set of miniatures; it is an imperial host in clay.</p>
+</section>
+<section class="sec">
+  <h2>How to describe it without overclaiming</h2>
+  <p>Present <b>兵马俑</b> as clay funerary soldiers and horses from the tomb of China's first emperor, built to guard him after death. Say <b>Qin Shi Huang</b> (秦始皇, Qín Shǐ Huáng) on first mention. Keep the immortality quest in the realm of a common interpretation.</p>
+  <p>Do not call them the emperor's real army sealed alive, a stone army, or toy soldiers. Do not treat any one troop total as sacred. Folk and popular tellings vary; scholarly summaries also vary in how much they stress immortality versus general afterlife protection.</p>
+  <p>The honest short version: a first emperor, a huge tomb, and a clay army meant to serve him when he was no longer among the living.</p>
+</section>
+
+<section class="sec">
+  <h2 id="faq">FAQ</h2>
+  {faqs.map(f => (
+    <div class="note" style="margin:10px 0"><b>{f.q}</b><p style="margin:6px 0 0">{f.a}</p></div>
+  ))}
+</section>
+
+<section class="sec">
+  <h2 id="sources">Sources</h2>
+  <ul class="more">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Terracotta_Army" rel="nofollow">Terracotta Army - Wikipedia</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/topic/terra-cotta-army" rel="nofollow">Terra-cotta army | Qin Dynasty, Soldier, How Many, Ancient ... - Britannica</a></li>
+    <li>Khan Academy — <a href="https://www.khanacademy.org/humanities/ap-art-history/south-east-se-asia/china-art/a/terracotta-warriors-from-the-mausoleum-of-the-first-qin-emperor-of-china" rel="nofollow">Terracotta Warriors | The first Qin emperor of China (article)</a></li>
+    <li>Encyclopædia Britannica — <a href="https://www.britannica.com/place/Qin-tomb" rel="nofollow">Qin tomb | History, Terra-Cotta Army, &amp; Facts | Britannica</a></li>
+    <li>The Palace Museum (故宫博物院) — <a href="https://www.dpm.org.cn/collection/sculpture/234236.html" rel="nofollow">陶武士俑</a></li>
+  </ul>
+  <p style="color:#6a6153;font-size:14px">General cultural knowledge backed by the reputable references above; where a story has multiple folk versions, this page presents one common version.</p>
+</section>
+</main>
+
+<StoryCTA source="explainer-terracotta-army" />
+<footer>
+  <div class="fine">© 2026 yaopulife · 耀蒲 — Authentic Chinese culture for curious minds.
+  · <a href="/editorial-policy" style="color:inherit">Editorial standards &amp; corrections</a></div>
+</footer>
+<script is:inline src="/yaopu.js"></script>
+<SiteAnalytics />
+</body>
+</html>
