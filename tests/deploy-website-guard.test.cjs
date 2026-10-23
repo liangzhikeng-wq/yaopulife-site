@@ -241,6 +241,7 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
   const uncertainGit = (_cwd, args) => {
     calls.push(args);
     if (args[0] === 'rev-parse') return '/nonexistent-hooks-dir/' + args[2].split('/').pop() + '\n';
+    if (args[0] === 'config') throw Object.assign(new Error('unset'), { status: 1 });
     throw new Error('connection closed before acknowledgement');
   };
 
@@ -257,7 +258,7 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
     ['rev-parse', '--git-path', 'hooks/pre-auto-gc'],
     ['rev-parse', '--git-path', 'hooks/reference-transaction'],
     ['rev-parse', '--git-path', 'hooks/pre-push'],
-    ['config', '--get', 'core.fsmonitor'],
+    ['config', '--type=bool', '--get', 'core.fsmonitor'],
     ['push', 'origin', `${commitSha}:main`],
   ]);
 });
@@ -434,8 +435,12 @@ test('a path-valued core.fsmonitor stops the release; boolean values do not', ()
   const { cwd } = makeRepoWithBareRemote();
   git(cwd, 'config', 'core.fsmonitor', 'false');
   assert.deepEqual(assertNoReleaseHooks({ cwd }).checkedHooks.length, 8);
-  git(cwd, 'config', 'core.fsmonitor', path.join(cwd, 'fsmon.sh'));
-  assert.throws(() => assertNoReleaseHooks({ cwd, step: 'staging' }), /core\.fsmonitor=.*fsmon\.sh.*Stopped before staging/s);
+  git(cwd, 'config', 'core.fsmonitor', 'true');
+  assert.deepEqual(assertNoReleaseHooks({ cwd }).checkedHooks.length, 8);
+  for (const value of [path.join(cwd, 'fsmon.sh'), ' true ', 'true ']) {
+    git(cwd, 'config', 'core.fsmonitor', value);
+    assert.throws(() => assertNoReleaseHooks({ cwd, step: 'staging' }), /core\.fsmonitor=<non-boolean value.*Stopped before staging/s, `value ${JSON.stringify(value)}`);
+  }
 });
 
 test('an approved file with a configured clean filter stops staging before git add runs it', () => {
@@ -464,3 +469,22 @@ test('a configured filter driver that no approved file uses does not block stagi
   const result = stageApprovedFiles({ cwd, approvedFiles: ['reviewed.txt'] });
   assert.deepEqual(result.stagedFiles, ['reviewed.txt']);
 });
+
+for (const [label, attr, driver] of [
+  ['empty name', 'reviewed.txt filter=', 'filter..clean'],
+  ['named unset', 'reviewed.txt filter=unset', 'filter.unset.clean'],
+  ['named unspecified', 'reviewed.txt filter=unspecified', 'filter.unspecified.clean'],
+  ['bare attribute (set)', 'reviewed.txt filter', 'filter.set.clean'],
+]) {
+  test(`a clean filter driver with an ${label} attribute value still stops staging`, () => {
+    const { stageApprovedFiles } = require(guardPath);
+    const cwd = makeRepo();
+    const marker = path.join(cwd, 'filter-ran.marker');
+    fs.writeFileSync(path.join(cwd, '.git', 'info', 'attributes'), `${attr}\n`);
+    git(cwd, 'config', driver, `sh -c 'touch "${marker}"; cat'`);
+    fs.writeFileSync(path.join(cwd, 'reviewed.txt'), 'reviewed change\n');
+
+    assert.throws(() => stageApprovedFiles({ cwd, approvedFiles: ['reviewed.txt'] }), /Approved files use a Git clean filter/);
+    assert.equal(fs.existsSync(marker), false, 'the clean filter must not have run');
+  });
+}

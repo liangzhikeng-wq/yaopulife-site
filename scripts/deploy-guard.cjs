@@ -75,17 +75,18 @@ function assertNoCleanFilters({ cwd, files, git = runGit }) {
   const flagged = [];
   for (let index = 0; index + 2 < parts.length; index += 3) {
     const [file, , value] = parts.slice(index, index + 3);
-    if (!value || value === 'unspecified' || value === 'unset') continue;
+    // check-attr cannot tell a missing attribute from a driver literally named
+    // "unspecified"/"unset"/"set"/"", so look the driver up for every value.
     let driver = '';
     for (const key of ['clean', 'process']) {
       try {
         driver = stripTrailingNewline(git(cwd, ['config', '--get', `filter.${value}.${key}`]));
-      } catch {
-        driver = '';
+      } catch (error) {
+        driver = error && error.status === 1 ? '' : `<unreadable filter.${value}.${key}>`;
       }
       if (driver) break;
     }
-    if (driver) flagged.push(`${file} (filter=${value})`);
+    if (driver) flagged.push(`${file} (filter=${value || '<empty>'})`);
   }
   if (flagged.length > 0) {
     throw new Error(
@@ -170,8 +171,6 @@ const RELEASE_FLOW_HOOKS = [
   'pre-push',
 ];
 
-const BOOLEAN_CONFIG_VALUES = new Set(['true', 'false', 'yes', 'no', 'on', 'off', '1', '0']);
-
 function stripTrailingNewline(value) {
   // Keep leading/trailing spaces that are part of a legal path; drop only Git's line ending.
   return String(value).replace(/\r?\n$/, '');
@@ -198,15 +197,12 @@ function assertNoReleaseHooks({ cwd, git = runGit, step = 'release' }) {
     const resolved = path.resolve(cwd, stripTrailingNewline(git(cwd, ['rev-parse', '--git-path', `hooks/${hook}`])));
     if (isExecutableFile(resolved)) active.push(resolved);
   }
-  let fsmonitor = '';
+  // Let Git parse core.fsmonitor itself: exit 1 = unset, a valid boolean selects Git's
+  // built-in monitor, anything else (a path, or a value with stray spaces) is a command.
   try {
-    fsmonitor = stripTrailingNewline(git(cwd, ['config', '--get', 'core.fsmonitor']));
-  } catch {
-    fsmonitor = ''; // unset: git config exits 1
-  }
-  if (fsmonitor && !BOOLEAN_CONFIG_VALUES.has(fsmonitor.trim().toLowerCase())) {
-    // A path-valued core.fsmonitor is an external program Git runs when it reads the index.
-    active.push(`core.fsmonitor=${fsmonitor}`);
+    git(cwd, ['config', '--type=bool', '--get', 'core.fsmonitor']);
+  } catch (error) {
+    if (error && error.status !== 1) active.push('core.fsmonitor=<non-boolean value: an external program>');
   }
   if (active.length > 0) {
     throw new Error(
