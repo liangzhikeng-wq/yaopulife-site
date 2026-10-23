@@ -49,6 +49,7 @@ function stageApprovedFiles({ cwd, approvedFiles, git = runGit }) {
     throw new Error(`Refusing to include unapproved staged files: ${unapprovedStaged.join(', ')}`);
   }
 
+  assertNoCleanFilters({ cwd, files: approved, git });
   git(cwd, ['add', '--', ...approved.map(file => `:(literal)${file}`)]);
   const stagedFiles = splitZero(git(cwd, ['diff', '--cached', '--no-renames', '--name-only', '-z']));
   const escaped = stagedFiles.filter(file => !approvedSet.has(file));
@@ -63,6 +64,34 @@ function stageApprovedFiles({ cwd, approvedFiles, git = runGit }) {
     stagedFiles,
     unapprovedUntracked: untracked.filter(file => !approvedSet.has(file)),
   };
+}
+
+// `git add` runs a clean/process filter for files whose `filter` attribute names
+// a configured driver. Only the approved files matter: a globally configured
+// driver (for example Git LFS) is fine when no approved file uses it.
+function assertNoCleanFilters({ cwd, files, git = runGit }) {
+  const out = git(cwd, ['check-attr', '-z', 'filter', '--', ...files]);
+  const parts = out.split('\0');
+  const flagged = [];
+  for (let index = 0; index + 2 < parts.length; index += 3) {
+    const [file, , value] = parts.slice(index, index + 3);
+    if (!value || value === 'unspecified' || value === 'unset') continue;
+    let driver = '';
+    for (const key of ['clean', 'process']) {
+      try {
+        driver = stripTrailingNewline(git(cwd, ['config', '--get', `filter.${value}.${key}`]));
+      } catch {
+        driver = '';
+      }
+      if (driver) break;
+    }
+    if (driver) flagged.push(`${file} (filter=${value})`);
+  }
+  if (flagged.length > 0) {
+    throw new Error(
+      `Approved files use a Git clean filter that git add would run: ${flagged.join(', ')}; review it before release. Stopped before staging.`
+    );
+  }
 }
 
 function assertProductionBaseline({ cwd, expectedProductionSha, git = runGit }) {
@@ -141,6 +170,8 @@ const RELEASE_FLOW_HOOKS = [
   'pre-push',
 ];
 
+const BOOLEAN_CONFIG_VALUES = new Set(['true', 'false', 'yes', 'no', 'on', 'off', '1', '0']);
+
 function stripTrailingNewline(value) {
   // Keep leading/trailing spaces that are part of a legal path; drop only Git's line ending.
   return String(value).replace(/\r?\n$/, '');
@@ -166,6 +197,16 @@ function assertNoReleaseHooks({ cwd, git = runGit, step = 'release' }) {
   for (const hook of RELEASE_FLOW_HOOKS) {
     const resolved = path.resolve(cwd, stripTrailingNewline(git(cwd, ['rev-parse', '--git-path', `hooks/${hook}`])));
     if (isExecutableFile(resolved)) active.push(resolved);
+  }
+  let fsmonitor = '';
+  try {
+    fsmonitor = stripTrailingNewline(git(cwd, ['config', '--get', 'core.fsmonitor']));
+  } catch {
+    fsmonitor = ''; // unset: git config exits 1
+  }
+  if (fsmonitor && !BOOLEAN_CONFIG_VALUES.has(fsmonitor.trim().toLowerCase())) {
+    // A path-valued core.fsmonitor is an external program Git runs when it reads the index.
+    active.push(`core.fsmonitor=${fsmonitor}`);
   }
   if (active.length > 0) {
     throw new Error(
@@ -195,6 +236,7 @@ function pushReviewedCommitOnce({ cwd, commitSha, git = runGit }) {
 
 module.exports = {
   assertCommitMatchesApprovedFiles,
+  assertNoCleanFilters,
   assertNoReleaseHooks,
   assertProductionBaseline,
   pushReviewedCommitOnce,

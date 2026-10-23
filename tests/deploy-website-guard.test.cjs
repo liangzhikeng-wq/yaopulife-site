@@ -257,6 +257,7 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
     ['rev-parse', '--git-path', 'hooks/pre-auto-gc'],
     ['rev-parse', '--git-path', 'hooks/reference-transaction'],
     ['rev-parse', '--git-path', 'hooks/pre-push'],
+    ['config', '--get', 'core.fsmonitor'],
     ['push', 'origin', `${commitSha}:main`],
   ]);
 });
@@ -417,10 +418,49 @@ for (const hook of ['post-index-change', 'pre-commit', 'prepare-commit-msg', 'co
   });
 }
 
-test('the release script checks hooks before staging and again before committing', () => {
+test('the release script checks hooks after generators, right before staging, and again before committing', () => {
   const script = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'deploy-website.cjs'), 'utf8');
+  const generators = script.indexOf('runGenerators(options.siteDir)');
   const stagingCheck = script.indexOf("assertNoReleaseHooks({ cwd: options.siteDir, step: 'staging' })");
+  const staging = script.indexOf('stageApprovedFiles({');
   const commitCheck = script.indexOf("assertNoReleaseHooks({ cwd: options.siteDir, step: 'commit' })");
-  assert.ok(stagingCheck > 0 && stagingCheck < script.indexOf('stageApprovedFiles({'), 'hook check must precede staging');
-  assert.ok(commitCheck > 0 && commitCheck < script.indexOf("['commit', '-m'"), 'hook check must precede git commit');
+  assert.ok(generators > 0 && generators < stagingCheck, 'hook check must run after generators');
+  assert.ok(stagingCheck > 0 && stagingCheck < staging, 'hook check must precede staging');
+  assert.ok(commitCheck > staging && commitCheck < script.indexOf("['commit', '-m'"), 'hook check must precede git commit');
+});
+
+test('a path-valued core.fsmonitor stops the release; boolean values do not', () => {
+  const { assertNoReleaseHooks } = require(guardPath);
+  const { cwd } = makeRepoWithBareRemote();
+  git(cwd, 'config', 'core.fsmonitor', 'false');
+  assert.deepEqual(assertNoReleaseHooks({ cwd }).checkedHooks.length, 8);
+  git(cwd, 'config', 'core.fsmonitor', path.join(cwd, 'fsmon.sh'));
+  assert.throws(() => assertNoReleaseHooks({ cwd, step: 'staging' }), /core\.fsmonitor=.*fsmon\.sh.*Stopped before staging/s);
+});
+
+test('an approved file with a configured clean filter stops staging before git add runs it', () => {
+  const { stageApprovedFiles } = require(guardPath);
+  const cwd = makeRepo();
+  const marker = path.join(cwd, 'filter-ran.marker');
+  fs.writeFileSync(path.join(cwd, '.git', 'info', 'attributes'), 'reviewed.txt filter=probe\n');
+  git(cwd, 'config', 'filter.probe.clean', `sh -c 'touch "${marker}"; cat'`);
+  fs.writeFileSync(path.join(cwd, 'reviewed.txt'), 'reviewed change\n');
+
+  assert.throws(
+    () => stageApprovedFiles({ cwd, approvedFiles: ['reviewed.txt'] }),
+    /Approved files use a Git clean filter.*reviewed\.txt \(filter=probe\).*Stopped before staging/s
+  );
+  assert.equal(fs.existsSync(marker), false, 'the clean filter must not have run');
+  assert.equal(git(cwd, 'diff', '--cached', '--name-only'), '');
+});
+
+test('a configured filter driver that no approved file uses does not block staging', () => {
+  const { stageApprovedFiles } = require(guardPath);
+  const cwd = makeRepo();
+  git(cwd, 'config', 'filter.lfs.clean', 'git-lfs clean -- %f');
+  git(cwd, 'config', 'filter.lfs.process', 'git-lfs filter-process');
+  fs.writeFileSync(path.join(cwd, 'reviewed.txt'), 'reviewed change\n');
+
+  const result = stageApprovedFiles({ cwd, approvedFiles: ['reviewed.txt'] });
+  assert.deepEqual(result.stagedFiles, ['reviewed.txt']);
 });

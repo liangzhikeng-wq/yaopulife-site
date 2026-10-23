@@ -68,8 +68,6 @@ function main(argv = process.argv.slice(2)) {
     expectedProductionSha: options.expectedProductionSha,
   });
   console.log(`  ✓ HEAD 与显式生产基线一致: ${baseline.currentSha}`);
-  assertNoReleaseHooks({ cwd: options.siteDir, step: 'staging' });
-  console.log('  ✓ 本次发布会触发的 Git 钩子均不存在（不绕过、不运行未审钩子）');
   if (baseline.remoteMainSha && baseline.remoteMainSha !== baseline.currentSha) {
     console.log(`  ! origin/main 仅作诊断且不是生产基线: ${baseline.remoteMainSha}`);
   }
@@ -77,6 +75,8 @@ function main(argv = process.argv.slice(2)) {
   runGenerators(options.siteDir);
 
   console.log('\n[2/4] 仅暂存已审文件...');
+  assertNoReleaseHooks({ cwd: options.siteDir, step: 'staging' });
+  console.log('  ✓ 本次发布会触发的 Git 钩子与 fsmonitor 均不存在（不绕过、不运行未审程序）');
   const staged = stageApprovedFiles({
     cwd: options.siteDir,
     approvedFiles: options.approvedFiles,
