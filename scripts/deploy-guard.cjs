@@ -125,12 +125,47 @@ function assertCommitMatchesApprovedFiles({
   return { approvedFiles: approved, committedFiles, committedTreeSha };
 }
 
+// Hooks that Git can run on the client while pushing. `pre-push` is the one
+// `--no-verify` would skip; `reference-transaction` runs when the local
+// remote-tracking ref is updated and cannot be skipped at all.
+const PUSH_TIME_HOOKS = ['pre-push', 'reference-transaction'];
+
+function isExecutableFile(file) {
+  try {
+    const stat = fs.statSync(file);
+    if (!stat.isFile()) return false;
+    fs.accessSync(file, fs.constants.X_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Never bypass hooks and never run unreviewed ones: if any push-time hook is
+// active (default hooks dir or core.hooksPath, including linked worktrees),
+// stop before the push so a human can review what it does.
+function assertNoPushTimeHooks({ cwd, git = runGit }) {
+  const active = [];
+  for (const hook of PUSH_TIME_HOOKS) {
+    const resolved = path.resolve(cwd, git(cwd, ['rev-parse', '--git-path', `hooks/${hook}`]).trim());
+    if (isExecutableFile(resolved)) active.push(resolved);
+  }
+  if (active.length > 0) {
+    throw new Error(
+      `Push-time Git hook present (${active.join(', ')}); review it before release. ` +
+      'The guard does not bypass hooks with --no-verify and does not run unreviewed hooks. No push was attempted.'
+    );
+  }
+  return { checkedHooks: [...PUSH_TIME_HOOKS] };
+}
+
 function pushReviewedCommitOnce({ cwd, commitSha, git = runGit }) {
   if (!/^[0-9a-f]{40}$/i.test(commitSha || '')) {
     throw new Error('A full reviewed commit SHA is required before push.');
   }
+  assertNoPushTimeHooks({ cwd, git });
   try {
-    const output = git(cwd, ['push', '--no-verify', 'origin', `${commitSha}:main`]);
+    const output = git(cwd, ['push', 'origin', `${commitSha}:main`]);
     return { triggerAccepted: true, deploymentStatus: 'unknown', output: output.trim() };
   } catch (error) {
     const wrapped = new Error(
@@ -143,6 +178,7 @@ function pushReviewedCommitOnce({ cwd, commitSha, git = runGit }) {
 
 module.exports = {
   assertCommitMatchesApprovedFiles,
+  assertNoPushTimeHooks,
   assertProductionBaseline,
   pushReviewedCommitOnce,
   stageApprovedFiles,

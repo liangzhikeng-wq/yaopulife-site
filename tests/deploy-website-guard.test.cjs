@@ -240,6 +240,7 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
   const calls = [];
   const uncertainGit = (_cwd, args) => {
     calls.push(args);
+    if (args[0] === 'rev-parse') return '/nonexistent-hooks-dir/' + args[2].split('/').pop() + '\n';
     throw new Error('connection closed before acknowledgement');
   };
 
@@ -247,7 +248,114 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
     () => pushReviewedCommitOnce({ cwd: '/unused', commitSha, git: uncertainGit }),
     /outcome is unknown.*reconcile remote main and Vercel before rerunning/i
   );
-  assert.deepEqual(calls, [['push', '--no-verify', 'origin', `${commitSha}:main`]]);
+  assert.deepEqual(calls, [
+    ['rev-parse', '--git-path', 'hooks/pre-push'],
+    ['rev-parse', '--git-path', 'hooks/reference-transaction'],
+    ['push', 'origin', `${commitSha}:main`],
+  ]);
+});
+
+function makeRepoWithBareRemote() {
+  const cwd = makeRepo();
+  const remote = fs.mkdtempSync(path.join(os.tmpdir(), 'yaopu-deploy-guard-remote-'));
+  git(remote, 'init', '--bare', '-b', 'main');
+  git(cwd, 'remote', 'add', 'origin', remote);
+  git(cwd, 'push', 'origin', 'main');
+  fs.writeFileSync(path.join(cwd, 'reviewed.txt'), 'reviewed change\n');
+  git(cwd, 'commit', '-am', 'reviewed commit');
+  return { cwd, remote, commitSha: git(cwd, 'rev-parse', 'HEAD') };
+}
+
+function recordingGit(calls) {
+  return (cwd, args) => {
+    calls.push(args);
+    return execFileSync('git', args, { cwd, encoding: 'utf8' });
+  };
+}
+
+function writeHook(file, body = '#!/bin/sh\nexit 0\n', mode = 0o755) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, body);
+  fs.chmodSync(file, mode);
+}
+
+test('the guard never passes --no-verify to git', () => {
+  const source = fs.readFileSync(guardPath, 'utf8');
+  assert.doesNotMatch(source, /['"]--no-verify['"]/);
+});
+
+test('an active pre-push hook stops the release before any push is attempted', () => {
+  const { pushReviewedCommitOnce } = require(guardPath);
+  const { cwd, remote, commitSha } = makeRepoWithBareRemote();
+  const remoteBefore = git(remote, 'rev-parse', 'main');
+  writeHook(path.join(cwd, '.git', 'hooks', 'pre-push'));
+  const calls = [];
+
+  assert.throws(
+    () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
+    /Push-time Git hook present.*pre-push.*No push was attempted/s
+  );
+  assert.equal(calls.filter(args => args[0] === 'push').length, 0);
+  assert.equal(git(remote, 'rev-parse', 'main'), remoteBefore);
+});
+
+test('a pre-push hook configured through a relative core.hooksPath is detected', () => {
+  const { pushReviewedCommitOnce } = require(guardPath);
+  const { cwd, commitSha } = makeRepoWithBareRemote();
+  git(cwd, 'config', 'core.hooksPath', '.githooks');
+  writeHook(path.join(cwd, '.githooks', 'pre-push'));
+  const calls = [];
+
+  assert.throws(
+    () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
+    /Push-time Git hook present.*\.githooks.*pre-push/s
+  );
+  assert.equal(calls.filter(args => args[0] === 'push').length, 0);
+});
+
+test('a reference-transaction hook, which --no-verify cannot skip, also stops the release', () => {
+  const { pushReviewedCommitOnce } = require(guardPath);
+  const { cwd, commitSha } = makeRepoWithBareRemote();
+  writeHook(path.join(cwd, '.git', 'hooks', 'reference-transaction'));
+  const calls = [];
+
+  assert.throws(
+    () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
+    /Push-time Git hook present.*reference-transaction/s
+  );
+  assert.equal(calls.filter(args => args[0] === 'push').length, 0);
+});
+
+test('a hook in a linked worktree common dir is detected', () => {
+  const { assertNoPushTimeHooks } = require(guardPath);
+  const { cwd } = makeRepoWithBareRemote();
+  const linked = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'yaopu-deploy-guard-wt-')), 'wt');
+  git(cwd, 'worktree', 'add', '-b', 'linked', linked);
+  writeHook(path.join(cwd, '.git', 'hooks', 'pre-push'));
+
+  assert.throws(() => assertNoPushTimeHooks({ cwd: linked }), /Push-time Git hook present/);
+});
+
+test('sample and non-executable hook files are not treated as active, matching Git', () => {
+  const { assertNoPushTimeHooks } = require(guardPath);
+  const { cwd } = makeRepoWithBareRemote();
+  writeHook(path.join(cwd, '.git', 'hooks', 'pre-push.sample'));
+  writeHook(path.join(cwd, '.git', 'hooks', 'pre-push'), '#!/bin/sh\nexit 1\n', 0o644);
+
+  assert.deepEqual(assertNoPushTimeHooks({ cwd }).checkedHooks, ['pre-push', 'reference-transaction']);
+});
+
+test('with no push-time hooks the reviewed commit is pushed exactly once without --no-verify', () => {
+  const { pushReviewedCommitOnce } = require(guardPath);
+  const { cwd, remote, commitSha } = makeRepoWithBareRemote();
+  const calls = [];
+
+  const result = pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) });
+
+  assert.equal(result.triggerAccepted, true);
+  assert.equal(result.deploymentStatus, 'unknown');
+  assert.deepEqual(calls.filter(args => args[0] === 'push'), [['push', 'origin', `${commitSha}:main`]]);
+  assert.equal(git(remote, 'rev-parse', 'main'), commitSha);
 });
 
 test('the regular deploy script uses reviewed-file guards and contains no add-all fallback', () => {
