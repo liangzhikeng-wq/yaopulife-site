@@ -11,6 +11,7 @@
 const { execFileSync } = require('node:child_process');
 const {
   assertCommitMatchesApprovedFiles,
+  assertNoReleaseHooks,
   assertProductionBaseline,
   pushReviewedCommitOnce,
   stageApprovedFiles,
@@ -67,6 +68,8 @@ function main(argv = process.argv.slice(2)) {
     expectedProductionSha: options.expectedProductionSha,
   });
   console.log(`  ✓ HEAD 与显式生产基线一致: ${baseline.currentSha}`);
+  assertNoReleaseHooks({ cwd: options.siteDir, step: 'staging' });
+  console.log('  ✓ 本次发布会触发的 Git 钩子均不存在（不绕过、不运行未审钩子）');
   if (baseline.remoteMainSha && baseline.remoteMainSha !== baseline.currentSha) {
     console.log(`  ! origin/main 仅作诊断且不是生产基线: ${baseline.remoteMainSha}`);
   }
@@ -85,6 +88,7 @@ function main(argv = process.argv.slice(2)) {
   }
 
   console.log('\n[3/4] 提交已审文件...');
+  assertNoReleaseHooks({ cwd: options.siteDir, step: 'commit' });
   execFileSync('git', ['commit', '-m', options.commitMessage], {
     cwd: options.siteDir,
     encoding: 'utf8',

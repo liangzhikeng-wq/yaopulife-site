@@ -125,10 +125,26 @@ function assertCommitMatchesApprovedFiles({
   return { approvedFiles: approved, committedFiles, committedTreeSha };
 }
 
-// Hooks that Git can run on the client while pushing. `pre-push` is the one
-// `--no-verify` would skip; `reference-transaction` runs when the local
-// remote-tracking ref is updated and cannot be skipped at all.
-const PUSH_TIME_HOOKS = ['pre-push', 'reference-transaction'];
+// Client-side hooks that this release flow's own Git commands can run:
+// `git add` (post-index-change), `git commit` (pre-commit, prepare-commit-msg,
+// commit-msg, post-commit, reference-transaction, pre-auto-gc via auto gc) and
+// `git push` (pre-push, reference-transaction). Any of them can execute
+// arbitrary commands, including an extra deploy trigger.
+const RELEASE_FLOW_HOOKS = [
+  'post-index-change',
+  'pre-commit',
+  'prepare-commit-msg',
+  'commit-msg',
+  'post-commit',
+  'pre-auto-gc',
+  'reference-transaction',
+  'pre-push',
+];
+
+function stripTrailingNewline(value) {
+  // Keep leading/trailing spaces that are part of a legal path; drop only Git's line ending.
+  return String(value).replace(/\r?\n$/, '');
+}
 
 function isExecutableFile(file) {
   try {
@@ -141,29 +157,30 @@ function isExecutableFile(file) {
   }
 }
 
-// Never bypass hooks and never run unreviewed ones: if any push-time hook is
-// active (default hooks dir or core.hooksPath, including linked worktrees),
-// stop before the push so a human can review what it does.
-function assertNoPushTimeHooks({ cwd, git = runGit }) {
+// Never bypass hooks and never run unreviewed ones: if any hook this release
+// would trigger is active (default hooks dir or core.hooksPath, including linked
+// worktrees), stop so a human can review what it does. Call this before staging,
+// before committing and before pushing.
+function assertNoReleaseHooks({ cwd, git = runGit, step = 'release' }) {
   const active = [];
-  for (const hook of PUSH_TIME_HOOKS) {
-    const resolved = path.resolve(cwd, git(cwd, ['rev-parse', '--git-path', `hooks/${hook}`]).trim());
+  for (const hook of RELEASE_FLOW_HOOKS) {
+    const resolved = path.resolve(cwd, stripTrailingNewline(git(cwd, ['rev-parse', '--git-path', `hooks/${hook}`])));
     if (isExecutableFile(resolved)) active.push(resolved);
   }
   if (active.length > 0) {
     throw new Error(
-      `Push-time Git hook present (${active.join(', ')}); review it before release. ` +
-      'The guard does not bypass hooks with --no-verify and does not run unreviewed hooks. No push was attempted.'
+      `Git hook present that this release would run (${active.join(', ')}); review it before release. ` +
+      `The guard does not bypass hooks with --no-verify and does not run unreviewed hooks. Stopped before ${step}.`
     );
   }
-  return { checkedHooks: [...PUSH_TIME_HOOKS] };
+  return { checkedHooks: [...RELEASE_FLOW_HOOKS] };
 }
 
 function pushReviewedCommitOnce({ cwd, commitSha, git = runGit }) {
   if (!/^[0-9a-f]{40}$/i.test(commitSha || '')) {
     throw new Error('A full reviewed commit SHA is required before push.');
   }
-  assertNoPushTimeHooks({ cwd, git });
+  assertNoReleaseHooks({ cwd, git, step: 'push' });
   try {
     const output = git(cwd, ['push', 'origin', `${commitSha}:main`]);
     return { triggerAccepted: true, deploymentStatus: 'unknown', output: output.trim() };
@@ -178,7 +195,7 @@ function pushReviewedCommitOnce({ cwd, commitSha, git = runGit }) {
 
 module.exports = {
   assertCommitMatchesApprovedFiles,
-  assertNoPushTimeHooks,
+  assertNoReleaseHooks,
   assertProductionBaseline,
   pushReviewedCommitOnce,
   stageApprovedFiles,

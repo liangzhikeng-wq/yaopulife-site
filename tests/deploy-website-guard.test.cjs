@@ -249,8 +249,14 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
     /outcome is unknown.*reconcile remote main and Vercel before rerunning/i
   );
   assert.deepEqual(calls, [
-    ['rev-parse', '--git-path', 'hooks/pre-push'],
+    ['rev-parse', '--git-path', 'hooks/post-index-change'],
+    ['rev-parse', '--git-path', 'hooks/pre-commit'],
+    ['rev-parse', '--git-path', 'hooks/prepare-commit-msg'],
+    ['rev-parse', '--git-path', 'hooks/commit-msg'],
+    ['rev-parse', '--git-path', 'hooks/post-commit'],
+    ['rev-parse', '--git-path', 'hooks/pre-auto-gc'],
     ['rev-parse', '--git-path', 'hooks/reference-transaction'],
+    ['rev-parse', '--git-path', 'hooks/pre-push'],
     ['push', 'origin', `${commitSha}:main`],
   ]);
 });
@@ -293,7 +299,7 @@ test('an active pre-push hook stops the release before any push is attempted', (
 
   assert.throws(
     () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
-    /Push-time Git hook present.*pre-push.*No push was attempted/s
+    /Git hook present that this release would run.*pre-push.*Stopped before push/s
   );
   assert.equal(calls.filter(args => args[0] === 'push').length, 0);
   assert.equal(git(remote, 'rev-parse', 'main'), remoteBefore);
@@ -308,7 +314,7 @@ test('a pre-push hook configured through a relative core.hooksPath is detected',
 
   assert.throws(
     () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
-    /Push-time Git hook present.*\.githooks.*pre-push/s
+    /Git hook present that this release would run.*\.githooks.*pre-push/s
   );
   assert.equal(calls.filter(args => args[0] === 'push').length, 0);
 });
@@ -321,28 +327,28 @@ test('a reference-transaction hook, which --no-verify cannot skip, also stops th
 
   assert.throws(
     () => pushReviewedCommitOnce({ cwd, commitSha, git: recordingGit(calls) }),
-    /Push-time Git hook present.*reference-transaction/s
+    /Git hook present that this release would run.*reference-transaction/s
   );
   assert.equal(calls.filter(args => args[0] === 'push').length, 0);
 });
 
 test('a hook in a linked worktree common dir is detected', () => {
-  const { assertNoPushTimeHooks } = require(guardPath);
+  const { assertNoReleaseHooks } = require(guardPath);
   const { cwd } = makeRepoWithBareRemote();
   const linked = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'yaopu-deploy-guard-wt-')), 'wt');
   git(cwd, 'worktree', 'add', '-b', 'linked', linked);
   writeHook(path.join(cwd, '.git', 'hooks', 'pre-push'));
 
-  assert.throws(() => assertNoPushTimeHooks({ cwd: linked }), /Push-time Git hook present/);
+  assert.throws(() => assertNoReleaseHooks({ cwd: linked }), /Git hook present that this release would run/);
 });
 
 test('sample and non-executable hook files are not treated as active, matching Git', () => {
-  const { assertNoPushTimeHooks } = require(guardPath);
+  const { assertNoReleaseHooks } = require(guardPath);
   const { cwd } = makeRepoWithBareRemote();
   writeHook(path.join(cwd, '.git', 'hooks', 'pre-push.sample'));
   writeHook(path.join(cwd, '.git', 'hooks', 'pre-push'), '#!/bin/sh\nexit 1\n', 0o644);
 
-  assert.deepEqual(assertNoPushTimeHooks({ cwd }).checkedHooks, ['pre-push', 'reference-transaction']);
+  assert.deepEqual(assertNoReleaseHooks({ cwd }).checkedHooks, ['post-index-change', 'pre-commit', 'prepare-commit-msg', 'commit-msg', 'post-commit', 'pre-auto-gc', 'reference-transaction', 'pre-push']);
 });
 
 test('with no push-time hooks the reviewed commit is pushed exactly once without --no-verify', () => {
@@ -386,4 +392,35 @@ test('generator errors fail closed before staging or push', () => {
     /generator failed.*stopped before staging/i
   );
   assert.equal(calls, 1);
+});
+
+test('a hooksPath with a leading space is resolved exactly, not trimmed', () => {
+  const { assertNoReleaseHooks } = require(guardPath);
+  const { cwd } = makeRepoWithBareRemote();
+  git(cwd, 'config', 'core.hooksPath', ' hooks');
+  writeHook(path.join(cwd, ' hooks', 'pre-push'));
+  writeHook(path.join(cwd, 'hooks', 'unrelated-decoy'));
+
+  assert.throws(() => assertNoReleaseHooks({ cwd }), /Git hook present that this release would run.* hooks\/pre-push/s);
+});
+
+for (const hook of ['post-index-change', 'pre-commit', 'prepare-commit-msg', 'commit-msg', 'post-commit', 'pre-auto-gc']) {
+  test(`a ${hook} hook, which runs before the push step, stops the release`, () => {
+    const { assertNoReleaseHooks } = require(guardPath);
+    const { cwd } = makeRepoWithBareRemote();
+    writeHook(path.join(cwd, '.git', 'hooks', hook));
+
+    assert.throws(
+      () => assertNoReleaseHooks({ cwd, step: 'commit' }),
+      new RegExp(`Git hook present that this release would run.*${hook}.*Stopped before commit`, 's')
+    );
+  });
+}
+
+test('the release script checks hooks before staging and again before committing', () => {
+  const script = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'deploy-website.cjs'), 'utf8');
+  const stagingCheck = script.indexOf("assertNoReleaseHooks({ cwd: options.siteDir, step: 'staging' })");
+  const commitCheck = script.indexOf("assertNoReleaseHooks({ cwd: options.siteDir, step: 'commit' })");
+  assert.ok(stagingCheck > 0 && stagingCheck < script.indexOf('stageApprovedFiles({'), 'hook check must precede staging');
+  assert.ok(commitCheck > 0 && commitCheck < script.indexOf("['commit', '-m'"), 'hook check must precede git commit');
 });
