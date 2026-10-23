@@ -204,6 +204,21 @@ function assertNoReleaseHooks({ cwd, git = runGit, step = 'release' }) {
   } catch (error) {
     if (error && error.status !== 1) active.push('core.fsmonitor=<non-boolean value: an external program>');
   }
+  // Config-driven programs that `git commit` / `git push` can run besides hooks:
+  // commit/push signing (gpg.program, gpg.<format>.program) and the GC recent-objects hook.
+  const readConfig = (key, type) => {
+    try {
+      return stripTrailingNewline(git(cwd, ['config', ...(type ? [`--type=${type}`] : []), '--get-all', key]));
+    } catch (error) {
+      if (error && error.status === 1) return ''; // unset
+      return '<invalid>';
+    }
+  };
+  const commitSign = readConfig('commit.gpgsign', 'bool');
+  if (commitSign && commitSign !== 'false') active.push(`commit.gpgsign=${commitSign} (runs the configured signing program)`);
+  const pushSign = readConfig('push.gpgsign');
+  if (pushSign && pushSign.toLowerCase() !== 'false') active.push(`push.gpgsign=${pushSign} (runs the configured signing program)`);
+  if (readConfig('gc.recentobjectshook')) active.push('gc.recentObjectsHook (runs during automatic GC)');
   if (active.length > 0) {
     throw new Error(
       `Git hook present that this release would run (${active.join(', ')}); review it before release. ` +

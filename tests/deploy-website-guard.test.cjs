@@ -259,6 +259,9 @@ test('an unknown push outcome stops after one trigger and requires reconciliatio
     ['rev-parse', '--git-path', 'hooks/reference-transaction'],
     ['rev-parse', '--git-path', 'hooks/pre-push'],
     ['config', '--type=bool', '--get', 'core.fsmonitor'],
+    ['config', '--type=bool', '--get-all', 'commit.gpgsign'],
+    ['config', '--get-all', 'push.gpgsign'],
+    ['config', '--get-all', 'gc.recentobjectshook'],
     ['push', 'origin', `${commitSha}:main`],
   ]);
 });
@@ -427,7 +430,7 @@ test('the release script checks hooks after generators, right before staging, an
   const commitCheck = script.indexOf("assertNoReleaseHooks({ cwd: options.siteDir, step: 'commit' })");
   assert.ok(generators > 0 && generators < stagingCheck, 'hook check must run after generators');
   assert.ok(stagingCheck > 0 && stagingCheck < staging, 'hook check must precede staging');
-  assert.ok(commitCheck > staging && commitCheck < script.indexOf("['commit', '-m'"), 'hook check must precede git commit');
+  assert.ok(commitCheck > staging && commitCheck < script.indexOf("'commit', '-m'"), 'hook check must precede git commit');
 });
 
 test('a path-valued core.fsmonitor stops the release; boolean values do not', () => {
@@ -488,3 +491,21 @@ for (const [label, attr, driver] of [
     assert.equal(fs.existsSync(marker), false, 'the clean filter must not have run');
   });
 }
+
+for (const [label, key, value] of [
+  ['commit signing', 'commit.gpgsign', 'true'],
+  ['push signing', 'push.gpgsign', 'if-asked'],
+  ['GC recent-objects hook', 'gc.recentObjectsHook', 'sh -c true'],
+]) {
+  test(`configured ${label} stops the release`, () => {
+    const { assertNoReleaseHooks } = require(guardPath);
+    const { cwd } = makeRepoWithBareRemote();
+    git(cwd, 'config', key, value);
+    assert.throws(() => assertNoReleaseHooks({ cwd, step: 'commit' }), /Git hook present that this release would run.*Stopped before commit/s);
+  });
+}
+
+test('the release commit disables automatic maintenance', () => {
+  const script = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'deploy-website.cjs'), 'utf8');
+  assert.match(script, /'-c', 'maintenance\.auto=false', '-c', 'gc\.auto=0', 'commit', '-m'/);
+});

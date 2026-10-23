@@ -89,7 +89,9 @@ function main(argv = process.argv.slice(2)) {
 
   console.log('\n[3/4] 提交已审文件...');
   assertNoReleaseHooks({ cwd: options.siteDir, step: 'commit' });
-  execFileSync('git', ['commit', '-m', options.commitMessage], {
+  // Automatic maintenance/GC after commit is not a safety check; turning it off keeps
+  // configured GC programs from running inside the release.
+  execFileSync('git', ['-c', 'maintenance.auto=false', '-c', 'gc.auto=0', 'commit', '-m', options.commitMessage], {
     cwd: options.siteDir,
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe'],
