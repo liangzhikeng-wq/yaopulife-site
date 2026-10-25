@@ -58,7 +58,7 @@ export default async function handler(req, res) {
         console.error('Resend error (subscribe):', detail);
         return res.status(500).json({ error: 'Subscription failed. Please try again.' });
       }
-      return res.status(200).json({ success: true, message: 'Thanks for subscribing!' });
+      return res.status(200).json({ success: true, message: 'Thanks! Your email address has been submitted.' });
     }
 
     // No key configured: do not fake success.
